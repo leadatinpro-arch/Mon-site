@@ -1,7 +1,7 @@
 /* Éléments communs à toutes les pages : chargement, curseur, en-tête, menu, pied de page.
    Modifiez-les ici une seule fois, ils s'appliquent partout. */
 (() => {
-  const page = document.body.dataset.page || "home";
+  const page = document.body.dataset.nav || document.body.dataset.page || "home";
   const S = window.SOCIAL || {};
   const links = [
     ["home", "index.html", "nav.home", "Accueil"],
@@ -29,11 +29,11 @@
       <a href="index.html" class="logo" aria-label="Léa Datin — Accueil"><span class="logo__mark">LD</span></a>
       <nav class="nav" aria-label="Navigation">${navLinks("nav__link")}</nav>
       <div class="header__right">
-        <div class="lang" role="group" aria-label="Langue / Language">
-          <button class="lang__btn" data-lang="fr" aria-pressed="false">FR</button>
-          <span class="lang__sep">/</span>
-          <button class="lang__btn" data-lang="en" aria-pressed="false">EN</button>
-        </div>
+        <button class="lang-switch" role="switch" aria-checked="false" aria-label="English version">
+          <span class="lang-switch__label lang-switch__label--fr" aria-hidden="true">FR</span>
+          <span class="lang-switch__track" aria-hidden="true"><span class="lang-switch__knob"></span></span>
+          <span class="lang-switch__label lang-switch__label--en" aria-hidden="true">EN</span>
+        </button>
         <button class="burger" aria-label="Menu" aria-expanded="false"><span></span><span></span></button>
       </div>
     </header>

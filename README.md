@@ -10,6 +10,8 @@ Site portfolio bilingue (FR / EN) en HTML, CSS et JavaScript, sans framework ni 
 | `about.html`    | À propos : histoire, valeurs, parcours, compétences |
 | `projects.html` | Projets avec filtres (pro / perso) et fiche détaillée |
 | `contact.html`  | Formulaire de contact                             |
+| `eclipse.html`, `punch.html`, `360idcom.html` | Pages projets détaillées |
+| `art.html`, `sport.html`, `voyage.html` | Pages passions              |
 | `404.html`      | Page introuvable                                  |
 
 ## Mettre le site en ligne (gratuit, GitHub Pages)
@@ -28,6 +30,7 @@ Chaque modification poussée sur `main` met le site à jour automatiquement.
 | ------------------------------------------------- | ------------------ |
 | Mes projets, mon parcours, mes compétences, mes liens LinkedIn / Instagram | `js/content.js` |
 | Les textes des pages (FR et EN)                   | `js/i18n.js`       |
+| Les pages Eclipse, PUNCH, 360idcom, Art, Sport, Voyage (textes, images, liens Instagram / Shotgun) | `js/pages.js` |
 | Les couleurs                                      | haut de `css/style.css` |
 | Le menu, le pied de page                          | `js/layout.js`     |
 
@@ -37,6 +40,10 @@ Déposez dans le dossier `assets/` :
 
 - `lea.png` : votre photo (déjà en place ; remplacez le fichier pour la changer) ;
 - `cv-lea-datin.pdf` : votre CV (le bouton « Télécharger mon CV » apparaît automatiquement).
+
+### Photos des pages projets et passions
+
+Voir la liste des noms de fichiers attendus dans `assets/README.md`.
 
 ### Images de projets
 

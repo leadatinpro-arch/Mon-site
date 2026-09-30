@@ -76,7 +76,7 @@
     if (!track) return;
     const featured = PROJECTS.filter((p) => p.featured !== false);
     track.innerHTML = featured.map((p) => `
-      <a href="projects.html#${esc(p.id)}" class="project" data-cursor="view">
+      <a href="${esc(p.page || `projects.html#${p.id}`)}" class="project" data-cursor="view">
         ${visual(p)}
         <div class="project__meta">
           <span class="tag${p.type === "perso" ? " tag--alt" : ""}">${esc(tagLabel(p.type))}</span>
@@ -122,8 +122,10 @@
   function renderProjectsGrid() {
     const grid = $("[data-projects-grid]");
     if (!grid) return;
-    grid.innerHTML = PROJECTS.map((p, i) => `
-      <button class="work-card reveal-up${currentFilter !== "all" && p.type !== currentFilter ? " is-hidden" : ""}" data-type="${esc(p.type)}" data-index="${i}" data-cursor="view" style="--d:${(i % 2) * 0.1}s">
+    grid.innerHTML = PROJECTS.map((p, i) => {
+      const tag = p.page ? `a href="${esc(p.page)}"` : "button";
+      return `
+      <${tag} class="work-card reveal-up${currentFilter !== "all" && p.type !== currentFilter ? " is-hidden" : ""}${p.page ? " work-card--page" : ""}" data-type="${esc(p.type)}" data-index="${i}" data-cursor="view" style="--d:${(i % 2) * 0.1}s">
         ${visual(p, "work-card__visual")}
         <span class="work-card__meta">
           <span class="work-card__top">
@@ -132,9 +134,10 @@
           </span>
           <span class="work-card__title">${esc(pick(p.title))}</span>
           <span class="work-card__desc">${esc(pick(p.summary))}</span>
-          <span class="work-card__more">${esc(t("projects.view"))} <i>→</i></span>
+          <span class="work-card__more">${esc(t(p.page ? "projects.viewPage" : "projects.view"))} <i>→</i></span>
         </span>
-      </button>`).join("");
+      </${p.page ? "a" : "button"}>`;
+    }).join("");
 
     const counts = { all: PROJECTS.length, pro: 0, perso: 0 };
     PROJECTS.forEach((p) => { counts[p.type] = (counts[p.type] || 0) + 1; });
@@ -165,6 +168,8 @@
       if (typeof val === "string") el.innerHTML = val;
     });
 
+    if (window.renderStory) window.renderStory(lang, t);
+
     const marquee = t("marquee");
     if (marquee) {
       $$(".marquee__content").forEach((el) => {
@@ -181,10 +186,10 @@
     renderProjectsGrid();
     if (modal.isOpen()) modal.fill();
 
-    $$(".lang__btn").forEach((b) => {
-      const active = b.dataset.lang === lang;
-      b.classList.toggle("is-active", active);
-      b.setAttribute("aria-pressed", active);
+    $$(".lang-switch").forEach((sw) => {
+      sw.classList.toggle("is-en", lang === "en");
+      sw.setAttribute("aria-checked", lang === "en");
+      sw.setAttribute("aria-label", lang === "en" ? "Version française" : "English version");
     });
 
     rotator.reset();
@@ -200,8 +205,7 @@
   }
 
   document.addEventListener("click", (e) => {
-    const b = e.target.closest(".lang__btn");
-    if (b && b.dataset.lang !== lang) applyLang(b.dataset.lang);
+    if (e.target.closest(".lang-switch")) applyLang(lang === "fr" ? "en" : "fr");
   });
 
   /* ==================================================================
@@ -509,7 +513,7 @@
       });
       document.addEventListener("click", (e) => {
         const card = e.target.closest(".work-card");
-        if (card) open(Number(card.dataset.index));
+        if (card && !card.classList.contains("work-card--page")) open(Number(card.dataset.index));
       });
     }
 

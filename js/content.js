@@ -9,6 +9,7 @@
    shape : circle, square, drop, leaf
    image (facultatif) : chemin vers une image, ex. "assets/projets/eclipse.jpg"
    results : laissez "" pour masquer la rubrique « Points clés »
+   page (facultatif) : le projet ouvre sa propre page au lieu de la fiche
    ========================================================================== */
 
 window.PROJECTS = [
@@ -41,6 +42,7 @@ window.PROJECTS = [
   },
   {
     id: "eclipse",
+    page: "eclipse.html",
     type: "perso",
     featured: true,
     color: 2,
@@ -65,6 +67,7 @@ window.PROJECTS = [
   },
   {
     id: "punch",
+    page: "punch.html",
     type: "perso",
     featured: true,
     color: 3,
@@ -137,6 +140,7 @@ window.PROJECTS = [
   },
   {
     id: "360idcom",
+    page: "360idcom.html",
     type: "perso",
     featured: false,
     color: 1,

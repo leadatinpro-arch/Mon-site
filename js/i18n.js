@@ -346,3 +346,48 @@ Object.assign(window.TRANSLATIONS.en, {
   "notfound.text": "Oops, this page got lost along the way.",
   "notfound.back": "Back to home"
 });
+
+/* ---------- Pages projets & passions ---------- */
+Object.assign(window.TRANSLATIONS.fr, {
+  "projects.viewPage": "Découvrir le projet",
+  "cursor.drag": "Glisser",
+  "story.back.projects": "← Retour aux projets",
+  "story.back.about": "← Retour à propos",
+  "story.placeholder": "Photo à venir",
+  "story.visualPh": "Visuel à venir",
+  "story.follow": "Suivre le projet",
+  "story.next": "Passion suivante",
+  "story.otherProjects": "Autres projets",
+  "story.mascot.eyebrow": "La mascotte",
+  "story.mascot.click": "Clique-moi !",
+  "story.mascot.alt": "Mascotte d'Eclipse",
+  "about.passions.eyebrow": "Passions",
+  "about.passions.title": "En dehors du <em>bureau</em>",
+  "about.passions.discover": "Découvrir",
+  "about.passions.art": "Dessin, expositions, design",
+  "about.passions.sport": "Aviron & randonnée",
+  "about.passions.voyage": "Partir, découvrir, s'inspirer",
+  "about.passions.voyageTitle": "Voyage"
+});
+
+Object.assign(window.TRANSLATIONS.en, {
+  "projects.viewPage": "Discover the project",
+  "cursor.drag": "Drag",
+  "story.back.projects": "← Back to projects",
+  "story.back.about": "← Back to about",
+  "story.placeholder": "Photo coming soon",
+  "story.visualPh": "Visual coming soon",
+  "story.follow": "Follow the project",
+  "story.next": "Next passion",
+  "story.otherProjects": "Other projects",
+  "story.mascot.eyebrow": "The mascot",
+  "story.mascot.click": "Click me!",
+  "story.mascot.alt": "Eclipse mascot",
+  "about.passions.eyebrow": "Passions",
+  "about.passions.title": "Outside the <em>office</em>",
+  "about.passions.discover": "Discover",
+  "about.passions.art": "Drawing, exhibitions, design",
+  "about.passions.sport": "Rowing & hiking",
+  "about.passions.voyage": "Travel, discover, get inspired",
+  "about.passions.voyageTitle": "Travel"
+});
