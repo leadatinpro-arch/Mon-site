@@ -74,7 +74,8 @@
   function renderHomeProjects() {
     const track = $("[data-home-projects]");
     if (!track) return;
-    track.innerHTML = PROJECTS.map((p) => `
+    const featured = PROJECTS.filter((p) => p.featured !== false);
+    track.innerHTML = featured.map((p) => `
       <a href="projects.html#${esc(p.id)}" class="project" data-cursor="view">
         ${visual(p)}
         <div class="project__meta">
@@ -127,7 +128,7 @@
         <span class="work-card__meta">
           <span class="work-card__top">
             <span class="tag${p.type === "perso" ? " tag--alt" : ""}">${esc(tagLabel(p.type))}</span>
-            <span class="work-card__year">${esc(p.year || "")}</span>
+            <span class="work-card__year">${esc(pick(p.year) || "")}</span>
           </span>
           <span class="work-card__title">${esc(pick(p.title))}</span>
           <span class="work-card__desc">${esc(pick(p.summary))}</span>
@@ -163,6 +164,13 @@
       const val = t(el.dataset.i18nHtml);
       if (typeof val === "string") el.innerHTML = val;
     });
+
+    const marquee = t("marquee");
+    if (marquee) {
+      $$(".marquee__content").forEach((el) => {
+        el.innerHTML = marquee.map((m) => `<span>${esc(m)}</span><i>✦</i>`).join("");
+      });
+    }
 
     $$("[data-split]").forEach(splitChars);
     $$("[data-words]").forEach(splitWords);
@@ -244,7 +252,12 @@
     let heroIdx = 0;
     $$(".reveal-up, [data-split]").forEach((el) => {
       if (el.classList.contains("is-visible")) return;
-      if (!onlyNew && el.closest(".hero, .page-hero")) el.style.setProperty("--d", `${0.1 + heroIdx++ * 0.08}s`);
+      if (!onlyNew && el.closest(".hero, .page-hero")) {
+        // top of page: reveal right away, even if slightly below the fold
+        el.style.setProperty("--d", `${0.1 + heroIdx++ * 0.08}s`);
+        el.classList.add("is-visible");
+        return;
+      }
       io.observe(el);
     });
   }
@@ -433,10 +446,14 @@
       const p = PROJECTS[index];
       if (!p) return;
       $(".modal__visual", el).innerHTML = visual(p);
-      $(".modal__meta", el).innerHTML = `<span class="tag${p.type === "perso" ? " tag--alt" : ""}">${esc(tagLabel(p.type))}</span><span class="work-card__year">${esc(p.year || "")}</span>`;
+      $(".modal__meta", el).innerHTML = `<span class="tag${p.type === "perso" ? " tag--alt" : ""}">${esc(tagLabel(p.type))}</span><span class="work-card__year">${esc(pick(p.year) || "")}</span>`;
       $(".modal__title", el).textContent = pick(p.title);
       $(".modal__summary", el).textContent = pick(p.summary);
-      $$("[data-field]", el).forEach((f) => { f.textContent = pick(p[f.dataset.field]) || ""; });
+      $$("[data-field]", el).forEach((f) => {
+        const val = pick(p[f.dataset.field]) || "";
+        f.textContent = val;
+        f.parentElement.hidden = !val;
+      });
       $(".modal__tags", el).innerHTML = (p.tags || []).map((tg) => `<li class="pill">${esc(pick(tg))}</li>`).join("");
       $(".modal__close", el).setAttribute("aria-label", lang === "fr" ? "Fermer" : "Close");
     }

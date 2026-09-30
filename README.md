@@ -35,7 +35,7 @@ Chaque modification poussée sur `main` met le site à jour automatiquement.
 
 Déposez dans le dossier `assets/` :
 
-- `lea.jpg` : votre photo (elle remplace automatiquement le bloc « LD » de la page À propos) ;
+- `lea.png` : votre photo (déjà en place ; remplacez le fichier pour la changer) ;
 - `cv-lea-datin.pdf` : votre CV (le bouton « Télécharger mon CV » apparaît automatiquement).
 
 ### Images de projets

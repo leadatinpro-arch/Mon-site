@@ -3,115 +3,185 @@
    --------------------------------------------------------------------------
    Chaque texte existe en français (fr) et en anglais (en).
    Pour ajouter un projet : copiez un bloc { ... } dans PROJECTS et modifiez-le.
-   type : "pro" (expérience professionnelle) ou "perso" (projet personnel)
+   type : "pro" (expérience professionnelle) ou "perso" (projet personnel / engagement)
+   featured : true = affiché sur la page d'accueil
    color : 1 = bleu, 2 = jaune, 3 = bleu nuit, 4 = bleu clair
-   image (facultatif) : chemin vers une image, ex. "assets/projets/campagne.jpg"
+   shape : circle, square, drop, leaf
+   image (facultatif) : chemin vers une image, ex. "assets/projets/eclipse.jpg"
+   results : laissez "" pour masquer la rubrique « Points clés »
    ========================================================================== */
 
 window.PROJECTS = [
   {
-    id: "social-media",
+    id: "saint-gobain",
     type: "pro",
+    featured: true,
     color: 1,
     shape: "circle",
-    year: "2025",
+    year: "2024 — 2026",
     image: "",
-    title: { fr: "Campagne social media", en: "Social media campaign" },
+    title: { fr: "Saint-Gobain — Pilotage international", en: "Saint-Gobain — International project lead" },
     summary: {
-      fr: "Lancement produit, stratégie de contenu et gestion de communauté.",
-      en: "Product launch, content strategy and community management."
+      fr: "Cheffe de projet marketing digital : coordination de 12 équipes internationales autour d'une plateforme digitale.",
+      en: "Digital marketing project manager: coordinating 12 international teams around a digital platform."
     },
     context: {
-      fr: "Accompagner le lancement d'un nouveau produit sur les réseaux sociaux et créer une communauté engagée autour de la marque.",
-      en: "Supporting a new product launch on social media and building an engaged community around the brand."
+      fr: "En alternance chez Saint-Gobain, j'ai accompagné le déploiement et l'adoption d'une plateforme digitale dans de nombreux pays, avec des équipes, des besoins et des contraintes propres à chaque marché.",
+      en: "As a work-study project manager at Saint-Gobain, I supported the rollout and adoption of a digital platform across many countries, each with its own teams, needs and constraints."
     },
     mission: {
-      fr: "Définition de la ligne éditoriale, calendrier de publication, création des visuels et vidéos courtes, animation de la communauté et campagne sponsorisée.",
-      en: "Defining the editorial line, publishing calendar, creating visuals and short videos, community management and a paid campaign."
+      fr: "Pilotage et suivi personnalisé de 12 équipes internationales (kick-off, points réguliers, hebdomadaires en période critique) et gestion des priorités pays par pays. Création de l'ensemble des supports projet : guides, formations, documents de cadrage et calendriers adaptés à chaque marché. Suivi et reporting des KPIs par pays (Google Analytics, tableaux de bord Excel). Validation des évolutions de la plateforme : analyse des besoins, vérification de la compatibilité avec chaque pays, collecte des retours et arbitrage final.",
+      en: "Tailored leadership and follow-up of 12 international teams (kick-offs, regular check-ins, weekly during critical phases) and country-by-country prioritisation. Creation of all project materials: guides, training, scoping documents and calendars adapted to each market. KPI tracking and reporting by country (Google Analytics, Excel dashboards). Validation of platform changes: needs analysis, compatibility checks for each country, feedback collection and final decisions."
     },
     results: {
-      fr: "Ajoutez ici vos résultats chiffrés (portée, engagement, abonnés gagnés…).",
-      en: "Add your measurable results here (reach, engagement, followers gained…)."
+      fr: "12 équipes internationales coordonnées, des supports adaptés à chaque marché et un reporting par pays pour mesurer l'avancement et l'adoption de la plateforme.",
+      en: "12 international teams coordinated, materials adapted to each market and country-level reporting to measure progress and platform adoption."
     },
-    tags: ["Instagram", "TikTok", "LinkedIn", "Meta Ads", "Canva"]
+    tags: [{ fr: "Gestion de projet", en: "Project management" }, "International", "Google Analytics", "Excel", "Reporting"]
   },
   {
-    id: "seo",
-    type: "pro",
+    id: "eclipse",
+    type: "perso",
+    featured: true,
     color: 2,
     shape: "square",
-    year: "2024",
+    year: { fr: "En cours", en: "Ongoing" },
     image: "",
-    title: { fr: "Stratégie SEO", en: "SEO strategy" },
+    title: { fr: "Eclipse — Soirées techno à Nancy", en: "Eclipse — Techno nights in Nancy" },
     summary: {
-      fr: "Audit technique, contenus optimisés et suivi du trafic organique.",
-      en: "Technical audit, optimised content and organic traffic tracking."
+      fr: "Co-organisatrice de concerts techno : gestion de projet de A à Z, communication et image de marque.",
+      en: "Co-organiser of techno events: end-to-end project management, communication and brand identity."
     },
     context: {
-      fr: "Améliorer la visibilité d'un site sur Google et générer davantage de trafic qualifié sans dépendre de la publicité.",
-      en: "Improving a website's visibility on Google and generating more qualified traffic without relying on ads."
+      fr: "Eclipse, ce sont des concerts de musique techno que nous organisons à Nancy, à seulement trois. Un projet qui demande autant de rigueur que de créativité.",
+      en: "Eclipse is a series of techno music events we organise in Nancy, as a team of just three. A project that requires as much rigour as creativity."
     },
     mission: {
-      fr: "Audit technique et sémantique, recherche de mots-clés, optimisation des pages existantes, rédaction d'articles de blog et suivi mensuel des positions.",
-      en: "Technical and semantic audit, keyword research, optimisation of existing pages, blog writing and monthly ranking reports."
+      fr: "Je m'occupe de toute la gestion de projet, de A à Z : organisation, planning, coordination et suivi de chaque événement. Je gère également l'ensemble de la communication et j'ai créé l'image de marque d'Eclipse : identité visuelle, ton et univers.",
+      en: "I handle all project management from start to finish: organisation, planning, coordination and follow-up for every event. I also run all communication and created Eclipse's brand identity: visual identity, tone of voice and overall universe."
     },
-    results: {
-      fr: "Ajoutez ici vos résultats chiffrés (trafic, positions, conversions…).",
-      en: "Add your measurable results here (traffic, rankings, conversions…)."
-    },
-    tags: ["SEO", "Google Search Console", "GA4", "WordPress"]
+    results: "",
+    tags: [{ fr: "Événementiel", en: "Events" }, { fr: "Gestion de projet", en: "Project management" }, "Branding", { fr: "Réseaux sociaux", en: "Social media" }]
   },
   {
-    id: "brand",
+    id: "punch",
     type: "perso",
+    featured: true,
     color: 3,
     shape: "drop",
-    year: "2025",
+    year: "",
     image: "",
-    title: { fr: "Identité de marque", en: "Brand identity" },
+    title: { fr: "PUNCH — Start-up santé", en: "PUNCH — Health start-up" },
     summary: {
-      fr: "Création d'une marque de A à Z : naming, logo, ton et univers visuel.",
-      en: "Building a brand from scratch: naming, logo, tone of voice and visual world."
+      fr: "Co-fondatrice : pilotage d'une start-up santé, conception d'une application mobile et stratégie marketing digital.",
+      en: "Co-founder: leading a health start-up, designing a mobile app and building the digital marketing strategy."
     },
     context: {
-      fr: "Projet personnel pour imaginer une marque complète, de son positionnement jusqu'à ses premiers contenus.",
-      en: "A personal project to imagine a complete brand, from its positioning to its very first content."
+      fr: "PUNCH est une start-up dans le domaine de la santé que j'ai co-fondée, avec pour ambition de proposer une application mobile.",
+      en: "PUNCH is a health start-up I co-founded, with the ambition of launching a mobile app."
     },
     mission: {
-      fr: "Étude de marché, personas, plateforme de marque, naming, direction artistique, charte graphique et maquettes de posts.",
-      en: "Market research, personas, brand platform, naming, art direction, brand guidelines and post mock-ups."
+      fr: "Pilotage du projet, conception de l'application mobile et définition de la stratégie marketing digital.",
+      en: "Leading the project, designing the mobile app and defining the digital marketing strategy."
     },
-    results: {
-      fr: "Décrivez ici ce que ce projet vous a apporté et ajoutez des visuels.",
-      en: "Describe what this project taught you and add some visuals."
-    },
-    tags: ["Branding", "Figma", "Canva", "Brand strategy"]
+    results: "",
+    tags: [{ fr: "Entrepreneuriat", en: "Entrepreneurship" }, { fr: "App mobile", en: "Mobile app" }, { fr: "Stratégie digitale", en: "Digital strategy" }]
   },
   {
-    id: "emailing",
-    type: "perso",
+    id: "cora",
+    type: "pro",
+    featured: true,
     color: 4,
     shape: "leaf",
-    year: "2024",
+    year: "2023 — 2024",
     image: "",
-    title: { fr: "Campagne emailing", en: "Email campaign" },
+    title: { fr: "Cora — Marketing & communication", en: "Cora — Marketing & communication" },
     summary: {
-      fr: "Séquences automatisées, segmentation et optimisation des taux d'ouverture.",
-      en: "Automated sequences, segmentation and open-rate optimisation."
+      fr: "Alternance : organisation d'événements internes et externes, création de supports de communication.",
+      en: "Work-study: organising internal and external events, creating communication materials."
     },
     context: {
-      fr: "Concevoir un parcours email pour transformer de nouveaux inscrits en clients fidèles.",
-      en: "Designing an email journey to turn new subscribers into loyal customers."
+      fr: "Alternance au sein du service marketing et communication de Cora.",
+      en: "Work-study position within Cora's marketing and communication department."
     },
     mission: {
-      fr: "Segmentation de la base, écriture des séquences de bienvenue et de relance, design des templates et A/B tests sur les objets.",
-      en: "Audience segmentation, writing welcome and follow-up sequences, template design and subject-line A/B tests."
+      fr: "Organisation et gestion d'événements internes et externes. Création de supports de communication et de visuels marketing.",
+      en: "Organising and managing internal and external events. Creating communication materials and marketing visuals."
     },
-    results: {
-      fr: "Ajoutez ici vos résultats chiffrés (taux d'ouverture, de clic, conversions…).",
-      en: "Add your measurable results here (open rate, click rate, conversions…)."
+    results: "",
+    tags: [{ fr: "Événementiel", en: "Events" }, "Communication", { fr: "Création visuelle", en: "Visual design" }]
+  },
+  {
+    id: "jacques-laveine",
+    type: "pro",
+    featured: false,
+    color: 2,
+    shape: "circle",
+    year: "2022",
+    image: "",
+    title: { fr: "Jacques Laveine Immo — Community management", en: "Jacques Laveine Immo — Community management" },
+    summary: {
+      fr: "Community manager : création de contenus digitaux et gestion des supports numériques.",
+      en: "Community manager: creating digital content and managing digital channels."
     },
-    tags: ["Brevo", "Mailchimp", "Automation", "A/B testing"]
+    context: {
+      fr: "Mission de community management pour une agence immobilière.",
+      en: "Community management role for a real estate agency."
+    },
+    mission: {
+      fr: "Création de contenus digitaux (réseaux sociaux, newsletters). Gestion et suivi des supports numériques.",
+      en: "Creating digital content (social media, newsletters). Managing and monitoring digital channels."
+    },
+    results: "",
+    tags: ["Community management", { fr: "Réseaux sociaux", en: "Social media" }, "Newsletters"]
+  },
+  {
+    id: "360idcom",
+    type: "perso",
+    featured: false,
+    color: 1,
+    shape: "square",
+    year: "",
+    image: "",
+    title: { fr: "360idcom — Cheffe de projet", en: "360idcom — Project manager" },
+    summary: {
+      fr: "Gestion de projets étudiants, développement et mise en place de stratégies innovantes.",
+      en: "Managing student projects, developing and implementing innovative strategies."
+    },
+    context: {
+      fr: "Engagement étudiant en tant que cheffe de projet au sein de 360idcom.",
+      en: "Student involvement as a project manager at 360idcom."
+    },
+    mission: {
+      fr: "Gestion de projets étudiants, développement et mise en place de stratégies innovantes.",
+      en: "Managing student projects, developing and implementing innovative strategies."
+    },
+    results: "",
+    tags: [{ fr: "Gestion de projet", en: "Project management" }, { fr: "Stratégie", en: "Strategy" }]
+  },
+  {
+    id: "aviron",
+    type: "perso",
+    featured: false,
+    color: 4,
+    shape: "drop",
+    year: "",
+    image: "",
+    title: { fr: "Entraîneuse d'aviron", en: "Rowing coach" },
+    summary: {
+      fr: "Organisation d'événements sportifs et gestion d'équipe.",
+      en: "Organising sports events and managing a team."
+    },
+    context: {
+      fr: "Engagement associatif dans le sport que je pratique : l'aviron.",
+      en: "Volunteering in the sport I practise: rowing."
+    },
+    mission: {
+      fr: "Entraînement et gestion d'équipe, organisation d'événements sportifs.",
+      en: "Coaching and managing a team, organising sports events."
+    },
+    results: "",
+    tags: [{ fr: "Gestion d'équipe", en: "Team management" }, { fr: "Événementiel", en: "Events" }, { fr: "Sport", en: "Sport" }]
   }
 ];
 
@@ -120,33 +190,47 @@ window.PROJECTS = [
 window.TIMELINE = [
   {
     kind: "work",
-    period: { fr: "20XX — Aujourd'hui", en: "20XX — Present" },
-    title: { fr: "Intitulé du poste", en: "Job title" },
-    place: "Nom de l'entreprise",
+    period: "2024 — 2026",
+    title: { fr: "Cheffe de projet marketing digital", en: "Digital marketing project manager" },
+    place: "Saint-Gobain",
     text: {
-      fr: "Décrivez en une ou deux phrases vos missions principales et ce que vous avez accompli.",
-      en: "Describe your main responsibilities and achievements in one or two sentences."
-    }
-  },
-  {
-    kind: "work",
-    period: { fr: "20XX — 20XX", en: "20XX — 20XX" },
-    title: { fr: "Stage / Alternance en marketing digital", en: "Digital marketing internship" },
-    place: "Nom de l'entreprise",
-    text: {
-      fr: "Décrivez en une ou deux phrases vos missions principales et ce que vous avez accompli.",
-      en: "Describe your main responsibilities and achievements in one or two sentences."
+      fr: "Pilotage de 12 équipes internationales, création des supports projet, reporting des KPIs par pays et validation des évolutions de la plateforme.",
+      en: "Leading 12 international teams, creating project materials, country-level KPI reporting and validating platform changes."
     }
   },
   {
     kind: "school",
-    period: { fr: "20XX — 20XX", en: "20XX — 20XX" },
-    title: { fr: "Nom du diplôme", en: "Degree name" },
-    place: "Nom de l'école",
+    period: "2024 — 2026",
+    title: { fr: "Master Programme Grande École", en: "Master in Management (Grande École Programme)" },
+    place: "ICN Business School",
+    text: { fr: "Formation en alternance.", en: "Work-study programme." }
+  },
+  {
+    kind: "work",
+    period: "2023 — 2024",
+    title: { fr: "Alternance Marketing & Communication", en: "Marketing & Communication (work-study)" },
+    place: "Cora",
     text: {
-      fr: "Spécialisation, matières clés ou projets marquants.",
-      en: "Specialisation, key subjects or notable projects."
+      fr: "Organisation et gestion d'événements internes et externes, création de supports de communication et de visuels marketing.",
+      en: "Organising internal and external events, creating communication materials and marketing visuals."
     }
+  },
+  {
+    kind: "work",
+    period: "2022",
+    title: { fr: "Community Manager", en: "Community Manager" },
+    place: "Jacques Laveine Immo",
+    text: {
+      fr: "Création de contenus digitaux (réseaux sociaux, newsletters), gestion et suivi des supports numériques.",
+      en: "Creating digital content (social media, newsletters), managing and monitoring digital channels."
+    }
+  },
+  {
+    kind: "school",
+    period: "2021 — 2024",
+    title: { fr: "BUT Marketing Digital, E-commerce & Entrepreneuriat", en: "Bachelor in Digital Marketing, E-commerce & Entrepreneurship (BUT)" },
+    place: "IUT Nancy-Charlemagne",
+    text: { fr: "Bachelor universitaire de technologie, en trois ans.", en: "Three-year university bachelor of technology." }
   }
 ];
 
@@ -154,20 +238,42 @@ window.TIMELINE = [
    Un élément peut être un simple texte ou { fr: "...", en: "..." } */
 window.SKILLS = [
   {
-    title: { fr: "Stratégie", en: "Strategy" },
-    items: [{ fr: "Stratégie digitale", en: "Digital strategy" }, "Personas", "Brand content", { fr: "Plan média", en: "Media planning" }, { fr: "Veille", en: "Market watch" }]
+    title: { fr: "Gestion de projet", en: "Project management" },
+    items: [
+      { fr: "Pilotage d'équipes internationales", en: "Leading international teams" },
+      { fr: "Cadrage", en: "Scoping" },
+      { fr: "Planning & priorisation", en: "Planning & prioritisation" },
+      { fr: "Kick-off & suivi", en: "Kick-offs & follow-up" },
+      { fr: "Arbitrage", en: "Decision-making" },
+      "Jira",
+      "Confluence"
+    ]
   },
   {
-    title: { fr: "Acquisition", en: "Acquisition" },
-    items: ["SEO", "Google Ads", "Meta Ads", "Emailing", "Marketing automation"]
+    title: { fr: "Analyse & reporting", en: "Analytics & reporting" },
+    items: [
+      "Google Analytics",
+      "Tag Manager",
+      "HubSpot",
+      { fr: "Suivi des KPIs", en: "KPI tracking" },
+      { fr: "Tableaux de bord Excel", en: "Excel dashboards" }
+    ]
   },
   {
-    title: { fr: "Social & contenu", en: "Social & content" },
-    items: ["Community management", "Copywriting", { fr: "Vidéo courte", en: "Short-form video" }, { fr: "Influence", en: "Influencer marketing" }, { fr: "Calendrier éditorial", en: "Editorial calendar" }]
+    title: { fr: "Communication & création", en: "Communication & design" },
+    items: [
+      "Adobe Illustrator",
+      "Photoshop",
+      "Canva",
+      { fr: "Image de marque", en: "Branding" },
+      "Community management",
+      "Newsletters",
+      { fr: "Événementiel", en: "Events" }
+    ]
   },
   {
     title: { fr: "Outils", en: "Tools" },
-    items: ["Google Analytics 4", "Meta Business Suite", "Canva", "Figma", "Notion", "WordPress", "HubSpot"]
+    items: ["Word", "Excel", "PowerPoint", "CMS"]
   }
 ];
 

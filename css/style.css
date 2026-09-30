@@ -565,7 +565,7 @@ body.is-loaded .loader { transform: translateY(-100%); }
 .hero__title {
   font-family: var(--font-display);
   font-weight: 800;
-  font-size: clamp(4.5rem, 19vw, 18rem);
+  font-size: clamp(4.5rem, min(19vw, 27vh), 18rem);
   line-height: 0.85;
   letter-spacing: -0.055em;
   margin-bottom: clamp(32px, 5vw, 56px);
@@ -1322,6 +1322,8 @@ body.is-entering .transition::before { transform: none; animation: transOut 0.8s
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: center top;
+  transform-origin: bottom center;
   z-index: 1;
   transition: transform 1.2s var(--ease-out);
 }
@@ -1547,6 +1549,8 @@ body.is-entering .transition::before { transform: none; animation: transOut 0.8s
 
 .languages__title { font-family: var(--font-display); font-size: 1.3rem; }
 .languages__list { display: flex; gap: 32px; flex-wrap: wrap; }
+.languages__title--sep { margin-left: auto; }
+.interests { display: flex; gap: 8px; flex-wrap: wrap; }
 .languages__list li { display: flex; flex-direction: column; }
 .languages__list span { font-weight: 600; }
 .languages__list em { color: var(--muted); font-size: 0.9rem; }
