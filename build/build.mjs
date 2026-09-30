@@ -40,7 +40,16 @@ const icon = (name, cls = '') =>
   `<svg class="icon ${cls}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${ICONS[name]}</svg>`;
 
 const t = (o, lang) => (o && typeof o === 'object' && lang in o ? o[lang] : o);
-const url = (key, lang) => ROUTES[key][lang];
+// Liens relatifs : le site s'ouvre aussi bien en local (double-clic) que sur n'importe quel hébergeur.
+// La page 404 garde des liens absolus car elle est servie à des adresses quelconques.
+let DEPTH = 0; // profondeur de dossier de la page en cours ; null = liens absolus
+const href = (path) => {
+  if (DEPTH === null) return path;
+  const [p, hash = ''] = path.split('#');
+  const file = (p.endsWith('/') ? p + 'index.html' : p).replace(/^\//, '');
+  return '../'.repeat(DEPTH) + file + (hash ? '#' + hash : '');
+};
+const url = (key, lang) => href(ROUTES[key][lang]);
 const other = (lang) => (lang === 'fr' ? 'en' : 'fr');
 
 const logo = (lang) =>
@@ -50,7 +59,7 @@ const eyebrow = (num, label) =>
   `<p class="eyebrow">${num ? `<span class="eyebrow__num">${num}</span>` : ''}${esc(label)}</p>`;
 
 const img = (src, alt, cls = '') =>
-  `<img class="${cls}" src="${src}" alt="${esc(alt)}" loading="lazy" decoding="async">`;
+  `<img class="${cls}" src="${href(src)}" alt="${esc(alt)}" loading="lazy" decoding="async">`;
 
 // ---------- Blocs communs ----------
 function langSwitch(lang, pageKey) {
@@ -68,7 +77,7 @@ function navLinks(lang, pageKey, cls) {
     `<li><a class="${cls}__link" href="${url(key, lang)}"${cur === key ? ' aria-current="page"' : ''}>${esc(t(UI.nav[key], lang))}</a></li>`;
   return `<ul class="${cls}__list">
     ${item('home')}${item('about')}${item('experience')}${item('projects')}
-    <li><a class="${cls}__link ${cls}__link--cv" href="${SITE.cv}" download>${icon('download')}${esc(t(UI.nav.cv, lang))}</a></li>
+    <li><a class="${cls}__link ${cls}__link--cv" href="${href(SITE.cv)}" download>${icon('download')}${esc(t(UI.nav.cv, lang))}</a></li>
     ${item('contact')}
   </ul>`;
 }
@@ -135,8 +144,8 @@ function footer(lang) {
 }
 
 function layout(lang, pageKey, { title, description, content, bodyClass = '', noindex = false }) {
-  const canonical = SITE.baseUrl + url(pageKey, lang);
-  const alt = LANGS.map((l) => `<link rel="alternate" hreflang="${l}" href="${SITE.baseUrl}${url(pageKey, l)}">`).join('\n  ');
+  const canonical = SITE.baseUrl + ROUTES[pageKey][lang];
+  const alt = LANGS.map((l) => `<link rel="alternate" hreflang="${l}" href="${SITE.baseUrl}${ROUTES[pageKey][l]}">`).join('\n  ');
   return `<!doctype html>
 <html lang="${lang}">
 <head>
@@ -144,7 +153,7 @@ function layout(lang, pageKey, { title, description, content, bodyClass = '', no
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>${esc(title)}</title>
   <meta name="description" content="${esc(description)}">
-  ${noindex ? '<meta name="robots" content="noindex">' : `<link rel="canonical" href="${canonical}">\n  ${alt}\n  <link rel="alternate" hreflang="x-default" href="${SITE.baseUrl}${url(pageKey, 'fr')}">`}
+  ${noindex ? '<meta name="robots" content="noindex">' : `<link rel="canonical" href="${canonical}">\n  ${alt}\n  <link rel="alternate" hreflang="x-default" href="${SITE.baseUrl}${ROUTES[pageKey].fr}">`}
   <meta name="theme-color" content="#03012A">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Léa Datin">
@@ -156,13 +165,13 @@ function layout(lang, pageKey, { title, description, content, bodyClass = '', no
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
   <meta name="twitter:card" content="summary_large_image">
-  <link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="${href('/assets/img/favicon.svg')}" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400;0,500;0,700;1,400&family=League+Spartan:wght@600;700;800&family=Caveat:wght@500;700&display=swap">
-  <link rel="stylesheet" href="/assets/css/style.css">
+  <link rel="stylesheet" href="${href('/assets/css/style.css')}">
   <script>document.documentElement.classList.add('js');</script>
-  <script src="/assets/js/main.js" defer data-analytics-provider="${SITE.analytics.provider}" data-analytics-id="${SITE.analytics.id}"></script>
+  <script src="${href('/assets/js/main.js')}" defer data-analytics-provider="${SITE.analytics.provider}" data-analytics-id="${SITE.analytics.id}"></script>
 </head>
 <body class="${bodyClass}">
 ${header(lang, pageKey)}
@@ -235,7 +244,7 @@ function home(lang) {
         <span class="magnetic" data-magnetic>
           <a class="btn btn--primary btn--lg" href="${url('contact', lang)}">${esc(t(UI.contactMe, lang))}${icon('arrow')}</a>
         </span>
-        <a class="btn btn--ghost btn--lg" href="${SITE.cv}" download>${icon('download')}${esc(t(UI.cvDownload, lang))}</a>
+        <a class="btn btn--ghost btn--lg" href="${href(SITE.cv)}" download>${icon('download')}${esc(t(UI.cvDownload, lang))}</a>
       </div>
       <div class="stats" data-reveal style="--d:400ms">${HOME.stats.map((s) => counter(s, lang)).join('')}</div>
     </div>
@@ -493,7 +502,7 @@ ${pageHero(lang, { eyebrowText: t(EXPERIENCE.heroEyebrow, lang), title: t(EXPERI
     </ol>
     <p class="section-cta section-cta--center" data-reveal>
       <span class="magnetic" data-magnetic><a class="btn btn--primary btn--lg" href="${url('contact', lang)}">${esc(t(EXPERIENCE.cta, lang))}${icon('arrow')}</a></span>
-      <a class="btn btn--ghost btn--lg" href="${SITE.cv}" download>${icon('download')}${esc(t(UI.cvDownload, lang))}</a>
+      <a class="btn btn--ghost btn--lg" href="${href(SITE.cv)}" download>${icon('download')}${esc(t(UI.cvDownload, lang))}</a>
     </p>
   </div>
 </section>`;
@@ -539,7 +548,7 @@ ${pageHero(lang, { eyebrowText: t(C.heroEyebrow, lang), title: t(C.heroTitle, la
         <span class="contact-card__icon">${icon('linkedin')}</span>
         <span><span class="contact-card__label">${esc(t(C.cards.linkedin, lang))}</span><span class="contact-card__value">${esc(t(C.cards.linkedinText, lang))}</span></span>
       </a>
-      <a class="contact-card glass glass--light" href="${SITE.cv}" download data-reveal="left" style="--d:180ms">
+      <a class="contact-card glass glass--light" href="${href(SITE.cv)}" download data-reveal="left" style="--d:180ms">
         <span class="contact-card__icon">${icon('download')}</span>
         <span><span class="contact-card__label">${esc(t(C.cards.cv, lang))}</span><span class="contact-card__value">${esc(t(C.cards.cvText, lang))}</span></span>
       </a>
@@ -586,11 +595,15 @@ function write(route, html) {
 let count = 0;
 for (const lang of LANGS) {
   const pages = {
-    home: home(lang), about: about(lang), experience: experience(lang), projects: projects(lang),
-    contact: contact(lang), notfound: notFound(lang),
-    ...Object.fromEntries(PASSION_KEYS.map((k) => [k, passionPage(lang, k)])),
+    home: () => home(lang), about: () => about(lang), experience: () => experience(lang), projects: () => projects(lang),
+    contact: () => contact(lang), notfound: () => notFound(lang),
+    ...Object.fromEntries(PASSION_KEYS.map((k) => [k, () => passionPage(lang, k)])),
   };
-  for (const [key, html] of Object.entries(pages)) { write(url(key, lang), html); count++; }
+  for (const [key, render] of Object.entries(pages)) {
+    const route = ROUTES[key][lang];
+    DEPTH = key === 'notfound' ? null : route.split('/').length - 2;
+    write(route, render()); count++;
+  }
 }
 
 const urls = Object.entries(ROUTES).filter(([k]) => k !== 'notfound');
