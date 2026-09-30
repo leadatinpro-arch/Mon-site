@@ -3,14 +3,14 @@
    ========================================================================== */
 
 :root {
-  --bg: #0b0b0f;
-  --bg-2: #13131a;
-  --text: #f3f1ec;
-  --muted: #8d8b95;
-  --line: rgba(243, 241, 236, 0.12);
-  --accent: #c8ff3d;      /* lime */
-  --accent-2: #8b5cff;    /* violet */
-  --accent-3: #ff5ca8;    /* pink */
+  --bg: #05070d;         /* noir */
+  --bg-2: #0b1530;       /* bleu foncé */
+  --text: #f4f6fb;
+  --muted: #8a95ad;
+  --line: rgba(160, 185, 255, 0.14);
+  --accent: #ffd23f;      /* jaune */
+  --accent-2: #2f6bff;    /* bleu */
+  --accent-3: #0f2a6b;    /* bleu nuit */
 
   --font-display: "Syne", system-ui, sans-serif;
   --font-body: "Manrope", system-ui, sans-serif;
@@ -206,7 +206,7 @@ body.is-loaded .loader { transform: translateY(-100%); }
 }
 
 .header.is-scrolled {
-  background: rgba(11, 11, 15, 0.6);
+  background: rgba(5, 7, 13, 0.6);
   backdrop-filter: blur(14px);
   -webkit-backdrop-filter: blur(14px);
 }
@@ -238,7 +238,7 @@ body.is-loaded .loader { transform: translateY(-100%); }
   padding: 6px;
   border: 1px solid var(--line);
   border-radius: 100px;
-  background: rgba(19, 19, 26, 0.5);
+  background: rgba(11, 21, 48, 0.5);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
 }
@@ -537,7 +537,7 @@ body.is-loaded .loader { transform: translateY(-100%); }
   font-size: 0.85rem;
   color: var(--muted);
   margin-bottom: 24px;
-  background: rgba(19, 19, 26, 0.5);
+  background: rgba(11, 21, 48, 0.5);
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
 }
@@ -734,7 +734,7 @@ body.is-loaded .loader { transform: translateY(-100%); }
 }
 
 .card.is-tilting { transition: border-color 0.4s, transform 0.15s linear; }
-.card:hover { border-color: rgba(200, 255, 61, 0.4); }
+.card:hover { border-color: rgba(255, 210, 63, 0.45); }
 
 .card:nth-child(2) { --d: 0.1s; }
 .card:nth-child(3) { --d: 0.2s; }
@@ -744,7 +744,7 @@ body.is-loaded .loader { transform: translateY(-100%); }
   position: absolute;
   inset: 0;
   pointer-events: none;
-  background: radial-gradient(400px circle at var(--gx, 50%) var(--gy, 50%), rgba(200, 255, 61, 0.14), transparent 45%);
+  background: radial-gradient(400px circle at var(--gx, 50%) var(--gy, 50%), rgba(255, 210, 63, 0.14), transparent 45%);
   opacity: 0;
   transition: opacity 0.4s;
 }
@@ -845,10 +845,10 @@ body.is-loaded .loader { transform: translateY(-100%); }
 
 .project:hover .project__visual { border-radius: 80px; }
 
-.project__visual--1 { background: linear-gradient(135deg, #8b5cff, #3b1d8f); }
-.project__visual--2 { background: linear-gradient(135deg, #c8ff3d, #3a8f1d); }
-.project__visual--3 { background: linear-gradient(135deg, #ff5ca8, #ff9a3d); }
-.project__visual--4 { background: linear-gradient(135deg, #3dd6ff, #1d3a8f); }
+.project__visual--1 { background: linear-gradient(135deg, #2f6bff, #0f2a6b); }
+.project__visual--2 { background: linear-gradient(135deg, #ffd23f, #f5a300); }
+.project__visual--3 { background: linear-gradient(135deg, #0b1530, #2f6bff); }
+.project__visual--4 { background: linear-gradient(135deg, #5b9bff, #13306e); }
 
 .project__shape {
   width: 45%;
@@ -881,7 +881,7 @@ body.is-loaded .loader { transform: translateY(-100%); }
   text-transform: uppercase;
 }
 
-.tag--alt { border-color: var(--accent-3); color: var(--accent-3); }
+.tag--alt { border-color: #5b9bff; color: #5b9bff; }
 
 .project__title {
   font-family: var(--font-display);
@@ -1005,7 +1005,7 @@ body.is-loaded .loader { transform: translateY(-100%); }
   max-width: 900px;
   max-height: 900px;
   transform: translate(-50%, -50%);
-  background: radial-gradient(circle, rgba(139, 92, 255, 0.25), transparent 60%);
+  background: radial-gradient(circle, rgba(47, 107, 255, 0.3), transparent 60%);
   pointer-events: none;
 }
 
@@ -1021,7 +1021,7 @@ body.is-loaded .loader { transform: translateY(-100%); }
 }
 
 .split--gradient .char {
-  background: linear-gradient(90deg, var(--accent), var(--accent-2), var(--accent-3), var(--accent));
+  background: linear-gradient(90deg, var(--accent-2), #8fbaff, var(--accent-2), #1d4ed8, var(--accent-2));
   background-size: 300% 100%;
   -webkit-background-clip: text;
   background-clip: text;
