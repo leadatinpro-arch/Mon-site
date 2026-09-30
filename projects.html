@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Projets — Léa Datin</title>
+  <meta name="description" content="Expériences professionnelles et projets personnels de Léa Datin en marketing digital." />
+  <meta name="theme-color" content="#05070d" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='32' fill='%23ffd23f'/%3E%3Ctext x='32' y='41' font-family='Arial' font-weight='900' font-size='26' text-anchor='middle' fill='%2305070d'%3ELD%3C/text%3E%3C/svg%3E" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@500;700;800&family=Manrope:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body class="is-loading" data-page="projects" data-title="meta.projects.title" data-desc="meta.projects.description">
+
+  <main id="top">
+    <section class="page-hero">
+      <div class="hero__blob" aria-hidden="true"></div>
+      <div class="container">
+        <p class="eyebrow reveal-up"><span>01</span> <span data-i18n="projectsPage.eyebrow">Portfolio</span></p>
+        <h1 class="page-title page-title--xl">
+          <span class="line"><span class="split" data-split data-i18n="projectsPage.title1">Mes</span></span>
+          <span class="line line--indent"><span class="split split--outline" data-split data-i18n="projectsPage.title2">projets</span><sup class="page-title__count" data-project-count>04</sup></span>
+        </h1>
+        <p class="page-hero__lead reveal-up" data-i18n="projectsPage.lead">
+          Une sélection d'expériences professionnelles et de projets personnels. Cliquez sur un projet pour découvrir le contexte, ma mission et les résultats.
+        </p>
+      </div>
+    </section>
+
+    <section class="work">
+      <div class="container">
+        <div class="filters reveal-up" role="tablist" aria-label="Filtres">
+          <span class="filters__pill" aria-hidden="true"></span>
+          <button class="filters__btn is-active" role="tab" aria-selected="true" data-filter="all"><span data-i18n="projectsPage.filter.all">Tous</span> <sup data-count="all"></sup></button>
+          <button class="filters__btn" role="tab" aria-selected="false" data-filter="pro"><span data-i18n="projectsPage.filter.pro">Expériences pro</span> <sup data-count="pro"></sup></button>
+          <button class="filters__btn" role="tab" aria-selected="false" data-filter="perso"><span data-i18n="projectsPage.filter.perso">Projets perso</span> <sup data-count="perso"></sup></button>
+        </div>
+
+        <div class="work__grid" data-projects-grid></div>
+      </div>
+    </section>
+
+    <section class="cta cta--small">
+      <div class="container">
+        <h2 class="cta__title">
+          <span class="line"><span class="split" data-split data-i18n="projectsPage.cta.line1">Un projet</span></span>
+          <span class="line"><span class="split split--gradient" data-split data-i18n="projectsPage.cta.line2">en tête ?</span></span>
+        </h2>
+        <div class="cta__row reveal-up">
+          <a href="contact.html" class="btn btn--primary magnetic"><span class="btn__text" data-i18n="projectsPage.cta.button">Parlons-en</span><span class="btn__icon">→</span></a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Project modal -->
+  <div class="modal" aria-hidden="true">
+    <div class="modal__backdrop" data-close></div>
+    <article class="modal__panel" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+      <button class="modal__close" data-close aria-label="Fermer">✕</button>
+      <div class="modal__visual"></div>
+      <div class="modal__body">
+        <div class="modal__meta"></div>
+        <h2 class="modal__title" id="modal-title"></h2>
+        <p class="modal__summary"></p>
+        <div class="modal__sections">
+          <div><h3 data-i18n="projectsPage.modal.context">Contexte</h3><p data-field="context"></p></div>
+          <div><h3 data-i18n="projectsPage.modal.mission">Ma mission</h3><p data-field="mission"></p></div>
+          <div><h3 data-i18n="projectsPage.modal.results">Résultats</h3><p data-field="results"></p></div>
+        </div>
+        <ul class="modal__tags"></ul>
+        <div class="modal__nav">
+          <button class="modal__prev" data-i18n="projectsPage.modal.prev">← Précédent</button>
+          <button class="modal__next" data-i18n="projectsPage.modal.next">Suivant →</button>
+        </div>
+      </div>
+    </article>
+  </div>
+
+  <script src="js/content.js"></script>
+  <script src="js/i18n.js"></script>
+  <script src="js/layout.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

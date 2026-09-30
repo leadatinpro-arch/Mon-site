@@ -6,62 +6,13 @@
   <title>Léa Datin — Marketing digital</title>
   <meta name="description" content="Portfolio de Léa Datin, spécialiste en marketing digital : stratégie, social media, contenu, SEO et growth." />
   <meta name="theme-color" content="#05070d" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='32' fill='%23ffd23f'/%3E%3Ctext x='32' y='41' font-family='Arial' font-weight='900' font-size='26' text-anchor='middle' fill='%2305070d'%3ELD%3C/text%3E%3C/svg%3E" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Syne:wght@500;700;800&family=Manrope:wght@300;400;500;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="css/style.css" />
 </head>
-<body class="is-loading">
-
-  <!-- Loader -->
-  <div class="loader" aria-hidden="true">
-    <div class="loader__name">
-      <span>L</span><span>é</span><span>a</span><span>&nbsp;</span><span>D</span><span>a</span><span>t</span><span>i</span><span>n</span>
-    </div>
-    <div class="loader__count"><span id="loader-num">0</span>%</div>
-  </div>
-
-  <!-- Custom cursor -->
-  <div class="cursor" aria-hidden="true"><span class="cursor__label"></span></div>
-  <div class="cursor-dot" aria-hidden="true"></div>
-
-  <!-- Grain overlay -->
-  <div class="grain" aria-hidden="true"></div>
-
-  <!-- Header -->
-  <header class="header">
-    <a href="#top" class="logo" aria-label="Léa Datin">
-      <span class="logo__mark">LD</span>
-    </a>
-
-    <nav class="nav" aria-label="Navigation principale">
-      <a href="#top" class="nav__link is-active" data-i18n="nav.home">Accueil</a>
-      <a href="#about" class="nav__link" data-i18n="nav.about">À propos</a>
-      <a href="#projects" class="nav__link" data-i18n="nav.projects">Projets</a>
-      <a href="#contact" class="nav__link" data-i18n="nav.contact">Contact</a>
-    </nav>
-
-    <div class="header__right">
-      <div class="lang" role="group" aria-label="Langue / Language">
-        <button class="lang__btn is-active" data-lang="fr" aria-pressed="true">FR</button>
-        <span class="lang__sep">/</span>
-        <button class="lang__btn" data-lang="en" aria-pressed="false">EN</button>
-      </div>
-      <button class="burger" aria-label="Menu" aria-expanded="false">
-        <span></span><span></span>
-      </button>
-    </div>
-  </header>
-
-  <!-- Mobile menu -->
-  <div class="menu" aria-hidden="true">
-    <nav class="menu__nav">
-      <a href="#top" class="menu__link" data-i18n="nav.home">Accueil</a>
-      <a href="#about" class="menu__link" data-i18n="nav.about">À propos</a>
-      <a href="#projects" class="menu__link" data-i18n="nav.projects">Projets</a>
-      <a href="#contact" class="menu__link" data-i18n="nav.contact">Contact</a>
-    </nav>
-  </div>
+<body class="is-loading" data-page="home">
 
   <main id="top">
 
@@ -94,11 +45,11 @@
           </p>
 
           <div class="hero__ctas reveal-up">
-            <a href="#projects" class="btn btn--primary magnetic" data-cursor="go">
+            <a href="projects.html" class="btn btn--primary magnetic" data-cursor="go">
               <span class="btn__text" data-i18n="hero.cta1">Voir mes projets</span>
               <span class="btn__icon">→</span>
             </a>
-            <a href="#contact" class="btn btn--ghost magnetic">
+            <a href="contact.html" class="btn btn--ghost magnetic">
               <span class="btn__text" data-i18n="hero.cta2">Me contacter</span>
             </a>
           </div>
@@ -153,7 +104,7 @@
     </section>
 
     <!-- EXPERTISES -->
-    <section class="skills" id="about">
+    <section class="skills" id="expertises">
       <div class="container">
         <div class="section-head">
           <p class="eyebrow reveal-up"><span>02</span> <span data-i18n="skills.eyebrow">Expertises</span></p>
@@ -203,7 +154,7 @@
         </div>
 
         <div class="section-foot reveal-up">
-          <a href="#about" class="link-arrow" data-i18n="skills.more">En savoir plus sur moi</a>
+          <a href="about.html" class="link-arrow" data-i18n="skills.more">En savoir plus sur moi</a>
         </div>
       </div>
     </section>
@@ -216,56 +167,7 @@
           <h2 class="section-title" data-i18n-html="projects.title">Sélection de <em>travaux</em></h2>
         </div>
 
-        <div class="projects__track">
-          <a href="#projects" class="project" data-cursor="view">
-            <div class="project__visual project__visual--1">
-              <span class="project__shape"></span>
-            </div>
-            <div class="project__meta">
-              <span class="tag" data-i18n="projects.pro">Expérience pro</span>
-              <h3 class="project__title" data-i18n="projects.p1.title">Campagne social media</h3>
-              <p class="project__desc" data-i18n="projects.p1.desc">Lancement produit, stratégie de contenu et gestion de communauté.</p>
-            </div>
-          </a>
-
-          <a href="#projects" class="project" data-cursor="view">
-            <div class="project__visual project__visual--2">
-              <span class="project__shape"></span>
-            </div>
-            <div class="project__meta">
-              <span class="tag" data-i18n="projects.pro">Expérience pro</span>
-              <h3 class="project__title" data-i18n="projects.p2.title">Stratégie SEO</h3>
-              <p class="project__desc" data-i18n="projects.p2.desc">Audit technique, contenus optimisés et suivi du trafic organique.</p>
-            </div>
-          </a>
-
-          <a href="#projects" class="project" data-cursor="view">
-            <div class="project__visual project__visual--3">
-              <span class="project__shape"></span>
-            </div>
-            <div class="project__meta">
-              <span class="tag tag--alt" data-i18n="projects.perso">Projet perso</span>
-              <h3 class="project__title" data-i18n="projects.p3.title">Identité de marque</h3>
-              <p class="project__desc" data-i18n="projects.p3.desc">Création d'une marque de A à Z : naming, logo, ton et univers visuel.</p>
-            </div>
-          </a>
-
-          <a href="#projects" class="project" data-cursor="view">
-            <div class="project__visual project__visual--4">
-              <span class="project__shape"></span>
-            </div>
-            <div class="project__meta">
-              <span class="tag tag--alt" data-i18n="projects.perso">Projet perso</span>
-              <h3 class="project__title" data-i18n="projects.p4.title">Campagne emailing</h3>
-              <p class="project__desc" data-i18n="projects.p4.desc">Séquences automatisées, segmentation et optimisation des taux d'ouverture.</p>
-            </div>
-          </a>
-
-          <a href="#projects" class="project project--all" data-cursor="go">
-            <span class="project--all__text" data-i18n-html="projects.all">Tous les<br>projets</span>
-            <span class="project--all__arrow">→</span>
-          </a>
-        </div>
+        <div class="projects__track" data-home-projects></div>
 
         <div class="projects__progress" aria-hidden="true"><span></span></div>
       </div>
@@ -314,7 +216,7 @@
         </h2>
         <p class="cta__text reveal-up" data-i18n="cta.text">Un poste, une mission ou simplement envie d'échanger ? Écrivez-moi.</p>
 
-        <a href="mailto:lea.datinpro@gmail.com" class="cta__button magnetic" data-cursor="mail">
+        <a href="contact.html" class="cta__button magnetic" data-cursor="mail">
           <span class="cta__button-inner">
             <span data-i18n="cta.button">Écrire un message</span>
           </span>
@@ -325,19 +227,9 @@
     </section>
   </main>
 
-  <footer class="footer">
-    <div class="container footer__inner">
-      <p>© <span id="year"></span> Léa Datin</p>
-      <ul class="footer__social">
-        <li><a href="https://www.linkedin.com/" target="_blank" rel="noopener" class="hover-line">LinkedIn</a></li>
-        <li><a href="https://www.instagram.com/" target="_blank" rel="noopener" class="hover-line">Instagram</a></li>
-        <li><a href="mailto:lea.datinpro@gmail.com" class="hover-line">Email</a></li>
-      </ul>
-      <a href="#top" class="footer__top hover-line" data-i18n="footer.top">Retour en haut ↑</a>
-    </div>
-  </footer>
-
+  <script src="js/content.js"></script>
   <script src="js/i18n.js"></script>
+  <script src="js/layout.js"></script>
   <script src="js/main.js"></script>
 </body>
 </html>

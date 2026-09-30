@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact — Léa Datin</title>
+  <meta name="description" content="Contactez Léa Datin pour un poste, une mission freelance ou un stage en marketing digital." />
+  <meta name="theme-color" content="#05070d" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='32' fill='%23ffd23f'/%3E%3Ctext x='32' y='41' font-family='Arial' font-weight='900' font-size='26' text-anchor='middle' fill='%2305070d'%3ELD%3C/text%3E%3C/svg%3E" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@500;700;800&family=Manrope:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body class="is-loading" data-page="contact" data-title="meta.contact.title" data-desc="meta.contact.description">
+
+  <main id="top">
+    <section class="page-hero page-hero--contact">
+      <div class="hero__blob" aria-hidden="true"></div>
+      <div class="container">
+        <p class="eyebrow reveal-up"><span>01</span> <span data-i18n="contactPage.eyebrow">Contact</span></p>
+        <h1 class="page-title page-title--xl">
+          <span class="line"><span class="split" data-split data-i18n="contactPage.title1">Dites</span></span>
+          <span class="line line--indent"><span class="split split--gradient" data-split data-i18n="contactPage.title2">bonjour</span><span class="wave" aria-hidden="true">👋</span></span>
+        </h1>
+      </div>
+    </section>
+
+    <section class="contact">
+      <div class="container contact__grid">
+
+        <aside class="contact__info">
+          <p class="contact__intro reveal-up" data-i18n="contactPage.intro">
+            Recruteur, entreprise ou porteur de projet : je serais ravie d'échanger avec vous. Remplissez le formulaire ou écrivez-moi directement.
+          </p>
+
+          <div class="info-card reveal-up">
+            <span class="info-card__label" data-i18n="contactPage.info.email">E-mail</span>
+            <div class="info-card__row">
+              <a href="mailto:lea.datinpro@gmail.com" class="info-card__value" data-email>lea.datinpro@gmail.com</a>
+              <button class="copy-btn" data-copy aria-label="Copier l'adresse e-mail">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="8" y="8" width="12" height="12" rx="3"/><path d="M16 8V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h2"/></svg>
+                <span data-i18n="contactPage.copy">Copier</span>
+              </button>
+            </div>
+          </div>
+
+          <div class="info-card reveal-up">
+            <span class="info-card__label" data-i18n="contactPage.info.social">Réseaux</span>
+            <div class="info-card__links">
+              <a href="https://www.linkedin.com/" target="_blank" rel="noopener" class="pill-link" data-social="linkedin">LinkedIn ↗</a>
+              <a href="https://www.instagram.com/" target="_blank" rel="noopener" class="pill-link" data-social="instagram">Instagram ↗</a>
+            </div>
+          </div>
+
+          <div class="info-card reveal-up">
+            <span class="info-card__label" data-i18n="contactPage.info.status">Statut</span>
+            <p class="info-card__status"><span class="pulse"></span> <span data-i18n="hero.available">Disponible pour de nouvelles opportunités</span></p>
+          </div>
+        </aside>
+
+        <form class="form reveal-up" novalidate>
+          <fieldset class="form__chips">
+            <legend data-i18n="contactPage.form.subject">Vous me contactez pour…</legend>
+            <label class="chip"><input type="radio" name="subject" value="job" checked /><span data-i18n="contactPage.form.s1">Un poste</span></label>
+            <label class="chip"><input type="radio" name="subject" value="freelance" /><span data-i18n="contactPage.form.s2">Une mission freelance</span></label>
+            <label class="chip"><input type="radio" name="subject" value="internship" /><span data-i18n="contactPage.form.s3">Un stage / une alternance</span></label>
+            <label class="chip"><input type="radio" name="subject" value="other" /><span data-i18n="contactPage.form.s4">Autre chose</span></label>
+          </fieldset>
+
+          <div class="form__row">
+            <div class="field">
+              <input type="text" id="f-name" name="name" required autocomplete="name" placeholder=" " />
+              <label for="f-name" data-i18n="contactPage.form.name">Votre nom *</label>
+              <span class="field__error" data-i18n="contactPage.form.errName">Merci d'indiquer votre nom.</span>
+            </div>
+            <div class="field">
+              <input type="email" id="f-email" name="email" required autocomplete="email" placeholder=" " />
+              <label for="f-email" data-i18n="contactPage.form.email">Votre e-mail *</label>
+              <span class="field__error" data-i18n="contactPage.form.errEmail">Merci d'indiquer un e-mail valide.</span>
+            </div>
+          </div>
+
+          <div class="field">
+            <input type="text" id="f-company" name="company" autocomplete="organization" placeholder=" " />
+            <label for="f-company" data-i18n="contactPage.form.company">Entreprise (facultatif)</label>
+          </div>
+
+          <div class="field">
+            <textarea id="f-message" name="message" rows="5" required maxlength="2000" placeholder=" "></textarea>
+            <label for="f-message" data-i18n="contactPage.form.message">Votre message *</label>
+            <span class="field__error" data-i18n="contactPage.form.errMessage">Votre message est un peu court.</span>
+            <span class="field__count"><span data-counter>0</span>/2000</span>
+          </div>
+
+          <button type="submit" class="btn btn--primary btn--submit magnetic" data-cursor="mail">
+            <span class="btn__text" data-i18n="contactPage.form.send">Envoyer le message</span>
+            <span class="btn__icon">→</span>
+          </button>
+          <p class="form__note" data-i18n="contactPage.form.note">Le bouton ouvre votre messagerie avec le message déjà rédigé : il ne reste qu'à cliquer sur « Envoyer ».</p>
+
+          <div class="form__success" aria-live="polite">
+            <div class="form__success-icon">✓</div>
+            <h3 data-i18n="contactPage.form.okTitle">Merci !</h3>
+            <p data-i18n="contactPage.form.okText">Votre messagerie s'est ouverte avec votre message. Si rien ne s'affiche, écrivez-moi directement à lea.datinpro@gmail.com.</p>
+            <button type="button" class="link-arrow" data-reset data-i18n="contactPage.form.again">Écrire un autre message</button>
+          </div>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <script src="js/content.js"></script>
+  <script src="js/i18n.js"></script>
+  <script src="js/layout.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
