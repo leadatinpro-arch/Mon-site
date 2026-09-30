@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Léa Datin — Marketing digital</title>
+  <meta name="description" content="Portfolio de Léa Datin, spécialiste en marketing digital : stratégie, social media, contenu, SEO et growth." />
+  <meta name="theme-color" content="#0b0b0f" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@500;700;800&family=Manrope:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body class="is-loading">
+
+  <!-- Loader -->
+  <div class="loader" aria-hidden="true">
+    <div class="loader__name">
+      <span>L</span><span>é</span><span>a</span><span>&nbsp;</span><span>D</span><span>a</span><span>t</span><span>i</span><span>n</span>
+    </div>
+    <div class="loader__count"><span id="loader-num">0</span>%</div>
+  </div>
+
+  <!-- Custom cursor -->
+  <div class="cursor" aria-hidden="true"><span class="cursor__label"></span></div>
+  <div class="cursor-dot" aria-hidden="true"></div>
+
+  <!-- Grain overlay -->
+  <div class="grain" aria-hidden="true"></div>
+
+  <!-- Header -->
+  <header class="header">
+    <a href="#top" class="logo" aria-label="Léa Datin">
+      <span class="logo__mark">LD</span>
+    </a>
+
+    <nav class="nav" aria-label="Navigation principale">
+      <a href="#top" class="nav__link is-active" data-i18n="nav.home">Accueil</a>
+      <a href="#about" class="nav__link" data-i18n="nav.about">À propos</a>
+      <a href="#projects" class="nav__link" data-i18n="nav.projects">Projets</a>
+      <a href="#contact" class="nav__link" data-i18n="nav.contact">Contact</a>
+    </nav>
+
+    <div class="header__right">
+      <div class="lang" role="group" aria-label="Langue / Language">
+        <button class="lang__btn is-active" data-lang="fr" aria-pressed="true">FR</button>
+        <span class="lang__sep">/</span>
+        <button class="lang__btn" data-lang="en" aria-pressed="false">EN</button>
+      </div>
+      <button class="burger" aria-label="Menu" aria-expanded="false">
+        <span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Mobile menu -->
+  <div class="menu" aria-hidden="true">
+    <nav class="menu__nav">
+      <a href="#top" class="menu__link" data-i18n="nav.home">Accueil</a>
+      <a href="#about" class="menu__link" data-i18n="nav.about">À propos</a>
+      <a href="#projects" class="menu__link" data-i18n="nav.projects">Projets</a>
+      <a href="#contact" class="menu__link" data-i18n="nav.contact">Contact</a>
+    </nav>
+  </div>
+
+  <main id="top">
+
+    <!-- HERO -->
+    <section class="hero">
+      <div class="hero__blob" aria-hidden="true"></div>
+      <div class="hero__blob hero__blob--2" aria-hidden="true"></div>
+
+      <div class="hero__inner">
+        <p class="hero__kicker reveal-up">
+          <span class="pulse"></span>
+          <span data-i18n="hero.available">Disponible pour de nouvelles opportunités</span>
+        </p>
+
+        <h1 class="hero__title" aria-label="Léa Datin">
+          <span class="line"><span class="split" data-split>Léa</span></span>
+          <span class="line line--indent"><span class="split split--outline" data-split>Datin</span></span>
+        </h1>
+
+        <div class="hero__bottom">
+          <p class="hero__role reveal-up">
+            <span data-i18n="hero.role">Spécialiste en</span>
+            <span class="rotator" aria-live="polite">
+              <span class="rotator__word" data-i18n-list="hero.words">Marketing digital</span>
+            </span>
+          </p>
+
+          <p class="hero__desc reveal-up" data-i18n="hero.desc">
+            Je transforme les idées en stratégies qui convertissent — du premier clic à la fidélisation.
+          </p>
+
+          <div class="hero__ctas reveal-up">
+            <a href="#projects" class="btn btn--primary magnetic" data-cursor="go">
+              <span class="btn__text" data-i18n="hero.cta1">Voir mes projets</span>
+              <span class="btn__icon">→</span>
+            </a>
+            <a href="#contact" class="btn btn--ghost magnetic">
+              <span class="btn__text" data-i18n="hero.cta2">Me contacter</span>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <a href="#manifesto" class="scroll-hint" aria-label="Scroll">
+        <span class="scroll-hint__circle">
+          <svg viewBox="0 0 100 100" aria-hidden="true">
+            <defs><path id="circlePath" d="M50,50 m-38,0 a38,38 0 1,1 76,0 a38,38 0 1,1 -76,0" /></defs>
+            <text><textPath href="#circlePath" textLength="236" lengthAdjust="spacing" data-i18n="hero.scroll">DÉFILER • DÉCOUVRIR • DÉFILER •</textPath></text>
+          </svg>
+          <span class="scroll-hint__arrow">↓</span>
+        </span>
+      </a>
+    </section>
+
+    <!-- MARQUEE -->
+    <section class="marquee" aria-label="Compétences">
+      <div class="marquee__track">
+        <div class="marquee__content">
+          <span>Social Media</span><i>✦</i>
+          <span>SEO / SEA</span><i>✦</i>
+          <span>Content Strategy</span><i>✦</i>
+          <span>Growth Marketing</span><i>✦</i>
+          <span>Emailing</span><i>✦</i>
+          <span>Analytics</span><i>✦</i>
+          <span>Branding</span><i>✦</i>
+          <span>Paid Ads</span><i>✦</i>
+        </div>
+        <div class="marquee__content" aria-hidden="true">
+          <span>Social Media</span><i>✦</i>
+          <span>SEO / SEA</span><i>✦</i>
+          <span>Content Strategy</span><i>✦</i>
+          <span>Growth Marketing</span><i>✦</i>
+          <span>Emailing</span><i>✦</i>
+          <span>Analytics</span><i>✦</i>
+          <span>Branding</span><i>✦</i>
+          <span>Paid Ads</span><i>✦</i>
+        </div>
+      </div>
+    </section>
+
+    <!-- MANIFESTO / ABOUT TEASER -->
+    <section class="manifesto" id="manifesto">
+      <div class="container">
+        <p class="eyebrow reveal-up"><span>01</span> <span data-i18n="manifesto.eyebrow">Qui suis-je</span></p>
+        <p class="manifesto__text" data-words data-i18n="manifesto.text">
+          Passionnée par le digital, je conçois des stratégies marketing qui allient créativité et data pour faire grandir les marques, engager les communautés et générer des résultats mesurables.
+        </p>
+      </div>
+    </section>
+
+    <!-- EXPERTISES -->
+    <section class="skills" id="about">
+      <div class="container">
+        <div class="section-head">
+          <p class="eyebrow reveal-up"><span>02</span> <span data-i18n="skills.eyebrow">Expertises</span></p>
+          <h2 class="section-title reveal-up" data-i18n-html="skills.title">Ce que je fais <em>de mieux</em></h2>
+        </div>
+
+        <div class="skills__grid">
+          <article class="card tilt reveal-up">
+            <div class="card__glow"></div>
+            <span class="card__num">01</span>
+            <div class="card__icon" aria-hidden="true">
+              <svg viewBox="0 0 48 48"><circle cx="24" cy="24" r="10"/><circle cx="24" cy="24" r="20"/><circle cx="24" cy="24" r="3" class="fill"/></svg>
+            </div>
+            <h3 class="card__title" data-i18n="skills.s1.title">Stratégie digitale</h3>
+            <p class="card__text" data-i18n="skills.s1.text">Audit, positionnement, personas et plan d'action multicanal aligné sur vos objectifs business.</p>
+          </article>
+
+          <article class="card tilt reveal-up">
+            <div class="card__glow"></div>
+            <span class="card__num">02</span>
+            <div class="card__icon" aria-hidden="true">
+              <svg viewBox="0 0 48 48"><rect x="8" y="8" width="32" height="32" rx="10"/><circle cx="24" cy="24" r="7"/><circle cx="34" cy="14" r="1.8" class="fill"/></svg>
+            </div>
+            <h3 class="card__title" data-i18n="skills.s2.title">Social media</h3>
+            <p class="card__text" data-i18n="skills.s2.text">Community management, ligne éditoriale, création de contenus et campagnes d'influence.</p>
+          </article>
+
+          <article class="card tilt reveal-up">
+            <div class="card__glow"></div>
+            <span class="card__num">03</span>
+            <div class="card__icon" aria-hidden="true">
+              <svg viewBox="0 0 48 48"><circle cx="21" cy="21" r="12"/><path d="M30 30l10 10"/><path d="M15 21h12M21 15v12"/></svg>
+            </div>
+            <h3 class="card__title" data-i18n="skills.s3.title">SEO &amp; SEA</h3>
+            <p class="card__text" data-i18n="skills.s3.text">Référencement naturel, Google Ads et optimisation continue pour gagner en visibilité.</p>
+          </article>
+
+          <article class="card tilt reveal-up">
+            <div class="card__glow"></div>
+            <span class="card__num">04</span>
+            <div class="card__icon" aria-hidden="true">
+              <svg viewBox="0 0 48 48"><path d="M8 38h32"/><path d="M12 32l8-10 7 6 11-14"/><circle cx="38" cy="14" r="2" class="fill"/></svg>
+            </div>
+            <h3 class="card__title" data-i18n="skills.s4.title">Data &amp; performance</h3>
+            <p class="card__text" data-i18n="skills.s4.text">Suivi des KPIs, tableaux de bord, A/B tests et recommandations basées sur les données.</p>
+          </article>
+        </div>
+
+        <div class="section-foot reveal-up">
+          <a href="#about" class="link-arrow" data-i18n="skills.more">En savoir plus sur moi</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROJECTS (horizontal scroll) -->
+    <section class="projects" id="projects">
+      <div class="projects__sticky">
+        <div class="projects__head container">
+          <p class="eyebrow"><span>03</span> <span data-i18n="projects.eyebrow">Projets</span></p>
+          <h2 class="section-title" data-i18n-html="projects.title">Sélection de <em>travaux</em></h2>
+        </div>
+
+        <div class="projects__track">
+          <a href="#projects" class="project" data-cursor="view">
+            <div class="project__visual project__visual--1">
+              <span class="project__shape"></span>
+            </div>
+            <div class="project__meta">
+              <span class="tag" data-i18n="projects.pro">Expérience pro</span>
+              <h3 class="project__title" data-i18n="projects.p1.title">Campagne social media</h3>
+              <p class="project__desc" data-i18n="projects.p1.desc">Lancement produit, stratégie de contenu et gestion de communauté.</p>
+            </div>
+          </a>
+
+          <a href="#projects" class="project" data-cursor="view">
+            <div class="project__visual project__visual--2">
+              <span class="project__shape"></span>
+            </div>
+            <div class="project__meta">
+              <span class="tag" data-i18n="projects.pro">Expérience pro</span>
+              <h3 class="project__title" data-i18n="projects.p2.title">Stratégie SEO</h3>
+              <p class="project__desc" data-i18n="projects.p2.desc">Audit technique, contenus optimisés et suivi du trafic organique.</p>
+            </div>
+          </a>
+
+          <a href="#projects" class="project" data-cursor="view">
+            <div class="project__visual project__visual--3">
+              <span class="project__shape"></span>
+            </div>
+            <div class="project__meta">
+              <span class="tag tag--alt" data-i18n="projects.perso">Projet perso</span>
+              <h3 class="project__title" data-i18n="projects.p3.title">Identité de marque</h3>
+              <p class="project__desc" data-i18n="projects.p3.desc">Création d'une marque de A à Z : naming, logo, ton et univers visuel.</p>
+            </div>
+          </a>
+
+          <a href="#projects" class="project" data-cursor="view">
+            <div class="project__visual project__visual--4">
+              <span class="project__shape"></span>
+            </div>
+            <div class="project__meta">
+              <span class="tag tag--alt" data-i18n="projects.perso">Projet perso</span>
+              <h3 class="project__title" data-i18n="projects.p4.title">Campagne emailing</h3>
+              <p class="project__desc" data-i18n="projects.p4.desc">Séquences automatisées, segmentation et optimisation des taux d'ouverture.</p>
+            </div>
+          </a>
+
+          <a href="#projects" class="project project--all" data-cursor="go">
+            <span class="project--all__text" data-i18n-html="projects.all">Tous les<br>projets</span>
+            <span class="project--all__arrow">→</span>
+          </a>
+        </div>
+
+        <div class="projects__progress" aria-hidden="true"><span></span></div>
+      </div>
+    </section>
+
+    <!-- PROCESS -->
+    <section class="process">
+      <div class="container">
+        <div class="section-head">
+          <p class="eyebrow reveal-up"><span>04</span> <span data-i18n="process.eyebrow">Méthode</span></p>
+          <h2 class="section-title reveal-up" data-i18n-html="process.title">Comment je <em>travaille</em></h2>
+        </div>
+
+        <ol class="process__list">
+          <li class="step reveal-up">
+            <span class="step__num">01</span>
+            <h3 class="step__title" data-i18n="process.p1.title">Écouter</h3>
+            <p class="step__text" data-i18n="process.p1.text">Comprendre vos objectifs, votre audience et votre marché.</p>
+          </li>
+          <li class="step reveal-up">
+            <span class="step__num">02</span>
+            <h3 class="step__title" data-i18n="process.p2.title">Imaginer</h3>
+            <p class="step__text" data-i18n="process.p2.text">Construire une stratégie claire et des idées qui marquent.</p>
+          </li>
+          <li class="step reveal-up">
+            <span class="step__num">03</span>
+            <h3 class="step__title" data-i18n="process.p3.title">Déployer</h3>
+            <p class="step__text" data-i18n="process.p3.text">Créer, publier et animer sur les bons canaux.</p>
+          </li>
+          <li class="step reveal-up">
+            <span class="step__num">04</span>
+            <h3 class="step__title" data-i18n="process.p4.title">Mesurer</h3>
+            <p class="step__text" data-i18n="process.p4.text">Analyser, apprendre et optimiser en continu.</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- CONTACT CTA -->
+    <section class="cta" id="contact">
+      <div class="container">
+        <p class="eyebrow reveal-up"><span>05</span> <span data-i18n="cta.eyebrow">Contact</span></p>
+        <h2 class="cta__title">
+          <span class="line"><span class="split" data-split data-i18n="cta.line1">Travaillons</span></span>
+          <span class="line"><span class="split split--gradient" data-split data-i18n="cta.line2">ensemble</span></span>
+        </h2>
+        <p class="cta__text reveal-up" data-i18n="cta.text">Un poste, une mission ou simplement envie d'échanger ? Écrivez-moi.</p>
+
+        <a href="mailto:lea.datinpro@gmail.com" class="cta__button magnetic" data-cursor="mail">
+          <span class="cta__button-inner">
+            <span data-i18n="cta.button">Écrire un message</span>
+          </span>
+        </a>
+
+        <a href="mailto:lea.datinpro@gmail.com" class="cta__mail reveal-up">lea.datinpro@gmail.com</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__inner">
+      <p>© <span id="year"></span> Léa Datin</p>
+      <ul class="footer__social">
+        <li><a href="https://www.linkedin.com/" target="_blank" rel="noopener" class="hover-line">LinkedIn</a></li>
+        <li><a href="https://www.instagram.com/" target="_blank" rel="noopener" class="hover-line">Instagram</a></li>
+        <li><a href="mailto:lea.datinpro@gmail.com" class="hover-line">Email</a></li>
+      </ul>
+      <a href="#top" class="footer__top hover-line" data-i18n="footer.top">Retour en haut ↑</a>
+    </div>
+  </footer>
+
+  <script src="js/i18n.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
