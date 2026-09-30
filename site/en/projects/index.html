@@ -23,129 +23,110 @@
   <link rel="icon" href="../../assets/img/favicon.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400;0,500;0,700;1,400&family=League+Spartan:wght@600;700;800&family=Caveat:wght@500;700&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@600;700;800&family=Arimo:wght@400;500;600;700&family=Caveat:wght@500;700&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cortado&display=swap">
   <link rel="stylesheet" href="../../assets/css/style.css">
   <script>document.documentElement.classList.add('js');</script>
   <script src="../../assets/js/main.js" defer data-analytics-provider="plausible" data-analytics-id=""></script>
+  
 </head>
 <body class="page-projects">
 <a class="skip-link" href="#main">Skip to content</a>
-<header class="site-header" data-header>
-  <div class="container site-header__inner">
-    <a class="logo" href="../../en/index.html" aria-label="Léa Datin — Home">Léa <span>DATIN</span></a>
-    <nav class="main-nav" aria-label="Main navigation">
-      <ul class="main-nav__list">
-    <li><a class="main-nav__link" href="../../en/index.html">Home</a></li><li><a class="main-nav__link" href="../../en/about/index.html">About</a></li><li><a class="main-nav__link" href="../../en/experience/index.html">Experience</a></li><li><a class="main-nav__link" href="../../en/projects/index.html" aria-current="page">Projects</a></li>
-    <li><a class="main-nav__link main-nav__link--cv" href="../../assets/cv/CV-Lea-Datin.pdf" download><svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v11M7 10l5 5 5-5M5 20h14"/></svg>Resume</a></li>
-    <li><a class="main-nav__link" href="../../en/contact/index.html">Contact</a></li>
-  </ul>
-    </nav>
-    <div class="site-header__actions">
-      <a class="lang-switch is-en" href="../../projets/index.html" hreflang="fr" data-lang-switch aria-label="Passer en français">
-    <span class="lang-switch__label" aria-hidden="true">FR</span>
-    <span class="lang-switch__label" aria-hidden="true">EN</span>
-    <span class="lang-switch__thumb" aria-hidden="true"></span>
-  </a>
-      <button class="burger" type="button" aria-expanded="false" aria-controls="mobile-menu"
-        data-burger data-label-open="Open menu" data-label-close="Close menu"
-        aria-label="Open menu"><span></span><span></span><span></span></button>
+<header class="container site-header">
+  <nav class="nav" aria-label="Main navigation">
+    <a class="nav__logo h2 nav__logo--outline" href="../../en/index.html">Léa <span class="accent">DATIN</span></a>
+    <div class="nav__links">
+      <a class="navlink navlink--on-light" href="../../en/index.html">Home</a>
+      <a class="navlink navlink--on-light" href="../../en/about/index.html">About</a>
+      <a class="navlink navlink--on-light" href="../../en/experience/index.html">Experience</a>
+      <a class="navlink navlink--on-light is-active" href="../../en/projects/index.html" aria-current="page">Projects</a>
+      <a class="navlink navlink--on-light" href="../../en/contact/index.html">Contact</a>
     </div>
+    <div class="nav__right">
+      <div class="lang-wrap" data-lang-switch data-target="../../projets/index.html">
+    <a class="lang-side" href="../../projets/index.html" data-lang-side="FR" hreflang="fr">FR</a>
+    <button class="lang-switch" type="button" data-lang="EN" aria-label="Switch language: Français"><span class="lang-knob"></span></button>
+    <a class="lang-side is-active" href="#" data-lang-side="EN" hreflang="en">EN</a>
   </div>
-</header>
-<div class="mobile-menu" id="mobile-menu" data-mobile-menu aria-hidden="true" inert>
-  <nav class="mobile-menu__nav" aria-label="Main navigation">
-    <ul class="mobile-menu__list">
-    <li><a class="mobile-menu__link" href="../../en/index.html">Home</a></li><li><a class="mobile-menu__link" href="../../en/about/index.html">About</a></li><li><a class="mobile-menu__link" href="../../en/experience/index.html">Experience</a></li><li><a class="mobile-menu__link" href="../../en/projects/index.html" aria-current="page">Projects</a></li>
-    <li><a class="mobile-menu__link mobile-menu__link--cv" href="../../assets/cv/CV-Lea-Datin.pdf" download><svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v11M7 10l5 5 5-5M5 20h14"/></svg>Resume</a></li>
-    <li><a class="mobile-menu__link" href="../../en/contact/index.html">Contact</a></li>
-  </ul>
+      <a class="cta nav__cv" href="../../assets/cv/CV-Lea-Datin.pdf" download>Resume ↓</a>
+      <button class="burger" type="button" data-menu-toggle="mobileMenu" aria-controls="mobileMenu" aria-expanded="false" aria-label="Open menu">
+        <span class="burger-line"></span><span class="burger-line"></span><span class="burger-line"></span>
+      </button>
+    </div>
   </nav>
-  <div class="mobile-menu__foot">
-    <a href="mailto:contact@lea-datin.com"><svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="3"/><path d="m4 7 8 6 8-6"/></svg>contact@lea-datin.com</a>
-    <a href="https://www.linkedin.com/in/lea-datin/" target="_blank" rel="noopener"><svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="4"/><path d="M8 10v7M8 7v.01M12 17v-4a2 2 0 0 1 4 0v4M12 10v7"/></svg>LinkedIn</a>
-  </div>
+</header>
+<div id="mobileMenu" class="menu-overlay" aria-hidden="true" inert>
+  <a href="../../en/index.html" data-menu-close>Home</a>
+  <a href="../../en/about/index.html" data-menu-close>About</a>
+  <a href="../../en/experience/index.html" data-menu-close>Experience</a>
+  <a href="../../en/projects/index.html" data-menu-close aria-current="page">Projects</a>
+  <a href="../../assets/cv/CV-Lea-Datin.pdf" download data-menu-close>Resume ↓</a>
+  <a href="../../en/contact/index.html" data-menu-close>Contact</a>
+  <div class="menu-overlay__lang"><div class="lang-wrap lang-wrap--on-dark" data-lang-switch data-target="../../projets/index.html">
+    <a class="lang-side" href="../../projets/index.html" data-lang-side="FR" hreflang="fr">FR</a>
+    <button class="lang-switch" type="button" data-lang="EN" aria-label="Switch language: Français"><span class="lang-knob"></span></button>
+    <a class="lang-side is-active" href="#" data-lang-side="EN" hreflang="en">EN</a>
+  </div></div>
+  <button class="close-btn" type="button" data-menu-close aria-label="Close menu">✕</button>
 </div>
-<main id="main">
+<main id="main" class="container">
+  <section class="hero hero--compact">
+    <div class="hero__glow" aria-hidden="true"></div>
+    <div class="hero__text">
+      <div class="pill reveal hero__pill">Side projects</div>
+      <h1 class="hero__title reveal" style="margin-top:20px; transition-delay:0.1s;">What I build <span class="script">outside of work.</span></h1>
+      <p class="reveal hero__lead" style="transition-delay:0.2s;">Three projects started out of passion and run with the same energy as at work. Hover the cards, they react.</p>
+    </div>
+  </section>
 
-<section class="page-hero page-hero--light" data-theme="light">
-  <div class="blobs " aria-hidden="true"><span class="blob blob--1"></span><span class="blob blob--2"></span><span class="blob blob--3"></span></div>
-  <div class="dot-pattern" aria-hidden="true"></div>
-  <div class="container page-hero__inner">
-    <div data-reveal><p class="eyebrow">Projects</p></div>
-    <h1 class="page-hero__title" data-reveal style="--d:80ms">My side projects</h1>
-    <p class="page-hero__text" data-reveal style="--d:160ms">What I launch and grow outside of school and work.</p>
-    
-  </div>
-</section>
-<section class="section project" id="360id" data-theme="light">
-  
-  <div class="container project__grid">
-    <div class="project__media border-beam" data-reveal="left"><img class="" src="../../assets/img/project-360id.svg" alt="360ID" loading="lazy" decoding="async"></div>
-    <div class="project__copy">
-      <div data-reveal><p class="eyebrow"><span class="eyebrow__num">01</span>[Category]</p></div>
-      <h2 class="project__name" data-reveal style="--d:80ms">360ID</h2>
-      <p class="project__pitch" data-reveal style="--d:140ms"><span class="todo">[One-sentence project pitch.]</span></p>
-      <p data-reveal style="--d:200ms"><span class="todo">[Describe 360ID: the problem, the idea, what has been achieved.]</span></p>
-      <p class="project__role" data-reveal style="--d:260ms"><strong>My role :</strong> <span class="todo">[Your role in the project]</span></p>
-    </div>
-  </div>
-</section>
-<section class="section project section--dark" id="punch" data-theme="dark">
-  <div class="blobs blobs--dark" aria-hidden="true"><span class="blob blob--1"></span><span class="blob blob--2"></span><span class="blob blob--3"></span></div>
-  <div class="container project__grid project__grid--rev">
-    <div class="project__media border-beam" data-reveal="right"><img class="" src="../../assets/img/project-punch.svg" alt="PUNCH" loading="lazy" decoding="async"></div>
-    <div class="project__copy">
-      <div data-reveal><p class="eyebrow"><span class="eyebrow__num">02</span>[Category]</p></div>
-      <h2 class="project__name" data-reveal style="--d:80ms">PUNCH</h2>
-      <p class="project__pitch" data-reveal style="--d:140ms"><span class="todo">[One-sentence project pitch.]</span></p>
-      <p data-reveal style="--d:200ms"><span class="todo">[Describe PUNCH: the problem, the idea, what has been achieved.]</span></p>
-      <p class="project__role" data-reveal style="--d:260ms"><strong>My role :</strong> <span class="todo">[Your role in the project]</span></p>
-    </div>
-  </div>
-</section>
-<section class="section project section--tint" id="eclipse" data-theme="light">
-  
-  <div class="container project__grid">
-    <div class="project__media border-beam" data-reveal="left"><img class="" src="../../assets/img/project-eclipse.svg" alt="Éclipse" loading="lazy" decoding="async"></div>
-    <div class="project__copy">
-      <div data-reveal><p class="eyebrow"><span class="eyebrow__num">03</span>Events · Electronic music</p></div>
-      <h2 class="project__name" data-reveal style="--d:80ms">Éclipse</h2>
-      <p class="project__pitch" data-reveal style="--d:140ms">An electronic music event in Nancy.</p>
-      <p data-reveal style="--d:200ms">I organise Éclipse, an electronic music event in Nancy. <span class="todo">[Add details: first edition, venue, audience, artists, key figures.]</span></p>
-      <p class="project__role" data-reveal style="--d:260ms"><strong>My role :</strong> Organiser</p>
-    </div>
-  </div>
-</section>
+  <section class="section projects">
+    <article class="project card reveal" id="360id" style="transition-delay:0.05s;">
+      <div class="project__stage card--tilt" data-tilt data-tilt-max="12"><div class="p3d p3d--ring" aria-hidden="true"><span style="--i:0"></span><span style="--i:1"></span><span style="--i:2"></span><span style="--i:3"></span><span style="--i:4"></span><span style="--i:5"></span><span style="--i:6"></span><span style="--i:7"></span><span style="--i:8"></span><span style="--i:9"></span><span style="--i:10"></span><span style="--i:11"></span><b>360°</b></div></div>
+      <div class="project__copy">
+        <div class="eyebrow">01 · <span class="todo">[Category]</span></div>
+        <h2 class="h2 project__name">360ID</h2>
+        <p class="project__pitch"><span class="todo">[One-sentence project pitch.]</span></p>
+        <p class="project__text"><span class="todo">[Describe 360ID: the problem, the idea, what has been achieved.]</span></p>
+        <p class="project__role"><b>My role :</b> <span class="todo">[Your role]</span></p>
+      </div>
+    </article>
+    <article class="project card reveal project--rev" id="punch" style="transition-delay:0.05s;">
+      <div class="project__stage card--tilt" data-tilt data-tilt-max="12"><div class="p3d p3d--type" aria-hidden="true" data-x3d-text="12"><span class="p3d__word">PUNCH</span></div></div>
+      <div class="project__copy">
+        <div class="eyebrow">02 · <span class="todo">[Category]</span></div>
+        <h2 class="h2 project__name">PUNCH</h2>
+        <p class="project__pitch"><span class="todo">[One-sentence project pitch.]</span></p>
+        <p class="project__text"><span class="todo">[Describe PUNCH: the problem, the idea, what has been achieved.]</span></p>
+        <p class="project__role"><b>My role :</b> <span class="todo">[Your role]</span></p>
+      </div>
+    </article>
+    <article class="project card reveal" id="eclipse" style="transition-delay:0.05s;">
+      <div class="project__stage card--tilt" data-tilt data-tilt-max="12"><div class="p3d p3d--eclipse" aria-hidden="true"><span class="eclipse__corona"></span><span class="eclipse__sun"></span><span class="eclipse__moon"></span></div></div>
+      <div class="project__copy">
+        <div class="eyebrow">03 · Events · Electronic music</div>
+        <h2 class="h2 project__name">Éclipse</h2>
+        <p class="project__pitch">An electronic music event in Nancy.</p>
+        <p class="project__text">I organise Éclipse, an electronic music event in Nancy. <span class="todo">[Add details: first edition, venue, audience, artists, key figures.]</span></p>
+        <p class="project__role"><b>My role :</b> Organiser</p>
+      </div>
+    </article>
+  </section>
 </main>
-<footer class="site-footer" data-theme="dark">
-  <div class="container site-footer__grid">
-    <div>
-      <a class="logo" href="../../en/index.html" aria-label="Léa Datin — Home">Léa <span>DATIN</span></a>
-      <p class="site-footer__tag">Digital marketing, project management &amp; good vibes.</p>
+<div class="footer-wrap"><footer class="container footer">
+    <div class="h2" style="font-size:20px;">Léa Datin</div>
+    <div class="footer__links">
+      <a class="navlink navlink--on-light" href="mailto:lea.datinpro@gmail.com">lea.datinpro@gmail.com</a>
+      <a class="navlink navlink--on-light" href="#" aria-disabled="true">LinkedIn</a>
     </div>
-    <nav aria-label="Footer">
-      <ul class="site-footer__nav">
-        <li><a class="u-link" href="../../en/index.html">Home</a></li><li><a class="u-link" href="../../en/about/index.html">About</a></li><li><a class="u-link" href="../../en/experience/index.html">Experience</a></li><li><a class="u-link" href="../../en/projects/index.html">Projects</a></li><li><a class="u-link" href="../../en/contact/index.html">Contact</a></li>
-      </ul>
-    </nav>
-    <div class="site-footer__contact">
-      <p class="script">Write to me</p>
-      <a class="u-link" href="mailto:contact@lea-datin.com"><svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="3"/><path d="m4 7 8 6 8-6"/></svg>contact@lea-datin.com</a>
-      <a class="u-link" href="https://www.linkedin.com/in/lea-datin/" target="_blank" rel="noopener"><svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="4"/><path d="M8 10v7M8 7v.01M12 17v-4a2 2 0 0 1 4 0v4M12 10v7"/></svg>LinkedIn</a>
-    </div>
-  </div>
-  <div class="container site-footer__bottom">
-    <p>© 2026 Léa Datin. All rights reserved.</p>
-    <button type="button" class="u-link" data-cookie-open>Cookie settings</button>
-  </div>
-</footer>
+    <div class="footer__legal">© 2026 Léa Datin · <button type="button" class="linklike" data-cookie-open>Cookies</button></div>
+  </footer>
 <button class="to-top" type="button" data-to-top aria-label="Back to top"><svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 19V5M6 11l6-6 6 6"/></svg></button>
 <div class="cookie" data-cookie role="dialog" aria-live="polite" aria-label="Cookies" hidden>
   <p>This site uses an audience measurement tool to see which pages are visited. Nothing runs without your consent.</p>
   <div class="cookie__actions">
-    <button type="button" class="btn btn--ghost btn--sm" data-cookie-refuse>Decline</button>
-    <button type="button" class="btn btn--primary btn--sm" data-cookie-accept>Accept</button>
+    <button type="button" class="cta-outline" data-cookie-refuse>Decline</button>
+    <button type="button" class="cta" data-cookie-accept>Accept</button>
   </div>
-</div>
+</div></div>
 </body>
 </html>

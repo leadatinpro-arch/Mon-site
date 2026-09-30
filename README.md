@@ -23,38 +23,42 @@ npm run assets   # régénère og-image.png et le CV provisoire (nécessite Play
 
 ## Ce qui est en place
 
-| Demande du brief | Implémentation |
-|---|---|
-| Switch FR/EN façon iOS | Un seul curseur jaune qui glisse, puis ouvre la page équivalente dans l'autre langue (URL dédiées + `hreflang`) |
-| Soulignement de la nav | Bleu sur fond clair, jaune sur fond sombre : l'en-tête détecte la section qu'il survole (`data-theme`) |
-| Animations au scroll | `IntersectionObserver` : fondu, translation et flou, rejoués **à chaque** entrée dans l'écran |
-| Menu mobile | Plein écran, cercle qui se déploie depuis le hamburger (`clip-path`) ; se ferme avec Échap |
-| Bouton « Me contacter » | Effet magnétique qui suit le curseur (désactivé sur écran tactile) |
-| Accroche animée | Mots qui défilent façon Magic UI « Word Rotate » |
-| Expérience | Timeline en accordéon, un seul élément ouvert à la fois |
-| À propos | Blobs, verre dépoli, alternance clair/sombre, eyebrows numérotés 01 à 04 ; panneaux Art/Sport/Voyage en accordéon au survol (titres verticaux), empilés sur mobile ; album photo avec retournement 3D, flèches, points et bouton « Recommencer » |
-| 404 | Le « 0 » rebondit comme une balle (chute accélérée, écrasement à l'impact, ombre qui suit) |
-| Remonter en haut | Apparition avec rebond après 600 px de scroll |
-| Cookies et suivi | Bandeau de consentement ; le script de suivi (Plausible ou GA4) n'est chargé qu'après « Accepter » |
-| SEO et partage | `og:image` 1200×630, `sitemap.xml`, `robots.txt`, balises canoniques |
-| Accessibilité | Lien d'évitement, focus visibles, `aria-expanded`, respect de `prefers-reduced-motion` |
+Les pages **Accueil, À propos et Expérience** reprennent la maquette validée (structure, CSS, textes). Les pages **Projets, Contact, Art, Sport, Voyage et 404** sont construites dans le même style.
 
-Effets inspirés de Magic UI, recodés en CSS/JS natif : Blur Fade, Word Rotate, Border Beam (portrait), Shine Border (cartes projets), Number Ticker (chiffres clés), Dot Pattern.
+| Élément | Implémentation |
+|---|---|
+| Switch FR/EN | Interrupteur rond à curseur jaune. Il glisse puis ouvre la même page dans l'autre langue (URL dédiées, `hreflang`) |
+| Soulignement de la nav | Bleu sur fond clair, jaune sur fond sombre (`navlink--on-light` / `navlink--on-dark`) |
+| Animations au scroll | `.reveal` rejoué à chaque entrée dans l'écran (`IntersectionObserver`) |
+| Menu mobile | Plein écran, cercle qui se déploie depuis le hamburger |
+| Expérience | Accordéon : un seul élément ouvert à la fois |
+| À propos | Panneaux au survol (titres verticaux), empilés sur mobile ; album avec flèches ←/→, points cliquables et bouton ↺ |
+| Extras | Bouton « remonter en haut » (rebond), bandeau cookies, suivi d'audience après consentement, `og:image`, sitemap, 404 avec « 0 » qui rebondit |
+
+### Objets 3D (thème digital)
+
+Tout est en code maison, sans bibliothèque externe.
+
+- **Globe 3D interactif** (accueil, section Expérience) : sphère de points, 12 pays reliés à Pont-à-Mousson par des arcs animés. On peut le faire tourner à la souris ou au doigt.
+- **Icônes 3D extrudées** : curseur, cœur « like », @, bouton play, palette, avirons, avion en papier. Elles flottent dans le hero et suivent la souris.
+- **Sol en grille 3D** animé dans les en-têtes sombres, **anneaux gyroscopiques** derrière « Ma vision du travail », icônes **en orbite** autour de la photo « À propos ».
+- **Page Projets** : sphère 360° pour 360ID, titre en relief pour PUNCH, éclipse animée pour Éclipse.
+- **Cartes inclinables** : elles s'inclinent en 3D avec un reflet lumineux au survol.
+- **Modèle 3D réel (optionnel)** : télécharger un `.glb` gratuit (par ex. un ordinateur portable sur [Poly Pizza](https://poly.pizza/search/Smartphone) ou [Sketchfab](https://sketchfab.com/3d-models/low-poly-laptop-a9c2e21a123542fdaf8edfdac4c22869), en licence CC0), le déposer dans `site/assets/3d/` et renseigner `SITE.model3d`. Il remplace alors les icônes flottantes du hero, affiché avec `<model-viewer>` de Google.
 
 ## À compléter par Léa
 
 Sur le site, les textes provisoires apparaissent **surlignés en jaune entre [crochets]**.
 
-1. **Recommandations** : coller le texte exact des recommandations de Catherine Ficara et Lucas Dorval (`TESTIMONIALS`).
+1. **LinkedIn** : `SITE.linkedin` dans `build/content.mjs`. Le lien est désactivé tant qu'il vaut `#`.
 2. **Projets 360ID et PUNCH** : catégorie, accroche, description, rôle. Pour Éclipse : détails de l'événement.
-3. **Sous-pages Art, Sport, Voyage** : le paragraphe « Pourquoi ça compte pour moi ».
-4. **Légendes de l'album photo** (`ABOUT.album`).
-5. **Coordonnées** : `SITE.email` (actuellement `contact@lea-datin.com`) et `SITE.linkedin` (URL à vérifier).
-6. **Photos** : remplacer les fichiers de `site/assets/img/` (portrait, about-portrait, album-1 à 5, art/sport/travel-1 à 4, *-cover, project-*, logo-art/sport/travel). Pour passer en JPG ou WebP, changer les extensions dans `build/build.mjs`.
-7. **CV** : remplacer `site/assets/cv/CV-Lea-Datin.pdf` par le vrai CV. Le PDF actuel est une version provisoire générée à partir du brief.
-8. **Police Cortado** : elle n'existe pas sur Google Fonts. Déposer `Cortado.woff2` dans `site/assets/fonts/`. En attendant, c'est Caveat qui s'affiche.
-9. **Mesure d'audience** : renseigner `SITE.analytics.id` (domaine Plausible, ou `provider: 'ga4'` avec l'identifiant `G-…`).
-10. Relancer `npm run build`. Relancer aussi `npm run assets` sur une machine avec accès internet, pour que l'image de partage utilise les vraies polices.
+3. **Sous-pages Art, Sport, Voyage** : le paragraphe « Mon histoire ».
+4. **Globe** : remplacer les 12 coordonnées de `GLOBE.points` par les 12 pays réels de PAM Line (aucun nom n'est affiché).
+5. **Photos** : portrait de l'accueil et de « À propos », album, galeries `site/assets/img/{art,sport,travel}-1…4.svg`.
+6. **CV** : remplacer `site/assets/cv/CV-Lea-Datin.pdf` (version provisoire générée à partir du contenu du site).
+7. **Police Cortado** : si Google Fonts ne la fournit pas, déposer `Cortado.woff2` dans `site/assets/fonts/`. En attendant, c'est Caveat qui s'affiche.
+8. **Mesure d'audience** : `SITE.analytics.id`.
+9. Relancer `npm run build`.
 
 ## Mise en ligne sur WordPress.com
 

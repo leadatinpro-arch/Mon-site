@@ -1,15 +1,29 @@
 // Contenu bilingue du site. Chaque texte est une paire { fr, en }.
-// Les éléments entre [crochets] sont à compléter par Léa (voir README).
+// Les textes FR des pages Accueil, À propos et Expérience reprennent la version validée par Léa.
+// Les éléments entre [crochets] sont à compléter (ils apparaissent surlignés sur le site).
 
 export const SITE = {
   baseUrl: 'https://lea-datin.com',
   name: 'Léa Datin',
-  email: 'contact@lea-datin.com', // [à remplacer par l'adresse de contact réelle]
-  linkedin: 'https://www.linkedin.com/in/lea-datin/', // [à vérifier : URL LinkedIn réelle]
+  email: 'lea.datinpro@gmail.com',
+  linkedin: '#', // [à compléter : URL du profil LinkedIn]
   cv: '/assets/cv/CV-Lea-Datin.pdf',
-  // Identifiant de mesure d'audience (GA4 « G-XXXX » ou domaine Plausible).
-  // Laisser vide = aucun script de suivi chargé.
+  // Mesure d'audience, chargée seulement après consentement.
+  // provider : 'plausible' (id = domaine) ou 'ga4' (id = G-XXXX). id vide = aucun suivi.
   analytics: { provider: 'plausible', id: '' },
+  // Modèle 3D optionnel (.glb) affiché dans le hero de l'accueil via <model-viewer>.
+  // Ex. : '/assets/3d/laptop.glb' après l'avoir téléchargé (Poly Pizza, Sketchfab CC0…). Vide = objets 3D maison.
+  model3d: '',
+};
+
+// 12 points lumineux du globe (section Expérience de l'accueil). Aucun nom n'est affiché sur le site.
+// [à vérifier : remplacer par les 12 pays réels du projet PAM Line]
+export const GLOBE = {
+  hub: [48.90, 6.06], // Pont-à-Mousson
+  points: [
+    [48.86, 2.35], [40.42, -3.70], [38.72, -9.14], [41.90, 12.50], [52.52, 13.40], [51.51, -0.13],
+    [50.85, 4.35], [52.37, 4.90], [46.95, 7.45], [48.21, 16.37], [52.23, 21.01], [50.08, 14.44],
+  ],
 };
 
 export const ROUTES = {
@@ -35,19 +49,12 @@ export const UI = {
   },
   navLabel: { fr: 'Navigation principale', en: 'Main navigation' },
   skip: { fr: 'Aller au contenu', en: 'Skip to content' },
-  langSwitch: { fr: 'Switch to English', en: 'Passer en français' },
+  langSwitch: { fr: 'Changer de langue : English', en: 'Switch language: Français' },
   menuOpen: { fr: 'Ouvrir le menu', en: 'Open menu' },
   menuClose: { fr: 'Fermer le menu', en: 'Close menu' },
   cvDownload: { fr: 'Télécharger mon CV', en: 'Download my resume' },
-  contactMe: { fr: 'Me contacter', en: 'Get in touch' },
   backToTop: { fr: 'Remonter en haut de page', en: 'Back to top' },
-  footerTag: {
-    fr: 'Marketing digital, gestion de projet & bonne humeur.',
-    en: 'Digital marketing, project management & good vibes.',
-  },
-  footerWrite: { fr: 'Écris-moi', en: 'Write to me' },
-  rights: { fr: 'Tous droits réservés.', en: 'All rights reserved.' },
-  cookieSettings: { fr: 'Gérer les cookies', en: 'Cookie settings' },
+  cookieSettings: { fr: 'Cookies', en: 'Cookies' },
   cookie: {
     text: {
       fr: 'Ce site utilise un outil de mesure d’audience pour savoir quelles pages sont consultées. Rien n’est activé sans ton accord.',
@@ -56,70 +63,87 @@ export const UI = {
     accept: { fr: 'Accepter', en: 'Accept' },
     refuse: { fr: 'Refuser', en: 'Decline' },
   },
-  todo: { fr: 'À compléter', en: 'Coming soon' },
+  more: { fr: 'En savoir plus →', en: 'Learn more →' },
+  projectsTeaser: {
+    title: { fr: '360ID, PUNCH, Éclipse...', en: '360ID, PUNCH, Éclipse...' },
+    text: { fr: 'Découvre ce que je construis en dehors du poste.', en: 'Discover what I build outside of my job.' },
+    cta: { fr: 'Voir mes projets →', en: 'See my projects →' },
+  },
 };
 
 export const PASSIONS = {
   art: {
     route: 'art',
-    icon: 'palette',
-    color: 'yellow',
     title: { fr: 'Art', en: 'Art' },
-    teaser: {
-      fr: 'Là où je laisse parler ma créativité et où je cultive mon regard.',
-      en: 'Where I let my creativity speak and keep training my eye.',
+    script: { fr: 'L’art', en: 'Art' },
+    card: { fr: 'Ce qui nourrit mon regard et ma créativité au quotidien.', en: 'What feeds my eye and my creativity every day.' },
+    panel: {
+      fr: 'Musique, dessin, sculpture, cinéma. Une source d’inspiration nourrie au fil des expositions.',
+      en: 'Music, drawing, sculpture, cinema. A source of inspiration fed by every exhibition.',
     },
-    intro: {
-      fr: 'L’art est mon espace de liberté : un endroit où j’expérimente, où je regarde autrement et où je nourris l’œil que je mets ensuite au service de mes projets marketing.',
-      en: 'Art is my space of freedom: a place to experiment, to look at things differently and to sharpen the eye I then bring to my marketing projects.',
+    gradient: 'linear-gradient(160deg, var(--blue-light), var(--blue))',
+    border: 'var(--yellow)',
+    heroTitle: { fr: 'L’art, <script>mon terrain de jeu.</script>', en: 'Art, <script>my playground.</script>' },
+    heroText: {
+      fr: 'Musique, dessin, sculpture, cinéma : l’art nourrit mon regard et ma créativité au quotidien.',
+      en: 'Music, drawing, sculpture, cinema: art feeds my eye and my creativity every day.',
     },
-    why: {
-      fr: '[Raconte ici ta pratique : ce que tu crées, depuis quand, les artistes ou mouvements qui t’inspirent.]',
-      en: '[Tell your practice here: what you create, since when, the artists or movements that inspire you.]',
+    tags: [{ fr: 'Musique', en: 'Music' }, { fr: 'Dessin', en: 'Drawing' }, { fr: 'Sculpture', en: 'Sculpture' }, { fr: 'Cinéma', en: 'Cinema' }, { fr: 'Expositions', en: 'Exhibitions' }],
+    story: {
+      fr: 'L’art est une source d’inspiration que je nourris au fil des expositions. [Raconte ici une exposition, un film ou une œuvre qui t’a marquée, et ta propre pratique.]',
+      en: 'Art is a source of inspiration I keep feeding through exhibitions. [Tell here about an exhibition, a film or a piece that moved you, and your own practice.]',
     },
     work: {
-      fr: 'Composer une image, choisir une couleur, raconter quelque chose sans mots : ce sont les mêmes réflexes que je mobilise pour créer un visuel de campagne ou une page web qui parle vraiment à son public.',
+      fr: 'Composer une image, choisir une couleur, raconter une histoire sans mots : ce sont les mêmes réflexes que je mobilise pour créer un visuel de campagne ou une page web qui parle vraiment à son public.',
       en: 'Composing an image, picking a colour, telling a story without words: these are the same reflexes I use to design a campaign visual or a web page that truly speaks to its audience.',
     },
   },
   sport: {
     route: 'sport',
-    icon: 'sport',
-    color: 'blue',
     title: { fr: 'Sport', en: 'Sport' },
-    teaser: {
-      fr: 'Mon énergie, mon goût de l’effort et de l’esprit d’équipe.',
-      en: 'My energy, my taste for effort and team spirit.',
+    script: { fr: 'Le sport', en: 'Sport' },
+    card: { fr: 'L’aviron et la discipline qui viennent avec.', en: 'Rowing, and the discipline that comes with it.' },
+    panel: {
+      fr: 'L’aviron : rigueur, persévérance, gestion de la pression. Un sport qui a forgé mon esprit d’équipe.',
+      en: 'Rowing: rigour, perseverance, handling pressure. A sport that shaped my team spirit.',
     },
-    intro: {
-      fr: 'Le sport, c’est ce qui me recharge. Il m’apprend la régularité, le dépassement de soi et le plaisir d’avancer ensemble vers un objectif commun.',
-      en: 'Sport is what recharges me. It teaches me consistency, pushing my limits and the joy of moving together towards a shared goal.',
+    gradient: 'linear-gradient(160deg, var(--blue), var(--navy))',
+    border: 'var(--blue)',
+    heroTitle: { fr: 'L’aviron, <script>ramer ensemble.</script>', en: 'Rowing, <script>pulling together.</script>' },
+    heroText: {
+      fr: 'Rigueur, persévérance, gestion de la pression : un sport qui a forgé mon esprit d’équipe.',
+      en: 'Rigour, perseverance, handling pressure: a sport that shaped my team spirit.',
     },
-    why: {
-      fr: '[Raconte ici tes sports : lesquels, à quel rythme, en club ou en solo, un souvenir marquant.]',
-      en: '[Tell your sports here: which ones, how often, in a club or solo, a memorable moment.]',
+    tags: [{ fr: 'Aviron', en: 'Rowing' }, { fr: 'Rigueur', en: 'Rigour' }, { fr: 'Persévérance', en: 'Perseverance' }, { fr: 'Esprit d’équipe', en: 'Team spirit' }],
+    story: {
+      fr: 'En aviron, un bateau n’avance vite que si tout l’équipage rame au même rythme. [Raconte ici ton parcours : club, années de pratique, compétitions, un souvenir marquant.]',
+      en: 'In rowing, a boat only goes fast when the whole crew pulls in rhythm. [Tell your story here: club, years rowing, competitions, a memorable moment.]',
     },
     work: {
-      fr: 'Tenir un planning, garder le rythme sur la durée, encourager les autres quand ça coince : le sport m’a donné des habitudes que je retrouve chaque semaine dans la gestion de projet.',
-      en: 'Sticking to a schedule, keeping the pace over time, cheering others on when things get tough: sport gave me habits I use every week in project management.',
+      fr: 'Tenir un planning, garder le rythme sur la durée, rester lucide sous pression et avancer ensemble vers un objectif commun : l’aviron m’a donné des réflexes que je retrouve chaque semaine en gestion de projet.',
+      en: 'Sticking to a plan, keeping the pace over time, staying clear-headed under pressure and moving together towards a shared goal: rowing gave me reflexes I use every week in project management.',
     },
   },
   travel: {
     route: 'travel',
-    icon: 'plane',
-    color: 'light',
     title: { fr: 'Voyage', en: 'Travel' },
-    teaser: {
-      fr: 'Découvrir de nouvelles cultures et de nouvelles perspectives.',
-      en: 'Discovering new cultures and new perspectives.',
+    script: { fr: 'Le voyage', en: 'Travel' },
+    card: { fr: 'Albanie, Zagreb, Majorque... et la suite.', en: 'Albania, Zagreb, Mallorca... and what comes next.' },
+    panel: {
+      fr: 'Albanie, Croatie, Majorque. Découvrir des cultures différentes, une façon de rester ouverte au monde.',
+      en: 'Albania, Croatia, Mallorca. Discovering different cultures, a way to stay open to the world.',
     },
-    intro: {
-      fr: 'Voyager, c’est accepter d’être surprise. Chaque destination m’ouvre à d’autres façons de vivre, de travailler et de voir le monde.',
-      en: 'Travelling means accepting to be surprised. Every destination opens me up to other ways of living, working and seeing the world.',
+    gradient: 'linear-gradient(160deg, var(--navy), var(--navy-soft))',
+    border: 'var(--navy)',
+    heroTitle: { fr: 'Le voyage, <script>rester ouverte.</script>', en: 'Travel, <script>staying open.</script>' },
+    heroText: {
+      fr: 'Albanie, Croatie, Majorque… Découvrir des cultures différentes, une façon de rester ouverte au monde.',
+      en: 'Albania, Croatia, Mallorca… Discovering different cultures, a way to stay open to the world.',
     },
-    why: {
-      fr: '[Raconte ici tes voyages : destinations marquantes, façon de voyager, prochaine destination rêvée.]',
-      en: '[Tell your travels here: memorable destinations, the way you travel, your next dream destination.]',
+    tags: [{ fr: 'Albanie', en: 'Albania' }, { fr: 'Zagreb', en: 'Zagreb' }, { fr: 'Majorque', en: 'Mallorca' }, { fr: 'Et la suite…', en: 'What’s next…' }],
+    story: {
+      fr: 'Chaque destination m’ouvre à d’autres façons de vivre, de travailler et de voir le monde. [Raconte ici un moment fort de l’un de ces voyages, et ta prochaine destination rêvée.]',
+      en: 'Every destination opens me up to other ways of living, working and seeing the world. [Tell here a highlight from one of these trips, and your next dream destination.]',
     },
     work: {
       fr: 'Coordonner un projet avec 12 pays européens demande curiosité et ouverture : comprendre les habitudes de chacun, adapter son discours, trouver un terrain d’entente. Le voyage m’y a préparée.',
@@ -129,59 +153,41 @@ export const PASSIONS = {
 };
 
 export const HOME = {
-  metaTitle: {
-    fr: 'Léa Datin — Cheffe de projet marketing digital',
-    en: 'Léa Datin — Digital Marketing Project Manager',
-  },
+  metaTitle: { fr: 'Léa Datin — Cheffe de projet marketing digital', en: 'Léa Datin — Digital Marketing Project Manager' },
   metaDesc: {
-    fr: 'Portfolio de Léa Datin, diplômée du PGE de l’ICN Business School. Deux ans de gestion de projet marketing digital chez Saint-Gobain PAM, sur 12 pays européens.',
-    en: 'Portfolio of Léa Datin, ICN Business School Master’s graduate. Two years managing digital marketing projects at Saint-Gobain PAM across 12 European countries.',
+    fr: 'Léa Datin, jeune diplômée de l’ICN Business School : 4 ans d’alternance, dont 2 ans comme cheffe de projet marketing digital sur 12 pays européens chez Saint-Gobain PAM.',
+    en: 'Léa Datin, ICN Business School graduate: 4 years of work-study, including 2 years as a digital marketing project manager across 12 European countries at Saint-Gobain PAM.',
   },
-  hello: { fr: 'Bonjour, moi c’est', en: 'Hi, I’m' },
-  rolePrefix: { fr: 'J’aime', en: 'I love' },
-  roles: {
-    fr: ['le marketing digital', 'piloter des projets', 'fédérer des équipes internationales', 'créer du contenu'],
-    en: ['digital marketing', 'leading projects', 'bringing international teams together', 'creating content'],
-  },
+  available: { fr: 'Disponible dès novembre 2026', en: 'Available from November 2026' },
+  title: { fr: 'Le marketing qui <script>bouge</script> les lignes.', en: 'Marketing that <script>moves</script> the needle.' },
   lead: {
-    fr: 'Jeune diplômée de l’ICN Business School, j’ai passé deux ans à piloter la refonte d’un site web déployé dans 12 pays européens chez Saint-Gobain PAM. Je cherche aujourd’hui mon prochain terrain de jeu.',
-    en: 'A recent ICN Business School graduate, I spent two years leading the redesign of a website rolled out across 12 European countries at Saint-Gobain PAM. I’m now looking for my next playground.',
+    fr: 'Jeune diplômée avec 4 ans d’expérience professionnelle en alternance, dont 2 ans comme cheffe de projet marketing digital sur 12 pays européens.',
+    en: 'Recent graduate with 4 years of work-study experience, including 2 years as a digital marketing project manager across 12 European countries.',
   },
-  stats: [
-    { value: 12, label: { fr: 'pays coordonnés', en: 'countries coordinated' } },
-    { value: 3, label: { fr: 'alternances', en: 'work-study roles' } },
-    { value: 3, label: { fr: 'projets perso', en: 'side projects' } },
-  ],
+  contact: { fr: 'Me contacter', en: 'Get in touch' },
+  journey: { fr: 'Voir mon parcours', en: 'See my journey' },
+  photo: { fr: 'Photo — ta photo détourée ou en pied', en: 'Photo — cut-out or full-length portrait' },
   whoEyebrow: { fr: 'Qui je suis', en: 'Who I am' },
-  whoTitle: {
-    fr: 'Dynamique, sociable et curieuse.',
-    en: 'Energetic, sociable and curious.',
-  },
-  whoText: {
-    fr: 'J’aime créer du lien, découvrir de nouvelles perspectives et travailler dans la bonne humeur. Trois passions nourrissent tout ce que je fais :',
-    en: 'I love connecting people, discovering new perspectives and working in a good mood. Three passions feed everything I do:',
-  },
-  whoMore: { fr: 'En savoir plus sur moi', en: 'More about me' },
+  whoTitle: { fr: 'Curieuse, mobile, et toujours prête à relever un nouveau défi.', en: 'Curious, mobile, and always ready for a new challenge.' },
   expEyebrow: { fr: 'Expérience', en: 'Experience' },
-  expTitle: {
-    fr: 'Deux ans aux commandes de PAM Line.',
-    en: 'Two years at the helm of PAM Line.',
-  },
-  expText: {
-    fr: 'Chez Saint-Gobain PAM, j’ai piloté la refonte stratégique d’un site multilingue : migration de Drupal 7 vers Drupal 10, coordination entre 12 pays, l’équipe centrale et les développeurs, workshops et formation des équipes locales.',
-    en: 'At Saint-Gobain PAM, I led the strategic redesign of a multilingual website: migrating from Drupal 7 to Drupal 10, coordinating 12 countries, the central team and developers, running workshops and training local teams.',
-  },
-  expCta: { fr: 'Voir tout mon parcours', en: 'See my full journey' },
-  expStats: [
-    { value: 12, label: { fr: 'pays', en: 'countries' } },
-    { value: 10, prefix: 'D7 → D', label: { fr: 'migration Drupal', en: 'Drupal migration' } },
-    { value: 2, label: { fr: 'ans de pilotage', en: 'years leading' } },
+  expTitle: { fr: 'Deux ans à piloter du digital sur 12 pays.', en: 'Two years leading digital projects across 12 countries.' },
+  expAll: { fr: 'Tout le parcours →', en: 'Full journey →' },
+  globeHint: { fr: 'Fais tourner le globe', en: 'Spin the globe' },
+  expCards: [
+    {
+      date: { fr: '2024 — 2026', en: '2024 — 2026' },
+      title: { fr: 'Cheffe de projet marketing digital', en: 'Digital Marketing Project Manager' },
+      text: { fr: 'Saint-Gobain PAM · Plateforme PAM Line sur 12 pays européens.', en: 'Saint-Gobain PAM · PAM Line platform across 12 European countries.' },
+    },
+    {
+      date: { fr: '2022 — 2024', en: '2022 — 2024' },
+      title: { fr: 'Alternances', en: 'Work-study roles' },
+      text: { fr: 'Cora (retail) et Jacques Laveine Immo (community management).', en: 'Cora (retail) and Jacques Laveine Immo (community management).' },
+    },
   ],
-  projEyebrow: { fr: 'Projets', en: 'Projects' },
-  projTitle: { fr: 'Ce que je construis à côté.', en: 'What I build on the side.' },
-  projCta: { fr: 'Découvrir mes projets', en: 'Discover my projects' },
-  testiEyebrow: { fr: 'Ils parlent de moi', en: 'Kind words' },
-  testiTitle: { fr: 'Recommandations', en: 'Recommendations' },
+  moreTitle: { fr: 'Envie d’en voir plus ?', en: 'Want to see more?' },
+  recoEyebrow: { fr: 'Ils en parlent mieux que moi', en: 'They say it better than I do' },
+  recoTitle: { fr: 'Recommandations', en: 'Recommendations' },
 };
 
 export const TESTIMONIALS = [
@@ -189,220 +195,166 @@ export const TESTIMONIALS = [
     name: 'Catherine Ficara',
     role: { fr: 'Digital Content Manager, Saint-Gobain PAM', en: 'Digital Content Manager, Saint-Gobain PAM' },
     quote: {
-      fr: '[Coller ici le texte exact de la recommandation LinkedIn de Catherine Ficara.]',
-      en: '[Paste the exact text of Catherine Ficara’s LinkedIn recommendation here.]',
+      fr: 'Autonome, rigoureuse et dotée d’un excellent sens de l’organisation. Léa a su s’adapter et s’imposer comme un membre à part entière de notre équipe sur un projet multilingue couvrant 12 pays européens.',
+      en: 'Autonomous, rigorous and highly organised. Léa adapted quickly and became a full member of our team on a multilingual project covering 12 European countries.',
     },
   },
   {
     name: 'Lucas Dorval',
     role: { fr: 'Coordinateur, Entreprendre Pour Apprendre', en: 'Coordinator, Entreprendre Pour Apprendre' },
     quote: {
-      fr: '[Coller ici le texte exact de la recommandation LinkedIn de Lucas Dorval.]',
-      en: '[Paste the exact text of Lucas Dorval’s LinkedIn recommendation here.]',
+      fr: 'Dynamique, fiable et d’une implication sans faille. Un véritable atout pour l’entreprise qui lui fera confiance.',
+      en: 'Energetic, reliable and unfailingly committed. A real asset for the company that puts its trust in her.',
     },
   },
 ];
+export const TESTI_NOTE = {
+  fr: '',
+  en: 'Translated from French.',
+};
 
 export const ABOUT = {
   metaTitle: { fr: 'À propos — Léa Datin', en: 'About — Léa Datin' },
   metaDesc: {
-    fr: 'Qui est Léa Datin : sa personnalité, sa vision du travail et ce qui l’inspire (art, sport, voyage).',
-    en: 'Who Léa Datin is: her personality, her vision of work and what inspires her (art, sport, travel).',
+    fr: 'Découvre la personnalité de Léa Datin, sa vision du travail et ce qui l’inspire : l’art, l’aviron et le voyage.',
+    en: 'Discover Léa Datin’s personality, her vision of work and what inspires her: art, rowing and travel.',
   },
-  heroEyebrow: { fr: 'À propos', en: 'About' },
-  heroTitle: { fr: 'Un peu plus sur moi', en: 'A bit more about me' },
-  heroScript: { fr: 'enchantée !', en: 'nice to meet you!' },
-  heroText: {
-    fr: 'Au-delà du CV, voici ce qui me fait avancer, la façon dont j’aime travailler et les passions qui me ressourcent.',
-    en: 'Beyond the resume, here is what drives me, how I like to work and the passions that recharge me.',
+  pill: { fr: '✦ À propos', en: '✦ About' },
+  title: { fr: 'Derrière le poste, <script>il y a moi.</script>', en: 'Behind the job title, <script>there’s me.</script>' },
+  lead: {
+    fr: 'Découvre ma personnalité, mes valeurs, et ce qui me motive au quotidien.',
+    en: 'Discover my personality, my values, and what drives me every day.',
   },
-  whoTitle: { fr: 'Qui je suis', en: 'Who I am' },
-  whoText: {
-    fr: 'Je suis quelqu’un de dynamique, sociable et curieuse. J’aime créer du lien avec les gens qui m’entourent et découvrir de nouvelles perspectives, que ce soit au travail ou en dehors. Je m’épanouis dans les environnements où règnent la bonne humeur et la créativité.',
-    en: 'I am energetic, sociable and curious. I love building connections with the people around me and discovering new perspectives, at work and beyond. I thrive in environments full of good mood and creativity.',
+  photo: { fr: 'Emplacement photo', en: 'Photo placeholder' },
+  whoEyebrow: { fr: '01 · Qui je suis', en: '01 · Who I am' },
+  who: {
+    fr: 'Je suis une personne <b>dynamique et sociable</b>, qui aime créer du lien et partager des moments avec les autres. J’adore rire, échanger et découvrir de nouvelles perspectives. Curieuse par nature, je m’intéresse à tout ce qui peut élargir mes horizons, que ce soit à travers des discussions, des lectures ou des expériences inédites. J’aime les environnements où règnent la <b>bonne humeur et la créativité</b>, et je crois que chaque rencontre est une opportunité d’apprendre quelque chose de nouveau.',
+    en: 'I am an <b>energetic and sociable</b> person who loves building connections and sharing moments with others. I love laughing, exchanging ideas and discovering new perspectives. Curious by nature, I’m interested in anything that can broaden my horizons, whether through conversations, reading or brand-new experiences. I thrive in environments full of <b>good mood and creativity</b>, and I believe every encounter is a chance to learn something new.',
   },
-  traits: [
-    { fr: 'Dynamique', en: 'Energetic' },
-    { fr: 'Sociable', en: 'Sociable' },
-    { fr: 'Curieuse', en: 'Curious' },
-  ],
-  visionTitle: { fr: 'Ma vision du travail', en: 'My vision of work' },
-  visionIntro: {
-    fr: 'Pour moi, un bon projet se construit avec les autres.',
-    en: 'To me, a good project is built with others.',
+  visionEyebrow: { fr: '02 · Ma vision du travail', en: '02 · My vision of work' },
+  visionTitle: {
+    fr: 'Un leadership basé sur <mark>l’écoute</mark>, la motivation et la confiance.',
+    en: 'Leadership built on <mark>listening</mark>, motivation and trust.',
   },
-  vision: [
-    {
-      title: { fr: 'Un leadership d’écoute', en: 'Listening-based leadership' },
-      text: {
-        fr: 'Je crois à un leadership basé sur l’écoute, la motivation et la confiance : on avance mieux quand chacun se sent entendu.',
-        en: 'I believe in leadership built on listening, motivation and trust: we move forward better when everyone feels heard.',
-      },
-    },
-    {
-      title: { fr: 'La diversité comme force', en: 'Diversity as a strength' },
-      text: {
-        fr: 'La diversité des idées est une force. Confronter les points de vue, c’est souvent là que naissent les meilleures solutions.',
-        en: 'Diversity of ideas is a strength. Comparing viewpoints is often where the best solutions are born.',
-      },
-    },
-    {
-      title: { fr: 'Organisé, mais spontané', en: 'Organised, yet spontaneous' },
-      text: {
-        fr: 'J’aime les projets bien organisés, qui laissent tout de même une place à la spontanéité et aux bonnes surprises.',
-        en: 'I like well-organised projects that still leave room for spontaneity and good surprises.',
-      },
-    },
-  ],
+  vision: {
+    fr: 'Mon objectif est de créer des environnements où chacun se sent impliqué et valorisé. Je suis convaincue que la diversité des idées est une force, et que la réussite d’un projet repose sur la capacité à travailler ensemble. J’aime les projets bien organisés, tout en laissant une place à la spontanéité et à la créativité.',
+    en: 'My goal is to create environments where everyone feels involved and valued. I’m convinced that diversity of ideas is a strength, and that a project’s success relies on the ability to work together. I like well-organised projects that still leave room for spontaneity and creativity.',
+  },
+  inspireEyebrow: { fr: '03 · À découvrir', en: '03 · To discover' },
   inspireTitle: { fr: 'Ce qui m’inspire', en: 'What inspires me' },
-  inspireText: {
-    fr: 'Trois univers qui me ressourcent et qui se retrouvent, d’une façon ou d’une autre, dans ma façon de travailler.',
-    en: 'Three worlds that recharge me and that show up, one way or another, in the way I work.',
-  },
-  discover: { fr: 'Découvrir', en: 'Discover' },
-  albumTitle: { fr: 'Album photo', en: 'Photo album' },
-  albumText: {
-    fr: 'Quelques moments choisis. Clique sur une photo ou utilise les flèches pour tourner les pages.',
-    en: 'A few hand-picked moments. Click a photo or use the arrows to turn the pages.',
-  },
+  albumEyebrow: { fr: 'En images', en: 'In pictures' },
+  albumTitle: { fr: 'Quelques instantanés', en: 'A few snapshots' },
   albumPrev: { fr: 'Photo précédente', en: 'Previous photo' },
   albumNext: { fr: 'Photo suivante', en: 'Next photo' },
-  albumReset: { fr: 'Recommencer', en: 'Start over' },
+  albumReset: { fr: 'Revenir à la première photo', en: 'Back to the first photo' },
   albumGoto: { fr: 'Aller à la photo', en: 'Go to photo' },
-  album: [
-    { fr: '[Légende photo 1]', en: '[Photo caption 1]' },
-    { fr: '[Légende photo 2]', en: '[Photo caption 2]' },
-    { fr: '[Légende photo 3]', en: '[Photo caption 3]' },
-    { fr: '[Légende photo 4]', en: '[Photo caption 4]' },
-    { fr: '[Légende photo 5]', en: '[Photo caption 5]' },
-  ],
 };
 
 export const PASSION_PAGE = {
-  back: { fr: 'Retour à « À propos »', en: 'Back to “About”' },
-  whyTitle: { fr: 'Pourquoi ça compte pour moi', en: 'Why it matters to me' },
-  workTitle: { fr: 'Ce que ça m’apporte au travail', en: 'What it brings to my work' },
-  galleryTitle: { fr: 'En images', en: 'In pictures' },
+  back: { fr: '← Retour à « À propos »', en: '← Back to “About”' },
+  storyEyebrow: { fr: '01 · Mon histoire', en: '01 · My story' },
+  workEyebrow: { fr: '02 · Ce que ça m’apporte au travail', en: '02 · What it brings to my work' },
+  galleryEyebrow: { fr: '03 · En images', en: '03 · In pictures' },
+  galleryTitle: { fr: 'Quelques souvenirs', en: 'A few memories' },
   others: { fr: 'Mes autres sources d’inspiration', en: 'My other sources of inspiration' },
-  metaDesc: {
-    fr: 'Léa Datin et sa passion : ',
-    en: 'Léa Datin and her passion: ',
-  },
+  metaDesc: { fr: 'Léa Datin et sa passion : ', en: 'Léa Datin and her passion: ' },
 };
 
 export const EXPERIENCE = {
   metaTitle: { fr: 'Expérience — Léa Datin', en: 'Experience — Léa Datin' },
   metaDesc: {
-    fr: 'Parcours académique et professionnel de Léa Datin : IUT Nancy Charlemagne, Carrefour, ICN Business School, Saint-Gobain PAM.',
-    en: 'Léa Datin’s academic and professional journey: IUT Nancy Charlemagne, Carrefour, ICN Business School, Saint-Gobain PAM.',
+    fr: 'Parcours de Léa Datin : IUT Nancy Charlemagne, Jacques Laveine Immobilier, Carrefour, ICN Business School et Saint-Gobain PAM (projet PAM Line, 12 pays).',
+    en: 'Léa Datin’s journey: IUT Nancy Charlemagne, Jacques Laveine Immobilier, Carrefour, ICN Business School and Saint-Gobain PAM (PAM Line project, 12 countries).',
   },
-  heroEyebrow: { fr: 'Expérience', en: 'Experience' },
-  heroTitle: { fr: 'Mon parcours', en: 'My journey' },
-  heroText: {
-    fr: 'Formations et alternances, dans l’ordre chronologique. Clique sur une étape pour la déplier.',
-    en: 'Studies and work-study placements, in chronological order. Click a step to expand it.',
+  eyebrow: { fr: 'Mon parcours', en: 'My journey' },
+  title: { fr: 'Études et expériences, <script>réunies.</script>', en: 'Studies and experience, <script>together.</script>' },
+  lead: {
+    fr: 'Découvre mes expériences clés, les projets que j’ai menés et les compétences que j’ai développées au fil des années.',
+    en: 'Discover my key experiences, the projects I’ve led and the skills I’ve built over the years.',
   },
   labels: {
-    context: { fr: 'Le contexte', en: 'Context' },
-    why: { fr: 'Pourquoi c’est important', en: 'Why it matters' },
-    resp: { fr: 'Responsabilités clés', en: 'Key responsibilities' },
-    school: { fr: 'Formation', en: 'Education' },
+    school: { fr: 'Études', en: 'Studies' },
     job: { fr: 'Alternance', en: 'Work-study' },
+    why: { fr: 'Pourquoi c’est important :', en: 'Why it matters:' },
+    resp: { fr: 'Responsabilités clés', en: 'Key responsibilities' },
   },
-  cta: { fr: 'Envie d’en parler ?', en: 'Want to talk about it?' },
+  ctaTitle: { fr: 'Envie d’en savoir plus ?', en: 'Want to know more?' },
+  ctaText: { fr: 'Retrouve le détail complet de mon parcours dans mon CV.', en: 'Find the full details of my journey in my resume.' },
   items: [
     {
-      kind: 'school',
+      kind: 'school', dark: false,
       org: 'IUT Nancy Charlemagne',
       title: { fr: 'BUT Techniques de commercialisation', en: 'Bachelor in Marketing & Sales (BUT TC)' },
-      date: { fr: '2021 – 2024', en: '2021 – 2024' },
-      summary: {
-        fr: 'Spécialisation marketing digital, entrepreneuriat et e-commerce.',
-        en: 'Specialisation in digital marketing, entrepreneurship and e-commerce.',
-      },
+      date: { fr: '2021 — 2024', en: '2021 — 2024' },
+      body: { fr: 'Spécialisation marketing digital, entrepreneuriat et e-commerce.', en: 'Specialisation in digital marketing, entrepreneurship and e-commerce.' },
     },
     {
-      kind: 'job',
+      kind: 'job', dark: true,
       org: 'Jacques Laveine Immobilier',
       title: { fr: 'Community Manager', en: 'Community Manager' },
-      date: { fr: 'Sept. – Déc. 2022', en: 'Sept. – Dec. 2022' },
-      summary: {
-        fr: 'Contenus réseaux sociaux pour une agence immobilière.',
-        en: 'Social media content for a real estate agency.',
-      },
+      date: { fr: 'Sept. 2022 — Déc. 2022', en: 'Sept. 2022 — Dec. 2022' },
       context: {
-        fr: 'Agence immobilière qui s’appuie sur les réseaux sociaux pour rester visible auprès de sa clientèle locale.',
-        en: 'A real estate agency relying on social media to stay visible to its local clientele.',
+        fr: 'Agence reconnue pour son expertise en vente et location de biens immobiliers. Travailler dans ce secteur m’a permis de développer mes compétences en communication digitale et création de contenu, dans un environnement où la visibilité en ligne est essentielle pour attirer et fidéliser les clients.',
+        en: 'An agency recognised for its expertise in property sales and rentals. Working in this sector helped me develop my digital communication and content creation skills, in an environment where online visibility is key to attracting and retaining clients.',
       },
       why: {
-        fr: 'Ma première expérience de communication digitale sur le terrain : produire des contenus réguliers pour une cible locale, en lien direct avec les équipes commerciales.',
-        en: 'My first hands-on digital communication experience: producing regular content for a local audience, working directly with the sales teams.',
+        fr: 'secteur concurrentiel nécessitant d’optimiser la présence digitale pour se démarquer. Rôle créatif et stratégique : création de contenus visuels et rédactionnels pour les réseaux sociaux. Impact direct : chaque publication influence la notoriété et la génération de leads.',
+        en: 'a competitive sector where digital presence must be optimised to stand out. A creative and strategic role: producing visual and written content for social media. Direct impact: every post influences brand awareness and lead generation.',
       },
       resp: [
-        { fr: 'Création de contenus visuels et rédactionnels pour Facebook et Instagram', en: 'Creating visual and written content for Facebook and Instagram' },
-        { fr: 'Animation des pages locales de l’agence', en: 'Running the agency’s local pages' },
-        { fr: 'Collaboration avec les équipes commerciales', en: 'Working closely with the sales teams' },
+        { fr: 'Création de contenus visuels et rédactionnels pour les réseaux sociaux (Facebook, Instagram)', en: 'Creating visual and written content for social media (Facebook, Instagram)' },
+        { fr: 'Suivi et animation des pages locales : planification des publications, suivi des interactions', en: 'Running local pages: scheduling posts, monitoring interactions' },
+        { fr: 'Collaboration avec les équipes commerciales pour mettre en avant les biens et services', en: 'Working with sales teams to showcase properties and services' },
       ],
     },
     {
-      kind: 'job',
-      org: 'Carrefour (ex-CORA)',
+      kind: 'job', dark: false,
+      org: 'Carrefour (anciennement CORA)',
       title: { fr: 'Chargée de marketing et communication', en: 'Marketing & Communication Officer' },
-      date: { fr: 'Avril 2023 – Août 2024', en: 'April 2023 – Aug. 2024' },
-      summary: {
-        fr: 'Campagnes, événements et supports en magasin.',
-        en: 'Campaigns, events and in-store materials.',
-      },
+      date: { fr: 'Avril 2023 — Août 2024', en: 'April 2023 — Aug. 2024' },
       context: {
-        fr: 'Grande enseigne de distribution, avec un magasin où le marketing se joue autant en rayon que sur les réseaux sociaux.',
-        en: 'A major retail chain, with a store where marketing happens as much on the shelves as on social media.',
+        fr: 'Grande enseigne de distribution qui accueille des milliers de clients chaque jour. Travailler dans cet environnement dynamique m’a permis de développer des compétences clés en marketing opérationnel, communication et gestion de projets événementiels, tout en apprenant à gérer des deadlines serrées et des actions à fort impact.',
+        en: 'A major retail chain welcoming thousands of customers every day. This fast-paced environment helped me build key skills in operational marketing, communication and event project management, while learning to handle tight deadlines and high-impact actions.',
       },
       why: {
-        fr: 'J’y ai appris à mener des campagnes de bout en bout, du print au digital, et à faire travailler ensemble des services aux priorités très différentes.',
-        en: 'I learned to run campaigns end to end, from print to digital, and to get departments with very different priorities working together.',
+        fr: 'environnement exigeant, forte affluence, diversité des publics, besoin d’actions rapides et efficaces. Rôle polyvalent : communication interne et externe, marketing digital, suivi logistique. Impact direct : chaque action influence la visibilité et l’expérience client en magasin.',
+        en: 'a demanding environment with heavy footfall, diverse audiences and a need for fast, effective action. A versatile role: internal and external communication, digital marketing, logistics follow-up. Direct impact: every action shapes in-store visibility and customer experience.',
       },
       resp: [
-        { fr: 'Gestion de campagnes marketing (affiches, PLV, réseaux sociaux)', en: 'Managing marketing campaigns (posters, POS materials, social media)' },
-        { fr: 'Organisation d’événements en magasin', en: 'Organising in-store events' },
-        { fr: 'Création de supports visuels', en: 'Designing visual materials' },
-        { fr: 'Animation des réseaux sociaux', en: 'Running social media accounts' },
-        { fr: 'Collaboration interservices', en: 'Cross-department collaboration' },
+        { fr: 'Gestion des campagnes marketing : conception et déploiement des actions promotionnelles (affiches, PLV, réseaux sociaux)', en: 'Managing marketing campaigns: designing and rolling out promotions (posters, POS, social media)' },
+        { fr: 'Organisation d’événements : coordination des animations en magasin, partenariats locaux, suivi logistique', en: 'Organising events: coordinating in-store activities, local partnerships, logistics' },
+        { fr: 'Création de supports visuels : flyers, affiches, présentations, contenus digitaux', en: 'Designing visual materials: flyers, posters, presentations, digital content' },
+        { fr: 'Animation des réseaux sociaux : planification des publications, rédaction des posts, suivi des performances', en: 'Running social media: scheduling, writing posts, tracking performance' },
+        { fr: 'Collaboration interservices avec les équipes commerciales et logistiques', en: 'Cross-department collaboration with sales and logistics teams' },
       ],
     },
     {
-      kind: 'school',
+      kind: 'school', dark: false,
       org: 'ICN Business School',
       title: { fr: 'Master Programme Grande École', en: 'Master in Management (Grande École)' },
-      date: { fr: '2024 – 2026', en: '2024 – 2026' },
-      summary: {
-        fr: 'Spécialisation Marketing & Innovation Produit.',
-        en: 'Specialisation in Marketing & Product Innovation.',
-      },
+      date: { fr: '2024 — 2026', en: '2024 — 2026' },
+      body: { fr: 'Spécialisation Marketing & Innovation Produit.', en: 'Specialisation in Marketing & Product Innovation.' },
     },
     {
-      kind: 'job',
+      kind: 'job', dark: true, open: true,
       org: 'Saint-Gobain PAM',
       title: { fr: 'Cheffe de projet marketing digital', en: 'Digital Marketing Project Manager' },
-      date: { fr: 'Sept. 2024 – Août 2026', en: 'Sept. 2024 – Aug. 2026' },
-      summary: {
-        fr: 'Pilotage du projet PAM Line : un site multilingue pour 12 pays.',
-        en: 'Leading the PAM Line project: a multilingual website for 12 countries.',
-      },
+      date: { fr: 'Sept. 2024 — Août 2026', en: 'Sept. 2024 — Aug. 2026' },
       context: {
-        fr: 'Refonte stratégique d’un site web multilingue déployé dans 12 pays. L’ancien site tournait sous Drupal 7, devenu obsolète, et son hébergement arrivait à échéance : il fallait migrer vers Drupal 10.',
-        en: 'Strategic redesign of a multilingual website rolled out in 12 countries. The old site ran on an outdated Drupal 7 and its hosting was about to expire: it had to be migrated to Drupal 10.',
+        fr: 'Saint-Gobain PAM est une entreprise spécialisée dans les solutions de canalisation en fonte ductile pour le transport de l’eau. Filiale du groupe Saint-Gobain, elle est leader mondial dans son secteur et dispose d’un rayonnement international. Le projet PAM Line est une refonte stratégique du site web multilingue pour 12 pays, visant à moderniser l’image de marque, harmoniser la communication digitale et améliorer l’expérience utilisateur.',
+        en: 'Saint-Gobain PAM specialises in ductile iron pipe solutions for water transport. A subsidiary of the Saint-Gobain group, it is a world leader in its field with an international reach. The PAM Line project is a strategic redesign of the multilingual website for 12 countries, aiming to modernise the brand image, harmonise digital communication and improve the user experience.',
       },
       why: {
-        fr: 'Un projet international à fort enjeu, où j’ai fait le lien entre les pays, l’équipe centrale et les développeurs, avec des délais imposés par la fin de l’hébergement.',
-        en: 'A high-stakes international project where I connected the countries, the central team and the developers, under deadlines set by the end of the hosting contract.',
+        fr: 'un site vieillissant (ancien site sur Drupal 7, obsolète et peu ergonomique), une urgence technique (hébergement arrivant à échéance en novembre 2025, migration vers Drupal 10 indispensable), et un enjeu stratégique (améliorer la visibilité internationale, centraliser les contenus, renforcer la cohérence de marque).',
+        en: 'an ageing website (the old site ran on an outdated, hard-to-use Drupal 7), a technical emergency (hosting expiring in November 2025, making the move to Drupal 10 essential), and a strategic stake (improving international visibility, centralising content, strengthening brand consistency).',
       },
       resp: [
-        { fr: 'Coordination internationale entre les pays, l’équipe centrale et les développeurs', en: 'International coordination between countries, the central team and developers' },
-        { fr: 'Organisation de workshops', en: 'Running workshops' },
-        { fr: 'Formation des équipes locales', en: 'Training local teams' },
-        { fr: 'Gestion de contenus via le back-office de plusieurs sites', en: 'Managing content through the back office of several sites' },
-        { fr: 'Suivi technique : remontée de bugs, validation de composants UI', en: 'Technical follow-up: bug reporting, UI component validation' },
-        { fr: 'Planification et reporting hebdomadaire', en: 'Planning and weekly reporting' },
+        { fr: 'Coordination internationale : interface entre les pays, l’équipe centrale et les développeurs', en: 'International coordination: the link between countries, the central team and developers' },
+        { fr: 'Organisation des workshops : analyse des besoins, définition des priorités', en: 'Running workshops: needs analysis, setting priorities' },
+        { fr: 'Formation des équipes locales : sessions en ligne, guides pratiques, support continu', en: 'Training local teams: online sessions, how-to guides, ongoing support' },
+        { fr: 'Gestion des contenus via back-office, contribution à deux autres sites', en: 'Managing content through the back office, contributing to two other sites' },
+        { fr: 'Suivi technique : remontée des bugs via tickets, validation des composants UI', en: 'Technical follow-up: reporting bugs via tickets, validating UI components' },
+        { fr: 'Planification et reporting : suivi des deadlines, mise à jour des plannings, reporting hebdomadaire', en: 'Planning and reporting: tracking deadlines, updating schedules, weekly reporting' },
       ],
     },
   ],
@@ -414,46 +366,34 @@ export const PROJECTS = {
     fr: 'Les projets personnels de Léa Datin : 360ID, PUNCH et Éclipse, un événement de musique électronique à Nancy.',
     en: 'Léa Datin’s side projects: 360ID, PUNCH and Éclipse, an electronic music event in Nancy.',
   },
-  heroEyebrow: { fr: 'Projets', en: 'Projects' },
-  heroTitle: { fr: 'Mes projets perso', en: 'My side projects' },
-  heroText: {
-    fr: 'Ce que je lance et fais grandir en dehors des cours et de l’entreprise.',
-    en: 'What I launch and grow outside of school and work.',
+  eyebrow: { fr: 'Projets perso', en: 'Side projects' },
+  title: { fr: 'Ce que je construis <script>en dehors du poste.</script>', en: 'What I build <script>outside of work.</script>' },
+  lead: {
+    fr: 'Trois projets lancés par envie, menés avec la même énergie qu’en entreprise. Survole les cartes, elles réagissent.',
+    en: 'Three projects started out of passion and run with the same energy as at work. Hover the cards, they react.',
   },
   roleLabel: { fr: 'Mon rôle', en: 'My role' },
   items: [
     {
-      id: '360id',
-      name: '360ID',
+      id: '360id', name: '360ID', object: 'ring',
       tag: { fr: '[Catégorie]', en: '[Category]' },
       pitch: { fr: '[Accroche du projet en une phrase.]', en: '[One-sentence project pitch.]' },
-      text: {
-        fr: '[Décris 360ID : le problème, l’idée, ce qui a été réalisé.]',
-        en: '[Describe 360ID: the problem, the idea, what has been achieved.]',
-      },
-      role: { fr: '[Ton rôle dans le projet]', en: '[Your role in the project]' },
+      text: { fr: '[Décris 360ID : le problème, l’idée, ce qui a été réalisé.]', en: '[Describe 360ID: the problem, the idea, what has been achieved.]' },
+      role: { fr: '[Ton rôle]', en: '[Your role]' },
     },
     {
-      id: 'punch',
-      name: 'PUNCH',
+      id: 'punch', name: 'PUNCH', object: 'type',
       tag: { fr: '[Catégorie]', en: '[Category]' },
       pitch: { fr: '[Accroche du projet en une phrase.]', en: '[One-sentence project pitch.]' },
-      text: {
-        fr: '[Décris PUNCH : le problème, l’idée, ce qui a été réalisé.]',
-        en: '[Describe PUNCH: the problem, the idea, what has been achieved.]',
-      },
-      role: { fr: '[Ton rôle dans le projet]', en: '[Your role in the project]' },
+      text: { fr: '[Décris PUNCH : le problème, l’idée, ce qui a été réalisé.]', en: '[Describe PUNCH: the problem, the idea, what has been achieved.]' },
+      role: { fr: '[Ton rôle]', en: '[Your role]' },
     },
     {
-      id: 'eclipse',
-      name: 'Éclipse',
+      id: 'eclipse', name: 'Éclipse', object: 'eclipse',
       tag: { fr: 'Événementiel · Musique électronique', en: 'Events · Electronic music' },
-      pitch: {
-        fr: 'Un événement de musique électronique à Nancy.',
-        en: 'An electronic music event in Nancy.',
-      },
+      pitch: { fr: 'Un événement de musique électronique à Nancy.', en: 'An electronic music event in Nancy.' },
       text: {
-        fr: 'J’organise Éclipse, un événement de musique électronique à Nancy. [Précise ici : première édition, lieu, public, artistes, chiffres clés.]',
+        fr: 'J’organise Éclipse, un événement de musique électronique à Nancy. [Précise : première édition, lieu, public, artistes, chiffres clés.]',
         en: 'I organise Éclipse, an electronic music event in Nancy. [Add details: first edition, venue, audience, artists, key figures.]',
       },
       role: { fr: 'Organisatrice', en: 'Organiser' },
@@ -463,16 +403,12 @@ export const PROJECTS = {
 
 export const CONTACT = {
   metaTitle: { fr: 'Contact — Léa Datin', en: 'Contact — Léa Datin' },
-  metaDesc: {
-    fr: 'Contacter Léa Datin : e-mail, LinkedIn et CV à télécharger.',
-    en: 'Contact Léa Datin: email, LinkedIn and downloadable resume.',
-  },
-  heroEyebrow: { fr: 'Contact', en: 'Contact' },
-  heroTitle: { fr: 'Parlons-en !', en: 'Let’s talk!' },
-  heroScript: { fr: 'à très vite', en: 'talk soon' },
-  heroText: {
-    fr: 'Une offre, une question, un projet ou juste envie d’échanger ? Je réponds avec plaisir.',
-    en: 'A job offer, a question, a project or just want to chat? I’ll be happy to reply.',
+  metaDesc: { fr: 'Contacter Léa Datin : e-mail, LinkedIn et CV à télécharger.', en: 'Contact Léa Datin: email, LinkedIn and downloadable resume.' },
+  pill: { fr: 'Disponible dès novembre 2026', en: 'Available from November 2026' },
+  title: { fr: 'Travaillons <script>ensemble.</script>', en: 'Let’s work <script>together.</script>' },
+  lead: {
+    fr: 'Une offre, une question ou un projet ? Écris-moi, je réponds avec plaisir.',
+    en: 'A job offer, a question or a project? Write to me, I’ll be happy to reply.',
   },
   cards: {
     email: { fr: 'E-mail', en: 'Email' },
@@ -488,10 +424,7 @@ export const CONTACT = {
     subject: { fr: 'Sujet', en: 'Subject' },
     message: { fr: 'Ton message', en: 'Your message' },
     send: { fr: 'Envoyer', en: 'Send' },
-    note: {
-      fr: 'Le bouton ouvre ta messagerie avec le message pré-rempli.',
-      en: 'The button opens your email app with the message pre-filled.',
-    },
+    note: { fr: 'Le bouton ouvre ta messagerie avec le message pré-rempli.', en: 'The button opens your email app with the message pre-filled.' },
   },
 };
 

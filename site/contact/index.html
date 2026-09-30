@@ -23,123 +23,111 @@
   <link rel="icon" href="../assets/img/favicon.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400;0,500;0,700;1,400&family=League+Spartan:wght@600;700;800&family=Caveat:wght@500;700&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@600;700;800&family=Arimo:wght@400;500;600;700&family=Caveat:wght@500;700&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cortado&display=swap">
   <link rel="stylesheet" href="../assets/css/style.css">
   <script>document.documentElement.classList.add('js');</script>
   <script src="../assets/js/main.js" defer data-analytics-provider="plausible" data-analytics-id=""></script>
+  
 </head>
 <body class="page-contact">
 <a class="skip-link" href="#main">Aller au contenu</a>
-<header class="site-header" data-header>
-  <div class="container site-header__inner">
-    <a class="logo" href="../index.html" aria-label="Léa Datin — Accueil">Léa <span>DATIN</span></a>
-    <nav class="main-nav" aria-label="Navigation principale">
-      <ul class="main-nav__list">
-    <li><a class="main-nav__link" href="../index.html">Accueil</a></li><li><a class="main-nav__link" href="../a-propos/index.html">À propos</a></li><li><a class="main-nav__link" href="../experience/index.html">Expérience</a></li><li><a class="main-nav__link" href="../projets/index.html">Projets</a></li>
-    <li><a class="main-nav__link main-nav__link--cv" href="../assets/cv/CV-Lea-Datin.pdf" download><svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v11M7 10l5 5 5-5M5 20h14"/></svg>CV</a></li>
-    <li><a class="main-nav__link" href="../contact/index.html" aria-current="page">Contact</a></li>
-  </ul>
-    </nav>
-    <div class="site-header__actions">
-      <a class="lang-switch" href="../en/contact/index.html" hreflang="en" data-lang-switch aria-label="Switch to English">
-    <span class="lang-switch__label" aria-hidden="true">FR</span>
-    <span class="lang-switch__label" aria-hidden="true">EN</span>
-    <span class="lang-switch__thumb" aria-hidden="true"></span>
-  </a>
-      <button class="burger" type="button" aria-expanded="false" aria-controls="mobile-menu"
-        data-burger data-label-open="Ouvrir le menu" data-label-close="Fermer le menu"
-        aria-label="Ouvrir le menu"><span></span><span></span><span></span></button>
+<header class="container site-header">
+  <nav class="nav" aria-label="Navigation principale">
+    <a class="nav__logo h2 nav__logo--outline" href="../index.html">Léa <span class="accent">DATIN</span></a>
+    <div class="nav__links">
+      <a class="navlink navlink--on-light" href="../index.html">Accueil</a>
+      <a class="navlink navlink--on-light" href="../a-propos/index.html">À propos</a>
+      <a class="navlink navlink--on-light" href="../experience/index.html">Expérience</a>
+      <a class="navlink navlink--on-light" href="../projets/index.html">Projets</a>
+      <a class="navlink navlink--on-light is-active" href="../contact/index.html" aria-current="page">Contact</a>
     </div>
+    <div class="nav__right">
+      <div class="lang-wrap" data-lang-switch data-target="../en/contact/index.html">
+    <a class="lang-side is-active" href="#" data-lang-side="FR" hreflang="fr">FR</a>
+    <button class="lang-switch" type="button" data-lang="FR" aria-label="Changer de langue : English"><span class="lang-knob"></span></button>
+    <a class="lang-side" href="../en/contact/index.html" data-lang-side="EN" hreflang="en">EN</a>
   </div>
-</header>
-<div class="mobile-menu" id="mobile-menu" data-mobile-menu aria-hidden="true" inert>
-  <nav class="mobile-menu__nav" aria-label="Navigation principale">
-    <ul class="mobile-menu__list">
-    <li><a class="mobile-menu__link" href="../index.html">Accueil</a></li><li><a class="mobile-menu__link" href="../a-propos/index.html">À propos</a></li><li><a class="mobile-menu__link" href="../experience/index.html">Expérience</a></li><li><a class="mobile-menu__link" href="../projets/index.html">Projets</a></li>
-    <li><a class="mobile-menu__link mobile-menu__link--cv" href="../assets/cv/CV-Lea-Datin.pdf" download><svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v11M7 10l5 5 5-5M5 20h14"/></svg>CV</a></li>
-    <li><a class="mobile-menu__link" href="../contact/index.html" aria-current="page">Contact</a></li>
-  </ul>
+      <a class="cta nav__cv" href="../assets/cv/CV-Lea-Datin.pdf" download>CV ↓</a>
+      <button class="burger" type="button" data-menu-toggle="mobileMenu" aria-controls="mobileMenu" aria-expanded="false" aria-label="Ouvrir le menu">
+        <span class="burger-line"></span><span class="burger-line"></span><span class="burger-line"></span>
+      </button>
+    </div>
   </nav>
-  <div class="mobile-menu__foot">
-    <a href="mailto:contact@lea-datin.com"><svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="3"/><path d="m4 7 8 6 8-6"/></svg>contact@lea-datin.com</a>
-    <a href="https://www.linkedin.com/in/lea-datin/" target="_blank" rel="noopener"><svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="4"/><path d="M8 10v7M8 7v.01M12 17v-4a2 2 0 0 1 4 0v4M12 10v7"/></svg>LinkedIn</a>
-  </div>
+</header>
+<div id="mobileMenu" class="menu-overlay" aria-hidden="true" inert>
+  <a href="../index.html" data-menu-close>Accueil</a>
+  <a href="../a-propos/index.html" data-menu-close>À propos</a>
+  <a href="../experience/index.html" data-menu-close>Expérience</a>
+  <a href="../projets/index.html" data-menu-close>Projets</a>
+  <a href="../assets/cv/CV-Lea-Datin.pdf" download data-menu-close>CV ↓</a>
+  <a href="../contact/index.html" data-menu-close aria-current="page">Contact</a>
+  <div class="menu-overlay__lang"><div class="lang-wrap lang-wrap--on-dark" data-lang-switch data-target="../en/contact/index.html">
+    <a class="lang-side is-active" href="#" data-lang-side="FR" hreflang="fr">FR</a>
+    <button class="lang-switch" type="button" data-lang="FR" aria-label="Changer de langue : English"><span class="lang-knob"></span></button>
+    <a class="lang-side" href="../en/contact/index.html" data-lang-side="EN" hreflang="en">EN</a>
+  </div></div>
+  <button class="close-btn" type="button" data-menu-close aria-label="Fermer le menu">✕</button>
 </div>
-<main id="main">
+<main id="main" class="container">
+  <section class="hero hero--contact">
+    <div class="hero__glow" aria-hidden="true"></div>
+    <div class="hero__text">
+      <div class="pill reveal hero__pill"><span class="live-dot"></span>Disponible dès novembre 2026</div>
+      <h1 class="hero__title reveal" style="margin-top:20px; transition-delay:0.1s;">Travaillons <span class="script">ensemble.</span></h1>
+      <p class="reveal hero__lead" style="transition-delay:0.2s;">Une offre, une question ou un projet ? Écris-moi, je réponds avec plaisir.</p>
+    </div>
+    <div class="contact-3d" data-parallax aria-hidden="true">
+      <div class="pedestal"></div>
+      <span class="x3d x3d--xl x3d--sway" data-x3d="26" style="--face:var(--yellow);--side:#b8961f" aria-hidden="true"><span class="x3d__obj"><svg viewBox="0 0 24 24"><text x="12" y="18" text-anchor="middle" font-family="League Spartan, Arial Black, sans-serif" font-weight="800" font-size="20" fill="currentColor">@</text></svg></span></span>
+    </div>
+  </section>
 
-<section class="page-hero page-hero--dark" data-theme="dark">
-  <div class="blobs blobs--dark" aria-hidden="true"><span class="blob blob--1"></span><span class="blob blob--2"></span><span class="blob blob--3"></span></div>
-  <div class="dot-pattern" aria-hidden="true"></div>
-  <div class="container page-hero__inner">
-    <div data-reveal><p class="eyebrow">Contact</p></div>
-    <h1 class="page-hero__title" data-reveal style="--d:80ms">Parlons-en ! <span class="script script--hero">à très vite</span></h1>
-    <p class="page-hero__text" data-reveal style="--d:160ms">Une offre, une question, un projet ou juste envie d’échanger ? Je réponds avec plaisir.</p>
-    
-  </div>
-</section>
-
-<section class="section section--gradient" data-theme="light">
-  <div class="blobs blobs--soft" aria-hidden="true"><span class="blob blob--1"></span><span class="blob blob--2"></span><span class="blob blob--3"></span></div>
-  <div class="container contact-grid">
+  <section class="section contact-grid">
     <div class="contact-cards">
-      <a class="contact-card glass glass--light" href="mailto:contact@lea-datin.com" data-reveal="left">
+      <a class="card card--hoverable card--tilt contact-card reveal" data-tilt href="mailto:lea.datinpro@gmail.com">
         <span class="contact-card__icon"><svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="3"/><path d="m4 7 8 6 8-6"/></svg></span>
-        <span><span class="contact-card__label">E-mail</span><span class="contact-card__value">contact@lea-datin.com</span></span>
+        <span><span class="eyebrow">E-mail</span><span class="contact-card__value">lea.datinpro@gmail.com</span></span>
       </a>
-      <a class="contact-card glass glass--light" href="https://www.linkedin.com/in/lea-datin/" target="_blank" rel="noopener" data-reveal="left" style="--d:90ms">
+      <a class="card card--hoverable card--tilt contact-card reveal" data-tilt href="#" aria-disabled="true" style="transition-delay:0.08s;">
         <span class="contact-card__icon"><svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="4"/><path d="M8 10v7M8 7v.01M12 17v-4a2 2 0 0 1 4 0v4M12 10v7"/></svg></span>
-        <span><span class="contact-card__label">LinkedIn</span><span class="contact-card__value">Voir mon profil</span></span>
+        <span><span class="eyebrow">LinkedIn</span><span class="contact-card__value">Voir mon profil</span></span>
       </a>
-      <a class="contact-card glass glass--light" href="../assets/cv/CV-Lea-Datin.pdf" download data-reveal="left" style="--d:180ms">
+      <a class="card card--hoverable card--tilt contact-card contact-card--yellow reveal" data-tilt href="../assets/cv/CV-Lea-Datin.pdf" download style="transition-delay:0.16s;">
         <span class="contact-card__icon"><svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v11M7 10l5 5 5-5M5 20h14"/></svg></span>
-        <span><span class="contact-card__label">CV</span><span class="contact-card__value">Télécharger le PDF</span></span>
+        <span><span class="eyebrow">CV</span><span class="contact-card__value">Télécharger le PDF</span></span>
       </a>
     </div>
-    <form class="contact-form glass glass--light" data-contact-form data-email="contact@lea-datin.com" data-reveal="right">
-      <h2>M’écrire directement</h2>
+    <form class="card contact-form reveal" data-contact-form data-email="lea.datinpro@gmail.com" style="transition-delay:0.1s;">
+      <h2 class="h2" style="font-size:24px;">M’écrire directement</h2>
       <div class="field-row">
         <label class="field"><span>Ton nom</span><input name="name" autocomplete="name" required></label>
         <label class="field"><span>Ton e-mail</span><input name="email" type="email" autocomplete="email" required></label>
       </div>
       <label class="field"><span>Sujet</span><input name="subject" required></label>
       <label class="field"><span>Ton message</span><textarea name="message" rows="5" required></textarea></label>
-      <div class="contact-form__foot">
-        <span class="magnetic" data-magnetic><button class="btn btn--primary" type="submit">Envoyer<svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 3 10 14M21 3l-7 18-4-7-7-4z"/></svg></button></span>
+      <div class="contact-form__foot" data-magnet-zone>
+        <button class="cta magnet" type="submit">Envoyer →</button>
         <small>Le bouton ouvre ta messagerie avec le message pré-rempli.</small>
       </div>
     </form>
-  </div>
-</section>
+  </section>
 </main>
-<footer class="site-footer" data-theme="dark">
-  <div class="container site-footer__grid">
-    <div>
-      <a class="logo" href="../index.html" aria-label="Léa Datin — Accueil">Léa <span>DATIN</span></a>
-      <p class="site-footer__tag">Marketing digital, gestion de projet &amp; bonne humeur.</p>
+<div class="footer-wrap"><footer class="container footer">
+    <div class="h2" style="font-size:20px;">Léa Datin</div>
+    <div class="footer__links">
+      <a class="navlink navlink--on-light" href="mailto:lea.datinpro@gmail.com">lea.datinpro@gmail.com</a>
+      <a class="navlink navlink--on-light" href="#" aria-disabled="true">LinkedIn</a>
     </div>
-    <nav aria-label="Footer">
-      <ul class="site-footer__nav">
-        <li><a class="u-link" href="../index.html">Accueil</a></li><li><a class="u-link" href="../a-propos/index.html">À propos</a></li><li><a class="u-link" href="../experience/index.html">Expérience</a></li><li><a class="u-link" href="../projets/index.html">Projets</a></li><li><a class="u-link" href="../contact/index.html">Contact</a></li>
-      </ul>
-    </nav>
-    <div class="site-footer__contact">
-      <p class="script">Écris-moi</p>
-      <a class="u-link" href="mailto:contact@lea-datin.com"><svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="3"/><path d="m4 7 8 6 8-6"/></svg>contact@lea-datin.com</a>
-      <a class="u-link" href="https://www.linkedin.com/in/lea-datin/" target="_blank" rel="noopener"><svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="4"/><path d="M8 10v7M8 7v.01M12 17v-4a2 2 0 0 1 4 0v4M12 10v7"/></svg>LinkedIn</a>
-    </div>
-  </div>
-  <div class="container site-footer__bottom">
-    <p>© 2026 Léa Datin. Tous droits réservés.</p>
-    <button type="button" class="u-link" data-cookie-open>Gérer les cookies</button>
-  </div>
-</footer>
+    <div class="footer__legal">© 2026 Léa Datin · <button type="button" class="linklike" data-cookie-open>Cookies</button></div>
+  </footer>
 <button class="to-top" type="button" data-to-top aria-label="Remonter en haut de page"><svg class="icon " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 19V5M6 11l6-6 6 6"/></svg></button>
 <div class="cookie" data-cookie role="dialog" aria-live="polite" aria-label="Cookies" hidden>
   <p>Ce site utilise un outil de mesure d’audience pour savoir quelles pages sont consultées. Rien n’est activé sans ton accord.</p>
   <div class="cookie__actions">
-    <button type="button" class="btn btn--ghost btn--sm" data-cookie-refuse>Refuser</button>
-    <button type="button" class="btn btn--primary btn--sm" data-cookie-accept>Accepter</button>
+    <button type="button" class="cta-outline" data-cookie-refuse>Refuser</button>
+    <button type="button" class="cta" data-cookie-accept>Accepter</button>
   </div>
-</div>
+</div></div>
 </body>
 </html>

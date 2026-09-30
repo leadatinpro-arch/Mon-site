@@ -1,7 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 1000" width="800" height="1000">
-  <defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#759DD7"/><stop offset="1" stop-color="#2E6ACB"/></linearGradient></defs>
-  <rect width="800" height="1000" fill="url(#g)"/>
-  <circle cx="624" cy="220" r="144" fill="#FBDE5A" opacity=".55"/>
-  <circle cx="144" cy="850" r="240" fill="#fff" opacity=".08"/>
-  <text x="50%" y="52%" text-anchor="middle" font-family="Arial, sans-serif" font-size="57" font-weight="700" fill="#fff" opacity=".85">Photo à venir</text>
-</svg>
