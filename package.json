@@ -1,0 +1,10 @@
+{
+  "name": "lea-datin-site",
+  "private": true,
+  "description": "Site personnel bilingue de Léa Datin (lea-datin.com)",
+  "scripts": {
+    "build": "node build/placeholders.mjs && node build/build.mjs",
+    "assets": "node build/render-assets.cjs",
+    "serve": "npx http-server site -p 8080 -c-1"
+  }
+}

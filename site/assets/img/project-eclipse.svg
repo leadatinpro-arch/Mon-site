@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 900" width="1200" height="900">
+  <defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#000000"/><stop offset="1" stop-color="#03012A"/></linearGradient></defs>
+  <rect width="1200" height="900" fill="url(#g)"/>
+  <circle cx="936" cy="198" r="162" fill="#FBDE5A" opacity=".55"/>
+  <circle cx="216" cy="765" r="270" fill="#fff" opacity=".08"/>
+  <text x="50%" y="52%" text-anchor="middle" font-family="Arial, sans-serif" font-size="64" font-weight="700" fill="#fff" opacity=".85">Éclipse</text>
+</svg>

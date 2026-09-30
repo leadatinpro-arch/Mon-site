@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="800" height="600">
+  <defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#2E6ACB"/><stop offset="1" stop-color="#03012A"/></linearGradient></defs>
+  <rect width="800" height="600" fill="url(#g)"/>
+  <circle cx="624" cy="132" r="108" fill="#FBDE5A" opacity=".55"/>
+  <circle cx="144" cy="510" r="180" fill="#fff" opacity=".08"/>
+  <text x="50%" y="52%" text-anchor="middle" font-family="Arial, sans-serif" font-size="43" font-weight="700" fill="#fff" opacity=".85">Sport 2</text>
+</svg>
