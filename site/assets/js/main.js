@@ -3,6 +3,9 @@
    Interactions partagées par toutes les pages (sans dépendance).
    =========================================================== */
 
+// La classe .js n'est posée que si ce script tourne : sans lui, tout le texte reste visible.
+document.documentElement.classList.add('js');
+
 document.addEventListener('DOMContentLoaded', () => {
   const $ = (s, r = document) => r.querySelector(s);
   const $$ = (s, r = document) => [...r.querySelectorAll(s)];
@@ -20,6 +23,11 @@ document.addEventListener('DOMContentLoaded', () => {
       entries.forEach((entry) => entry.target.classList.toggle('is-visible', entry.isIntersecting));
     }, { threshold: 0.15 });
     revealEls.forEach((el) => io.observe(el));
+    // Filet de sécurité (aperçus, iframes) : ce qui est à l'écran après 1,5 s s'affiche quoi qu'il arrive.
+    setTimeout(() => revealEls.forEach((el) => {
+      const r = el.getBoundingClientRect();
+      if (r.top < innerHeight && r.bottom > 0) el.classList.add('is-visible');
+    }), 1500);
   } else {
     revealEls.forEach((el) => el.classList.add('is-visible'));
   }

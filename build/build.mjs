@@ -161,7 +161,6 @@ function layout(lang, pageKey, { title, description, body, bodyClass = '', bodyS
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@600;700;800&family=Arimo:wght@400;500;600;700&family=Caveat:wght@500;700&display=swap">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cortado&display=swap">
   <link rel="stylesheet" href="${href('/assets/css/style.css')}">
-  <script>document.documentElement.classList.add('js');</script>
   <script src="${href('/assets/js/main.js')}" defer data-analytics-provider="${SITE.analytics.provider}" data-analytics-id="${SITE.analytics.id}"></script>
   ${extraHead}
 </head>

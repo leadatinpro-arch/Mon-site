@@ -234,7 +234,7 @@ a { color: inherit; }
 
 /* ---------- Scroll reveal ---------- */
 
-.reveal {
+.js .reveal {
   opacity: 0; transform: translateY(36px);
   transition: opacity 1s var(--ease-out), transform 1s var(--ease-out);
 }
@@ -709,3 +709,27 @@ html:not(.js) .reveal { opacity: 1; transform: none; }
 .hero__glow { opacity: .6; }
 .site-header { z-index: 40; }
 @media (max-width: 899px) { .exp-teaser__globe { margin-bottom: 36px; } }
+
+/* ---------- Lisibilité : contraste et tailles de texte ---------- */
+:root { --text-muted: #5b6577; }
+.hero::before { content: ''; position: absolute; inset: 0; z-index: 0; pointer-events: none; background: linear-gradient(180deg, rgba(3,1,42,.55) 0%, rgba(3,1,42,.25) 55%, rgba(3,1,42,0) 100%); }
+@media (min-width: 900px) {
+  .hero::before { background: linear-gradient(90deg, rgba(3,1,42,0) 30%, rgba(3,1,42,.35) 100%); }
+  .hero--compact::before, .hero--contact::before { background: linear-gradient(90deg, rgba(3,1,42,.55) 0%, rgba(3,1,42,.2) 60%, rgba(3,1,42,0) 100%); }
+}
+.hero__title, .hero__lead { text-shadow: 0 2px 18px rgba(3,1,42,.35); }
+.hero__lead { color: #fff; font-size: 17px; line-height: 1.6; }
+body { font-size: 16px; line-height: 1.6; }
+.passion-card p, .glass-dark p { font-size: 15px !important; line-height: 1.6; }
+.timeline-item__body-inner { font-size: 15px; line-height: 1.75; }
+.timeline-item__meta { font-size: 14px; }
+.about-who { font-size: 17px; }
+.vision p { font-size: 16px !important; }
+.inspire-panel__text { font-size: 15px; }
+.reco blockquote { font-size: 17px; }
+.reco figcaption small { font-size: 13px; }
+.teaser__text { font-size: 16px; opacity: 1; }
+.project__text, .passion-body__card p { font-size: 16px; }
+.photo-placeholder { font-size: 13px; color: #6b7280; }
+.eyebrow { font-size: 13px; }
+.navlink { font-size: 15px; }
