@@ -27,15 +27,26 @@ window.PAGES = {
       { label: { fr: "Rôle", en: "Role" }, value: { fr: "Co-organisatrice · Cheffe de projet · Com'", en: "Co-organiser · Project lead · Comms" } },
       { label: { fr: "Équipe", en: "Team" }, value: { fr: "3 personnes", en: "3 people" } },
       { label: { fr: "Où", en: "Where" }, value: "Nancy" },
-      { label: { fr: "Style", en: "Sound" }, value: "Électro · Techno" }
+      { label: { fr: "Style", en: "Sound" }, value: "Techno · Hard techno · Raw" }
     ],
-    marquee: ["ECLIPSE", "TECHNO", "NANCY", "ÉLECTRO", "DE A À Z"],
+    heroMascot: "assets/eclipse/mascotte-2.png",
+    walker: "assets/eclipse/mascotte-3.png",
+    marquee: ["ECLIPSE", "TECHNO", "HARD TECHNO", "RAW", "NANCY", "DE A À Z"],
     intro: {
       title: { fr: "Le projet", en: "The project" },
       text: {
-        fr: "Eclipse, ce sont des événements autour de la musique électro et techno que nous organisons à trois à Nancy. Tout est fait maison, de l'idée jusqu'au jour J : organisation, communication et identité visuelle.",
-        en: "Eclipse is a series of electro and techno events that the three of us organise in Nancy. Everything is homemade, from the idea to the big night: organisation, communication and visual identity."
+        fr: "Eclipse, ce sont des événements autour de la musique électro et techno que nous organisons à trois à Nancy, comme l'Eclipse Festival au Nirvana Club. Tout est fait maison, de l'idée jusqu'au jour J : organisation, communication et identité visuelle.",
+        en: "Eclipse is a series of electro and techno events that the three of us organise in Nancy, such as Eclipse Festival at Nirvana Club. Everything is homemade, from the idea to the big night: organisation, communication and visual identity."
       }
+    },
+    event: {
+      name: "Eclipse Festival",
+      date: { fr: "11 septembre", en: "September 11" },
+      venue: "Nirvana Club",
+      address: "6 quai Claude Lorrain — Nancy",
+      genres: "Techno / Hard techno / Raw",
+      hours: { fr: "23h – 5h", en: "11pm – 5am" },
+      poster: "assets/eclipse/affiche-1.jpg"
     },
     stats: [
       { value: "3", label: { fr: "organisateurs", en: "organisers" } },
@@ -47,13 +58,19 @@ window.PAGES = {
       subtitle: { fr: "Ce que je gère sur chaque événement", en: "What I handle for every event" },
       items: [
         { title: { fr: "Gestion de projet", en: "Project management" }, text: { fr: "Organisation, planning, coordination de l'équipe et suivi de chaque étape jusqu'au jour J.", en: "Organisation, planning, team coordination and following every step up to the big night." } },
-        { title: { fr: "Communication", en: "Communication" }, text: { fr: "Stratégie et contenus sur les réseaux sociaux, annonces et teasing avant chaque événement.", en: "Social media strategy and content, announcements and teasers before each event." } },
+        { title: { fr: "Communication", en: "Communication" }, text: { fr: "Stratégie et contenus sur les réseaux sociaux, annonces et teasing avant chaque événement, sans oublier les messages de prévention pour que chacun passe une soirée safe.", en: "Social media strategy and content, announcements and teasers before each event, plus prevention messages so everyone has a safe night." } },
         { title: { fr: "Image de marque", en: "Brand identity" }, text: { fr: "Création de l'identité d'Eclipse : univers, ton et visuels.", en: "Creating Eclipse's identity: universe, tone of voice and visuals." } },
         { title: { fr: "La mascotte", en: "The mascot" }, text: { fr: "Imaginée et créée pour incarner Eclipse et la rendre reconnaissable en un coup d'œil.", en: "Designed and created to embody Eclipse and make it recognisable at a glance." } }
       ]
     },
     mascot: {
       src: "assets/eclipse/mascotte.png",
+      /* Chaque clic sur la mascotte passe à la pose suivante */
+      poses: [
+        { src: "assets/eclipse/mascotte.png", bubble: { fr: "Le son est lancé !", en: "The music is on!" } },
+        { src: "assets/eclipse/mascotte-2.png", bubble: { fr: "On se voit à la prochaine ?", en: "See you at the next one?" } },
+        { src: "assets/eclipse/mascotte-3.png", bubble: { fr: "Petite pause fraîcheur…", en: "Quick refreshment break…" } }
+      ],
       title: { fr: "Voici la mascotte", en: "Meet the mascot" },
       text: {
         fr: "Je l'ai créée pour donner un visage à Eclipse. Elle apparaît sur les affiches, les réseaux sociaux et tous nos supports.",
@@ -63,13 +80,13 @@ window.PAGES = {
     },
     posters: {
       title: { fr: "Les visuels", en: "The visuals" },
-      subtitle: { fr: "Affiches et communication · glissez pour parcourir", en: "Posters and communication · drag to browse" },
+      subtitle: { fr: "Affiches, prévention et mascotte · glissez pour parcourir, cliquez pour agrandir", en: "Posters, prevention and mascot · drag to browse, click to enlarge" },
       items: [
-        { src: "assets/eclipse/affiche-1.jpg", alt: { fr: "Affiche Eclipse", en: "Eclipse poster" } },
-        { src: "assets/eclipse/affiche-2.jpg", alt: { fr: "Affiche Eclipse", en: "Eclipse poster" } },
-        { src: "assets/eclipse/affiche-3.jpg", alt: { fr: "Affiche Eclipse", en: "Eclipse poster" } },
-        { src: "assets/eclipse/affiche-4.jpg", alt: { fr: "Affiche Eclipse", en: "Eclipse poster" } },
-        { src: "assets/eclipse/affiche-5.jpg", alt: { fr: "Affiche Eclipse", en: "Eclipse poster" } }
+        { src: "assets/eclipse/affiche-1.jpg", alt: { fr: "Affiche de l'Eclipse Festival au Nirvana Club", en: "Eclipse Festival poster at Nirvana Club" } },
+        { src: "assets/eclipse/mascotte.png", alt: { fr: "Mascotte Eclipse aux platines", en: "Eclipse mascot DJing" }, fit: "contain" },
+        { src: "assets/eclipse/affiche-2.jpg", alt: { fr: "Visuel de prévention « Besoin d'aide ? »", en: "\"Need help?\" prevention visual" } },
+        { src: "assets/eclipse/mascotte-2.png", alt: { fr: "Mascotte Eclipse à lunettes", en: "Eclipse mascot with sunglasses" }, fit: "contain" },
+        { src: "assets/eclipse/mascotte-3.png", alt: { fr: "Mascotte Eclipse avec un jus", en: "Eclipse mascot with a drink" }, fit: "contain" }
       ]
     },
     gallery: {

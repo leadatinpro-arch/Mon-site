@@ -2162,13 +2162,13 @@ body.is-entering .transition::before { transform: none; animation: transOut 0.8s
 .eclipse__corona { position: absolute; inset: 0; border-radius: 50%; }
 
 .eclipse__sun {
-  background: radial-gradient(circle at 40% 40%, #fff3b0, var(--accent) 45%, #f5a300 75%);
-  box-shadow: 0 0 80px 10px rgba(255, 210, 63, 0.45), 0 0 200px 40px rgba(255, 170, 0, 0.18);
+  background: radial-gradient(circle at 40% 40%, #ffe7a3, #ffb23f 40%, #ff6a13 78%);
+  box-shadow: 0 0 60px 8px rgba(255, 120, 30, 0.6), 0 0 200px 60px rgba(120, 60, 255, 0.3);
 }
 
 .eclipse__corona {
   inset: -18%;
-  background: conic-gradient(from 0deg, transparent, rgba(255, 210, 63, 0.5), transparent 20%, rgba(47, 107, 255, 0.45), transparent 45%, rgba(255, 210, 63, 0.4), transparent 70%, rgba(91, 155, 255, 0.4), transparent);
+  background: conic-gradient(from 0deg, transparent, rgba(255, 140, 40, 0.6), transparent 20%, rgba(110, 60, 255, 0.5), transparent 45%, rgba(255, 190, 60, 0.5), transparent 70%, rgba(90, 50, 220, 0.45), transparent);
   filter: blur(24px);
   opacity: calc(0.2 + var(--p, 0) * 0.8);
   animation: spin 16s linear infinite;
@@ -2876,6 +2876,171 @@ body.is-entering .transition::before { transform: none; animation: transOut 0.8s
 .lightbox__close:hover,
 .lightbox__nav:hover { background: var(--accent); color: var(--bg); }
 .lightbox__count { position: absolute; bottom: 24px; left: 50%; transform: translateX(-50%); color: var(--muted); font-size: 0.9rem; }
+
+
+/* ---------- Eclipse: brand touches ---------- */
+.s-hero--eclipse {
+  background:
+    radial-gradient(ellipse 60% 70% at 80% 40%, rgba(88, 44, 210, 0.45), transparent 70%),
+    radial-gradient(ellipse 40% 50% at 10% 100%, rgba(47, 107, 255, 0.25), transparent 70%);
+}
+
+.hero-mascot {
+  position: absolute;
+  right: max(2vw, 16px);
+  bottom: 10%;
+  width: min(30vw, 46vh);
+  z-index: 1;
+  filter: drop-shadow(0 30px 40px rgba(0, 0, 0, 0.55));
+  transform: translateY(calc(var(--p, 0) * -80px)) rotate(calc(var(--p, 0) * -8deg));
+  animation: mascotBob 3.2s ease-in-out infinite;
+  pointer-events: none;
+}
+
+@keyframes mascotBob {
+  0%, 100% { translate: 0 0; rotate: -2deg; }
+  50% { translate: 0 -18px; rotate: 3deg; }
+}
+
+/* Event ticket */
+.s-event { padding: clamp(20px, 4vw, 60px) 0 clamp(60px, 8vw, 100px); }
+
+.s-event__grid {
+  display: grid;
+  grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.4fr);
+  gap: clamp(24px, 4vw, 56px);
+  align-items: center;
+}
+
+.s-event__poster { aspect-ratio: 4 / 5; transform: rotate(-3deg); box-shadow: 0 40px 80px rgba(0, 0, 0, 0.5); transition: transform 0.6s var(--ease-out); }
+.s-event__poster:hover { transform: rotate(0) scale(1.02); }
+
+.ticket {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr 120px;
+  border-radius: 28px;
+  background: linear-gradient(135deg, #3a1d9e, #1a1050 55%, var(--bg-2));
+  box-shadow: 0 30px 70px rgba(58, 29, 158, 0.35);
+  overflow: hidden;
+  transition: transform 0.6s var(--ease-out), opacity 1s var(--ease-out);
+}
+
+.ticket:hover { transform: rotate(-1deg) translateY(-6px); }
+
+.ticket::before,
+.ticket::after {
+  content: "";
+  position: absolute;
+  right: 104px;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: var(--bg);
+}
+
+.ticket::before { top: -16px; }
+.ticket::after { bottom: -16px; }
+
+.ticket__main { padding: clamp(24px, 4vw, 44px); border-right: 2px dashed rgba(255, 255, 255, 0.25); }
+
+.ticket__kicker {
+  display: inline-block;
+  padding: 4px 12px;
+  border-radius: 100px;
+  background: #ff7a1a;
+  color: var(--bg);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.ticket__name {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: clamp(2rem, 4.4vw, 3.6rem);
+  line-height: 1;
+  letter-spacing: -0.03em;
+  margin: 16px 0 28px;
+}
+
+.ticket__rows { display: grid; grid-template-columns: 1fr 1fr; gap: 20px 24px; }
+.ticket__wide { grid-column: span 2; }
+.ticket__rows dt { font-size: 0.72rem; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(255, 255, 255, 0.6); }
+.ticket__rows dd { font-family: var(--font-display); font-weight: 700; font-size: 1.25rem; }
+.ticket__rows small { display: block; font-family: var(--font-body); font-weight: 400; font-size: 0.9rem; color: rgba(255, 255, 255, 0.7); }
+
+.ticket__stub {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  padding: 20px 0;
+}
+
+.ticket__barcode {
+  width: 44px;
+  height: 60%;
+  background: repeating-linear-gradient(180deg, #fff 0 3px, transparent 3px 5px, #fff 5px 6px, transparent 6px 10px);
+  opacity: 0.85;
+}
+
+.ticket__admit {
+  writing-mode: vertical-rl;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+/* Walking mascot */
+.walker {
+  position: relative;
+  height: clamp(140px, 16vw, 200px);
+  overflow: hidden;
+  border-bottom: 1px dashed var(--line);
+}
+
+.walker img {
+  position: absolute;
+  bottom: -4px;
+  left: -220px;
+  width: clamp(130px, 14vw, 180px);
+  animation: walkAcross 18s linear infinite, walkBob 0.5s ease-in-out infinite alternate;
+}
+
+@keyframes walkAcross { to { left: calc(100% + 40px); } }
+@keyframes walkBob { from { transform: translateY(0) rotate(-2deg); } to { transform: translateY(-8px) rotate(2deg); } }
+
+/* Poster with transparent artwork (mascot) */
+.poster--art {
+  background:
+    radial-gradient(circle at 50% 45%, rgba(255, 122, 26, 0.35), transparent 60%),
+    linear-gradient(160deg, #3a1d9e, #140c3d);
+}
+
+.poster--art img { object-fit: contain; padding: 8%; }
+
+.mascot__img { transition: transform 0.4s var(--ease-out), opacity 0.18s; }
+.mascot.is-jumping .mascot__img { animation: poseSwap 0.36s ease; }
+@keyframes poseSwap { 50% { opacity: 0; transform: scale(0.8) rotate(-10deg); } }
+
+@media (max-width: 900px) {
+  .s-event__grid { grid-template-columns: 1fr; }
+  .s-event__poster { max-width: 360px; }
+  .hero-mascot { width: 42vw; bottom: auto; top: 110px; opacity: 0.9; }
+}
+
+@media (max-width: 560px) {
+  .ticket { grid-template-columns: 1fr; }
+  .ticket::before, .ticket::after { display: none; }
+  .ticket__main { border-right: 0; border-bottom: 2px dashed rgba(255, 255, 255, 0.25); }
+  .ticket__stub { flex-direction: row; padding: 16px 24px; }
+  .ticket__barcode { width: 60%; height: 36px; background: repeating-linear-gradient(90deg, #fff 0 3px, transparent 3px 5px, #fff 5px 6px, transparent 6px 10px); }
+  .ticket__admit { writing-mode: horizontal-tb; }
+}
 
 /* ---------- Story responsive ---------- */
 @media (max-width: 1000px) {

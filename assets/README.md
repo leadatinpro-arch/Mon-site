@@ -10,8 +10,8 @@ Pensez à alléger les images (moins de 500 Ko chacune si possible, par ex. avec
 | Dossier / fichier                       | Où ça s'affiche                                  |
 | --------------------------------------- | ------------------------------------------------ |
 | `lea.png`                               | Votre photo, page À propos (déjà en place)       |
-| `eclipse/mascotte.png`                  | La mascotte d'Eclipse (fond transparent idéal)   |
-| `eclipse/affiche-1.jpg` … `affiche-5.jpg` | Les visuels / affiches d'Eclipse (format portrait) |
+| `eclipse/mascotte.png`, `mascotte-2.png`, `mascotte-3.png` | Les 3 poses de la mascotte (déjà en place) |
+| `eclipse/affiche-1.jpg`, `affiche-2.jpg` | Affiche du festival et visuel prévention (déjà en place) ; ajoutez-en d'autres dans `js/pages.js` |
 | `eclipse/photo-1.jpg` … `photo-8.jpg`   | La galerie photos des événements Eclipse         |
 | `punch/app-1.png`                       | L'écran affiché dans le téléphone (page PUNCH)   |
 | `punch/visuel-1.jpg` … `visuel-4.jpg`   | La galerie PUNCH                                 |

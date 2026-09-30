@@ -48,7 +48,7 @@ window.PROJECTS = [
     color: 2,
     shape: "square",
     year: { fr: "En cours", en: "Ongoing" },
-    image: "",
+    image: "assets/eclipse/affiche-1.jpg",
     title: { fr: "Eclipse — Soirées techno à Nancy", en: "Eclipse — Techno nights in Nancy" },
     summary: {
       fr: "Co-organisatrice de concerts techno : gestion de projet de A à Z, communication et image de marque.",

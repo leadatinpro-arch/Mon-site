@@ -35,6 +35,7 @@
           <div class="eclipse__corona"></div>
           <div class="eclipse__moon"></div>
         </div>
+        ${P.heroMascot ? `<img class="hero-mascot" src="${esc(P.heroMascot)}" alt="" onerror="this.remove()" />` : ""}
         <div class="hero-eq" aria-hidden="true">${Array.from({ length: 48 }, (_, i) => `<i style="--i:${i};--h:${20 + ((i * 37) % 80)}%;--dur:${(0.5 + ((i * 37) % 70) / 100).toFixed(2)}s"></i>`).join("")}</div>`;
     }
     if (P.theme === "punch") {
@@ -89,6 +90,35 @@
     </div></section>`;
   }
 
+  function event() {
+    const E = P.event;
+    if (!E) return "";
+    return `<section class="s-event"><div class="container s-event__grid">
+      ${E.poster ? media(E.poster, E.name, "s-event__poster reveal-up", "story.visualPh", "event") : ""}
+      <div class="ticket reveal-up">
+        <div class="ticket__main">
+          <span class="ticket__kicker">${esc(t("story.event.kicker"))}</span>
+          <h2 class="ticket__name">${esc(E.name)}</h2>
+          <dl class="ticket__rows">
+            <div><dt>${esc(t("story.event.date"))}</dt><dd>${tx(E.date)}</dd></div>
+            <div><dt>${esc(t("story.event.hours"))}</dt><dd>${tx(E.hours)}</dd></div>
+            <div class="ticket__wide"><dt>${esc(t("story.event.venue"))}</dt><dd>${esc(E.venue)}<small>${esc(E.address)}</small></dd></div>
+            <div class="ticket__wide"><dt>${esc(t("story.event.sound"))}</dt><dd>${esc(E.genres)}</dd></div>
+          </dl>
+        </div>
+        <div class="ticket__stub" aria-hidden="true">
+          <span class="ticket__barcode"></span>
+          <span class="ticket__admit">ECLIPSE · NANCY</span>
+        </div>
+      </div>
+    </div></section>`;
+  }
+
+  function walker() {
+    if (!P.walker) return "";
+    return `<div class="walker" aria-hidden="true"><img src="${esc(P.walker)}" alt="" onerror="this.parentNode.remove()" /></div>`;
+  }
+
   function stats() {
     if (!P.stats) return "";
     return `<section class="s-stats"><div class="container s-stats__grid">
@@ -139,13 +169,13 @@
       <div class="mascot reveal-up" data-mascot>
         <div class="mascot__halo" aria-hidden="true"></div>
         <button class="mascot__btn" aria-label="${esc(t("story.mascot.click"))}">
-          <img class="mascot__img" src="${esc(M.src)}" alt="${esc(t("story.mascot.alt"))}" onerror="this.closest('.mascot').classList.add('is-fallback');this.remove()" />
+          <img class="mascot__img" src="${esc(M.poses ? M.poses[0].src : M.src)}" alt="${esc(t("story.mascot.alt"))}" onerror="this.closest('.mascot').classList.add('is-fallback');this.remove()" />
           <span class="mascot__fallback" aria-hidden="true">
             <span class="mf__corona"></span>
             <span class="mf__body"><span class="mf__eye"><i></i></span><span class="mf__eye"><i></i></span><span class="mf__mouth"></span></span>
           </span>
         </button>
-        <span class="mascot__bubble">${tx(M.bubble)}</span>
+        <span class="mascot__bubble">${tx(M.poses ? M.poses[0].bubble : M.bubble)}</span>
         <span class="mascot__hint">${esc(t("story.mascot.click"))}</span>
       </div>
       <div class="s-mascot__text">
@@ -164,7 +194,7 @@
         <h2 class="section-title reveal-up">${tx(P.posters.title)}</h2>
       </div>
       <div class="posters" data-drag data-cursor="drag">
-        <div class="posters__track">${P.posters.items.map((it, i) => media(it.src, pick(it.alt), `poster poster--${(i % 3) + 1}`, "story.visualPh", "posters")).join("")}</div>
+        <div class="posters__track">${P.posters.items.map((it, i) => media(it.src, pick(it.alt), `poster poster--${(i % 3) + 1}${it.fit === "contain" ? " poster--art" : ""}`, "story.visualPh", "posters")).join("")}</div>
       </div>
     </section>`;
   }
@@ -220,7 +250,7 @@
     lang = currentLang;
     t = translate;
     document.body.classList.add(`theme-${P.theme}`);
-    root.innerHTML = hero() + marquee() + intro() + stats() + role() + highlights() + mascot() + posters() + gallery() + links() + next() + cta();
+    root.innerHTML = hero() + marquee() + intro() + event() + stats() + walker() + role() + highlights() + mascot() + posters() + gallery() + links() + next() + cta();
     document.title = `${pick(P.title)} — Léa Datin`;
     const meta = $('meta[name="description"]');
     if (meta) meta.setAttribute("content", pick(P.tagline));
@@ -245,12 +275,11 @@
       el.addEventListener("pointerdown", (e) => {
         if (e.pointerType !== "mouse") return; // touch devices scroll natively
         down = true; moved = false; startX = e.clientX; startScroll = el.scrollLeft;
-        el.classList.add("is-dragging");
       });
       window.addEventListener("pointermove", (e) => {
         if (!down) return;
         const dx = e.clientX - startX;
-        if (Math.abs(dx) > 4) moved = true;
+        if (Math.abs(dx) > 4 && !moved) { moved = true; el.classList.add("is-dragging"); }
         el.scrollLeft = startScroll - dx;
       });
       window.addEventListener("pointerup", () => { down = false; el.classList.remove("is-dragging"); });
@@ -263,7 +292,17 @@
     const m = $("[data-mascot]");
     if (!m) return;
     const btn = $(".mascot__btn", m);
+    const poses = (P.mascot && P.mascot.poses) || [];
+    let pose = 0;
+    // preload the other poses so the swap is instant
+    poses.forEach((ps) => { const im = new Image(); im.src = ps.src; });
     btn.addEventListener("click", () => {
+      if (poses.length > 1 && !m.classList.contains("is-fallback")) {
+        pose = (pose + 1) % poses.length;
+        const img = $(".mascot__img", m);
+        setTimeout(() => { if (img) img.src = poses[pose].src; }, 180);
+        $(".mascot__bubble", m).textContent = pick(poses[pose].bubble);
+      }
       m.classList.remove("is-jumping");
       void m.offsetWidth;
       m.classList.add("is-jumping", "is-talking");
