@@ -279,6 +279,71 @@ window.PAGES = {
   },
 
   /* ------------------------------------------------------------------ */
+  "jacques-laveine": {
+    theme: "jli",
+    eyebrow: { fr: "Expérience pro · Community management", en: "Professional experience · Community management" },
+    title: "JACQUES LAVEINE",
+    tagline: {
+      fr: "Community Manager pour une agence immobilière de Metz : contenus, réseaux sociaux et visibilité des annonces.",
+      en: "Community Manager for a real estate agency in Metz: content, social media and listing visibility."
+    },
+    logo: "assets/jacques-laveine/logo.png",
+    facts: [
+      { label: { fr: "Rôle", en: "Role" }, value: "Community Manager" },
+      { label: { fr: "Période", en: "Period" }, value: { fr: "Sept. – déc. 2022", en: "Sept – Dec 2022" } },
+      { label: { fr: "Réseaux", en: "Channels" }, value: "Facebook · Instagram" },
+      { label: { fr: "Secteur", en: "Sector" }, value: { fr: "Immobilier", en: "Real estate" } }
+    ],
+    marquee: ["JACQUES LAVEINE IMMOBILIER", "COMMUNITY MANAGEMENT", "FACEBOOK", "INSTAGRAM", "SEO", "METZ"],
+    intro: {
+      title: { fr: "L'agence", en: "The agency" },
+      text: {
+        fr: "Jacques Laveine Immobilier est une agence reconnue pour son expertise dans la vente et la location de biens immobiliers. Travailler dans ce secteur m'a permis de développer des compétences en communication digitale et en création de contenu, dans un environnement où la visibilité en ligne est essentielle pour attirer et fidéliser les clients.",
+        en: "Jacques Laveine Immobilier is an agency known for its expertise in selling and renting property. Working in this sector helped me develop skills in digital communication and content creation, in an environment where online visibility is key to attracting and retaining clients."
+      }
+    },
+    context: {
+      title: { fr: "Pourquoi cette expérience compte", en: "Why this experience matters" },
+      items: [
+        { label: { fr: "Un secteur concurrentiel", en: "A competitive sector" }, value: { fr: "Optimiser la présence digitale pour se démarquer.", en: "Optimising the digital presence to stand out." } },
+        { label: { fr: "Un rôle créatif et stratégique", en: "A creative and strategic role" }, value: { fr: "Création de contenus visuels et rédactionnels pour les réseaux sociaux.", en: "Creating visual and written content for social media." } },
+        { label: { fr: "Un impact direct", en: "A direct impact" }, value: { fr: "Chaque publication influence la notoriété et la génération de leads.", en: "Every post influences brand awareness and lead generation." } }
+      ]
+    },
+    role: {
+      title: { fr: "Mes responsabilités clés", en: "My key responsibilities" },
+      subtitle: { fr: "Community Manager", en: "Community Manager" },
+      items: [
+        { title: { fr: "Création de contenus", en: "Content creation" }, text: { fr: "Contenus visuels et rédactionnels pour les réseaux sociaux (Facebook, Instagram).", en: "Visual and written content for social media (Facebook, Instagram)." } },
+        { title: { fr: "Animation des pages", en: "Page management" }, text: { fr: "Planification des publications et suivi des interactions.", en: "Scheduling posts and monitoring interactions." } },
+        { title: { fr: "Optimisation SEO", en: "SEO optimisation" }, text: { fr: "Améliorer la visibilité des annonces immobilières.", en: "Improving the visibility of property listings." } },
+        { title: { fr: "Collaboration commerciale", en: "Working with sales" }, text: { fr: "Avec les équipes commerciales, pour mettre en avant les biens et les services.", en: "With the sales teams, to showcase properties and services." } }
+      ]
+    },
+    showcase: {
+      title: { fr: "Réalisations", en: "Selected work" },
+      subtitle: { fr: "Quelques contenus créés pour l'agence", en: "Some content created for the agency" },
+      items: [
+        {
+          src: "assets/jacques-laveine/bonne-nouvelle.png",
+          tag: { fr: "Post réseaux sociaux", en: "Social media post" },
+          title: { fr: "« Bonne nouvelle » : les taux d'usure", en: "“Good news”: usury rates" },
+          text: { fr: "Un visuel pédagogique et percutant pour annoncer la hausse des taux d'usure au 1er octobre 2022, une info clé pour les futurs acheteurs.", en: "An informative, eye-catching visual announcing the rise in usury rates on 1 October 2022, key news for future buyers." }
+        },
+        {
+          src: "assets/jacques-laveine/concours-photos.png",
+          tag: { fr: "Campagne & print", en: "Campaign & print" },
+          title: { fr: "Concours photos & calendrier 2022", en: "Photo contest & 2022 calendar" },
+          text: { fr: "Un concours photos valorisant le pays messin, avec 12 lauréats récompensés et leurs clichés réunis dans le calendrier de l'agence.", en: "A photo contest showcasing the Metz area, with 12 winners rewarded and their shots gathered in the agency's calendar." }
+        }
+      ]
+    },
+    links: [
+      { label: "laveine.immo", url: "https://www.laveine.immo" }
+    ],
+    cta: { fr: "Besoin d'une community manager ?", en: "Need a community manager?" }
+  },
+
   "360idcom": {
     theme: "idcom",
     eyebrow: { fr: "Engagement · Association étudiante", en: "Involvement · Student association" },

@@ -62,6 +62,15 @@
           </div>
         </div>`;
     }
+    if (P.theme === "jli" && P.logo) {
+      return `<div class="jli-hero" aria-hidden="true">
+          <span class="jli-hero__beam"></span>
+          <img class="jli-hero__logo" src="${esc(P.logo)}" alt="" />
+          <span class="jli-hero__key">🔑</span>
+          <span class="jli-hero__pin">📍</span>
+          <span class="jli-hero__like">♥</span>
+        </div>`;
+    }
     if (P.theme === "idcom" && P.logo) {
       return `<div class="idcom-hero" aria-hidden="true">
           <span class="arc arc--1"></span><span class="arc arc--2"></span><span class="arc arc--3"></span><span class="arc arc--4"></span>
@@ -325,6 +334,26 @@
     </div></section>`;
   }
 
+  function showcase() {
+    const S = P.showcase;
+    if (!S) return "";
+    return `<section class="s-showcase"><div class="container">
+      <div class="section-head">
+        <p class="eyebrow reveal-up"><span>✦</span> <span>${tx(S.subtitle)}</span></p>
+        <h2 class="section-title reveal-up">${tx(S.title)}</h2>
+      </div>
+      ${S.items.map((it, i) => `
+      <article class="show-row${i % 2 ? " show-row--rev" : ""}">
+        <figure class="show-row__img reveal-up" data-lb="showcase"><span class="show-row__halo"></span><img src="${esc(it.src)}" alt="${esc(pick(it.title))}" loading="lazy" /></figure>
+        <div class="show-row__text">
+          <span class="tag reveal-up">${tx(it.tag)}</span>
+          <h3 class="show-row__title reveal-up">${tx(it.title)}</h3>
+          <p class="reveal-up">${tx(it.text)}</p>
+        </div>
+      </article>`).join("")}
+    </div></section>`;
+  }
+
   function walker() {
     if (!P.walker) return "";
     return `<div class="walker" aria-hidden="true"><img src="${esc(P.walker)}" alt="" onerror="this.parentNode.remove()" /></div>`;
@@ -463,7 +492,7 @@
     lang = currentLang;
     t = translate;
     document.body.classList.add(`theme-${P.theme}`);
-    root.innerHTML = hero() + marquee() + intro() + context() + services() + concept() + event() + stats() + editions() + walker() + role() + highlights() + impact() + award() + outro() + mascot() + faq() + posters() + gallery() + links() + next() + cta();
+    root.innerHTML = hero() + marquee() + intro() + context() + services() + concept() + event() + stats() + editions() + walker() + role() + showcase() + highlights() + impact() + award() + outro() + mascot() + faq() + posters() + gallery() + links() + next() + cta();
     document.title = `${pick(P.title)} — Léa Datin`;
     const meta = $('meta[name="description"]');
     if (meta) meta.setAttribute("content", pick(P.tagline));

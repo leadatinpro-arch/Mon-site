@@ -119,27 +119,22 @@ window.PROJECTS = [
   },
   {
     id: "jacques-laveine",
+    page: "jacques-laveine.html",
     type: "pro",
     featured: false,
     color: 2,
     shape: "circle",
     year: "2022",
-    image: "",
-    title: { fr: "Jacques Laveine Immo — Community management", en: "Jacques Laveine Immo — Community management" },
+    image: "assets/jacques-laveine/bonne-nouvelle.png",
+    title: { fr: "Jacques Laveine Immobilier — Community Manager", en: "Jacques Laveine Immobilier — Community Manager" },
     summary: {
-      fr: "Community manager : création de contenus digitaux et gestion des supports numériques.",
-      en: "Community manager: creating digital content and managing digital channels."
+      fr: "Community Manager (sept. – déc. 2022) : contenus Facebook et Instagram, animation des pages, SEO des annonces.",
+      en: "Community Manager (Sept – Dec 2022): Facebook and Instagram content, page management, listing SEO."
     },
-    context: {
-      fr: "Mission de community management pour une agence immobilière.",
-      en: "Community management role for a real estate agency."
-    },
-    mission: {
-      fr: "Création de contenus digitaux (réseaux sociaux, newsletters). Gestion et suivi des supports numériques.",
-      en: "Creating digital content (social media, newsletters). Managing and monitoring digital channels."
-    },
+    context: { fr: "Agence immobilière de vente et de location.", en: "Real estate sales and rental agency." },
+    mission: { fr: "Création de contenus, animation des réseaux, SEO, collaboration avec les commerciaux.", en: "Content creation, social media, SEO, working with sales." },
     results: "",
-    tags: ["Community management", { fr: "Réseaux sociaux", en: "Social media" }, "Newsletters"]
+    tags: ["Community management", "Facebook", "Instagram", "SEO"]
   },
   {
     id: "360idcom",
@@ -221,9 +216,9 @@ window.TIMELINE = [
   },
   {
     kind: "work",
-    period: "2022",
+    period: { fr: "Sept. — déc. 2022", en: "Sept — Dec 2022" },
     title: { fr: "Community Manager", en: "Community Manager" },
-    place: "Jacques Laveine Immo",
+    place: "Jacques Laveine Immobilier",
     text: {
       fr: "Création de contenus digitaux (réseaux sociaux, newsletters), gestion et suivi des supports numériques.",
       en: "Creating digital content (social media, newsletters), managing and monitoring digital channels."
