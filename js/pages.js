@@ -123,6 +123,7 @@ window.PAGES = {
     heroMascot: "assets/punch/mascotte-2.png",
     facts: [
       { label: { fr: "Rôle", en: "Role" }, value: { fr: "Co-fondatrice", en: "Co-founder" } },
+      { label: { fr: "Création", en: "Founded" }, value: "2022" },
       { label: { fr: "Durée", en: "Duration" }, value: { fr: "1 an · à suivre", en: "1 year · to be continued" } },
       { label: { fr: "Programme", en: "Programme" }, value: "Entreprendre Pour Apprendre" },
       { label: { fr: "Récompense", en: "Award" }, value: { fr: "Médaille d'or ESS", en: "Gold medal, social economy" } }
@@ -222,7 +223,7 @@ window.PAGES = {
     },
     logo: "assets/360idcom/logo.jpg",
     facts: [
-      { label: { fr: "Rôle", en: "Role" }, value: { fr: "Responsable communication", en: "Head of communication" } },
+      { label: { fr: "Rôle", en: "Role" }, value: { fr: "Membre actif & cheffe de projet", en: "Active member & project manager" } },
       { label: { fr: "Équipe", en: "Team" }, value: { fr: "6 étudiants", en: "6 students" } },
       { label: { fr: "Durée", en: "Duration" }, value: { fr: "1 an", en: "1 year" } },
       { label: { fr: "Impact", en: "Impact" }, value: { fr: "Mission solidaire à Majorque", en: "Solidarity mission in Mallorca" } }
@@ -231,8 +232,8 @@ window.PAGES = {
     intro: {
       title: { fr: "L'agence", en: "The agency" },
       text: {
-        fr: "360 ID COM est une association étudiante créée par l'IUT Nancy-Charlemagne. Chaque année, une nouvelle équipe d'étudiants prend le relais pour gérer l'agence, trouver des clients et réaliser des prestations professionnelles, tout en suivant les cours et en travaillant en entreprise. L'objectif : récolter des fonds pour financer un projet pédagogique ou humanitaire.",
-        en: "360 ID COM is a student association created by IUT Nancy-Charlemagne. Every year, a new team of students takes over to run the agency, find clients and deliver professional services, while attending classes and working in companies. The goal: raise funds to finance an educational or humanitarian project."
+        fr: "360 ID COM est une association étudiante créée en 2016 par l'IUT Nancy-Charlemagne. Chaque année, une nouvelle équipe d'étudiants prend le relais pour gérer l'agence, trouver des clients et réaliser des prestations professionnelles, tout en suivant les cours et en travaillant en entreprise. L'objectif : récolter des fonds pour financer un projet pédagogique ou humanitaire.",
+        en: "360 ID COM is a student association created in 2016 by IUT Nancy-Charlemagne. Every year, a new team of students takes over to run the agency, find clients and deliver professional services, while attending classes and working in companies. The goal: raise funds to finance an educational or humanitarian project."
       }
     },
     context: {
@@ -260,7 +261,7 @@ window.PAGES = {
     },
     role: {
       title: { fr: "Mes responsabilités et réalisations", en: "My responsibilities and achievements" },
-      subtitle: { fr: "Responsable communication", en: "Head of communication" },
+      subtitle: { fr: "Cheffe de projet & responsable communication", en: "Project manager & head of communication" },
       image: "assets/360idcom/equipe.jpg",
       items: [
         { title: { fr: "Prospection et négociation", en: "Prospecting and negotiation" }, text: { fr: "Recherche de clients, élaboration de devis, présentation des offres.", en: "Finding clients, preparing quotes, presenting offers." } },
@@ -308,16 +309,17 @@ window.PAGES = {
     theme: "interest",
     nav: "about",
     back: "about",
-    eyebrow: { fr: "Passion", en: "Passion" },
+    eyebrow: { fr: "Ce qui m'inspire", en: "What inspires me" },
     title: "ART",
+    heroImage: "assets/about/statue.png",
     tagline: {
-      fr: "Dessin, expositions, design : l'art nourrit ma créativité et mon regard sur l'image des marques.",
-      en: "Drawing, exhibitions, design: art feeds my creativity and the way I look at brand image."
+      fr: "Musique, dessin, sculpture, cinéma : l'art est pour moi une source d'inspiration et de réflexion, qui nourrit ma créativité et mon ouverture d'esprit.",
+      en: "Music, drawing, sculpture, film: art is a source of inspiration and reflection that feeds my creativity and open-mindedness."
     },
     highlights: [
-      { title: { fr: "Dessin", en: "Drawing" }, text: { fr: "Un crayon, une idée : le dessin reste ma façon préférée de réfléchir en images.", en: "A pencil and an idea: drawing is still my favourite way to think in pictures." } },
-      { title: { fr: "Expositions", en: "Exhibitions" }, text: { fr: "Musées, galeries, expos : j'aime découvrir des univers et des artistes.", en: "Museums, galleries, shows: I love discovering new worlds and artists." } },
-      { title: { fr: "Design", en: "Design" }, text: { fr: "Couleurs, typographies, compositions : une sensibilité que je retrouve dans mon travail.", en: "Colours, typefaces, layouts: a sensitivity I bring into my work." } }
+      { title: { fr: "Musique", en: "Music" }, text: { fr: "J'écoute tous les genres et toutes les générations : une manière unique d'exprimer des émotions.", en: "I listen to every genre and every generation: a unique way to express emotions." } },
+      { title: { fr: "Dessin, sculpture & cinéma", en: "Drawing, sculpture & film" }, text: { fr: "Chaque discipline est une façon fascinante de faire passer des idées, qui nourrit ma créativité.", en: "Each discipline is a fascinating way to convey ideas, and it feeds my creativity." } },
+      { title: { fr: "Musées & expositions", en: "Museums & exhibitions" }, text: { fr: "J'en visite régulièrement pour découvrir de nouvelles œuvres, comprendre les courants artistiques et la diversité culturelle.", en: "I visit them regularly to discover new works and understand artistic movements and cultural diversity." } }
     ],
     gallery: {
       title: { fr: "Galerie", en: "Gallery" },
@@ -339,20 +341,21 @@ window.PAGES = {
     theme: "interest",
     nav: "about",
     back: "about",
-    eyebrow: { fr: "Passion", en: "Passion" },
+    eyebrow: { fr: "Ce qui m'inspire", en: "What inspires me" },
     title: "SPORT",
+    heroImage: "assets/about/aviron.png",
     tagline: {
-      fr: "Aviron et randonnée : le goût de l'effort, de l'équipe et du grand air.",
-      en: "Rowing and hiking: a taste for effort, teamwork and the great outdoors."
+      fr: "Le sport a toujours été une passion, mais l'aviron a marqué un tournant : il a forgé mon esprit d'équipe et ma détermination.",
+      en: "Sport has always been a passion, but rowing was a turning point: it shaped my team spirit and determination."
     },
     highlights: [
-      { title: { fr: "Aviron", en: "Rowing" }, text: { fr: "Pratiquante et entraîneuse : j'encadre une équipe et j'organise des événements sportifs.", en: "Rower and coach: I lead a team and organise sports events." } },
-      { title: { fr: "Randonnée", en: "Hiking" }, text: { fr: "Marcher, prendre de la hauteur et se vider la tête au milieu des paysages.", en: "Walking, gaining height and clearing my head surrounded by landscapes." } },
-      { title: { fr: "Esprit d'équipe", en: "Team spirit" }, text: { fr: "Sur l'eau comme au travail, on avance plus loin quand tout le monde rame dans le même sens.", en: "On the water as at work, you go further when everyone rows in the same direction." } }
+      { title: { fr: "Rigueur", en: "Rigour" }, text: { fr: "L'aviron est un sport exigeant, qui demande de la précision et de la régularité à chaque coup de rame.", en: "Rowing is a demanding sport that requires precision and consistency with every stroke." } },
+      { title: { fr: "Persévérance & pression", en: "Perseverance & pressure" }, text: { fr: "Tenir dans l'effort et garder son calme en compétition : des réflexes que j'applique aussi au travail.", en: "Pushing through the effort and staying calm in competition: reflexes I also bring to work." } },
+      { title: { fr: "Esprit d'équipe", en: "Team spirit" }, text: { fr: "Entraîneuse d'aviron, je sais qu'on va plus loin quand tout le monde rame dans le même sens.", en: "As a rowing coach, I know you go further when everyone rows in the same direction." } }
     ],
     gallery: {
       title: { fr: "Galerie", en: "Gallery" },
-      subtitle: { fr: "Sur l'eau et sur les sentiers · cliquez pour agrandir", en: "On the water and on the trails · click to enlarge" },
+      subtitle: { fr: "Sur l'eau · cliquez pour agrandir", en: "On the water · click to enlarge" },
       items: [
         { src: "assets/sport/sport-1.jpg" },
         { src: "assets/sport/sport-2.jpg" },
@@ -370,27 +373,28 @@ window.PAGES = {
     theme: "interest",
     nav: "about",
     back: "about",
-    eyebrow: { fr: "Passion", en: "Passion" },
+    eyebrow: { fr: "Ce qui m'inspire", en: "What inspires me" },
     title: { fr: "VOYAGE", en: "TRAVEL" },
+    heroImage: "assets/about/cavalier.png",
     tagline: {
-      fr: "Partir, découvrir d'autres cultures et revenir avec de nouvelles idées.",
-      en: "Setting off, discovering other cultures and coming back with new ideas."
+      fr: "Voyager est pour moi bien plus qu'un loisir : c'est une manière de découvrir des paysages uniques et des cultures différentes.",
+      en: "For me, travelling is much more than a hobby: it's a way to discover unique landscapes and different cultures."
     },
     highlights: [
-      { title: { fr: "Curiosité", en: "Curiosity" }, text: { fr: "Chaque voyage est une occasion d'apprendre et de voir les choses autrement.", en: "Every trip is a chance to learn and see things differently." } },
-      { title: { fr: "Ouverture", en: "Open-mindedness" }, text: { fr: "Rencontrer d'autres cultures, un vrai atout pour travailler à l'international.", en: "Meeting other cultures, a real asset for working internationally." } },
-      { title: { fr: "Inspiration", en: "Inspiration" }, text: { fr: "Paysages, villes, couleurs : je reviens toujours avec des idées plein la tête.", en: "Landscapes, cities, colours: I always come back full of ideas." } }
+      { title: { fr: "Albanie", en: "Albania" }, text: { fr: "Ses traditions et ses villes authentiques.", en: "Its traditions and authentic towns." } },
+      { title: { fr: "Croatie", en: "Croatia" }, text: { fr: "Ses musées fascinants.", en: "Its fascinating museums." } },
+      { title: { fr: "Majorque", en: "Mallorca" }, text: { fr: "Où j'ai contribué à des actions solidaires pour un refuge pour animaux, avec 360 ID COM.", en: "Where I took part in solidarity work for an animal shelter, with 360 ID COM." } }
     ],
     gallery: {
       title: { fr: "Carnet de voyage", en: "Travel journal" },
       subtitle: { fr: "Cliquez pour agrandir", en: "Click to enlarge" },
       items: [
-        { src: "assets/voyage/voyage-1.jpg", caption: { fr: "Destination", en: "Destination" } },
-        { src: "assets/voyage/voyage-2.jpg", caption: { fr: "Destination", en: "Destination" } },
-        { src: "assets/voyage/voyage-3.jpg", caption: { fr: "Destination", en: "Destination" } },
-        { src: "assets/voyage/voyage-4.jpg", caption: { fr: "Destination", en: "Destination" } },
-        { src: "assets/voyage/voyage-5.jpg", caption: { fr: "Destination", en: "Destination" } },
-        { src: "assets/voyage/voyage-6.jpg", caption: { fr: "Destination", en: "Destination" } }
+        { src: "assets/voyage/voyage-1.jpg", caption: { fr: "Albanie", en: "Albania" } },
+        { src: "assets/voyage/voyage-2.jpg", caption: { fr: "Albanie", en: "Albania" } },
+        { src: "assets/voyage/voyage-3.jpg", caption: { fr: "Croatie", en: "Croatia" } },
+        { src: "assets/voyage/voyage-4.jpg", caption: { fr: "Croatie", en: "Croatia" } },
+        { src: "assets/360idcom/photo-3.jpg", caption: { fr: "Majorque", en: "Mallorca" } },
+        { src: "assets/360idcom/photo-1.jpg", caption: { fr: "Majorque", en: "Mallorca" } }
       ]
     },
     next: "art"

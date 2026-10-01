@@ -93,7 +93,8 @@
   function renderTimeline() {
     const list = $("[data-timeline]");
     if (!list) return;
-    list.innerHTML = (window.TIMELINE || []).map((item) => `
+    const kind = list.dataset.kind;
+    list.innerHTML = (window.TIMELINE || []).filter((item) => !kind || item.kind === kind).map((item) => `
       <li class="tl-item reveal-up">
         <span class="tl-item__dot" aria-hidden="true"></span>
         <div class="tl-item__head">
@@ -104,6 +105,19 @@
         <p class="tl-item__place">${esc(pick(item.place))}</p>
         <p class="tl-item__text">${esc(pick(item.text))}</p>
       </li>`).join("");
+  }
+
+  function renderSchools() {
+    const box = $("[data-schools]");
+    if (!box) return;
+    box.innerHTML = (window.TIMELINE || []).filter((item) => item.kind === "school").reverse().map((item, i) => `
+      <article class="school reveal-up" style="--d:${i * 0.12}s">
+        ${item.logo ? `<span class="school__logo"><img src="${esc(item.logo)}" alt="${esc(pick(item.place))}" loading="lazy" /></span>` : ""}
+        <span class="school__period">${esc(pick(item.period))}</span>
+        <h3 class="school__title">${esc(pick(item.title))}</h3>
+        <p class="school__place">${esc(pick(item.place))}</p>
+        ${item.spec ? `<p class="school__spec"><span>${esc(t("about.school.spec"))}</span>${esc(pick(item.spec))}</p>` : ""}
+      </article>`).join("");
   }
 
   function renderSkills() {
@@ -182,6 +196,7 @@
 
     renderHomeProjects();
     renderTimeline();
+    renderSchools();
     renderSkills();
     renderProjectsGrid();
     if (modal.isOpen()) modal.fill();
@@ -618,6 +633,12 @@
       form.classList.remove("is-sent");
     });
   }
+
+  // Portrait flip (about page)
+  $$("[data-flip]").forEach((btn) => btn.addEventListener("click", () => {
+    const on = btn.classList.toggle("is-flipped");
+    btn.setAttribute("aria-pressed", on);
+  }));
 
   // Hide CV button if the file hasn't been added yet
   const cvBtn = $("[data-cv]");

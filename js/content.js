@@ -152,8 +152,8 @@ window.PROJECTS = [
     image: "assets/360idcom/photo-3.jpg",
     title: { fr: "360 ID COM — Agence étudiante", en: "360 ID COM — Student agency" },
     summary: {
-      fr: "Responsable communication d'une agence étudiante : clients réels (dont ENGIE) et bénéfices reversés à une mission solidaire à Majorque.",
-      en: "Head of communication at a student agency: real clients (including ENGIE) and profits funding a solidarity mission in Mallorca."
+      fr: "Cheffe de projet d'une agence étudiante : clients réels (dont ENGIE) et bénéfices reversés à une mission solidaire à Majorque.",
+      en: "Project manager at a student agency: real clients (including ENGIE) and profits funding a solidarity mission in Mallorca."
     },
     context: { fr: "Association étudiante de l'IUT Nancy-Charlemagne.", en: "Student association at IUT Nancy-Charlemagne." },
     mission: { fr: "Prospection, gestion de projets, création graphique et relation client.", en: "Prospecting, project management, graphic design and client relations." },
@@ -202,10 +202,13 @@ window.TIMELINE = [
   {
     kind: "school",
     period: "2024 — 2026",
+    logo: "assets/about/icn.png",
     title: { fr: "Master Programme Grande École", en: "Master in Management (Grande École Programme)" },
     place: "ICN Business School",
+    spec: { fr: "Marketing & Innovation Produit", en: "Marketing & Product Innovation" },
     text: { fr: "Formation en alternance.", en: "Work-study programme." }
   },
+
   {
     kind: "work",
     period: "2023 — 2024",
@@ -229,8 +232,10 @@ window.TIMELINE = [
   {
     kind: "school",
     period: "2021 — 2024",
-    title: { fr: "BUT Marketing Digital, E-commerce & Entrepreneuriat", en: "Bachelor in Digital Marketing, E-commerce & Entrepreneurship (BUT)" },
+    logo: "assets/about/iut.png",
+    title: { fr: "BUT Techniques de commercialisation", en: "Bachelor in Marketing & Sales (BUT TC)" },
     place: "IUT Nancy-Charlemagne",
+    spec: { fr: "Marketing digital, entrepreneuriat et e-commerce", en: "Digital marketing, entrepreneurship and e-commerce" },
     text: { fr: "Bachelor universitaire de technologie, en trois ans.", en: "Three-year university bachelor of technology." }
   }
 ];

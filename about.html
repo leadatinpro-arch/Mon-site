@@ -9,7 +9,7 @@
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='32' fill='%23ffd23f'/%3E%3Ctext x='32' y='41' font-family='Arial' font-weight='900' font-size='26' text-anchor='middle' fill='%2305070d'%3ELD%3C/text%3E%3C/svg%3E" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@500;700;800&family=Manrope:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@500;700;800&family=Manrope:wght@300;400;500;600&family=Kaushan+Script&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="css/style.css" />
 </head>
 <body class="is-loading" data-page="about" data-title="meta.about.title" data-desc="meta.about.description">
@@ -23,12 +23,10 @@
         <div class="page-hero__text">
           <p class="eyebrow reveal-up"><span>01</span> <span data-i18n="about.eyebrow">À propos</span></p>
           <h1 class="page-title">
-            <span class="line"><span class="split" data-split data-i18n="about.title1">Hello, moi</span></span>
-            <span class="line"><span class="split split--outline" data-split data-i18n="about.title2">c'est Léa</span></span>
+            <span class="line"><span class="split" data-split data-i18n="about.title1">À propos</span></span>
+            <span class="line"><span class="split" data-split data-i18n="about.title2">de</span> <span class="script-word" data-i18n="about.title3">moi</span></span>
           </h1>
-          <p class="page-hero__lead reveal-up" data-i18n="about.lead">
-            Spécialiste en marketing digital, j'aide les marques à se faire connaître, à créer du lien avec leur audience et à transformer l'attention en résultats.
-          </p>
+          <p class="page-hero__lead reveal-up" data-i18n="about.lead">Découvrez ma personnalité, mes valeurs et ce qui me motive.</p>
           <div class="page-hero__ctas reveal-up">
             <a href="contact.html" class="btn btn--primary magnetic">
               <span class="btn__text" data-i18n="about.cta.contact">Me contacter</span>
@@ -41,11 +39,18 @@
           </div>
         </div>
 
-        <div class="portrait reveal-up">
-          <div class="portrait__frame">
-            <img src="assets/lea.png" alt="Portrait de Léa Datin" class="portrait__img" onerror="this.remove()" />
-            <span class="portrait__initials" aria-hidden="true">LD</span>
-          </div>
+        <div class="flip-wrap reveal-up">
+          <button class="flip" data-flip aria-pressed="false" data-cursor="flip">
+            <span class="flip__bg" aria-hidden="true"></span>
+            <span class="flip__inner">
+              <img class="flip__face flip__face--front" src="assets/about/lea-pull.png" alt="Léa Datin aujourd'hui" />
+              <img class="flip__face flip__face--back" src="assets/about/lea-bebe.png" alt="Léa Datin enfant" />
+            </span>
+            <span class="flip__label">
+              <span class="flip__label-front" data-i18n="about.flip.front">Clique pour voir la version 1.0 👶</span>
+              <span class="flip__label-back" data-i18n="about.flip.back">Retour à la version actuelle ✨</span>
+            </span>
+          </button>
           <div class="sticker" aria-hidden="true">
             <svg viewBox="0 0 100 100">
               <defs><path id="stickerPath" d="M50,50 m-36,0 a36,36 0 1,1 72,0 a36,36 0 1,1 -72,0" /></defs>
@@ -57,53 +62,95 @@
       </div>
     </section>
 
-    <!-- STORY -->
+    <!-- QUI JE SUIS -->
     <section class="manifesto manifesto--tight">
       <div class="container">
-        <p class="eyebrow reveal-up"><span>02</span> <span data-i18n="about.story.eyebrow">Mon histoire</span></p>
-        <p class="manifesto__text" data-words="about.story.keys" data-i18n="about.story.text">
-          Curieuse de nature, je suis tombée dans le marketing digital en découvrant qu'une bonne idée, bien racontée et bien mesurée, pouvait changer la trajectoire d'une marque.
-        </p>
+        <p class="eyebrow reveal-up"><span>02</span> <span data-i18n="about.who.eyebrow">Qui je suis ?</span></p>
+        <p class="manifesto__text manifesto__text--md" data-words="about.who.keys" data-i18n="about.who.text">Je suis une personne dynamique et sociable, qui aime créer du lien et partager des moments avec les autres.</p>
       </div>
     </section>
 
-    <!-- VALUES -->
-    <section class="values">
+    <!-- VISION -->
+    <section class="vision">
       <div class="container">
-        <div class="section-head">
-          <p class="eyebrow reveal-up"><span>03</span> <span data-i18n="about.values.eyebrow">Valeurs</span></p>
-          <h2 class="section-title reveal-up" data-i18n-html="about.values.title">Ce qui me <em>guide</em></h2>
+        <div class="vision__grid">
+          <div>
+            <p class="eyebrow reveal-up"><span>03</span> <span data-i18n="about.vision.eyebrow">État d'esprit</span></p>
+            <h2 class="section-title reveal-up" data-i18n-html="about.vision.title">Ma vision du <em>travail</em></h2>
+          </div>
+          <p class="vision__text reveal-up" data-i18n="about.vision.text">Je crois en un leadership basé sur l'écoute, la motivation et la confiance.</p>
         </div>
         <div class="values__list">
           <article class="value reveal-up">
             <span class="value__num">01</span>
-            <h3 class="value__title" data-i18n="about.v1.title">Curiosité</h3>
-            <p class="value__text" data-i18n="about.v1.text">Tester, apprendre, suivre les tendances et les nouveaux outils pour garder une longueur d'avance.</p>
+            <h3 class="value__title" data-i18n="about.v1.title">Écoute &amp; confiance</h3>
+            <p class="value__text" data-i18n="about.v1.text"></p>
           </article>
           <article class="value reveal-up">
             <span class="value__num">02</span>
-            <h3 class="value__title" data-i18n="about.v2.title">Créativité</h3>
-            <p class="value__text" data-i18n="about.v2.text">Des idées originales qui font parler, sans jamais perdre de vue le message et la cible.</p>
+            <h3 class="value__title" data-i18n="about.v2.title">Organisation &amp; créativité</h3>
+            <p class="value__text" data-i18n="about.v2.text"></p>
           </article>
           <article class="value reveal-up">
             <span class="value__num">03</span>
-            <h3 class="value__title" data-i18n="about.v3.title">Exigence</h3>
-            <p class="value__text" data-i18n="about.v3.text">Des objectifs clairs, des indicateurs suivis et des décisions guidées par les données.</p>
+            <h3 class="value__title" data-i18n="about.v3.title">Optimisme &amp; détermination</h3>
+            <p class="value__text" data-i18n="about.v3.text"></p>
           </article>
         </div>
       </div>
     </section>
 
-    <!-- TIMELINE -->
+    <!-- PARCOURS ACADEMIQUE -->
+    <section class="schools-section">
+      <div class="container">
+        <div class="section-head">
+          <p class="eyebrow reveal-up"><span>04</span> <span data-i18n="about.school.eyebrow">Formation</span></p>
+          <h2 class="section-title reveal-up" data-i18n-html="about.school.title">Mon parcours <em>académique</em></h2>
+        </div>
+        <div class="schools" data-schools></div>
+      </div>
+    </section>
+
+    <!-- PARCOURS PRO -->
     <section class="timeline-section">
       <div class="container">
         <div class="section-head">
-          <p class="eyebrow reveal-up"><span>04</span> <span data-i18n="about.timeline.eyebrow">Parcours</span></p>
-          <h2 class="section-title reveal-up" data-i18n-html="about.timeline.title">Mon <em>parcours</em></h2>
+          <p class="eyebrow reveal-up"><span>05</span> <span data-i18n="about.timeline.eyebrow">Expériences</span></p>
+          <h2 class="section-title reveal-up" data-i18n-html="about.timeline.title">Mon parcours <em>pro</em></h2>
         </div>
         <div class="timeline">
           <div class="timeline__line" aria-hidden="true"><span></span></div>
-          <ol class="timeline__list" data-timeline></ol>
+          <ol class="timeline__list" data-timeline data-kind="work"></ol>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROJETS PERSO -->
+    <section class="side-projects">
+      <div class="container">
+        <div class="section-head">
+          <p class="eyebrow reveal-up"><span>06</span> <span data-i18n="about.side.eyebrow">Engagements</span></p>
+          <h2 class="section-title reveal-up" data-i18n-html="about.side.title">Projets <em>personnels</em></h2>
+        </div>
+        <div class="side-grid">
+          <a href="punch.html" class="side-card tilt reveal-up" data-cursor="view">
+            <span class="side-card__logo side-card__logo--light"><img src="assets/punch/logo.png" alt="PUNCH" /></span>
+            <span class="side-card__name">PUNCH</span>
+            <span class="side-card__role" data-i18n="about.side.punch.role">Co-fondatrice</span>
+            <span class="side-card__meta" data-i18n="about.side.punch.meta">Création en 2022</span>
+          </a>
+          <a href="360idcom.html" class="side-card tilt reveal-up" data-cursor="view">
+            <span class="side-card__logo side-card__logo--light"><img src="assets/360idcom/logo.jpg" alt="360 ID COM" /></span>
+            <span class="side-card__name">360 ID COM</span>
+            <span class="side-card__role" data-i18n="about.side.idcom.role">Membre actif &amp; cheffe de projet</span>
+            <span class="side-card__meta" data-i18n="about.side.idcom.meta">Association lancée en 2016</span>
+          </a>
+          <a href="eclipse.html" class="side-card tilt reveal-up" data-cursor="view">
+            <span class="side-card__logo side-card__logo--eclipse"><img src="assets/eclipse/mascotte-2.png" alt="Eclipse" /></span>
+            <span class="side-card__name">ECLIPSE</span>
+            <span class="side-card__role" data-i18n="about.side.eclipse.role">Co-organisatrice</span>
+            <span class="side-card__meta" data-i18n="about.side.eclipse.meta">Soirées techno à Nancy</span>
+          </a>
         </div>
       </div>
     </section>
@@ -112,7 +159,7 @@
     <section class="toolbox">
       <div class="container">
         <div class="section-head">
-          <p class="eyebrow reveal-up"><span>05</span> <span data-i18n="about.skills.eyebrow">Compétences</span></p>
+          <p class="eyebrow reveal-up"><span>07</span> <span data-i18n="about.skills.eyebrow">Compétences</span></p>
           <h2 class="section-title reveal-up" data-i18n-html="about.skills.title">Ma <em>boîte à outils</em></h2>
         </div>
         <div class="toolbox__grid" data-skills></div>
@@ -127,36 +174,40 @@
       </div>
     </section>
 
-    <!-- PASSIONS -->
-    <section class="passions">
+    <!-- INSPIRATIONS -->
+    <section class="inspire">
       <div class="container">
         <div class="section-head">
-          <p class="eyebrow reveal-up"><span>06</span> <span data-i18n="about.passions.eyebrow">Passions</span></p>
-          <h2 class="section-title reveal-up" data-i18n-html="about.passions.title">En dehors du <em>bureau</em></h2>
+          <p class="eyebrow reveal-up"><span>08</span> <span data-i18n="about.passions.eyebrow">Passions</span></p>
+          <h2 class="section-title reveal-up" data-i18n-html="about.inspire.title">Ce qui m'<em>inspire</em>…</h2>
         </div>
-        <div class="passions__list">
-          <a href="art.html" class="passion reveal-up" data-cursor="go">
-            <span class="passion__num">01</span>
-            <span class="passion__title">Art</span>
-            <span class="passion__text" data-i18n="about.passions.art">Dessin, expositions, design</span>
-            <span class="passion__img" style="--img:url('assets/art/art-1.jpg')"></span>
-            <span class="passion__arrow">→</span>
-          </a>
-          <a href="sport.html" class="passion reveal-up" data-cursor="go">
-            <span class="passion__num">02</span>
-            <span class="passion__title">Sport</span>
-            <span class="passion__text" data-i18n="about.passions.sport">Aviron &amp; randonnée</span>
-            <span class="passion__img" style="--img:url('assets/sport/sport-1.jpg')"></span>
-            <span class="passion__arrow">→</span>
-          </a>
-          <a href="voyage.html" class="passion reveal-up" data-cursor="go">
-            <span class="passion__num">03</span>
-            <span class="passion__title" data-i18n="about.passions.voyageTitle">Voyage</span>
-            <span class="passion__text" data-i18n="about.passions.voyage">Partir, découvrir, s'inspirer</span>
-            <span class="passion__img" style="--img:url('assets/voyage/voyage-1.jpg')"></span>
-            <span class="passion__arrow">→</span>
-          </a>
-        </div>
+
+        <article class="inspire-row">
+          <div class="inspire-row__img reveal-up"><span class="inspire-row__halo"></span><img src="assets/about/statue.png" alt="" loading="lazy" /></div>
+          <div class="inspire-row__text">
+            <h3 class="script-title reveal-up" data-i18n="about.inspire.art.title">L'art</h3>
+            <p class="reveal-up" data-i18n="about.inspire.art.text"></p>
+            <a href="art.html" class="btn btn--primary btn--sm magnetic reveal-up"><span class="btn__text" data-i18n="about.inspire.more">En savoir plus</span><span class="btn__icon">→</span></a>
+          </div>
+        </article>
+
+        <article class="inspire-row inspire-row--rev">
+          <div class="inspire-row__img reveal-up"><span class="inspire-row__halo"></span><img src="assets/about/aviron.png" alt="" loading="lazy" /></div>
+          <div class="inspire-row__text">
+            <h3 class="script-title reveal-up" data-i18n="about.inspire.sport.title">Le sport</h3>
+            <p class="reveal-up" data-i18n="about.inspire.sport.text"></p>
+            <a href="sport.html" class="btn btn--primary btn--sm magnetic reveal-up"><span class="btn__text" data-i18n="about.inspire.more">En savoir plus</span><span class="btn__icon">→</span></a>
+          </div>
+        </article>
+
+        <article class="inspire-row">
+          <div class="inspire-row__img reveal-up"><span class="inspire-row__halo"></span><img src="assets/about/cavalier.png" alt="" loading="lazy" /></div>
+          <div class="inspire-row__text">
+            <h3 class="script-title reveal-up" data-i18n="about.inspire.travel.title">Le voyage</h3>
+            <p class="reveal-up" data-i18n="about.inspire.travel.text"></p>
+            <a href="voyage.html" class="btn btn--primary btn--sm magnetic reveal-up"><span class="btn__text" data-i18n="about.inspire.more">En savoir plus</span><span class="btn__icon">→</span></a>
+          </div>
+        </article>
       </div>
     </section>
 

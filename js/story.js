@@ -79,7 +79,7 @@
           <span class="ring__deg">360°</span>
         </div>`;
     }
-    return `<span class="s-bigword" aria-hidden="true">${tx(P.title)}</span>`;
+    return `<span class="s-bigword" aria-hidden="true">${tx(P.title)}</span>${P.heroImage ? `<img class="s-hero-img" src="${esc(P.heroImage)}" alt="" onerror="this.remove()" />` : ""}`;
   }
 
   const doodles = {
