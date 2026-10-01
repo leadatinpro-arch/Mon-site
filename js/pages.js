@@ -100,8 +100,7 @@ window.PAGES = {
           posters: [
             { src: "assets/eclipse/sept-affiche.jpg", alt: { fr: "Affiche Eclipse Festival, 11 septembre", en: "Eclipse Festival poster, September 11" } },
             { src: "assets/eclipse/sept-lineup.jpg", alt: { fr: "Line-up du 11 septembre", en: "September 11 line-up" } },
-            { src: "assets/eclipse/sept-billetterie.jpg", alt: { fr: "Visuel « La billetterie est ouverte »", en: "“Ticketing is open” visual" } },
-            { src: "assets/eclipse/sept-affiche-2.jpg", alt: { fr: "Affiche Eclipse, 11 septembre", en: "Eclipse poster, September 11" } }
+            { src: "assets/eclipse/sept-billetterie.jpg", alt: { fr: "Visuel « La billetterie est ouverte »", en: "“Ticketing is open” visual" } }
           ]
         }
       ],
@@ -135,12 +134,12 @@ window.PAGES = {
       ],
       title: { fr: "Voici Hélios", en: "Meet Hélios" },
       text: {
-        fr: "Une petite lune à lunettes, un éclat de soleil dans le dos, et toujours le casque sur les oreilles. Je l'ai créé pour donner un visage à Eclipse : il porte désormais nos affiches, nos réseaux et nos goodies.",
-        en: "A little moon in sunglasses, a burst of sun behind him, and headphones always on. I created him to give Eclipse a face: he now fronts our posters, social media and merch."
+        fr: "Hélios, c'est une éclipse personnifiée : la lune devant, le soleil qui dépasse derrière, des lunettes et le casque toujours sur les oreilles. Je l'ai créé pour donner un visage à Eclipse : il porte désormais nos affiches, nos réseaux et nos goodies.",
+        en: "Hélios is an eclipse brought to life: the moon in front, the sun peeking out behind, sunglasses on and headphones always on. I created him to give Eclipse a face: he now fronts our posters, social media and merch."
       },
       bubble: { fr: "Salut, moi c'est Hélios !", en: "Hi, I'm Hélios!" },
       faq: [
-        { q: { fr: "Qui est Hélios ?", en: "Who is Hélios?" }, a: { fr: "La mascotte d'Eclipse : une lune qui a croqué un bout de soleil, fan de techno, de hard techno et de raw.", en: "Eclipse's mascot: a moon that took a bite of the sun, into techno, hard techno and raw." }, img: "assets/eclipse/mascotte-3.png" },
+        { q: { fr: "Qui est Hélios ?", en: "Who is Hélios?" }, a: { fr: "La mascotte d'Eclipse : une éclipse personnifiée, fan de techno, de hard techno et de raw.", en: "Eclipse's mascot: an eclipse brought to life, into techno, hard techno and raw." }, img: "assets/eclipse/mascotte-3.png" },
         { q: { fr: "Sa mission ?", en: "His mission?" }, a: { fr: "Mettre l'ambiance, annoncer les prochaines dates et rappeler à chacun de passer une soirée safe.", en: "Setting the mood, announcing upcoming dates and reminding everyone to have a safe night." }, img: "assets/eclipse/mascotte.png" },
         { q: { fr: "Où le retrouver ?", en: "Where to find him?" }, a: { fr: "Sur nos affiches, nos réseaux, nos stickers… et bientôt en soirée.", en: "On our posters, social media, stickers… and soon at our nights." }, img: "assets/eclipse/mascotte-2.png" }
       ]
