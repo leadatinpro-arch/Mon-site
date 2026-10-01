@@ -589,6 +589,13 @@ window.PAGES = {
           tag: { fr: "Packaging & illustration", en: "Packaging & illustration" },
           title: { fr: "Donner vie à un univers", en: "Bringing a world to life" },
           text: { fr: "Un packaging de jeu imaginé et illustré de bout en bout, avec son personnage, ses couleurs et son plateau : la preuve qu'une identité forte raconte une histoire.", en: "A game packaging designed and illustrated from start to finish, with its character, colours and board: proof that a strong identity tells a story." }
+        },
+        {
+          src: "assets/eclipse/mascotte-2.png",
+          tag: { fr: "Direction artistique · Eclipse", en: "Art direction · Eclipse" },
+          title: { fr: "Eclipse : de l'affiche à la mascotte", en: "Eclipse: from poster to mascot" },
+          text: { fr: "Pour Eclipse, j'ai créé toute l'identité visuelle : une charte déclinée dans une couleur par édition, les affiches, les visuels réseaux et Hélios, la mascotte que j'ai dessinée. Mon goût pour le dessin au service d'un vrai projet.", en: "For Eclipse, I created the whole visual identity: guidelines with a new colour for each edition, posters, social visuals and Hélios, the mascot I drew. My love of drawing put to work on a real project." },
+          link: { href: "eclipse.html", label: { fr: "Voir le projet Eclipse", en: "See the Eclipse project" } }
         }
       ]
     },
@@ -618,28 +625,62 @@ window.PAGES = {
     back: "about",
     eyebrow: { fr: "Ce qui m'inspire", en: "What inspires me" },
     title: "SPORT",
-    heroImage: "assets/about/aviron.png",
+    heroImage: "assets/sport/skiff.png",
+    heroFx: "glide",
     tagline: {
-      fr: "Le sport a toujours été une passion, mais l'aviron a marqué un tournant : il a forgé mon esprit d'équipe et ma détermination.",
-      en: "Sport has always been a passion, but rowing was a turning point: it shaped my team spirit and determination."
+      fr: "L'aviron, une école de rigueur et de persévérance. Un sport qui a forgé mon esprit d'équipe et ma détermination.",
+      en: "Rowing, a school of rigour and perseverance. A sport that shaped my team spirit and determination."
     },
-    highlights: [
-      { title: { fr: "Rigueur", en: "Rigour" }, text: { fr: "L'aviron est un sport exigeant, qui demande de la précision et de la régularité à chaque coup de rame.", en: "Rowing is a demanding sport that requires precision and consistency with every stroke." } },
-      { title: { fr: "Persévérance & pression", en: "Perseverance & pressure" }, text: { fr: "Tenir dans l'effort et garder son calme en compétition : des réflexes que j'applique aussi au travail.", en: "Pushing through the effort and staying calm in competition: reflexes I also bring to work." } },
-      { title: { fr: "Esprit d'équipe", en: "Team spirit" }, text: { fr: "Entraîneuse d'aviron, je sais qu'on va plus loin quand tout le monde rame dans le même sens.", en: "As a rowing coach, I know you go further when everyone rows in the same direction." } }
+    facts: [
+      { label: { fr: "Discipline", en: "Sport" }, value: { fr: "Aviron", en: "Rowing" } },
+      { label: { fr: "Rythme", en: "Training" }, value: { fr: "4 entraînements / semaine", en: "4 sessions / week" } },
+      { label: { fr: "Niveau", en: "Level" }, value: { fr: "Championnats de France", en: "French Championships" } },
+      { label: { fr: "Aujourd'hui", en: "Today" }, value: { fr: "Encadrement des jeunes", en: "Coaching young rowers" } }
     ],
-    gallery: {
-      title: { fr: "Galerie", en: "Gallery" },
-      subtitle: { fr: "Sur l'eau · cliquez pour agrandir", en: "On the water · click to enlarge" },
-      items: [
-        { src: "assets/sport/sport-1.jpg" },
-        { src: "assets/sport/sport-2.jpg" },
-        { src: "assets/sport/sport-3.jpg" },
-        { src: "assets/sport/sport-4.jpg" },
-        { src: "assets/sport/sport-5.jpg" },
-        { src: "assets/sport/sport-6.jpg" }
+    intro: {
+      title: { fr: "Mon parcours", en: "My journey" },
+      text: {
+        fr: "J'ai commencé l'aviron en classe de troisième. Dès la première année, avec quatre entraînements par semaine, je me qualifie pour les championnats de France en duo. Malgré des problèmes de santé qui m'ont contrainte à arrêter la pratique intensive, je ne me suis jamais éloignée de mon club. Cette expérience m'a appris la persévérance, l'esprit d'équipe et à ne jamais abandonner.",
+        en: "I started rowing in year 10. In my very first year, training four times a week, I qualified for the French Championships in a double. Health issues later forced me to stop training intensively, but I never left my club. This experience taught me perseverance, team spirit and never to give up."
+      }
+    },
+    race: {
+      title: { fr: "Ma course", en: "My race" },
+      subtitle: { fr: "Faites défiler pour ramer", en: "Scroll to row" },
+      boat: "assets/sport/skiff.png",
+      steps: [
+        { tag: { fr: "Départ", en: "Start" }, title: { fr: "Premiers coups de rame", en: "First strokes" }, text: { fr: "Je découvre l'aviron en troisième, avec quatre entraînements par semaine.", en: "I discover rowing in year 10, training four times a week." } },
+        { tag: { fr: "500 m", en: "500 m" }, title: { fr: "Championnats de France", en: "French Championships" }, text: { fr: "Dès la première année, qualification pour les championnats de France en duo.", en: "In my first year, I qualify for the French Championships in a double." } },
+        { tag: { fr: "1 000 m", en: "1,000 m" }, title: { fr: "Seule et en équipage", en: "Solo and in crews" }, text: { fr: "Compétitions en individuel, en duo et en équipe (quatre et huit) : coordination et patience.", en: "Competing solo, in doubles and in crews (fours and eights): coordination and patience." } },
+        { tag: { fr: "1 500 m", en: "1,500 m" }, title: { fr: "Un virage imprévu", en: "An unexpected turn" }, text: { fr: "Des problèmes de santé m'obligent à arrêter la pratique intensive. Je reste au club.", en: "Health issues force me to stop training intensively. I stay with the club." } },
+        { tag: { fr: "Arrivée", en: "Finish" }, title: { fr: "De l'autre côté du bateau", en: "On the other side of the boat" }, text: { fr: "Organisation des tests chronométrés et encadrement des plus jeunes.", en: "Organising timed trials and coaching the younger rowers." } }
       ]
     },
+    role: {
+      title: { fr: "Ce que le sport m'a appris", en: "What sport taught me" },
+      subtitle: { fr: "Et ce que j'en fais au travail", en: "And how I use it at work" },
+      items: [
+        { title: { fr: "Rigueur", en: "Rigour" }, text: { fr: "Respecter un programme exigeant et s'y tenir. Au travail : des plannings tenus et des deadlines respectées.", en: "Sticking to a demanding programme. At work: schedules kept and deadlines met." } },
+        { title: { fr: "Esprit d'équipe", en: "Team spirit" }, text: { fr: "Avancer ensemble, synchroniser les efforts. Au travail : coordonner 12 pays dans la même direction.", en: "Moving forward together, syncing efforts. At work: getting 12 countries pulling in the same direction." } },
+        { title: { fr: "Gestion de la pression", en: "Handling pressure" }, text: { fr: "Performer en compétition malgré le stress. Au travail : garder son calme quand les échéances approchent.", en: "Performing in competition despite stress. At work: staying calm as deadlines approach." } },
+        { title: { fr: "Leadership", en: "Leadership" }, text: { fr: "Encadrer les plus jeunes et soutenir le collectif. Au travail : animer des ateliers et former les équipes.", en: "Coaching younger rowers and supporting the group. At work: running workshops and training teams." } }
+      ]
+    },
+    gallery: {
+      title: { fr: "Sur l'eau", en: "On the water" },
+      subtitle: { fr: "Courses, équipages et podiums · cliquez pour agrandir", en: "Races, crews and podiums · click to enlarge" },
+      items: [
+        { src: "assets/sport/g-equipage.jpg", caption: { fr: "En équipage", en: "In the crew" } },
+        { src: "assets/sport/podium.jpg", caption: { fr: "Médailles et mascotte", en: "Medals and mascot" } },
+        { src: "assets/sport/huit.jpg", caption: { fr: "Un huit sur le lac", en: "An eight on the lake" } },
+        { src: "assets/sport/g-quatre.jpg", caption: { fr: "Un quatre en course", en: "A four racing" } },
+        { src: "assets/sport/equipe-medailles.jpg", caption: { fr: "L'équipe du club", en: "The club team" } },
+        { src: "assets/sport/g-ponton.jpg", caption: { fr: "Avant le départ", en: "Before the start" } },
+        { src: "assets/sport/g-loin.jpg", caption: { fr: "Régate", en: "Regatta" } },
+        { src: "assets/sport/g-repos.jpg", caption: { fr: "Débrief au ponton", en: "Debrief on the pontoon" } }
+      ]
+    },
+    quote: { fr: "On va plus loin quand tout le monde rame dans le même sens.", en: "You go further when everyone rows in the same direction." },
     next: "voyage"
   },
 

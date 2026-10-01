@@ -91,7 +91,7 @@
           <span class="ring__deg">360°</span>
         </div>`;
     }
-    return `<span class="s-bigword" aria-hidden="true">${tx(P.title)}</span>${P.heroImage ? `<img class="s-hero-img" src="${esc(P.heroImage)}" alt="" onerror="this.remove()" />` : ""}`;
+    return `<span class="s-bigword" aria-hidden="true">${tx(P.title)}</span>${P.heroImage ? `<img class="s-hero-img${P.heroFx ? ` s-hero-img--${esc(P.heroFx)}` : ""}" src="${esc(P.heroImage)}" alt="" onerror="this.remove()" />` : ""}`;
   }
 
   const doodles = {
@@ -364,9 +364,39 @@
           <span class="tag reveal-up">${tx(it.tag)}</span>
           <h3 class="show-row__title reveal-up">${tx(it.title)}</h3>
           <p class="reveal-up">${tx(it.text)}</p>
+          ${it.link ? `<a href="${esc(it.link.href)}" class="btn btn--primary btn--sm magnetic reveal-up" style="margin-top:20px"><span class="btn__text">${tx(it.link.label)}</span><span class="btn__icon">→</span></a>` : ""}
         </div>
       </article>`).join("")}
     </div></section>`;
+  }
+
+  function race() {
+    const R = P.race;
+    if (!R) return "";
+    return `<section class="s-race" data-race style="--n:${R.steps.length}">
+      <div class="s-race__sticky">
+        <div class="container">
+          <div class="section-head">
+            <p class="eyebrow"><span>✦</span> <span>${tx(R.subtitle)}</span></p>
+            <h2 class="section-title">${tx(R.title)}</h2>
+          </div>
+        </div>
+        <div class="lane">
+          <div class="lane__water" aria-hidden="true"></div>
+          <div class="lane__buoys" aria-hidden="true">${R.steps.map(() => "<i></i>").join("")}</div>
+          <img class="lane__boat" src="${esc(R.boat)}" alt="" />
+          <span class="lane__wake" aria-hidden="true"></span>
+        </div>
+        <div class="container">
+          <ol class="race-steps">${R.steps.map((st, i) => `
+            <li class="race-step" data-step="${i}">
+              <span class="race-step__tag">${tx(st.tag)}</span>
+              <h3>${tx(st.title)}</h3>
+              <p>${tx(st.text)}</p>
+            </li>`).join("")}</ol>
+        </div>
+      </div>
+    </section>`;
   }
 
   function asset() {
@@ -545,7 +575,7 @@
     lang = currentLang;
     t = translate;
     document.body.classList.add(`theme-${P.theme}`);
-    root.innerHTML = hero() + marquee() + intro() + project() + context() + services() + concept() + event() + stats() + editions() + banner() + walker() + role() + showcase() + asset() + duo() + quote() + highlights() + impact() + award() + outro() + mascot() + faq() + posters() + gallery() + links() + next() + cta();
+    root.innerHTML = hero() + marquee() + intro() + race() + project() + context() + services() + concept() + event() + stats() + editions() + banner() + walker() + role() + showcase() + asset() + duo() + quote() + highlights() + impact() + award() + outro() + mascot() + faq() + posters() + gallery() + links() + next() + cta();
     document.title = `${pick(P.title)} — Léa Datin`;
     const meta = $('meta[name="description"]');
     if (meta) meta.setAttribute("content", pick(P.tagline));
@@ -562,6 +592,16 @@
       eds.forEach((e) => { if (e.getBoundingClientRect().top < mid) cur = e; });
       document.body.style.setProperty("--ed", cur.dataset.edColor);
       document.body.style.setProperty("--ed2", cur.dataset.edColor2);
+    }
+    const rc = $("[data-race]");
+    if (rc) {
+      const r = rc.getBoundingClientRect();
+      const total = rc.offsetHeight - window.innerHeight;
+      const p = total > 0 ? Math.min(Math.max(-r.top / total, 0), 1) : 0;
+      rc.style.setProperty("--rp", reduceMotion ? 1 : p);
+      const n = P.race.steps.length;
+      const cur = Math.min(n - 1, Math.floor(p * n * 0.999));
+      $$(".race-step", rc).forEach((el, i) => { el.classList.toggle("is-on", i === cur); el.classList.toggle("is-done", i < cur); });
     }
     const ban = $("[data-banner]");
     if (ban && !reduceMotion) {

@@ -3868,6 +3868,36 @@ body.theme-eclipse { transition: --ed 1.2s ease, --ed2 1.2s ease; }
   .deck-card--1, .deck-card--2 { transform: none; }
 }
 
+/* ---------- Sport: race lane ---------- */
+.s-hero-img--glide { animation: glide 7s ease-in-out infinite; top: 34%; bottom: auto; width: min(40vw, 560px); }
+@keyframes glide { 0%, 100% { transform: translateX(0) rotate(-2deg); } 50% { transform: translateX(-40px) rotate(-1deg); } }
+.s-race { --rp: 0; position: relative; height: 340vh; }
+.s-race__sticky { position: sticky; top: 0; height: 100vh; height: 100svh; display: flex; flex-direction: column; justify-content: center; overflow: hidden; padding-top: 60px; }
+.s-race .section-head { margin-bottom: clamp(16px, 3vw, 36px); }
+.lane { position: relative; height: clamp(110px, 16vw, 170px); margin: 0 0 clamp(20px, 3vw, 40px); }
+.lane__water { position: absolute; inset: 0; background: repeating-linear-gradient(90deg, rgba(91, 155, 255, 0.12) 0 40px, rgba(91, 155, 255, 0.04) 40px 80px), linear-gradient(180deg, #0f2a6b, #0b1530); border-top: 1px solid rgba(160, 185, 255, 0.25); border-bottom: 1px solid rgba(160, 185, 255, 0.25); background-position: calc(var(--rp) * -600px) 0, 0 0; }
+.lane__buoys { position: absolute; left: 6%; right: 6%; bottom: 10px; display: flex; justify-content: space-between; }
+.lane__buoys i { width: 14px; height: 14px; border-radius: 50%; background: var(--accent); box-shadow: 0 0 12px rgba(255, 210, 63, 0.7); }
+.lane__boat { position: absolute; top: 50%; left: calc(2% + var(--rp) * 72%); width: clamp(200px, 26vw, 360px); transform: translateY(-58%); filter: drop-shadow(0 12px 14px rgba(0, 0, 0, 0.5)); animation: rowBob 1.4s ease-in-out infinite; }
+@keyframes rowBob { 0%, 100% { translate: 0 0; } 50% { translate: 0 4px; } }
+.lane__wake { position: absolute; top: 55%; left: 0; width: calc(2% + var(--rp) * 72% + 20px); height: 2px; background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.5)); }
+.race-steps { display: grid; grid-template-columns: repeat(var(--n), 1fr); gap: 14px; }
+.race-step { padding: 18px; border-radius: 18px; border: 1px solid var(--line); background: var(--bg-2); opacity: 0.4; transform: translateY(10px); transition: opacity 0.5s, transform 0.5s var(--ease-out), border-color 0.4s; }
+.race-step.is-done { opacity: 0.7; transform: none; }
+.race-step.is-on { opacity: 1; transform: translateY(-6px); border-color: var(--accent); box-shadow: 0 20px 40px rgba(255, 210, 63, 0.12); }
+.race-step__tag { display: inline-block; padding: 3px 10px; border-radius: 100px; background: rgba(255, 210, 63, 0.15); color: var(--accent); font-size: 0.72rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; }
+.race-step h3 { font-family: var(--font-display); font-size: 1.05rem; margin: 10px 0 6px; line-height: 1.2; }
+.race-step p { color: var(--muted); font-size: 0.88rem; line-height: 1.5; }
+@media (max-width: 900px) {
+  .s-race { height: auto; }
+  .s-race__sticky { position: static; height: auto; padding: clamp(60px, 10vw, 100px) 0 20px; overflow: visible; }
+  .lane { display: none; }
+  .race-steps { grid-template-columns: 1fr; position: relative; padding-left: 26px; }
+  .race-steps::before { content: ""; position: absolute; left: 8px; top: 10px; bottom: 10px; width: 2px; background: linear-gradient(var(--accent), var(--accent-2)); }
+  .race-step, .race-step.is-done, .race-step.is-on { opacity: 1; transform: none; position: relative; box-shadow: none; }
+  .race-step::before { content: ""; position: absolute; left: -24px; top: 22px; width: 12px; height: 12px; border-radius: 50%; background: var(--accent); }
+}
+
 /* ---------- Story responsive ---------- */
 @media (max-width: 1000px) {
   .s-intro__grid { grid-template-columns: 1fr; }
