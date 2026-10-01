@@ -338,10 +338,63 @@ window.PAGES = {
         }
       ]
     },
-    links: [
-      { label: "laveine.immo", url: "https://www.laveine.immo" }
-    ],
+    links: [],
     cta: { fr: "Besoin d'une community manager ?", en: "Need a community manager?" }
+  },
+
+  cora: {
+    theme: "cora",
+    eyebrow: { fr: "Expérience pro · Alternance", en: "Professional experience · Work-study" },
+    title: "CORA",
+    tagline: {
+      fr: "Chargée de marketing et communication chez Carrefour (anciennement Cora) : campagnes, événements en magasin et réseaux sociaux.",
+      en: "Marketing and communication officer at Carrefour (formerly Cora): campaigns, in-store events and social media."
+    },
+    heroPhotos: ["assets/cora/brioches.jpg", "assets/cora/pommes-amour.jpg", "assets/cora/cora-rose.jpg"],
+    facts: [
+      { label: { fr: "Rôle", en: "Role" }, value: { fr: "Chargée de marketing & communication", en: "Marketing & communication officer" } },
+      { label: { fr: "Période", en: "Period" }, value: { fr: "Avril 2023 – août 2024", en: "April 2023 – August 2024" } },
+      { label: { fr: "Enseigne", en: "Retailer" }, value: { fr: "Carrefour (anciennement Cora)", en: "Carrefour (formerly Cora)" } },
+      { label: { fr: "Statut", en: "Status" }, value: { fr: "Alternance", en: "Work-study" } }
+    ],
+    marquee: ["CORA", "CARREFOUR", "MARKETING OPÉRATIONNEL", "ÉVÉNEMENTIEL", "PLV", "RÉSEAUX SOCIAUX"],
+    intro: {
+      title: { fr: "L'enseigne", en: "The retailer" },
+      text: {
+        fr: "Carrefour est une grande enseigne de distribution qui accueille des milliers de clients chaque jour. Travailler dans cet environnement dynamique m'a permis de développer des compétences clés en marketing opérationnel, communication et gestion de projets événementiels, tout en apprenant à gérer des deadlines serrées et des actions à fort impact.",
+        en: "Carrefour is a major retailer welcoming thousands of customers every day. Working in this fast-paced environment helped me build key skills in operational marketing, communication and event project management, while learning to handle tight deadlines and high-impact actions."
+      }
+    },
+    context: {
+      title: { fr: "Pourquoi cette expérience compte", en: "Why this experience matters" },
+      items: [
+        { label: { fr: "Un environnement exigeant", en: "A demanding environment" }, value: { fr: "Forte affluence, diversité des publics, besoin d'actions rapides et efficaces.", en: "High footfall, diverse audiences, a need for fast and effective actions." } },
+        { label: { fr: "Un rôle polyvalent", en: "A versatile role" }, value: { fr: "Communication interne et externe, marketing digital, organisation d'événements.", en: "Internal and external communication, digital marketing, event organisation." } },
+        { label: { fr: "Un impact direct", en: "A direct impact" }, value: { fr: "Chaque action influence la visibilité et l'expérience client en magasin.", en: "Every action shapes visibility and the in-store customer experience." } }
+      ]
+    },
+    role: {
+      title: { fr: "Mes responsabilités clés", en: "My key responsibilities" },
+      subtitle: { fr: "Chargée de marketing & communication", en: "Marketing & communication officer" },
+      items: [
+        { title: { fr: "Campagnes marketing", en: "Marketing campaigns" }, text: { fr: "Conception et déploiement des actions promotionnelles : affiches, PLV, réseaux sociaux.", en: "Designing and rolling out promotional actions: posters, POS displays, social media." } },
+        { title: { fr: "Organisation d'événements", en: "Event organisation" }, text: { fr: "Coordination des animations en magasin, partenariats locaux, suivi logistique.", en: "Coordinating in-store activities, local partnerships, logistics follow-up." } },
+        { title: { fr: "Supports visuels", en: "Visual materials" }, text: { fr: "Flyers, affiches, présentations et contenus digitaux pour les réseaux sociaux.", en: "Flyers, posters, presentations and digital content for social media." } },
+        { title: { fr: "Réseaux sociaux", en: "Social media" }, text: { fr: "Planification des publications, rédaction des posts, suivi des performances.", en: "Scheduling posts, writing content, tracking performance." } },
+        { title: { fr: "Collaboration interservices", en: "Cross-team collaboration" }, text: { fr: "Échanges avec les équipes commerciales et logistiques pour assurer la cohérence des actions.", en: "Working with sales and logistics teams to keep actions consistent." } }
+      ]
+    },
+    gallery: {
+      title: { fr: "Sur le terrain", en: "In the field" },
+      subtitle: { fr: "Animations et événements · cliquez pour agrandir", en: "Activities and events · click to enlarge" },
+      items: [
+        { src: "assets/cora/pommes-amour.jpg", caption: { fr: "Animation pommes d'amour en magasin", en: "In-store candy apple activity" } },
+        { src: "assets/cora/brioches.jpg", caption: { fr: "« Le tour de France des brioches »", en: "“The Tour de France of brioches”" } },
+        { src: "assets/cora/cora-rose.jpg", caption: { fr: "La course Cora Rose", en: "The Cora Rose run" } }
+      ]
+    },
+    links: [],
+    cta: { fr: "Un projet marketing à lancer ?", en: "A marketing project to launch?" }
   },
 
   "360idcom": {

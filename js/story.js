@@ -62,6 +62,9 @@
           </div>
         </div>`;
     }
+    if (P.heroPhotos) {
+      return `<div class="photo-stack" aria-hidden="true">${P.heroPhotos.map((src, i) => `<img class="photo-stack__img photo-stack__img--${i + 1}" src="${esc(src)}" alt="" />`).join("")}</div>`;
+    }
     if (P.theme === "jli" && P.logo) {
       return `<div class="jli-hero" aria-hidden="true">
           <span class="jli-hero__beam"></span>

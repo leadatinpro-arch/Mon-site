@@ -95,27 +95,22 @@ window.PROJECTS = [
   },
   {
     id: "cora",
+    page: "cora.html",
     type: "pro",
     featured: true,
     color: 4,
     shape: "leaf",
     year: "2023 — 2024",
-    image: "",
-    title: { fr: "Cora — Marketing & communication", en: "Cora — Marketing & communication" },
+    image: "assets/cora/brioches.jpg",
+    title: { fr: "Carrefour (ex-Cora) — Marketing & communication", en: "Carrefour (ex-Cora) — Marketing & communication" },
     summary: {
-      fr: "Alternance : organisation d'événements internes et externes, création de supports de communication.",
-      en: "Work-study: organising internal and external events, creating communication materials."
+      fr: "Alternance (avril 2023 – août 2024) : campagnes promotionnelles, événements en magasin, supports visuels et réseaux sociaux.",
+      en: "Work-study (April 2023 – August 2024): promotional campaigns, in-store events, visual materials and social media."
     },
-    context: {
-      fr: "Alternance au sein du service marketing et communication de Cora.",
-      en: "Work-study position within Cora's marketing and communication department."
-    },
-    mission: {
-      fr: "Organisation et gestion d'événements internes et externes. Création de supports de communication et de visuels marketing.",
-      en: "Organising and managing internal and external events. Creating communication materials and marketing visuals."
-    },
+    context: { fr: "Grande enseigne de distribution.", en: "Major retailer." },
+    mission: { fr: "Campagnes, événements, supports visuels, réseaux sociaux.", en: "Campaigns, events, visual materials, social media." },
     results: "",
-    tags: [{ fr: "Événementiel", en: "Events" }, "Communication", { fr: "Création visuelle", en: "Visual design" }]
+    tags: [{ fr: "Marketing opérationnel", en: "Operational marketing" }, { fr: "Événementiel", en: "Events" }, "PLV", { fr: "Réseaux sociaux", en: "Social media" }]
   },
   {
     id: "jacques-laveine",
@@ -206,12 +201,12 @@ window.TIMELINE = [
 
   {
     kind: "work",
-    period: "2023 — 2024",
-    title: { fr: "Alternance Marketing & Communication", en: "Marketing & Communication (work-study)" },
-    place: "Cora",
+    period: { fr: "Avr. 2023 — août 2024", en: "Apr 2023 — Aug 2024" },
+    title: { fr: "Chargée de marketing et communication (alternance)", en: "Marketing & communication officer (work-study)" },
+    place: "Carrefour (anciennement Cora)",
     text: {
-      fr: "Organisation et gestion d'événements internes et externes, création de supports de communication et de visuels marketing.",
-      en: "Organising internal and external events, creating communication materials and marketing visuals."
+      fr: "Campagnes promotionnelles, organisation d'événements en magasin, supports visuels et animation des réseaux sociaux.",
+      en: "Promotional campaigns, in-store event organisation, visual materials and social media management."
     }
   },
   {
