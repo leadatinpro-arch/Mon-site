@@ -155,7 +155,7 @@ Object.assign(window.TRANSLATIONS.fr, {
   "meta.projects.title": "Projets — Léa Datin",
   "meta.projects.description": "Expériences professionnelles et projets personnels de Léa Datin en marketing digital.",
   "meta.contact.title": "Contact — Léa Datin",
-  "meta.contact.description": "Contactez Léa Datin pour un poste, une mission freelance ou un stage en marketing digital.",
+  "meta.contact.description": "Contactez Léa Datin pour un poste ou une mission freelance en marketing digital.",
   "meta.404.title": "Page introuvable — Léa Datin",
 
   "projects.view": "Voir le projet",
@@ -254,7 +254,7 @@ Object.assign(window.TRANSLATIONS.en, {
   "meta.projects.title": "Projects — Léa Datin",
   "meta.projects.description": "Professional experience and personal projects by Léa Datin in digital marketing.",
   "meta.contact.title": "Contact — Léa Datin",
-  "meta.contact.description": "Get in touch with Léa Datin for a job, a freelance mission or an internship in digital marketing.",
+  "meta.contact.description": "Get in touch with Léa Datin for a job or a freelance mission in digital marketing.",
   "meta.404.title": "Page not found — Léa Datin",
 
   "projects.view": "View project",
@@ -499,12 +499,12 @@ Object.assign(window.TRANSLATIONS.en, {
 
 /* ---------- Page Contact (v2) ---------- */
 Object.assign(window.TRANSLATIONS.fr, {
-  "hero.available": "Disponible dès novembre 2026 · France & international",
+  "hero.available": "Disponible immédiatement · France & international",
   "contactPage.title1": "Prête à rejoindre",
   "contactPage.title2": "votre",
   "contactPage.title3": "équipe",
-  "contactPage.lead": "Disponible dès <strong>novembre 2026</strong>, en France ou à l'international. Un poste qui me correspond ? La localisation n'est <strong>pas</strong> un frein.",
-  "contactPage.chip1": "Disponible nov. 2026",
+  "contactPage.lead": "Disponible <strong>dès maintenant</strong>, en France ou à l'international. Un poste qui me correspond ? La localisation n'est <strong>pas</strong> un frein.",
+  "contactPage.chip1": "Disponible immédiatement",
   "contactPage.chip2": "🌍 France & international",
   "contactPage.chip3": "✈️ Mobilité complète",
   "contactPage.hello": "Hello !",
@@ -515,7 +515,7 @@ Object.assign(window.TRANSLATIONS.fr, {
   "contactPage.profile": "Voir le profil",
   "contactPage.cv": "Consultez<br>mon CV !",
   "contactPage.dispo.label": "Disponibilité",
-  "contactPage.dispo.date": "Nov. 2026",
+  "contactPage.dispo.date": "Dès maintenant",
   "contactPage.dispo.where": "France &amp;<br>International",
   "contactPage.dispo.sub": "Mobilité complète",
   "contactPage.vcard.title": "Ajoutez-moi en un scan",
@@ -523,12 +523,12 @@ Object.assign(window.TRANSLATIONS.fr, {
   "contactPage.vcard.btn": "Télécharger ma carte"
 });
 Object.assign(window.TRANSLATIONS.en, {
-  "hero.available": "Available from November 2026 · France & abroad",
+  "hero.available": "Available now · France & abroad",
   "contactPage.title1": "Ready to join",
   "contactPage.title2": "your",
   "contactPage.title3": "team",
-  "contactPage.lead": "Available from <strong>November 2026</strong>, in France or abroad. A role that fits me? Location is <strong>not</strong> an issue.",
-  "contactPage.chip1": "Available Nov 2026",
+  "contactPage.lead": "Available <strong>right now</strong>, in France or abroad. A role that fits me? Location is <strong>not</strong> an issue.",
+  "contactPage.chip1": "Available now",
   "contactPage.chip2": "🌍 France & abroad",
   "contactPage.chip3": "✈️ Fully mobile",
   "contactPage.hello": "Hello!",
@@ -539,7 +539,7 @@ Object.assign(window.TRANSLATIONS.en, {
   "contactPage.profile": "View profile",
   "contactPage.cv": "Check out<br>my resume!",
   "contactPage.dispo.label": "Availability",
-  "contactPage.dispo.date": "Nov 2026",
+  "contactPage.dispo.date": "Right now",
   "contactPage.dispo.where": "France &amp;<br>International",
   "contactPage.dispo.sub": "Fully mobile",
   "contactPage.vcard.title": "Add me in one scan",
