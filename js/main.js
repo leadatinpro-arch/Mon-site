@@ -515,64 +515,22 @@
   window.addEventListener("resize", () => { refreshProjects(); updateScrollFx(); moveFilterPill(); });
 
   /* ==================================================================
-     3D particle globe (projects page) — canvas, no images
+     3D card deck (projects page): fans out on scroll, tilts with the mouse
      ================================================================== */
-  const globe = $("[data-globe]");
-  if (globe) {
-    const ctx = globe.getContext("2d");
-    const N = 520, pts = [];
-    for (let i = 0; i < N; i++) {
-      const y = 1 - (i / (N - 1)) * 2, r = Math.sqrt(1 - y * y), th = Math.PI * (3 - Math.sqrt(5)) * i;
-      pts.push([Math.cos(th) * r, y, Math.sin(th) * r]);
+  const deck = $("[data-deck]");
+  if (deck) {
+    const fan = () => {
+      const p = reduceMotion ? 1 : Math.min(window.scrollY / (window.innerHeight * 0.45), 1);
+      deck.style.setProperty("--fan", (0.35 + p * 0.65).toFixed(3));
+    };
+    window.addEventListener("scroll", () => requestAnimationFrame(fan), { passive: true });
+    setTimeout(() => { deck.classList.add("is-in"); fan(); }, reduceMotion ? 0 : 900);
+    if (finePointer && !reduceMotion) {
+      window.addEventListener("pointermove", (e) => {
+        deck.style.setProperty("--tx", ((e.clientX / window.innerWidth - 0.5) * 18).toFixed(2) + "deg");
+        deck.style.setProperty("--ty", ((e.clientY / window.innerHeight - 0.5) * -12).toFixed(2) + "deg");
+      }, { passive: true });
     }
-    // a few highlighted "hubs" (projects / countries)
-    const hubs = [12, 64, 141, 199, 263, 318, 377, 430, 488];
-    let W = 0, H = 0, R = 0, rotY = 0, rotX = -0.35, tX = -0.35, tY = 0, dpr = 1, visible = true;
-    function size() {
-      dpr = Math.min(window.devicePixelRatio || 1, 2);
-      const rect = globe.getBoundingClientRect();
-      W = rect.width; H = rect.height; R = Math.min(W, H) * 0.42;
-      globe.width = W * dpr; globe.height = H * dpr;
-      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
-    }
-    function frame() {
-      if (!visible) return requestAnimationFrame(frame);
-      ctx.clearRect(0, 0, W, H);
-      rotY += reduceMotion ? 0 : 0.0025;
-      rotX += (tX - rotX) * 0.05;
-      const ry = rotY + tY;
-      const cy = Math.cos(ry), sy = Math.sin(ry), cx = Math.cos(rotX), sx = Math.sin(rotX);
-      const proj = pts.map(([x, y, z], i) => {
-        let X = x * cy - z * sy, Z = x * sy + z * cy;
-        let Y = y * cx - Z * sx; Z = y * sx + Z * cx;
-        const k = 2.6 / (2.6 + Z);
-        return [W / 2 + X * R * k, H / 2 + Y * R * k, Z, i];
-      }).sort((a, b) => b[2] - a[2]);
-      const hubPts = [];
-      for (const [px, py, z, i] of proj) {
-        const front = (1 - z) / 2;
-        const isHub = hubs.includes(i);
-        if (isHub && z < 0.2) hubPts.push([px, py]);
-        ctx.beginPath();
-        ctx.arc(px, py, isHub ? 3.4 : 0.6 + front * 1.4, 0, Math.PI * 2);
-        ctx.fillStyle = isHub ? `rgba(255,210,63,${0.5 + front * 0.5})` : `rgba(${Math.round(91 + front * 120)},${Math.round(130 + front * 80)},255,${0.12 + front * 0.6})`;
-        ctx.fill();
-      }
-      ctx.strokeStyle = "rgba(255,210,63,0.35)"; ctx.lineWidth = 1;
-      for (let i = 0; i < hubPts.length - 1; i++) {
-        const [x1, y1] = hubPts[i], [x2, y2] = hubPts[i + 1];
-        ctx.beginPath(); ctx.moveTo(x1, y1);
-        ctx.quadraticCurveTo((x1 + x2) / 2, Math.min(y1, y2) - 40, x2, y2); ctx.stroke();
-      }
-      requestAnimationFrame(frame);
-    }
-    size(); window.addEventListener("resize", size);
-    new IntersectionObserver(([e]) => { visible = e.isIntersecting; }).observe(globe);
-    window.addEventListener("pointermove", (e) => {
-      tY = (e.clientX / window.innerWidth - 0.5) * 1.2;
-      tX = -0.35 + (e.clientY / window.innerHeight - 0.5) * 0.6;
-    }, { passive: true });
-    requestAnimationFrame(frame);
   }
 
   /* ==================================================================

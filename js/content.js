@@ -150,30 +150,6 @@ window.PROJECTS = [
     mission: { fr: "Prospection, gestion de projets, création graphique et relation client.", en: "Prospecting, project management, graphic design and client relations." },
     results: { fr: "Mission humanitaire de 5 jours dans un refuge pour animaux à Majorque.", en: "5-day humanitarian mission at an animal shelter in Mallorca." },
     tags: ["Communication", { fr: "Prospection", en: "Prospecting" }, { fr: "Solidarité", en: "Solidarity" }]
-  },
-  {
-    id: "aviron",
-    type: "perso",
-    featured: false,
-    color: 4,
-    shape: "drop",
-    year: "",
-    image: "",
-    title: { fr: "Entraîneuse d'aviron", en: "Rowing coach" },
-    summary: {
-      fr: "Organisation d'événements sportifs et gestion d'équipe.",
-      en: "Organising sports events and managing a team."
-    },
-    context: {
-      fr: "Engagement associatif dans le sport que je pratique : l'aviron.",
-      en: "Volunteering in the sport I practise: rowing."
-    },
-    mission: {
-      fr: "Entraînement et gestion d'équipe, organisation d'événements sportifs.",
-      en: "Coaching and managing a team, organising sports events."
-    },
-    results: "",
-    tags: [{ fr: "Gestion d'équipe", en: "Team management" }, { fr: "Événementiel", en: "Events" }, { fr: "Sport", en: "Sport" }]
   }
 ];
 
