@@ -369,6 +369,34 @@
     </div></section>`;
   }
 
+  function asset() {
+    const A = P.asset;
+    if (!A) return "";
+    return `<section class="s-asset"><div class="container">
+      <div class="s-asset__head">
+        <h2 class="section-title reveal-up">${tx(A.title).replace("?", "")}<span class="q"> ?</span></h2>
+        <p class="s-impact__text reveal-up">${tx(A.text)}</p>
+      </div>
+      <div class="s-asset__deck">${A.images.map((im, i) => `
+        <figure class="deck-card deck-card--${i + 1} reveal-up" data-lb="asset"><img src="${esc(im.src)}" alt="${tx(im.caption)}" loading="lazy" /><figcaption>${tx(im.caption)}</figcaption></figure>`).join("")}</div>
+    </div></section>`;
+  }
+
+  function duo() {
+    if (!P.duo) return "";
+    return `<section class="s-duo"><div class="container s-duo__grid">${P.duo.map((d, i) => `
+      <article class="duo-card reveal-up" style="--d:${i * 0.12}s">
+        <span class="duo-card__obj duo-card__obj--${esc(d.fx || "")}"><img src="${esc(d.img)}" alt="" loading="lazy" /></span>
+        <h3 class="duo-card__title">${tx(d.title)}</h3>
+        <p>${tx(d.text)}</p>
+      </article>`).join("")}</div></section>`;
+  }
+
+  function quote() {
+    if (!P.quote) return "";
+    return `<section class="s-quote"><div class="container"><blockquote class="s-quote__text reveal-up">“${tx(P.quote)}”</blockquote></div></section>`;
+  }
+
   function banner() {
     const B = P.banner;
     if (!B) return "";
@@ -517,7 +545,7 @@
     lang = currentLang;
     t = translate;
     document.body.classList.add(`theme-${P.theme}`);
-    root.innerHTML = hero() + marquee() + intro() + project() + context() + services() + concept() + event() + stats() + editions() + banner() + walker() + role() + showcase() + highlights() + impact() + award() + outro() + mascot() + faq() + posters() + gallery() + links() + next() + cta();
+    root.innerHTML = hero() + marquee() + intro() + project() + context() + services() + concept() + event() + stats() + editions() + banner() + walker() + role() + showcase() + asset() + duo() + quote() + highlights() + impact() + award() + outro() + mascot() + faq() + posters() + gallery() + links() + next() + cta();
     document.title = `${pick(P.title)} — Léa Datin`;
     const meta = $('meta[name="description"]');
     if (meta) meta.setAttribute("content", pick(P.tagline));

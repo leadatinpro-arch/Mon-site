@@ -564,26 +564,50 @@ window.PAGES = {
     title: "ART",
     heroImage: "assets/about/statue.png",
     tagline: {
-      fr: "Musique, dessin, sculpture, cinéma : l'art est pour moi une source d'inspiration et de réflexion, qui nourrit ma créativité et mon ouverture d'esprit.",
-      en: "Music, drawing, sculpture, film: art is a source of inspiration and reflection that feeds my creativity and open-mindedness."
+      fr: "L'art, mon moteur créatif. Dessin, design, musique, cinéma : mes sources d'inspiration au quotidien.",
+      en: "Art, my creative engine. Drawing, design, music, film: my everyday sources of inspiration."
     },
-    highlights: [
-      { title: { fr: "Musique", en: "Music" }, text: { fr: "J'écoute tous les genres et toutes les générations : une manière unique d'exprimer des émotions.", en: "I listen to every genre and every generation: a unique way to express emotions." } },
-      { title: { fr: "Dessin, sculpture & cinéma", en: "Drawing, sculpture & film" }, text: { fr: "Chaque discipline est une façon fascinante de faire passer des idées, qui nourrit ma créativité.", en: "Each discipline is a fascinating way to convey ideas, and it feeds my creativity." } },
-      { title: { fr: "Musées & expositions", en: "Museums & exhibitions" }, text: { fr: "J'en visite régulièrement pour découvrir de nouvelles œuvres, comprendre les courants artistiques et la diversité culturelle.", en: "I visit them regularly to discover new works and understand artistic movements and cultural diversity." } }
-    ],
-    gallery: {
-      title: { fr: "Galerie", en: "Gallery" },
-      subtitle: { fr: "Dessins, créations et coups de cœur · cliquez pour agrandir", en: "Drawings, creations and favourites · click to enlarge" },
+    intro: {
+      title: { fr: "Depuis toujours", en: "Since forever" },
+      text: {
+        fr: "J'ai toujours été profondément attirée par l'art et la création. Depuis mon enfance, le dessin fait partie de mon quotidien, au point d'avoir envisagé des études de graphisme et de design. J'ai finalement choisi la gestion de projet, car j'aime organiser, coordonner et donner vie à des idées. Mais l'art reste une force qui complète mon profil : il nourrit ma créativité et mon sens esthétique.",
+        en: "I've always been deeply drawn to art and creation. Drawing has been part of my daily life since childhood, to the point that I considered studying graphic design. In the end I chose project management, because I love organising, coordinating and bringing ideas to life. But art remains a strength that completes my profile: it feeds my creativity and my eye for aesthetics."
+      }
+    },
+    showcase: {
+      title: { fr: "Mes créations visuelles", en: "My visual creations" },
+      subtitle: { fr: "Chartes, logos, maquettes", en: "Brand guidelines, logos, mock-ups" },
       items: [
-        { src: "assets/art/art-1.jpg" },
-        { src: "assets/art/art-2.jpg" },
-        { src: "assets/art/art-3.jpg" },
-        { src: "assets/art/art-4.jpg" },
-        { src: "assets/art/art-5.jpg" },
-        { src: "assets/art/art-6.jpg" }
+        {
+          src: "assets/art/chartes.png",
+          tag: { fr: "Identités visuelles", en: "Visual identities" },
+          title: { fr: "Des chartes graphiques de A à Z", en: "Brand guidelines from A to Z" },
+          text: { fr: "Au fil de mes études et de mes projets, j'ai souvent pris en charge la partie visuelle : chartes graphiques, logos, palettes, maquettes et flyers. J'aime transformer une idée en identité cohérente et impactante.", en: "Throughout my studies and projects, I often took charge of the visual side: brand guidelines, logos, colour palettes, mock-ups and flyers. I love turning an idea into a coherent, striking identity." }
+        },
+        {
+          src: "assets/art/tylles.png",
+          tag: { fr: "Packaging & illustration", en: "Packaging & illustration" },
+          title: { fr: "Donner vie à un univers", en: "Bringing a world to life" },
+          text: { fr: "Un packaging de jeu imaginé et illustré de bout en bout, avec son personnage, ses couleurs et son plateau : la preuve qu'une identité forte raconte une histoire.", en: "A game packaging designed and illustrated from start to finish, with its character, colours and board: proof that a strong identity tells a story." }
+        }
       ]
     },
+    asset: {
+      title: { fr: "Pourquoi c'est un atout dans mon métier", en: "Why it's an asset in my job" },
+      text: {
+        fr: "Cette sensibilité artistique me permet d'apporter une dimension créative à la gestion de projet. Je sais allier organisation et esthétique, essentiel pour des projets digitaux où l'expérience utilisateur et l'image de marque comptent autant que la technique. Et c'est un vrai plus pour créer des présentations professionnelles qui marquent.",
+        en: "This artistic sensitivity lets me bring a creative dimension to project management. I combine organisation and aesthetics, which is essential for digital projects where user experience and brand image matter as much as the technical side. And it's a real plus for creating professional presentations that stand out."
+      },
+      images: [
+        { src: "assets/art/slides-docaposte.png", caption: { fr: "Présentation Docaposte", en: "Docaposte presentation" } },
+        { src: "assets/art/slides-rolandgarros.png", caption: { fr: "Stratégie e-CRM Roland-Garros", en: "Roland-Garros e-CRM strategy" } }
+      ]
+    },
+    duo: [
+      { img: "assets/art/platine.png", fx: "spin", title: { fr: "Musique", en: "Music" }, text: { fr: "La musique m'accompagne au quotidien. J'écoute tous les genres et toutes les générations : classique, jazz, électro, hip-hop, rock… Chaque style m'apporte une énergie différente et crée une ambiance propice à la réflexion ou à la créativité.", en: "Music is with me every day. I listen to every genre and generation: classical, jazz, electro, hip-hop, rock… Each style brings a different energy and sets the mood for thinking or creating." } },
+      { img: "assets/art/tele.png", fx: "flicker", title: { fr: "Cinéma", en: "Film" }, text: { fr: "Le cinéma influence ma manière de travailler. J'aime analyser la structure d'un film, son rythme, ses cadrages et sa bande-son : ils m'inspirent pour concevoir des projets fluides et immersifs. Films d'auteur, grands classiques, documentaires, animation…", en: "Film influences the way I work. I love analysing a film's structure, rhythm, framing and soundtrack: they inspire me to design smooth, immersive projects. Arthouse, great classics, documentaries, animation…" } }
+    ],
+    quote: { fr: "Transformer une idée en projet concret, c'est là que l'art rencontre la performance.", en: "Turning an idea into a concrete project: that's where art meets performance." },
     next: "sport"
   },
 
