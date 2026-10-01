@@ -13,8 +13,7 @@ Pensez à alléger les images (moins de 500 Ko chacune si possible, par ex. avec
 | `eclipse/mascotte.png`, `mascotte-2.png`, `mascotte-3.png` | Les 3 poses de la mascotte (déjà en place) |
 | `eclipse/affiche-1.jpg`, `affiche-2.jpg` | Affiche du festival et visuel prévention (déjà en place) ; ajoutez-en d'autres dans `js/pages.js` |
 | `eclipse/photo-1.jpg` … `photo-8.jpg`   | La galerie photos des événements Eclipse         |
-| `punch/app-1.png`                       | L'écran affiché dans le téléphone (page PUNCH)   |
-| `punch/visuel-1.jpg` … `visuel-4.jpg`   | La galerie PUNCH                                 |
+| `punch/…`                               | Logo, mascotte et photos PUNCH (déjà en place, recadrés depuis vos captures ; remplacez-les par les originaux pour une meilleure netteté en gardant les mêmes noms) |
 | `360idcom/visuel-1.jpg` … `visuel-3.jpg` | La galerie 360idcom                             |
 | `art/art-1.jpg` … `art-6.jpg`           | La galerie Art                                   |
 | `sport/sport-1.jpg` … `sport-6.jpg`     | La galerie Sport                                 |

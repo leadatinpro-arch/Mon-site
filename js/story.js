@@ -38,6 +38,16 @@
         ${P.heroMascot ? `<img class="hero-mascot" src="${esc(P.heroMascot)}" alt="" onerror="this.remove()" />` : ""}
         <div class="hero-eq" aria-hidden="true">${Array.from({ length: 48 }, (_, i) => `<i style="--i:${i};--h:${20 + ((i * 37) % 80)}%;--dur:${(0.5 + ((i * 37) % 70) / 100).toFixed(2)}s"></i>`).join("")}</div>`;
     }
+    if (P.theme === "punch" && P.logo) {
+      return `<div class="punch-hero" aria-hidden="true">
+          <span class="punch-hero__burst"></span>
+          <img class="punch-hero__logo" src="${esc(P.logo)}" alt="" />
+          ${P.heroMascot ? `<img class="punch-hero__mascot" src="${esc(P.heroMascot)}" alt="" />` : ""}
+          <span class="punch-hero__spark punch-hero__spark--1">✦</span>
+          <span class="punch-hero__spark punch-hero__spark--2">✦</span>
+          <span class="punch-hero__spark punch-hero__spark--3">★</span>
+        </div>`;
+    }
     if (P.theme === "punch") {
       return `<div class="phone" aria-hidden="true">
           <div class="phone__notch"></div>
@@ -90,6 +100,66 @@
     </div></section>`;
   }
 
+  function context() {
+    const C = P.context;
+    if (!C) return "";
+    return `<section class="s-context"><div class="container">
+      <h2 class="section-title reveal-up">${tx(C.title)}<span class="dots" aria-hidden="true">…</span></h2>
+      <div class="context-grid">${C.items.map((it, i) => `
+        <article class="context-card reveal-up" style="--d:${i * 0.1}s">
+          <span class="context-card__label">${tx(it.label)}</span>
+          <p class="context-card__value">${tx(it.value)}</p>
+          ${it.chips ? `<ul class="context-card__chips">${it.chips.map((c, ci) => `<li class="pill" style="--ci:${ci}">${tx(c)}</li>`).join("")}</ul>` : ""}
+        </article>`).join("")}</div>
+    </div></section>`;
+  }
+
+  function concept() {
+    const C = P.concept;
+    if (!C) return "";
+    return `<section class="s-concept"><div class="container s-concept__grid">
+      <div class="s-concept__visual reveal-up">
+        <span class="s-concept__ring" aria-hidden="true"></span>
+        ${C.image ? `<img class="s-concept__mascot" src="${esc(C.image)}" alt="${esc(t("story.mascotAlt"))}" onerror="this.remove()" />` : ""}
+        ${C.photo ? media(C.photo, "", "s-concept__photo", "story.placeholder", "concept") : ""}
+      </div>
+      <div class="s-concept__text">
+        <h2 class="section-title reveal-up">${tx(C.title)}</h2>
+        <p class="s-intro__text reveal-up">${tx(C.text)}</p>
+        ${C.pillars ? `<ul class="pillars">${C.pillars.map((pl, i) => `<li class="pillar reveal-up" style="--d:${i * 0.1}s"><span class="pillar__icon">${["◎", "✚", "♥"][i % 3]}</span>${tx(pl)}</li>`).join("")}</ul>` : ""}
+      </div>
+    </div></section>`;
+  }
+
+  function award() {
+    const A = P.award;
+    if (!A) return "";
+    return `<section class="s-award"><div class="container s-award__grid">
+      <div class="s-award__text">
+        <div class="medal reveal-up" aria-hidden="true">
+          <span class="medal__ribbon"></span>
+          <span class="medal__disc"><span>1</span></span>
+        </div>
+        <h2 class="section-title reveal-up">${tx(A.title)}</h2>
+        <p class="s-award__badge reveal-up"><strong>${tx(A.badge)}</strong> · ${tx(A.prize)}</p>
+        <p class="s-award__desc reveal-up">${tx(A.text)}</p>
+      </div>
+      ${A.image ? media(A.image, pick(A.prize), "s-award__photo reveal-up", "story.placeholder", "award") : ""}
+    </div></section>`;
+  }
+
+  function outro() {
+    const O = P.outro;
+    if (!O) return "";
+    return `<section class="s-outro"><div class="container"><div class="s-outro__grid">
+      <div>
+        <h2 class="section-title reveal-up">${tx(O.title).replace("?", '<span class="q">?</span>')}</h2>
+        <p class="s-intro__text reveal-up">${tx(O.text)}</p>
+      </div>
+      ${O.image ? `<img class="s-outro__img reveal-up" src="${esc(O.image)}" alt="" onerror="this.remove()" />` : ""}
+    </div></div></section>`;
+  }
+
   function event() {
     const E = P.event;
     if (!E) return "";
@@ -140,13 +210,15 @@
           </li>`).join("")}</ol>
       </div></section>`;
     }
+    const withImg = P.role.image ? `<figure class="role-photo reveal-up">${media(P.role.image, "", "role-photo__media", "story.placeholder", "role")}</figure>` : "";
     return `<section class="s-role"><div class="container">${head}
-      <div class="role-grid">${P.role.items.map((it, i) => `
+      <div class="${P.role.image ? "role-split" : ""}">${withImg}
+      <div class="role-grid${P.role.items.length === 4 ? " role-grid--4" : ""}">${P.role.items.map((it, i) => `
         <article class="value reveal-up" style="--d:${i * 0.1}s">
           <span class="value__num">${String(i + 1).padStart(2, "0")}</span>
           <h3 class="value__title">${tx(it.title)}</h3>
           <p class="value__text">${tx(it.text)}</p>
-        </article>`).join("")}</div>
+        </article>`).join("")}</div></div>
     </div></section>`;
   }
 
@@ -250,7 +322,7 @@
     lang = currentLang;
     t = translate;
     document.body.classList.add(`theme-${P.theme}`);
-    root.innerHTML = hero() + marquee() + intro() + event() + stats() + walker() + role() + highlights() + mascot() + posters() + gallery() + links() + next() + cta();
+    root.innerHTML = hero() + marquee() + intro() + context() + concept() + event() + stats() + walker() + role() + highlights() + award() + outro() + mascot() + posters() + gallery() + links() + next() + cta();
     document.title = `${pick(P.title)} — Léa Datin`;
     const meta = $('meta[name="description"]');
     if (meta) meta.setAttribute("content", pick(P.tagline));

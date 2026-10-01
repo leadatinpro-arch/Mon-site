@@ -73,22 +73,25 @@ window.PROJECTS = [
     color: 3,
     shape: "drop",
     year: "",
-    image: "",
-    title: { fr: "PUNCH — Start-up santé", en: "PUNCH — Health start-up" },
+    image: "assets/punch/photo-stand.jpg",
+    title: { fr: "PUNCH — Mini-entreprise", en: "PUNCH — Student company" },
     summary: {
-      fr: "Co-fondatrice : pilotage d'une start-up santé, conception d'une application mobile et stratégie marketing digital.",
-      en: "Co-founder: leading a health start-up, designing a mobile app and building the digital marketing strategy."
+      fr: "Co-fondatrice d'une mini-entreprise engagée pour le bien-être mental. Médaille d'or du prix Économie sociale et solidaire.",
+      en: "Co-founder of a student company committed to mental well-being. Gold medal, Social and solidarity economy award."
     },
     context: {
-      fr: "PUNCH est une start-up dans le domaine de la santé que j'ai co-fondée, avec pour ambition de proposer une application mobile.",
-      en: "PUNCH is a health start-up I co-founded, with the ambition of launching a mobile app."
+      fr: "Projet d'un an dans le cadre du programme Entreprendre Pour Apprendre.",
+      en: "A one-year project as part of the Entreprendre Pour Apprendre programme."
     },
     mission: {
-      fr: "Pilotage du projet, conception de l'application mobile et définition de la stratégie marketing digital.",
-      en: "Leading the project, designing the mobile app and defining the digital marketing strategy."
+      fr: "Concept, identité visuelle, communication et pitch final d'une application de soutien mental.",
+      en: "Concept, visual identity, communication and final pitch for a mental health support app."
     },
-    results: "",
-    tags: [{ fr: "Entrepreneuriat", en: "Entrepreneurship" }, { fr: "App mobile", en: "Mobile app" }, { fr: "Stratégie digitale", en: "Digital strategy" }]
+    results: {
+      fr: "Médaille d'or du prix « Économie sociale et solidaire » au concours des mini-entreprises.",
+      en: "Gold medal for the “Social and solidarity economy” award at the student company competition."
+    },
+    tags: [{ fr: "Entrepreneuriat", en: "Entrepreneurship" }, { fr: "Identité visuelle", en: "Visual identity" }, "Pitch", "ESS"]
   },
   {
     id: "cora",

@@ -113,49 +113,101 @@ window.PAGES = {
   /* ------------------------------------------------------------------ */
   punch: {
     theme: "punch",
-    eyebrow: { fr: "Projet perso · Entrepreneuriat", en: "Personal project · Entrepreneurship" },
+    eyebrow: { fr: "Projet perso · Mini-entreprise", en: "Personal project · Student company" },
     title: "PUNCH",
     tagline: {
-      fr: "La start-up santé que j'ai co-fondée : pilotage du projet, conception d'une application mobile et stratégie marketing digital.",
-      en: "The health start-up I co-founded: project leadership, mobile app design and digital marketing strategy."
+      fr: "Une mini-entreprise engagée pour le bien-être mental.",
+      en: "A student company committed to mental well-being."
     },
+    logo: "assets/punch/logo.png",
+    heroMascot: "assets/punch/mascotte-2.png",
     facts: [
       { label: { fr: "Rôle", en: "Role" }, value: { fr: "Co-fondatrice", en: "Co-founder" } },
-      { label: { fr: "Secteur", en: "Sector" }, value: { fr: "Santé", en: "Health" } },
-      { label: { fr: "Produit", en: "Product" }, value: { fr: "Application mobile", en: "Mobile app" } }
+      { label: { fr: "Durée", en: "Duration" }, value: { fr: "1 an", en: "1 year" } },
+      { label: { fr: "Programme", en: "Programme" }, value: "Entreprendre Pour Apprendre" },
+      { label: { fr: "Récompense", en: "Award" }, value: { fr: "Médaille d'or ESS", en: "Gold medal, social economy" } }
     ],
-    phone: { src: "assets/punch/app-1.png" },
+    marquee: ["PUNCH", "SOUTIEN MENTAL", "MINI-ENTREPRISE", "MÉDAILLE D'OR", "ESS"],
     intro: {
-      title: { fr: "Le projet", en: "The project" },
+      title: { fr: "L'origine", en: "How it started" },
       text: {
-        fr: "PUNCH est une start-up dans le domaine de la santé, construite autour d'une application mobile. En tant que co-fondatrice, j'ai participé à toutes les étapes : de la vision du projet à la conception du produit, jusqu'à la stratégie pour le faire connaître.",
-        en: "PUNCH is a health start-up built around a mobile app. As a co-founder, I took part in every stage: from the project vision to product design and the strategy to make it known."
+        fr: "PUNCH est né d'un projet scolaire ambitieux : créer une mini-entreprise dans le cadre du programme Entreprendre Pour Apprendre et participer au concours des mini-entreprises. La seule règle : concevoir un projet complet, réalisable et innovant. Après des semaines de réflexion et de débats, nous avons choisi de nous engager pour une cause sociale forte : le soutien mental.",
+        en: "PUNCH was born from an ambitious school project: creating a student company as part of the Entreprendre Pour Apprendre programme and taking part in the student company competition. The only rule: design a complete, feasible and innovative project. After weeks of thinking and debating, we chose to commit to a strong social cause: mental health support."
       }
     },
-    role: {
-      title: { fr: "Mon rôle", en: "My role" },
-      subtitle: { fr: "Trois casquettes, un même projet", en: "Three hats, one project" },
+    context: {
+      title: { fr: "Contexte", en: "Context" },
       items: [
-        { title: { fr: "Pilotage de la start-up", en: "Leading the start-up" }, text: { fr: "Organisation du projet, priorités, planning et coordination entre les associés.", en: "Organising the project, priorities, planning and coordination between co-founders." } },
-        { title: { fr: "Conception de l'app", en: "Designing the app" }, text: { fr: "Définition des besoins utilisateurs, des fonctionnalités et des parcours de l'application mobile.", en: "Defining user needs, features and user journeys for the mobile app." } },
-        { title: { fr: "Stratégie marketing digital", en: "Digital marketing strategy" }, text: { fr: "Positionnement, cibles et plan de communication pour lancer et faire grandir PUNCH.", en: "Positioning, target audiences and communication plan to launch and grow PUNCH." } }
+        { label: { fr: "Durée du projet", en: "Project length" }, value: { fr: "1 an", en: "1 year" } },
+        {
+          label: { fr: "Mission", en: "Mission" },
+          value: { fr: "Créer une mini-entreprise de A à Z", en: "Build a student company from A to Z" },
+          chips: [
+            { fr: "Nom", en: "Name" }, "Logo", { fr: "Identité visuelle", en: "Visual identity" },
+            "Communication", { fr: "Comptabilité", en: "Accounting" }, "Business plan"
+          ]
+        },
+        { label: { fr: "Objectif final", en: "Final goal" }, value: { fr: "Présenter notre projet devant un jury, comme si nous étions face à des investisseurs.", en: "Pitch our project to a jury, as if we were in front of investors." } }
       ]
     },
-    gallery: {
-      title: { fr: "En images", en: "In pictures" },
-      subtitle: { fr: "Maquettes, écrans et supports · cliquez pour agrandir", en: "Mock-ups, screens and materials · click to enlarge" },
+    concept: {
+      title: { fr: "Le concept PUNCH", en: "The PUNCH concept" },
+      image: "assets/punch/mascotte-1.png",
+      text: {
+        fr: "PUNCH est une application de soutien mental dédiée aux personnes atteintes de troubles du comportement alimentaire, mais aussi à leurs proches. L'objectif : offrir un espace sécurisé, des ressources adaptées et un accompagnement pour améliorer le quotidien des utilisateurs.",
+        en: "PUNCH is a mental health support app for people with eating disorders, and for their loved ones too. The goal: offer a safe space, tailored resources and support to improve users' everyday lives."
+      },
+      pillars: [
+        { fr: "Un espace sécurisé", en: "A safe space" },
+        { fr: "Des ressources adaptées", en: "Tailored resources" },
+        { fr: "Un accompagnement", en: "Ongoing support" }
+      ],
+      photo: "assets/punch/photo-app.jpg"
+    },
+    role: {
+      title: { fr: "Mes responsabilités et réalisations", en: "My responsibilities and achievements" },
+      subtitle: { fr: "Ce que j'ai porté", en: "What I took on" },
+      image: "assets/punch/lea-punch.jpg",
       items: [
-        { src: "assets/punch/visuel-1.jpg" },
-        { src: "assets/punch/visuel-2.jpg" },
-        { src: "assets/punch/visuel-3.jpg" },
-        { src: "assets/punch/visuel-4.jpg" }
+        { title: { fr: "Définition du concept", en: "Defining the concept" }, text: { fr: "Analyse des besoins, proposition de valeur, étude de marché.", en: "Needs analysis, value proposition, market research." } },
+        { title: { fr: "Identité visuelle", en: "Visual identity" }, text: { fr: "Logo, charte graphique, maquettes de l'application.", en: "Logo, brand guidelines, app mock-ups." } },
+        { title: { fr: "Communication & marketing", en: "Communication & marketing" }, text: { fr: "Conception des supports pour le concours, stratégie digitale fictive.", en: "Designing materials for the competition, a mock digital strategy." } },
+        { title: { fr: "Pitch final", en: "Final pitch" }, text: { fr: "Préparation et présentation devant le jury, avec un support visuel professionnel.", en: "Preparing and presenting to the jury, with a professional visual deck." } }
+      ]
+    },
+    award: {
+      title: { fr: "Un succès reconnu", en: "A recognised success" },
+      badge: { fr: "Médaille d'or", en: "Gold medal" },
+      prize: { fr: "Prix « Économie sociale et solidaire »", en: "“Social and solidarity economy” award" },
+      text: {
+        fr: "Après un an de travail, nous avons présenté PUNCH lors du concours des mini-entreprises et remporté la médaille d'or pour le prix « Économie sociale et solidaire ». Une reconnaissance qui confirme la pertinence et l'impact de notre projet.",
+        en: "After a year of work, we presented PUNCH at the student company competition and won the gold medal for the “Social and solidarity economy” award. A recognition that confirms the relevance and impact of our project."
+      },
+      image: "assets/punch/photo-prix.jpg"
+    },
+    outro: {
+      title: { fr: "Et après ?", en: "What's next?" },
+      image: "assets/punch/mascotte-2.png",
+      text: {
+        fr: "Cette expérience nous a tellement marqués que nous envisageons de concrétiser PUNCH, non plus comme un projet fictif, mais comme une solution réelle. Parce que l'innovation sociale mérite de passer du concept à la réalité.",
+        en: "This experience left such a mark on us that we are considering turning PUNCH into reality, no longer as a fictional project but as a real solution. Because social innovation deserves to move from concept to reality."
+      }
+    },
+    gallery: {
+      title: { fr: "Galerie", en: "Gallery" },
+      subtitle: { fr: "Le stand, le concours, l'équipe · cliquez pour agrandir", en: "The stand, the competition, the team · click to enlarge" },
+      items: [
+        { src: "assets/punch/photo-stand.jpg", caption: { fr: "L'équipe PUNCH sur le stand", en: "The PUNCH team at the stand" } },
+        { src: "assets/punch/photo-prix.jpg", caption: { fr: "Remise du label Économie sociale et solidaire", en: "Social and solidarity economy award ceremony" } },
+        { src: "assets/punch/photo-equipe.jpg", caption: { fr: "Sur le stand, avec la mascotte", en: "At the stand, with the mascot" } },
+        { src: "assets/punch/photo-app.jpg", caption: { fr: "L'application PUNCH", en: "The PUNCH app" } },
+        { src: "assets/punch/lea-punch.jpg", caption: { fr: "Le jour du concours", en: "Competition day" } }
       ]
     },
     links: [
-      { label: { fr: "Site web", en: "Website" }, url: "" },
-      { label: "LinkedIn", url: "" }
+      { label: "Instagram @punch.france", url: "https://www.instagram.com/punch.france/" }
     ],
-    cta: { fr: "Un projet à lancer ?", en: "A project to launch?" }
+    cta: { fr: "Un projet engagé à lancer ?", en: "A purpose-driven project to launch?" }
   },
 
   /* ------------------------------------------------------------------ */
