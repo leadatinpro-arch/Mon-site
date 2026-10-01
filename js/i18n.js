@@ -546,3 +546,27 @@ Object.assign(window.TRANSLATIONS.en, {
   "contactPage.vcard.text": "Scan to save my details straight into your contacts.",
   "contactPage.vcard.btn": "Download my card"
 });
+
+/* ---------- Page d'accueil (v2) ---------- */
+Object.assign(window.TRANSLATIONS.fr, {
+  "home.float.countries": "sites pays",
+  "home.float.award": "Médaille d'or ESS",
+  "home.kpi1": "ans d'expérience en alternance",
+  "home.kpi2": "sites pays créés pour Saint-Gobain PAM",
+  "home.kpi3": "personnes à chaque soirée Eclipse",
+  "home.kpi4": "au TOEIC, anglais courant",
+  "home.ring.eyebrow": "Parcours",
+  "home.ring.title": "Mon parcours <em>en 360°</em>",
+  "home.ring.hint": "Faites défiler pour faire tourner · cliquez sur une carte"
+});
+Object.assign(window.TRANSLATIONS.en, {
+  "home.float.countries": "country sites",
+  "home.float.award": "Gold medal, social economy",
+  "home.kpi1": "years of work-study experience",
+  "home.kpi2": "country sites created for Saint-Gobain PAM",
+  "home.kpi3": "people at every Eclipse night",
+  "home.kpi4": "TOEIC score, fluent English",
+  "home.ring.eyebrow": "Journey",
+  "home.ring.title": "My journey <em>in 360°</em>",
+  "home.ring.hint": "Scroll to spin · click a card"
+});

@@ -9,7 +9,7 @@
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='32' fill='%23ffd23f'/%3E%3Ctext x='32' y='41' font-family='Arial' font-weight='900' font-size='26' text-anchor='middle' fill='%2305070d'%3ELD%3C/text%3E%3C/svg%3E" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@500;700;800&family=Manrope:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@500;700;800&family=Manrope:wght@300;400;500;600&family=Kaushan+Script&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="css/style.css" />
 </head>
 <body class="is-loading" data-page="home">
@@ -17,42 +17,62 @@
   <main id="top">
 
     <!-- HERO -->
-    <section class="hero">
+    <section class="hero hero--v2">
       <div class="hero__blob" aria-hidden="true"></div>
       <div class="hero__blob hero__blob--2" aria-hidden="true"></div>
 
-      <div class="hero__inner">
-        <p class="hero__kicker reveal-up">
-          <span class="pulse"></span>
-          <span data-i18n="hero.available">Disponible pour de nouvelles opportunités</span>
-        </p>
+      <div class="hero__inner hero__grid">
+        <div class="hero__copy">
+          <p class="hero__kicker reveal-up">
+            <span class="pulse"></span>
+            <span data-i18n="hero.available">Disponible immédiatement · France & international</span>
+          </p>
 
-        <h1 class="hero__title" aria-label="Léa Datin">
-          <span class="line"><span class="split" data-split>Léa</span></span>
-          <span class="line line--indent"><span class="split split--outline" data-split>Datin</span></span>
-        </h1>
+          <h1 class="hero__title" aria-label="Léa Datin">
+            <span class="line"><span class="split" data-split>Léa</span></span>
+            <span class="line line--indent"><span class="split split--outline" data-split>Datin</span></span>
+          </h1>
 
-        <div class="hero__bottom">
           <p class="hero__role reveal-up">
-            <span data-i18n="hero.role">Spécialiste en</span>
-            <span class="rotator" aria-live="polite">
-              <span class="rotator__word" data-i18n-list="hero.words">Marketing digital</span>
-            </span>
+            <span data-i18n="hero.role">Cheffe de projet</span>
+            <span class="rotator" aria-live="polite"><span class="rotator__word">Marketing digital</span></span>
           </p>
 
-          <p class="hero__desc reveal-up" data-i18n="hero.desc">
-            Je transforme les idées en stratégies qui convertissent — du premier clic à la fidélisation.
-          </p>
+          <p class="hero__desc reveal-up" data-i18n="hero.desc">Je pilote des projets marketing de A à Z, à l'international comme sur le terrain.</p>
 
           <div class="hero__ctas reveal-up">
             <a href="projects.html" class="btn btn--primary magnetic" data-cursor="go">
               <span class="btn__text" data-i18n="hero.cta1">Voir mes projets</span>
               <span class="btn__icon">→</span>
             </a>
-            <a href="contact.html" class="btn btn--ghost magnetic">
-              <span class="btn__text" data-i18n="hero.cta2">Me contacter</span>
+            <a href="assets/cv-lea-datin.pdf" class="btn btn--ghost magnetic" data-cv download>
+              <span class="btn__text" data-i18n="about.cta.cv">Télécharger mon CV</span>
+              <span class="btn__icon">↓</span>
             </a>
           </div>
+        </div>
+
+        <div class="hero-stage reveal-up" data-parallax-stage aria-hidden="true">
+          <div class="hero-stage__orbit"></div>
+          <div class="hero-stage__orbit hero-stage__orbit--2"></div>
+          <div class="hero-stage__arch"></div>
+          <img class="hero-stage__photo" src="assets/about/lea-pull.png" alt="" />
+
+          <a href="eclipse.html" class="float-card float-card--1" data-depth="0.6" tabindex="-1">
+            <img src="assets/eclipse/mascotte-2.png" alt="" />
+          </a>
+          <a href="punch.html" class="float-card float-card--2" data-depth="1" tabindex="-1">
+            <img src="assets/punch/logo.png" alt="" />
+          </a>
+          <a href="saint-gobain.html" class="float-card float-card--3 float-card--stat" data-depth="0.8" tabindex="-1">
+            <strong>12</strong><span data-i18n="home.float.countries">sites pays</span>
+          </a>
+          <a href="eclipse.html" class="float-card float-card--4" data-depth="1.3" tabindex="-1">
+            <img src="assets/eclipse/sept-affiche.jpg" alt="" />
+          </a>
+          <span class="float-card float-card--5 float-card--chip" data-depth="0.5">🥇 <span data-i18n="home.float.award">Médaille d'or ESS</span></span>
+          <span class="hero-stage__spark hero-stage__spark--1">✦</span>
+          <span class="hero-stage__spark hero-stage__spark--2">✦</span>
         </div>
       </div>
 
@@ -90,6 +110,16 @@
           <span>Image de marque</span><i>✦</i>
           <span>Community management</span><i>✦</i>
         </div>
+      </div>
+    </section>
+
+    <!-- KEY FIGURES -->
+    <section class="kpis">
+      <div class="container kpis__grid">
+        <div class="kpi reveal-up"><span class="kpi__value"><span data-countup="4">0</span></span><span class="kpi__label" data-i18n="home.kpi1">ans d'expérience en alternance</span></div>
+        <div class="kpi reveal-up"><span class="kpi__value"><span data-countup="12">0</span></span><span class="kpi__label" data-i18n="home.kpi2">sites pays pilotés pour Saint-Gobain PAM</span></div>
+        <div class="kpi reveal-up"><span class="kpi__value">~<span data-countup="200">0</span></span><span class="kpi__label" data-i18n="home.kpi3">personnes à chaque soirée Eclipse</span></div>
+        <div class="kpi reveal-up"><span class="kpi__value"><span data-countup="920">0</span></span><span class="kpi__label" data-i18n="home.kpi4">au TOEIC, anglais courant</span></div>
       </div>
     </section>
 
@@ -173,43 +203,39 @@
       </div>
     </section>
 
-    <!-- PROCESS -->
-    <section class="process">
+    <!-- 3D JOURNEY -->
+    <section class="ring3d" data-ring>
+      <div class="ring3d__sticky">
+        <div class="container ring3d__head">
+          <p class="eyebrow"><span>04</span> <span data-i18n="home.ring.eyebrow">Parcours</span></p>
+          <h2 class="section-title" data-i18n-html="home.ring.title">Mon parcours <em>en 360°</em></h2>
+          <p class="ring3d__hint" data-i18n="home.ring.hint">Faites défiler pour faire tourner · cliquez sur une carte</p>
+        </div>
+        <div class="ring3d__scene">
+          <div class="ring3d__ring" data-ring-items></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PASSIONS -->
+    <section class="home-passions">
       <div class="container">
         <div class="section-head">
-          <p class="eyebrow reveal-up"><span>04</span> <span data-i18n="process.eyebrow">Méthode</span></p>
-          <h2 class="section-title reveal-up" data-i18n-html="process.title">Comment je <em>travaille</em></h2>
+          <p class="eyebrow reveal-up"><span>05</span> <span data-i18n="about.passions.eyebrow">Passions</span></p>
+          <h2 class="section-title reveal-up" data-i18n-html="about.inspire.title">Ce qui m'<em>inspire</em>…</h2>
         </div>
-
-        <ol class="process__list">
-          <li class="step reveal-up">
-            <span class="step__num">01</span>
-            <h3 class="step__title" data-i18n="process.p1.title">Écouter</h3>
-            <p class="step__text" data-i18n="process.p1.text">Comprendre vos objectifs, votre audience et votre marché.</p>
-          </li>
-          <li class="step reveal-up">
-            <span class="step__num">02</span>
-            <h3 class="step__title" data-i18n="process.p2.title">Imaginer</h3>
-            <p class="step__text" data-i18n="process.p2.text">Construire une stratégie claire et des idées qui marquent.</p>
-          </li>
-          <li class="step reveal-up">
-            <span class="step__num">03</span>
-            <h3 class="step__title" data-i18n="process.p3.title">Déployer</h3>
-            <p class="step__text" data-i18n="process.p3.text">Créer, publier et animer sur les bons canaux.</p>
-          </li>
-          <li class="step reveal-up">
-            <span class="step__num">04</span>
-            <h3 class="step__title" data-i18n="process.p4.title">Mesurer</h3>
-            <p class="step__text" data-i18n="process.p4.text">Analyser, apprendre et optimiser en continu.</p>
-          </li>
-        </ol>
+        <div class="hp-grid">
+          <a href="art.html" class="hp-card reveal-up" data-cursor="go"><span class="hp-card__glow"></span><img src="assets/about/statue.png" alt="" loading="lazy" /><span class="hp-card__title" data-i18n="about.inspire.art.title">L'art</span></a>
+          <a href="sport.html" class="hp-card reveal-up" data-cursor="go"><span class="hp-card__glow"></span><img src="assets/about/aviron.png" alt="" loading="lazy" /><span class="hp-card__title" data-i18n="about.inspire.sport.title">Le sport</span></a>
+          <a href="voyage.html" class="hp-card reveal-up" data-cursor="go"><span class="hp-card__glow"></span><img src="assets/about/cavalier.png" alt="" loading="lazy" /><span class="hp-card__title" data-i18n="about.inspire.travel.title">Le voyage</span></a>
+        </div>
       </div>
     </section>
 
     <!-- CONTACT CTA -->
     <section class="cta" id="contact">
       <div class="container">
-        <p class="eyebrow reveal-up"><span>05</span> <span data-i18n="cta.eyebrow">Contact</span></p>
+        <p class="eyebrow reveal-up"><span>06</span> <span data-i18n="cta.eyebrow">Contact</span></p>
         <h2 class="cta__title">
           <span class="line"><span class="split" data-split data-i18n="cta.line1">Travaillons</span></span>
           <span class="line"><span class="split split--gradient" data-split data-i18n="cta.line2">ensemble</span></span>

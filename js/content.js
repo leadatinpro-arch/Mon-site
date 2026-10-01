@@ -117,7 +117,7 @@ window.PROJECTS = [
     id: "jacques-laveine",
     page: "jacques-laveine.html",
     type: "pro",
-    featured: false,
+    featured: true,
     color: 2,
     shape: "circle",
     year: "2022",
@@ -136,7 +136,7 @@ window.PROJECTS = [
     id: "360idcom",
     page: "360idcom.html",
     type: "perso",
-    featured: false,
+    featured: true,
     color: 1,
     shape: "square",
     year: "",
@@ -278,6 +278,18 @@ window.SKILLS = [
 window.SOCIAL = {
   email: "lea.datinpro@gmail.com",
   phone: "06 49 46 94 96",
-  linkedin: "https://www.linkedin.com/",
+  linkedin: "https://www.linkedin.com/in/lea-datin",
   instagram: "https://www.instagram.com/"
 };
+
+/* Roue 3D « Mon parcours en 360° » (page d'accueil) */
+window.JOURNEY = [
+  { href: "saint-gobain.html", img: "assets/saint-gobain/pamline-mockup.png", fit: "contain", year: "2024 — 2026", title: "Saint-Gobain PAM", role: { fr: "Cheffe de projet marketing digital", en: "Digital marketing project manager" } },
+  { href: "about.html", img: "assets/about/icn.png", fit: "logo", year: "2024 — 2026", title: "ICN Business School", role: { fr: "Master Programme Grande École", en: "Master in Management" } },
+  { href: "eclipse.html", img: "assets/eclipse/juin-affiche.jpg", year: "2026", title: "Eclipse", role: { fr: "DA, com' & co-organisation", en: "Art direction, comms & co-organisation" } },
+  { href: "cora.html", img: "assets/cora/brioches.jpg", year: "2023 — 2024", title: "Carrefour (ex-Cora)", role: { fr: "Chargée de marketing & communication", en: "Marketing & communication officer" } },
+  { href: "360idcom.html", img: "assets/360idcom/photo-3.jpg", year: "", title: "360 ID COM", role: { fr: "Cheffe de projet", en: "Project manager" } },
+  { href: "jacques-laveine.html", img: "assets/jacques-laveine/bonne-nouvelle.png", fit: "contain", year: "2022", title: "Jacques Laveine", role: { fr: "Community Manager", en: "Community Manager" } },
+  { href: "punch.html", img: "assets/punch/photo-stand.jpg", year: "2022", title: "PUNCH", role: { fr: "Co-fondatrice", en: "Co-founder" } },
+  { href: "about.html", img: "assets/about/iut.png", fit: "logo", year: "2021 — 2024", title: "IUT Nancy-Charlemagne", role: { fr: "BUT Techniques de commercialisation", en: "Bachelor in Marketing & Sales" } }
+];

@@ -90,6 +90,22 @@
       </a>`;
   }
 
+  function renderRing() {
+    const ring = $("[data-ring-items]");
+    if (!ring) return;
+    const items = window.JOURNEY || [];
+    ring.style.setProperty("--n", items.length);
+    ring.innerHTML = items.map((it, i) => `
+      <a href="${esc(it.href)}" class="ring-card" style="--i:${i}" data-cursor="view">
+        <span class="ring-card__img ring-card__img--${esc(it.fit || "cover")}"><img src="${esc(it.img)}" alt="" loading="lazy" /></span>
+        <span class="ring-card__body">
+          ${it.year ? `<span class="ring-card__year">${esc(it.year)}</span>` : ""}
+          <span class="ring-card__title">${esc(it.title)}</span>
+          <span class="ring-card__role">${esc(pick(it.role))}</span>
+        </span>
+      </a>`).join("");
+  }
+
   function renderTimeline() {
     const list = $("[data-timeline]");
     if (!list) return;
@@ -195,6 +211,7 @@
     $$("[data-words]").forEach(splitWords);
 
     renderHomeProjects();
+    renderRing();
     renderTimeline();
     renderSchools();
     renderSkills();
@@ -205,6 +222,12 @@
       sw.classList.toggle("is-en", lang === "en");
       sw.setAttribute("aria-checked", lang === "en");
       sw.setAttribute("aria-label", lang === "en" ? "Version française" : "English version");
+    });
+
+    // CV in the current language
+    $$("[data-cv]").forEach((a) => {
+      a.href = lang === "en" ? "assets/cv-lea-datin-en.pdf" : "assets/cv-lea-datin.pdf";
+      a.setAttribute("download", lang === "en" ? "Lea-Datin-CV-EN.pdf" : "Lea-Datin-CV-FR.pdf");
     });
 
     rotator.reset();
@@ -384,10 +407,63 @@
     lastY = y;
   }
 
+  // 3D ring rotates with scroll
+  const ringSec = $("[data-ring]");
+  function updateRing() {
+    if (!ringSec) return;
+    const r = ringSec.getBoundingClientRect();
+    const total = ringSec.offsetHeight - window.innerHeight;
+    const p = total > 0 ? Math.min(Math.max(-r.top / total, 0), 1) : 0;
+    ringSec.style.setProperty("--rot", `${(reduceMotion ? 0 : -p * 315).toFixed(2)}deg`);
+  }
+
+  // Project cards lean with scroll speed
+  let lastScrollY = window.scrollY, lean = 0, leanRaf = null;
+  function leanLoop() {
+    lean *= 0.9;
+    if (hTrack) hTrack.style.setProperty("--lean", `${lean.toFixed(2)}deg`);
+    leanRaf = Math.abs(lean) > 0.05 ? requestAnimationFrame(leanLoop) : null;
+  }
+  function updateLean() {
+    const dy = window.scrollY - lastScrollY;
+    lastScrollY = window.scrollY;
+    if (!hTrack || reduceMotion) return;
+    lean = Math.max(-14, Math.min(14, lean + dy * 0.08));
+    if (!leanRaf) leanRaf = requestAnimationFrame(leanLoop);
+  }
+
+  // Hero stage parallax on scroll
+  const stage = $("[data-parallax-stage]");
+  function updateStage() {
+    if (!stage || reduceMotion) return;
+    const y = Math.min(window.scrollY, window.innerHeight);
+    stage.style.setProperty("--sy", y);
+  }
+
+  // Image strips (projects page) slide with scroll, in opposite directions
+  const strips = $$("[data-strip]");
+  function updateStrips() {
+    if (!strips.length || reduceMotion) return;
+    strips.forEach((el) => {
+      const r = el.getBoundingClientRect();
+      const p = (window.innerHeight - r.top) / (window.innerHeight + r.height);
+      el.style.transform = `translate3d(${(Number(el.dataset.strip) * (p - 0.5) * 30 - 25).toFixed(2)}%,0,0)`;
+    });
+    $$(".work-card__visual img, .work-card .project__shape").forEach((img) => {
+      const r = img.parentElement.getBoundingClientRect();
+      const p = (r.top + r.height / 2 - window.innerHeight / 2) / window.innerHeight;
+      img.style.translate = `0 ${(p * -24).toFixed(1)}px`;
+    });
+  }
+
   function updateScrollFx() {
+    updateStrips();
     updateWords();
     updateProjects();
     updateTimeline();
+    updateRing();
+    updateLean();
+    updateStage();
   }
 
   let ticking = false;
@@ -398,6 +474,25 @@
   }, { passive: true });
 
   window.addEventListener("resize", () => { refreshProjects(); updateScrollFx(); moveFilterPill(); });
+
+  /* ==================================================================
+     Animated counters
+     ================================================================== */
+  const countIo = new IntersectionObserver((entries) => {
+    entries.forEach((e) => {
+      if (!e.isIntersecting) return;
+      countIo.unobserve(e.target);
+      const end = Number(e.target.dataset.countup);
+      if (reduceMotion) { e.target.textContent = end; return; }
+      const start = performance.now(), dur = 1600;
+      (function tick(now) {
+        const p = Math.min((now - start) / dur, 1);
+        e.target.textContent = Math.round(end * (1 - Math.pow(1 - p, 4)));
+        if (p < 1) requestAnimationFrame(tick);
+      })(start);
+    });
+  }, { threshold: 0.6 });
+  $$("[data-countup]").forEach((el) => countIo.observe(el));
 
   /* ==================================================================
      Mobile menu
@@ -667,14 +762,6 @@
     btn.setAttribute("aria-pressed", on);
   }));
 
-  // Hide CV button if the file hasn't been added yet
-  const cvBtn = $("[data-cv]");
-  if (cvBtn) {
-    fetch(cvBtn.getAttribute("href"), { method: "HEAD" })
-      .then((r) => { if (!r.ok) cvBtn.remove(); })
-      .catch(() => cvBtn.remove());
-  }
-
   /* ==================================================================
      Pointer effects (desktop only)
      ================================================================== */
@@ -753,6 +840,16 @@
       card.style.setProperty("--gx", `${px * 100}%`);
       card.style.setProperty("--gy", `${py * 100}%`);
     });
+
+    // Floating cards follow the mouse
+    if (stage) {
+      window.addEventListener("mousemove", (e) => {
+        const x = e.clientX / window.innerWidth - 0.5;
+        const y = e.clientY / window.innerHeight - 0.5;
+        stage.style.setProperty("--mx", x.toFixed(3));
+        stage.style.setProperty("--my", y.toFixed(3));
+      });
+    }
 
     // Blob follows mouse
     const hero = $(".hero, .page-hero, .notfound");

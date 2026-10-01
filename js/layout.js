@@ -29,6 +29,7 @@
       <a href="index.html" class="logo" aria-label="Léa Datin — Accueil"><span class="logo__mark">LD</span></a>
       <nav class="nav" aria-label="Navigation">${navLinks("nav__link")}</nav>
       <div class="header__right">
+        <a href="assets/cv-lea-datin.pdf" class="header-cv" data-cv download><span>CV</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11M7 10l5 5 5-5M5 20h14"/></svg></a>
         <button class="lang-switch" role="switch" aria-checked="false" aria-label="English version">
           <span class="lang-switch__label lang-switch__label--fr" aria-hidden="true">FR</span>
           <span class="lang-switch__track" aria-hidden="true"><span class="lang-switch__knob"></span></span>

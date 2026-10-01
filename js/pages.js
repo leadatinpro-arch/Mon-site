@@ -373,8 +373,8 @@ window.PAGES = {
       }
     },
     stats: [
-      { value: "12", label: { fr: "sites pays dans un même back-office", en: "country sites in one back office" } },
-      { value: "3", label: { fr: "sites construits ou co-construits (dont le site français)", en: "sites built or co-built (including the French one)" } },
+      { value: "12", label: { fr: "sites pays créés avec les équipes, dans un même back-office", en: "country sites created with the teams, in one back office" } },
+      { value: "2", label: { fr: "sites construits de A à Z, dont le site français", en: "sites built from scratch, including the French one" } },
       { value: "D10", label: { fr: "migration de Drupal 7 vers Drupal 10", en: "migration from Drupal 7 to Drupal 10" } }
     ],
     context: {
@@ -389,14 +389,14 @@ window.PAGES = {
       title: { fr: "Mon rôle dans ce projet", en: "My role in this project" },
       subtitle: { fr: "Référente pour 12 pays", en: "Lead contact for 12 countries" },
       lead: {
-        fr: "En tant que référente pour 12 pays, j'assure un suivi quotidien et une coordination constante entre les équipes locales, l'équipe centrale et l'agence de développement. Mon rôle ne se limite pas à la supervision : je suis impliquée dans la construction du site français et j'ai contribué à la création des sites de deux autres pays. Je dois être réactive, répondre aux besoins, trouver des solutions et anticiper les problèmes pour garantir le respect des délais et la qualité des livrables.",
-        en: "As the lead contact for 12 countries, I provide daily follow-up and constant coordination between local teams, the central team and the development agency. My role goes beyond supervision: I'm building the French site and contributed to the sites of two other countries. I need to be responsive, meet needs, find solutions and anticipate problems to keep deadlines and deliverable quality on track."
+        fr: "En tant que référente pour 12 pays, j'assure un suivi quotidien et une coordination constante entre les équipes locales, l'équipe centrale et l'agence de développement. Mon rôle ne se limite pas à la supervision : j'ai participé à la création des 12 sites et j'ai construit moi-même deux d'entre eux, dont le site français. Je dois être réactive, répondre aux besoins, trouver des solutions et anticiper les problèmes pour garantir le respect des délais et la qualité des livrables.",
+        en: "As the lead contact for 12 countries, I provide daily follow-up and constant coordination between local teams, the central team and the development agency. My role goes beyond supervision: I took part in creating all 12 sites and built two of them myself, including the French one. I need to be responsive, meet needs, find solutions and anticipate problems to keep deadlines and deliverable quality on track."
       },
       items: [
         { title: { fr: "Coordination internationale", en: "International coordination" }, text: { fr: "Interface entre les pays, l'équipe centrale et les développeurs.", en: "Interface between the countries, the central team and the developers." } },
         { title: { fr: "Workshops", en: "Workshops" }, text: { fr: "Organisation des ateliers : analyse des besoins, définition des priorités.", en: "Running workshops: needs analysis, setting priorities." } },
         { title: { fr: "Formation des équipes", en: "Team training" }, text: { fr: "Sessions en ligne, guides pratiques, support continu pour les équipes locales.", en: "Online sessions, practical guides, ongoing support for local teams." } },
-        { title: { fr: "Gestion des contenus", en: "Content management" }, text: { fr: "Création complète du site français, contribution à deux autres sites.", en: "Building the entire French site, contributing to two other sites." } },
+        { title: { fr: "Gestion des contenus", en: "Content management" }, text: { fr: "Création complète de deux sites, dont le site français, et participation à la création des 12 sites.", en: "Built two sites from scratch, including the French one, and helped create all 12 sites." } },
         { title: { fr: "Suivi technique", en: "Technical follow-up" }, text: { fr: "Remontée des bugs via tickets, validation des composants UI.", en: "Reporting bugs through tickets, validating UI components." } },
         { title: { fr: "Planification & reporting", en: "Planning & reporting" }, text: { fr: "Suivi des deadlines, mise à jour des plannings, reporting hebdomadaire.", en: "Tracking deadlines, updating schedules, weekly reporting." } }
       ]
