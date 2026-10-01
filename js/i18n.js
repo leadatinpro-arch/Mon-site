@@ -557,7 +557,8 @@ Object.assign(window.TRANSLATIONS.fr, {
   "home.kpi4": "au TOEIC, anglais courant",
   "home.ring.eyebrow": "Parcours",
   "home.ring.title": "Mon parcours <em>en 360°</em>",
-  "home.ring.hint": "Faites défiler pour faire tourner · cliquez sur une carte"
+  "home.ring.hint": "Faites défiler pour faire tourner · cliquez sur une carte",
+  "home.ring.hintTouch": "Faites glisser les cartes · touchez pour découvrir"
 });
 Object.assign(window.TRANSLATIONS.en, {
   "home.float.countries": "country sites",
@@ -568,5 +569,6 @@ Object.assign(window.TRANSLATIONS.en, {
   "home.kpi4": "TOEIC score, fluent English",
   "home.ring.eyebrow": "Journey",
   "home.ring.title": "My journey <em>in 360°</em>",
-  "home.ring.hint": "Scroll to spin · click a card"
+  "home.ring.hint": "Scroll to spin · click a card",
+  "home.ring.hintTouch": "Swipe the cards · tap to explore"
 });

@@ -3824,7 +3824,7 @@ body.theme-eclipse { transition: --ed 1.2s ease, --ed2 1.2s ease; }
 .s-role .role-grid:has(.value:nth-child(6)) .value:nth-child(4) { grid-column: auto; }
 @media (max-width: 1000px) { .s-project__grid { grid-template-columns: 1fr; } }
 @media (max-width: 1000px) { .s-hero--sg .s-tagline, .s-hero--sg .s-facts { max-width: none; } }
-@media (max-width: 700px) { .s-title--long { font-size: 11.4vw; } .s-hero--sg .s-title { font-size: 11.4vw; } .s-hero--sg { padding-top: 290px; } .s-hero--sg .s-hero-img { top: 90px; bottom: auto; width: 80vw; max-height: 200px; opacity: 1; right: 50%; transform: translateX(50%); animation: none; } }
+@media (max-width: 700px) { .s-title--long { font-size: 9.2vw; } .s-hero--sg .s-title { font-size: 9.2vw; } .s-hero--sg { padding-top: 290px; } .s-hero--sg .s-hero-img { top: 90px; bottom: auto; width: 80vw; max-height: 200px; opacity: 1; right: 50%; transform: translateX(50%); animation: none; } }
 
 /* ---------- Story responsive ---------- */
 @media (max-width: 1000px) {
@@ -4246,7 +4246,7 @@ body.theme-eclipse { transition: --ed 1.2s ease, --ed2 1.2s ease; }
 }
 
 @media (max-width: 700px) {
-  .c-hero .page-title { font-size: 12vw; }
+  .c-hero .page-title { font-size: 10vw; }
   .c-cards__grid { grid-template-columns: 1fr; }
   .cv-sticker { width: 96px; font-size: 0.85rem; top: -10px; }
   .vcard { grid-template-columns: 1fr; text-align: center; justify-items: center; }
@@ -4435,7 +4435,11 @@ a.float-card:hover { box-shadow: 0 24px 50px rgba(255, 210, 63, 0.3); }
   .kpi:nth-child(n + 3) { border-top: 1px solid var(--line); }
 }
 @media (max-width: 700px) {
-  .hero--v2 .hero__title { font-size: 22vw; }
+  .hero--v2 .hero__title { font-size: 16.5vw; }
+  .hero--v2 .line--indent { padding-left: 6vw; }
+  .hero__copy { min-width: 0; }
+  .hero--v2 .hero__ctas .btn { width: 100%; flex: 1 1 100%; justify-content: center; }
+  .hero--v2 .hero__kicker { font-size: 0.78rem; }
   .hero-stage { width: 82%; }
   .float-card--5 { left: 18%; font-size: 0.72rem; }
   .ring3d { height: 260vh; }
@@ -4457,6 +4461,55 @@ a.float-card:hover { box-shadow: 0 24px 50px rgba(255, 210, 63, 0.3); }
 .page-hero .page-title--xl { font-size: clamp(1.98rem, 6.6vw, 6.05rem); }
 .work-card__visual { overflow: hidden; }
 .work-card__visual img { height: 115%; top: -7.5%; transition: transform 1s var(--ease-out); }
+
+/* Mobile type safety (Syne is a wide font) */
+@media (max-width: 700px) {
+  .hero__grid > *, .page-hero__grid > *, .c-hero__grid > * { min-width: 0; }
+  .page-title, .s-title, .section-title, .cta__title { overflow-wrap: anywhere; }
+  .section-title { font-size: clamp(1.7rem, 8.5vw, 2.6rem); }
+  .page-title { font-size: clamp(2.2rem, 11vw, 3.4rem); }
+  .s-title { font-size: clamp(2.6rem, 13vw, 4rem); }
+  .cta__title { font-size: clamp(2.2rem, 12vw, 3.6rem); }
+  .manifesto__text { font-size: clamp(1.3rem, 6vw, 1.8rem); }
+  .btn { padding: 14px 22px; }
+}
+
+/* 360 journey: swipe coverflow on touch / small screens */
+@media (max-width: 900px) {
+  .ring3d { height: auto; }
+  .ring3d__sticky { position: static; height: auto; padding: clamp(60px, 10vw, 100px) 0 40px; overflow: visible; }
+  .ring3d__scene { display: block; perspective: 1000px; }
+  .ring3d__scene::after { display: none; }
+  .ring3d .ring3d__ring {
+    display: flex;
+    gap: 0;
+    width: 100%;
+    aspect-ratio: auto;
+    transform: none;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+    padding: 30px calc(50% - 31vw) 40px;
+    transform-style: preserve-3d;
+  }
+  .ring3d .ring3d__ring::-webkit-scrollbar { display: none; }
+  .ring-card {
+    position: relative;
+    inset: auto;
+    flex: 0 0 62vw;
+    max-width: 300px;
+    aspect-ratio: 3 / 4;
+    scroll-snap-align: center;
+    backface-visibility: visible;
+    transform: rotateY(var(--cy, 0deg)) scale(var(--cs, 1));
+    opacity: var(--co, 1);
+    transition: transform 0.1s linear, opacity 0.1s linear;
+  }
+  .ring3d__dots { display: flex; justify-content: center; gap: 8px; }
+  .ring3d__dots span { width: 8px; height: 8px; border-radius: 50%; background: var(--line); transition: width 0.3s, background 0.3s; }
+  .ring3d__dots span.is-on { width: 22px; border-radius: 8px; background: var(--accent); }
+}
+@media (min-width: 901px) { .ring3d__dots { display: none; } }
 
 /* ---------- Reduced motion ---------- */
 @media (prefers-reduced-motion: reduce) {

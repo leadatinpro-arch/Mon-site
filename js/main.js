@@ -212,6 +212,7 @@
 
     renderHomeProjects();
     renderRing();
+    setupCoverflow();
     renderTimeline();
     renderSchools();
     renderSkills();
@@ -407,15 +408,70 @@
     lastY = y;
   }
 
-  // 3D ring rotates with scroll
+  // 3D ring: scroll-driven + gentle auto-spin on desktop, swipe coverflow on small screens
   const ringSec = $("[data-ring]");
+  const ringSmall = window.matchMedia("(max-width: 900px)");
+  let ringScroll = 0, ringAuto = 0, ringVisible = false, ringRaf = null, ringLast = 0;
+  function applyRing() {
+    if (ringSec) ringSec.style.setProperty("--rot", `${(ringScroll + ringAuto).toFixed(2)}deg`);
+  }
+  function ringLoop(now) {
+    const dt = ringLast ? Math.min(now - ringLast, 50) : 16;
+    ringLast = now;
+    ringAuto -= dt * 0.005;
+    applyRing();
+    ringRaf = ringVisible && !ringSmall.matches && !reduceMotion ? requestAnimationFrame(ringLoop) : (ringLast = 0, null);
+  }
+  if (ringSec) {
+    new IntersectionObserver(([e]) => {
+      ringVisible = e.isIntersecting;
+      if (ringVisible && !ringRaf && !ringSmall.matches && !reduceMotion) ringRaf = requestAnimationFrame(ringLoop);
+    }).observe(ringSec);
+  }
   function updateRing() {
-    if (!ringSec) return;
+    if (!ringSec || ringSmall.matches) return;
     const r = ringSec.getBoundingClientRect();
     const total = ringSec.offsetHeight - window.innerHeight;
     const p = total > 0 ? Math.min(Math.max(-r.top / total, 0), 1) : 0;
-    ringSec.style.setProperty("--rot", `${(reduceMotion ? 0 : -p * 315).toFixed(2)}deg`);
+    ringScroll = reduceMotion ? 0 : -p * 315;
+    applyRing();
   }
+  function updateCoverflow() {
+    const track = $("[data-ring-items]");
+    if (!track || !ringSmall.matches) return;
+    const mid = track.getBoundingClientRect().left + track.clientWidth / 2;
+    const cards = $$(".ring-card", track);
+    let best = 0, bestD = Infinity;
+    cards.forEach((c, i) => {
+      const r = c.getBoundingClientRect();
+      const d = (r.left + r.width / 2 - mid) / r.width;
+      const ad = Math.min(Math.abs(d), 2);
+      c.style.setProperty("--cy", `${Math.max(-1, Math.min(1, d)) * -38}deg`);
+      c.style.setProperty("--cs", (1 - ad * 0.14).toFixed(3));
+      c.style.setProperty("--co", (1 - ad * 0.3).toFixed(3));
+      if (Math.abs(d) < bestD) { bestD = Math.abs(d); best = i; }
+    });
+    $$("[data-ring-dots] span").forEach((dot, i) => dot.classList.toggle("is-on", i === best));
+  }
+  function setupCoverflow() {
+    const track = $("[data-ring-items]");
+    const dots = $("[data-ring-dots]");
+    if (!track) return;
+    if (dots) dots.innerHTML = (window.JOURNEY || []).map(() => "<span></span>").join("");
+    const hint = $(".ring3d__hint");
+    if (hint) hint.textContent = t(ringSmall.matches ? "home.ring.hintTouch" : "home.ring.hint");
+    if (!track.dataset.cf) {
+      track.dataset.cf = "1";
+      track.addEventListener("scroll", () => requestAnimationFrame(updateCoverflow), { passive: true });
+    }
+    if (ringSmall.matches) {
+      $$(".ring-card", track).forEach((c) => c.removeAttribute("style"));
+      requestAnimationFrame(updateCoverflow);
+    } else {
+      $$(".ring-card", track).forEach((c, i) => { c.style.cssText = `--i:${i}`; });
+    }
+  }
+  if (ringSmall.addEventListener) ringSmall.addEventListener("change", () => { setupCoverflow(); if (!ringSmall.matches && ringVisible && !ringRaf) ringRaf = requestAnimationFrame(ringLoop); });
 
   // Project cards lean with scroll speed
   let lastScrollY = window.scrollY, lean = 0, leanRaf = null;
