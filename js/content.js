@@ -149,22 +149,16 @@ window.PROJECTS = [
     color: 1,
     shape: "square",
     year: "",
-    image: "",
-    title: { fr: "360idcom — Cheffe de projet", en: "360idcom — Project manager" },
+    image: "assets/360idcom/photo-3.jpg",
+    title: { fr: "360 ID COM — Agence étudiante", en: "360 ID COM — Student agency" },
     summary: {
-      fr: "Gestion de projets étudiants, développement et mise en place de stratégies innovantes.",
-      en: "Managing student projects, developing and implementing innovative strategies."
+      fr: "Responsable communication d'une agence étudiante : clients réels (dont ENGIE) et bénéfices reversés à une mission solidaire à Majorque.",
+      en: "Head of communication at a student agency: real clients (including ENGIE) and profits funding a solidarity mission in Mallorca."
     },
-    context: {
-      fr: "Engagement étudiant en tant que cheffe de projet au sein de 360idcom.",
-      en: "Student involvement as a project manager at 360idcom."
-    },
-    mission: {
-      fr: "Gestion de projets étudiants, développement et mise en place de stratégies innovantes.",
-      en: "Managing student projects, developing and implementing innovative strategies."
-    },
-    results: "",
-    tags: [{ fr: "Gestion de projet", en: "Project management" }, { fr: "Stratégie", en: "Strategy" }]
+    context: { fr: "Association étudiante de l'IUT Nancy-Charlemagne.", en: "Student association at IUT Nancy-Charlemagne." },
+    mission: { fr: "Prospection, gestion de projets, création graphique et relation client.", en: "Prospecting, project management, graphic design and client relations." },
+    results: { fr: "Mission humanitaire de 5 jours dans un refuge pour animaux à Majorque.", en: "5-day humanitarian mission at an animal shelter in Mallorca." },
+    tags: ["Communication", { fr: "Prospection", en: "Prospecting" }, { fr: "Solidarité", en: "Solidarity" }]
   },
   {
     id: "aviron",

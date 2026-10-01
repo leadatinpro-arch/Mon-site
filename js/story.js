@@ -62,6 +62,16 @@
           </div>
         </div>`;
     }
+    if (P.theme === "idcom" && P.logo) {
+      return `<div class="idcom-hero" aria-hidden="true">
+          <span class="arc arc--1"></span><span class="arc arc--2"></span><span class="arc arc--3"></span><span class="arc arc--4"></span>
+          <img class="idcom-hero__logo" src="${esc(P.logo)}" alt="" />
+          <span class="doodle doodle--gear">${doodles.gear}</span>
+          <span class="doodle doodle--mega">${doodles.mega}</span>
+          <span class="doodle doodle--wrench">${doodles.wrench}</span>
+          <span class="doodle doodle--idea">${doodles.idea}</span>
+        </div>`;
+    }
     if (P.theme === "idcom") {
       return `<div class="ring" aria-hidden="true">
           <svg viewBox="0 0 200 200"><defs><path id="ringPath" d="M100,100 m-80,0 a80,80 0 1,1 160,0 a80,80 0 1,1 -160,0"/></defs>
@@ -71,6 +81,13 @@
     }
     return `<span class="s-bigword" aria-hidden="true">${tx(P.title)}</span>`;
   }
+
+  const doodles = {
+    gear: `<svg viewBox="0 0 64 64"><circle cx="24" cy="24" r="7"/><path d="M24 8v5M24 35v5M8 24h5M35 24h5M12.7 12.7l3.5 3.5M31.8 31.8l3.5 3.5M12.7 35.3l3.5-3.5M31.8 16.2l3.5-3.5"/><circle cx="24" cy="24" r="12"/><circle cx="44" cy="44" r="6"/><circle cx="44" cy="44" r="11"/><path d="M44 29v4M44 55v4M29 44h4M55 44h4"/></svg>`,
+    mega: `<svg viewBox="0 0 64 64"><path d="M10 28h8l22-12v32L18 36h-8z"/><path d="M18 36l4 14h6l-3-14"/><path d="M48 24l6-4M50 32h7M48 40l6 4"/></svg>`,
+    wrench: `<svg viewBox="0 0 64 64"><path d="M40 10a12 12 0 0 0-11 16L10 45a5 5 0 0 0 7 7l19-19a12 12 0 0 0 16-11l-7 4-6-3-1-7z"/></svg>`,
+    idea: `<svg viewBox="0 0 64 64"><path d="M22 54V44c-6-4-9-10-8-17a17 17 0 0 1 33 1c0 4-1 7 1 10l3 6h-6v6c0 2-2 4-4 4h-6v0"/><path d="M30 14l2-6M40 16l4-5M22 16l-3-5M46 24l6-2"/><circle cx="31" cy="27" r="4"/></svg>`
+  };
 
   function hero() {
     const back = P.back === "about" ? ["about.html", "story.back.about"] : ["projects.html", "story.back.projects"];
@@ -109,6 +126,7 @@
         <article class="context-card reveal-up" style="--d:${i * 0.1}s">
           <span class="context-card__label">${tx(it.label)}</span>
           <p class="context-card__value">${tx(it.value)}</p>
+          ${it.note ? `<p class="context-card__note">${tx(it.note)}</p>` : ""}
           ${it.chips ? `<ul class="context-card__chips">${it.chips.map((c, ci) => `<li class="pill" style="--ci:${ci}">${tx(c)}</li>`).join("")}</ul>` : ""}
         </article>`).join("")}</div>
     </div></section>`;
@@ -153,11 +171,56 @@
     if (!O) return "";
     return `<section class="s-outro"><div class="container"><div class="s-outro__grid">
       <div>
+        ${O.badge ? `<span class="live-badge reveal-up"><i></i>${tx(O.badge)}</span>` : ""}
         <h2 class="section-title reveal-up">${tx(O.title).replace("?", '<span class="q">?</span>')}</h2>
         <p class="s-intro__text reveal-up">${tx(O.text)}</p>
       </div>
       ${O.image ? `<img class="s-outro__img reveal-up" src="${esc(O.image)}" alt="" onerror="this.remove()" />` : ""}
     </div></div></section>`;
+  }
+
+  function services() {
+    const S = P.services;
+    if (!S) return "";
+    return `<section class="s-services"><div class="container">
+      <div class="section-head">
+        <p class="eyebrow reveal-up"><span>✦</span> <span>${tx(S.subtitle)}</span></p>
+        <h2 class="section-title reveal-up">${tx(S.title)}</h2>
+      </div>
+      <div class="s-services__grid">
+        <div class="services">${S.groups.map((g, i) => `
+          <article class="service reveal-up" style="--c:${esc(g.color)};--d:${i * 0.08}s">
+            <h3 class="service__name"><span class="service__dot"></span>${tx(g.name)}<span class="service__count">${g.items.length}</span></h3>
+            <ul class="service__list">${g.items.map((it) => `<li>${tx(it)}</li>`).join("")}</ul>
+          </article>`).join("")}</div>
+        ${S.image ? media(S.image, pick(S.title), "s-services__flyer reveal-up", "story.visualPh", "services") : ""}
+      </div>
+    </div></section>`;
+  }
+
+  function impact() {
+    const I = P.impact;
+    if (!I) return "";
+    const imgs = I.images || [];
+    return `<section class="s-impact"><div class="container">
+      <div class="s-impact__head">
+        <h2 class="section-title reveal-up">${tx(I.title)}</h2>
+        <div class="days reveal-up"><span class="days__value">${esc(I.days.value)}</span><span class="days__label">${tx(I.days.label)}<strong>📍 ${tx(I.place)}</strong></span></div>
+      </div>
+      <div class="s-impact__grid">
+        <div>
+          <p class="s-impact__text reveal-up">${tx(I.text)}</p>
+          <div class="impact-actions">${I.actions.map((a, i) => `
+            <article class="impact-action reveal-up" style="--d:${i * 0.1}s">
+              <span class="impact-action__icon" aria-hidden="true">${esc(a.icon)}</span>
+              <h3>${tx(a.title)}</h3>
+              <p>${tx(a.text)}</p>
+            </article>`).join("")}</div>
+        </div>
+        <div class="impact-photos">${imgs.map((src, i) => media(src, "", `impact-photo impact-photo--${i + 1} reveal-up`, "story.placeholder", "impact")).join("")}</div>
+      </div>
+      <blockquote class="impact-quote reveal-up">${tx(I.conclusion)}</blockquote>
+    </div></section>`;
   }
 
   function event() {
@@ -322,7 +385,7 @@
     lang = currentLang;
     t = translate;
     document.body.classList.add(`theme-${P.theme}`);
-    root.innerHTML = hero() + marquee() + intro() + context() + concept() + event() + stats() + walker() + role() + highlights() + award() + outro() + mascot() + posters() + gallery() + links() + next() + cta();
+    root.innerHTML = hero() + marquee() + intro() + context() + services() + concept() + event() + stats() + walker() + role() + highlights() + impact() + award() + outro() + mascot() + posters() + gallery() + links() + next() + cta();
     document.title = `${pick(P.title)} — Léa Datin`;
     const meta = $('meta[name="description"]');
     if (meta) meta.setAttribute("content", pick(P.tagline));

@@ -123,7 +123,7 @@ window.PAGES = {
     heroMascot: "assets/punch/mascotte-2.png",
     facts: [
       { label: { fr: "Rôle", en: "Role" }, value: { fr: "Co-fondatrice", en: "Co-founder" } },
-      { label: { fr: "Durée", en: "Duration" }, value: { fr: "1 an", en: "1 year" } },
+      { label: { fr: "Durée", en: "Duration" }, value: { fr: "1 an · à suivre", en: "1 year · to be continued" } },
       { label: { fr: "Programme", en: "Programme" }, value: "Entreprendre Pour Apprendre" },
       { label: { fr: "Récompense", en: "Award" }, value: { fr: "Médaille d'or ESS", en: "Gold medal, social economy" } }
     ],
@@ -189,9 +189,10 @@ window.PAGES = {
       title: { fr: "Et après ?", en: "What's next?" },
       image: "assets/punch/mascotte-2.png",
       text: {
-        fr: "Cette expérience nous a tellement marqués que nous envisageons de concrétiser PUNCH, non plus comme un projet fictif, mais comme une solution réelle. Parce que l'innovation sociale mérite de passer du concept à la réalité.",
-        en: "This experience left such a mark on us that we are considering turning PUNCH into reality, no longer as a fictional project but as a real solution. Because social innovation deserves to move from concept to reality."
-      }
+        fr: "Le concours est terminé, mais l'aventure continue. Cette expérience m'a tellement marquée que j'ai la volonté de reprendre PUNCH de mon côté, pour en faire non plus un projet fictif, mais une solution réelle. Parce que l'innovation sociale mérite de passer du concept à la réalité.",
+        en: "The competition is over, but the adventure goes on. This experience left such a mark on me that I intend to take PUNCH forward on my own, turning it from a fictional project into a real solution. Because social innovation deserves to move from concept to reality."
+      },
+      badge: { fr: "Projet toujours d'actualité", en: "Still an active project" }
     },
     gallery: {
       title: { fr: "Galerie", en: "Gallery" },
@@ -213,44 +214,92 @@ window.PAGES = {
   /* ------------------------------------------------------------------ */
   "360idcom": {
     theme: "idcom",
-    eyebrow: { fr: "Engagement · Gestion de projet", en: "Involvement · Project management" },
-    title: "360idcom",
+    eyebrow: { fr: "Engagement · Association étudiante", en: "Involvement · Student association" },
+    title: "360 ID COM",
     tagline: {
-      fr: "Cheffe de projet : gestion de projets étudiants, développement et mise en place de stratégies innovantes.",
-      en: "Project manager: running student projects, developing and implementing innovative strategies."
+      fr: "Communication, stratégie et solidarité.",
+      en: "Communication, strategy and solidarity."
     },
+    logo: "assets/360idcom/logo.jpg",
     facts: [
-      { label: { fr: "Rôle", en: "Role" }, value: { fr: "Cheffe de projet", en: "Project manager" } },
-      { label: { fr: "Cadre", en: "Setting" }, value: { fr: "Projets étudiants", en: "Student projects" } }
+      { label: { fr: "Rôle", en: "Role" }, value: { fr: "Responsable communication", en: "Head of communication" } },
+      { label: { fr: "Équipe", en: "Team" }, value: { fr: "6 étudiants", en: "6 students" } },
+      { label: { fr: "Durée", en: "Duration" }, value: { fr: "1 an", en: "1 year" } },
+      { label: { fr: "Impact", en: "Impact" }, value: { fr: "Mission solidaire à Majorque", en: "Solidarity mission in Mallorca" } }
     ],
+    marquee: ["360 ID COM", "COMMUNICATION", "STRATÉGIE", "SOLIDARITÉ", "IUT NANCY-CHARLEMAGNE"],
     intro: {
-      title: { fr: "Le projet", en: "The project" },
+      title: { fr: "L'agence", en: "The agency" },
       text: {
-        fr: "Au sein de 360idcom, j'ai piloté des projets étudiants : cadrer les demandes, organiser les équipes et imaginer des stratégies innovantes, puis les mettre en place.",
-        en: "At 360idcom, I led student projects: scoping requests, organising teams and coming up with innovative strategies, then putting them into action."
+        fr: "360 ID COM est une association étudiante créée par l'IUT Nancy-Charlemagne. Chaque année, une nouvelle équipe d'étudiants prend le relais pour gérer l'agence, trouver des clients et réaliser des prestations professionnelles, tout en suivant les cours et en travaillant en entreprise. L'objectif : récolter des fonds pour financer un projet pédagogique ou humanitaire.",
+        en: "360 ID COM is a student association created by IUT Nancy-Charlemagne. Every year, a new team of students takes over to run the agency, find clients and deliver professional services, while attending classes and working in companies. The goal: raise funds to finance an educational or humanitarian project."
       }
     },
-    role: {
-      title: { fr: "Mon rôle", en: "My role" },
-      subtitle: { fr: "Une vision à 360°", en: "A 360° view" },
+    context: {
+      title: { fr: "Contexte", en: "Context" },
       items: [
-        { title: { fr: "Gestion de projets", en: "Project management" }, text: { fr: "Cadrage, planning, répartition des tâches et suivi jusqu'à la livraison.", en: "Scoping, planning, task allocation and follow-up through to delivery." } },
-        { title: { fr: "Stratégies innovantes", en: "Innovative strategies" }, text: { fr: "Recherche d'idées nouvelles et développement de stratégies adaptées à chaque projet.", en: "Finding fresh ideas and developing strategies tailored to each project." } },
-        { title: { fr: "Mise en place", en: "Implementation" }, text: { fr: "Passage de l'idée à l'action avec l'équipe, et suivi des résultats.", en: "Turning ideas into action with the team and tracking results." } }
+        { label: { fr: "Durée du projet", en: "Project length" }, value: { fr: "1 an", en: "1 year" }, note: { fr: "En parallèle des études et de l'alternance", en: "Alongside studies and work-study" } },
+        {
+          label: { fr: "Mission", en: "Mission" },
+          value: { fr: "Développer une activité réelle de communication et marketing pour des clients variés", en: "Run a real communication and marketing business for a variety of clients" },
+          chips: ["Digital", { fr: "Événementiel", en: "Events" }, "Communication", "Marketing"]
+        },
+        { label: { fr: "Objectif final", en: "Final goal" }, value: { fr: "Financer une action solidaire grâce aux bénéfices générés.", en: "Fund a solidarity initiative with the profits generated." } }
       ]
+    },
+    services: {
+      title: { fr: "Nos services", en: "Our services" },
+      subtitle: { fr: "Ce que l'agence proposait à ses clients", en: "What the agency offered its clients" },
+      image: "assets/360idcom/flyer.jpg",
+      groups: [
+        { name: "Digital", color: "#e04848", items: [{ fr: "Création de site web", en: "Website creation" }, { fr: "Fiche Google My Business", en: "Google Business Profile" }, { fr: "Référencement SEO", en: "SEO" }, { fr: "Référencement SEA", en: "SEA" }] },
+        { name: { fr: "Événementiel", en: "Events" }, color: "#4fb8a8", items: [{ fr: "Organisation d'événements", en: "Event organisation" }, "Buzz marketing", { fr: "Street marketing & accueil", en: "Street marketing & hosting" }, { fr: "Distribution de flyers", en: "Flyer distribution" }] },
+        { name: "Communication", color: "#f7c948", items: [{ fr: "Rédaction d'articles", en: "Article writing" }, { fr: "Photographie professionnelle", en: "Professional photography" }, { fr: "Charte graphique", en: "Brand guidelines" }, { fr: "Supports de communication", en: "Communication materials" }, "Community management"] },
+        { name: "Marketing", color: "#f4f6fb", items: [{ fr: "Étude de satisfaction", en: "Satisfaction surveys" }, { fr: "Étude de marché", en: "Market research" }, "E-mailing"] }
+      ]
+    },
+    role: {
+      title: { fr: "Mes responsabilités et réalisations", en: "My responsibilities and achievements" },
+      subtitle: { fr: "Responsable communication", en: "Head of communication" },
+      image: "assets/360idcom/equipe.jpg",
+      items: [
+        { title: { fr: "Prospection et négociation", en: "Prospecting and negotiation" }, text: { fr: "Recherche de clients, élaboration de devis, présentation des offres.", en: "Finding clients, preparing quotes, presenting offers." } },
+        { title: { fr: "Gestion de projets", en: "Project management" }, text: { fr: "Organisation des prestations, suivi des deadlines, coordination avec les équipes.", en: "Organising services, tracking deadlines, coordinating with the teams." } },
+        { title: { fr: "Création graphique et digitale", en: "Graphic and digital design" }, text: { fr: "Conception de visuels, chartes graphiques, supports de communication.", en: "Designing visuals, brand guidelines and communication materials." } },
+        { title: { fr: "Relation client", en: "Client relations" }, text: { fr: "Suivi des demandes, ajustements, validation des livrables.", en: "Following up on requests, adjustments, signing off deliverables." } }
+      ]
+    },
+    impact: {
+      title: { fr: "Impact solidaire", en: "Social impact" },
+      text: {
+        fr: "Le projet 360 ID COM ne s'est pas limité à des prestations de communication : il avait un objectif bien plus grand. Grâce aux contrats que nous avons décrochés, notamment avec des entreprises comme ENGIE, nous avons récolté des fonds significatifs. Ces bénéfices ont été utilisés pour financer une mission humanitaire à Majorque, en faveur d'un refuge pour animaux.",
+        en: "The 360 ID COM project wasn't limited to communication services: it had a much bigger goal. Thanks to the contracts we won, notably with companies such as ENGIE, we raised significant funds. These profits were used to finance a humanitarian mission in Mallorca, supporting an animal shelter."
+      },
+      days: { value: "5", label: { fr: "jours de mission au refuge", en: "days at the shelter" } },
+      place: { fr: "Majorque", en: "Mallorca" },
+      actions: [
+        { icon: "🐾", title: { fr: "Aidé sur place", en: "Helped on site" }, text: { fr: "Soins aux animaux (chiens et chats), nettoyage des espaces, organisation des repas.", en: "Caring for the animals (dogs and cats), cleaning the spaces, organising meals." } },
+        { icon: "🤝", title: { fr: "Contribué financièrement", en: "Contributed financially" }, text: { fr: "Achat de nourriture, produits d'entretien et matériel pour améliorer le confort des animaux.", en: "Buying food, cleaning products and equipment to make the animals more comfortable." } }
+      ],
+      conclusion: {
+        fr: "Cette expérience a été une leçon de solidarité et de travail d'équipe, qui a donné un sens concret à nos efforts tout au long de l'année. Elle illustre parfaitement la capacité à transformer des compétences professionnelles en actions utiles et humaines.",
+        en: "This experience was a lesson in solidarity and teamwork that gave real meaning to our efforts throughout the year. It perfectly illustrates how professional skills can be turned into useful, human actions."
+      },
+      images: ["assets/360idcom/photo-3.jpg", "assets/360idcom/photo-2.jpg"]
     },
     gallery: {
-      title: { fr: "En images", en: "In pictures" },
-      subtitle: { fr: "Cliquez pour agrandir", en: "Click to enlarge" },
+      title: { fr: "Galerie", en: "Gallery" },
+      subtitle: { fr: "L'équipe et la mission à Majorque · cliquez pour agrandir", en: "The team and the Mallorca mission · click to enlarge" },
       items: [
-        { src: "assets/360idcom/visuel-1.jpg" },
-        { src: "assets/360idcom/visuel-2.jpg" },
-        { src: "assets/360idcom/visuel-3.jpg" }
+        { src: "assets/360idcom/photo-3.jpg", caption: { fr: "L'équipe au refuge, à Majorque", en: "The team at the shelter, in Mallorca" } },
+        { src: "assets/360idcom/photo-1.jpg", caption: { fr: "Le tote bag 360 ID COM… et un nouvel ami", en: "The 360 ID COM tote bag… and a new friend" } },
+        { src: "assets/360idcom/photo-2.jpg", caption: { fr: "Découverte du refuge", en: "Discovering the shelter" } },
+        { src: "assets/360idcom/photo-4.jpg", caption: { fr: "Nettoyage des espaces", en: "Cleaning the grounds" } },
+        { src: "assets/360idcom/equipe-poster.jpg", caption: { fr: "Notre équipe", en: "Our team" } },
+        { src: "assets/360idcom/flyer.jpg", caption: { fr: "Le flyer de l'agence", en: "The agency flyer" } }
       ]
     },
-    links: [
-      { label: { fr: "Site web", en: "Website" }, url: "" }
-    ],
+    links: [],
     cta: { fr: "On en discute ?", en: "Shall we talk?" }
   },
 
