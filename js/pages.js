@@ -347,10 +347,10 @@ window.PAGES = {
     eyebrow: { fr: "Expérience pro · Alternance", en: "Professional experience · Work-study" },
     title: "SAINT-GOBAIN",
     tagline: {
-      fr: "Cheffe de projet marketing digital chez Saint-Gobain PAM : référente de 12 pays pour PAMLINE, la refonte du site web international.",
-      en: "Digital marketing project manager at Saint-Gobain PAM: lead contact for 12 countries on PAMLINE, the international website overhaul."
+      fr: "Cheffe de projet marketing digital chez Saint-Gobain PAM : référente de 12 pays pour PAMLINE, la refonte des sites web du groupe.",
+      en: "Digital marketing project manager at Saint-Gobain PAM: lead contact for 12 countries on PAMLINE, the overhaul of the group's websites."
     },
-    heroImage: "assets/saint-gobain/lea-sg.png",
+    heroImage: "assets/saint-gobain/pamline-mockup.png",
     facts: [
       { label: { fr: "Rôle", en: "Role" }, value: { fr: "Cheffe de projet marketing digital", en: "Digital marketing project manager" } },
       { label: { fr: "Période", en: "Period" }, value: { fr: "Sept. 2024 – août 2026", en: "Sept 2024 – Aug 2026" } },
@@ -368,13 +368,12 @@ window.PAGES = {
     project: {
       title: { fr: "Le projet PAMLINE", en: "The PAMLINE project" },
       text: {
-        fr: "PAMLINE est bien plus qu'une refonte de site web : c'est une transformation digitale stratégique. Lancé il y a plus de deux ans, le projet vise à moderniser l'image de marque, harmoniser la communication digitale et offrir une expérience utilisateur fluide et multilingue. PAMLINE est conçu comme une plateforme unique pour 12 pays, avec un back-office centralisé et des fonctionnalités adaptées aux besoins locaux.",
-        en: "PAMLINE is much more than a website redesign: it's a strategic digital transformation. Launched over two years ago, the project aims to modernise the brand image, harmonise digital communication and deliver a smooth, multilingual user experience. PAMLINE is designed as a single platform for 12 countries, with a centralised back office and features tailored to local needs."
-      },
-      image: "assets/saint-gobain/pamline-mockup.png"
+        fr: "PAMLINE est bien plus qu'une refonte de site web : c'est une transformation digitale stratégique. Lancé il y a plus de deux ans, le projet vise à moderniser l'image de marque, harmoniser la communication digitale et offrir une expérience utilisateur fluide et multilingue. PAMLINE réunit 12 sites pays dans un même back-office centralisé, certains déclinés en plusieurs langues (par exemple BE-FR et BE-NL pour la Belgique), avec des fonctionnalités adaptées aux besoins locaux.",
+        en: "PAMLINE is much more than a website redesign: it's a strategic digital transformation. Launched over two years ago, the project aims to modernise the brand image, harmonise digital communication and deliver a smooth, multilingual user experience. PAMLINE brings 12 country sites together in a single centralised back office, some available in several languages (for example BE-FR and BE-NL for Belgium), with features tailored to local needs."
+      }
     },
     stats: [
-      { value: "12", label: { fr: "pays coordonnés sur une même plateforme", en: "countries coordinated on one platform" } },
+      { value: "12", label: { fr: "sites pays dans un même back-office", en: "country sites in one back office" } },
       { value: "3", label: { fr: "sites construits ou co-construits (dont le site français)", en: "sites built or co-built (including the French one)" } },
       { value: "D10", label: { fr: "migration de Drupal 7 vers Drupal 10", en: "migration from Drupal 7 to Drupal 10" } }
     ],

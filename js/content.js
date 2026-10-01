@@ -24,8 +24,8 @@ window.PROJECTS = [
     image: "assets/saint-gobain/pamline-mockup.png",
     title: { fr: "Saint-Gobain PAM — Projet PAMLINE", en: "Saint-Gobain PAM — PAMLINE project" },
     summary: {
-      fr: "Cheffe de projet marketing digital : référente de 12 pays pour la refonte du site web international (Drupal 10).",
-      en: "Digital marketing project manager: lead contact for 12 countries on the international website overhaul (Drupal 10)."
+      fr: "Cheffe de projet marketing digital : référente de 12 pays pour la refonte de 12 sites pays multilingues (Drupal 10).",
+      en: "Digital marketing project manager: lead contact for 12 countries on the overhaul of 12 multilingual country sites (Drupal 10)."
     },
     context: {
       fr: "En alternance chez Saint-Gobain, j'ai accompagné le déploiement et l'adoption d'une plateforme digitale dans de nombreux pays, avec des équipes, des besoins et des contraintes propres à chaque marché.",
@@ -277,6 +277,7 @@ window.SKILLS = [
 /* Liens réseaux sociaux — remplacez par vos vrais profils */
 window.SOCIAL = {
   email: "lea.datinpro@gmail.com",
+  phone: "06 49 46 94 96",
   linkedin: "https://www.linkedin.com/",
   instagram: "https://www.instagram.com/"
 };

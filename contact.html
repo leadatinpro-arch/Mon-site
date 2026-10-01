@@ -9,53 +9,89 @@
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='32' fill='%23ffd23f'/%3E%3Ctext x='32' y='41' font-family='Arial' font-weight='900' font-size='26' text-anchor='middle' fill='%2305070d'%3ELD%3C/text%3E%3C/svg%3E" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@500;700;800&family=Manrope:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@500;700;800&family=Manrope:wght@300;400;500;600&family=Kaushan+Script&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="css/style.css" />
 </head>
 <body class="is-loading" data-page="contact" data-title="meta.contact.title" data-desc="meta.contact.description">
 
   <main id="top">
-    <section class="page-hero page-hero--contact">
+    <section class="c-hero">
       <div class="hero__blob" aria-hidden="true"></div>
+      <div class="container c-hero__grid">
+        <div class="c-hero__text">
+          <p class="eyebrow reveal-up"><span>01</span> <span data-i18n="contactPage.eyebrow">Contact</span></p>
+          <h1 class="page-title">
+            <span class="line"><span class="split" data-split data-i18n="contactPage.title1">Prête à rejoindre</span></span>
+            <span class="line"><span class="split" data-split data-i18n="contactPage.title2">votre</span> <span class="script-word" data-i18n="contactPage.title3">équipe</span></span>
+          </h1>
+          <p class="page-hero__lead reveal-up" data-i18n-html="contactPage.lead">Disponible dès <strong>novembre 2026</strong>, en France ou à l'international. Un poste qui me correspond ? La localisation n'est <strong>pas</strong> un frein.</p>
+          <div class="c-hero__chips reveal-up">
+            <span class="c-chip c-chip--live"><i></i><span data-i18n="contactPage.chip1">Disponible nov. 2026</span></span>
+            <span class="c-chip" data-i18n="contactPage.chip2">🌍 France & international</span>
+            <span class="c-chip" data-i18n="contactPage.chip3">✈️ Mobilité complète</span>
+          </div>
+        </div>
+        <div class="c-hero__photo reveal-up">
+          <span class="c-hero__ring" aria-hidden="true"></span>
+          <img src="assets/saint-gobain/lea-sg.png" alt="Léa Datin" />
+          <span class="c-hero__badge" aria-hidden="true">👋 <span data-i18n="contactPage.hello">Hello !</span></span>
+        </div>
+      </div>
+    </section>
+
+    <section class="c-cards">
       <div class="container">
-        <p class="eyebrow reveal-up"><span>01</span> <span data-i18n="contactPage.eyebrow">Contact</span></p>
-        <h1 class="page-title page-title--xl">
-          <span class="line"><span class="split" data-split data-i18n="contactPage.title1">Dites</span></span>
-          <span class="line line--indent"><span class="split split--gradient" data-split data-i18n="contactPage.title2">bonjour</span><span class="wave" aria-hidden="true">👋</span></span>
-        </h1>
+        <p class="eyebrow reveal-up"><span>02</span> <span data-i18n="contactPage.direct">Me contacter</span></p>
+        <div class="c-cards__grid">
+          <article class="c-card reveal-up">
+            <span class="c-card__icon"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="3"/><path d="M3 7l9 6 9-6"/></svg></span>
+            <span class="c-card__label" data-i18n="contactPage.info.email">E-mail</span>
+            <a class="c-card__value" data-email href="mailto:lea.datinpro@gmail.com">lea.datinpro@gmail.com</a>
+            <div class="c-card__actions">
+              <a class="c-card__link" data-email-link href="mailto:lea.datinpro@gmail.com"><span data-i18n="contactPage.write">Écrire</span> →</a>
+              <button class="c-card__link" data-copy><span data-i18n="contactPage.copy">Copier</span> ⧉</button>
+            </div>
+          </article>
+          <article class="c-card reveal-up" data-phone-card>
+            <span class="c-card__icon"><svg viewBox="0 0 24 24"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/></svg></span>
+            <span class="c-card__label" data-i18n="contactPage.info.phone">Téléphone</span>
+            <a class="c-card__value" data-phone href="tel:+33649469496">06 49 46 94 96</a>
+            <div class="c-card__actions">
+              <a class="c-card__link" data-phone-link href="tel:+33649469496"><span data-i18n="contactPage.call">Appeler</span> →</a>
+            </div>
+          </article>
+          <article class="c-card reveal-up">
+            <span class="c-card__icon"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="4"/><path d="M8 10v7M8 7v.01M12 17v-4a2 2 0 0 1 4 0v4M12 10v7"/></svg></span>
+            <span class="c-card__label">LinkedIn</span>
+            <a class="c-card__value" data-social="linkedin" href="https://www.linkedin.com/" target="_blank" rel="noopener">Léa Datin</a>
+            <div class="c-card__actions">
+              <a class="c-card__link" data-social="linkedin" href="https://www.linkedin.com/" target="_blank" rel="noopener"><span data-i18n="contactPage.profile">Voir le profil</span> ↗</a>
+            </div>
+          </article>
+        </div>
+        <a href="assets/cv-lea-datin.pdf" class="cv-sticker" data-cv download data-cursor="go">
+          <span data-i18n-html="contactPage.cv">Consultez<br>mon CV !</span>
+        </a>
       </div>
     </section>
 
     <section class="contact">
       <div class="container contact__grid">
-
         <aside class="contact__info">
-          <p class="contact__intro reveal-up" data-i18n="contactPage.intro">
-            Recruteur, entreprise ou porteur de projet : je serais ravie d'échanger avec vous. Remplissez le formulaire ou écrivez-moi directement.
-          </p>
-
-          <div class="info-card reveal-up">
-            <span class="info-card__label" data-i18n="contactPage.info.email">E-mail</span>
-            <div class="info-card__row">
-              <a href="mailto:lea.datinpro@gmail.com" class="info-card__value" data-email>lea.datinpro@gmail.com</a>
-              <button class="copy-btn" data-copy aria-label="Copier l'adresse e-mail">
-                <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="8" y="8" width="12" height="12" rx="3"/><path d="M16 8V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h2"/></svg>
-                <span data-i18n="contactPage.copy">Copier</span>
-              </button>
-            </div>
+          <div class="dispo reveal-up">
+            <span class="dispo__label" data-i18n="contactPage.dispo.label">Disponibilité</span>
+            <span class="dispo__date" data-i18n="contactPage.dispo.date">Nov. 2026</span>
+            <span class="dispo__where" data-i18n-html="contactPage.dispo.where">France &amp;<br>International</span>
+            <span class="dispo__sub" data-i18n="contactPage.dispo.sub">Mobilité complète</span>
+            <span class="dispo__globe" aria-hidden="true">🌍</span>
           </div>
-
-          <div class="info-card reveal-up">
-            <span class="info-card__label" data-i18n="contactPage.info.social">Réseaux</span>
-            <div class="info-card__links">
-              <a href="https://www.linkedin.com/" target="_blank" rel="noopener" class="pill-link" data-social="linkedin">LinkedIn ↗</a>
-              <a href="https://www.instagram.com/" target="_blank" rel="noopener" class="pill-link" data-social="instagram">Instagram ↗</a>
+          <div class="vcard reveal-up">
+            <div class="vcard__qr"><img src="assets/vcard-qr.svg" alt="QR code : coordonnées de Léa Datin" /></div>
+            <div class="vcard__text">
+              <h3 data-i18n="contactPage.vcard.title">Ajoutez-moi en un scan</h3>
+              <p data-i18n="contactPage.vcard.text">Scannez pour enregistrer mes coordonnées directement dans vos contacts.</p>
+              <button class="btn btn--ghost btn--sm" data-vcard><span class="btn__text" data-i18n="contactPage.vcard.btn">Télécharger ma carte</span><span class="btn__icon">↓</span></button>
             </div>
-          </div>
-
-          <div class="info-card reveal-up">
-            <span class="info-card__label" data-i18n="contactPage.info.status">Statut</span>
-            <p class="info-card__status"><span class="pulse"></span> <span data-i18n="hero.available">Disponible pour de nouvelles opportunités</span></p>
           </div>
         </aside>
 

@@ -556,6 +556,33 @@
   $$("[data-social]").forEach((a) => { if (SOCIAL[a.dataset.social]) a.href = SOCIAL[a.dataset.social]; });
   $$("[data-email]").forEach((a) => { if (SOCIAL.email) { a.href = `mailto:${SOCIAL.email}`; a.textContent = SOCIAL.email; } });
 
+  // Phone (contact page)
+  if (SOCIAL.phone) {
+    const tel = "tel:+33" + SOCIAL.phone.replace(/\D/g, "").replace(/^0/, "");
+    $$("[data-phone]").forEach((el) => { el.textContent = SOCIAL.phone; el.href = tel; });
+    $$("[data-phone-link]").forEach((el) => { el.href = tel; });
+  } else {
+    $$("[data-phone-card]").forEach((el) => el.remove());
+  }
+  $$("[data-email-link]").forEach((a) => { if (SOCIAL.email) a.href = `mailto:${SOCIAL.email}`; });
+
+  // vCard download (the QR code is a static image: assets/vcard-qr.svg)
+  const vcard = () => [
+    "BEGIN:VCARD", "VERSION:3.0", "N:Datin;Léa;;;", "FN:Léa Datin",
+    "TITLE:Cheffe de projet marketing digital",
+    SOCIAL.email ? `EMAIL;TYPE=INTERNET:${SOCIAL.email}` : "",
+    SOCIAL.phone ? `TEL;TYPE=CELL:+33${SOCIAL.phone.replace(/\D/g, "").replace(/^0/, "")}` : "",
+    SOCIAL.linkedin && SOCIAL.linkedin !== "https://www.linkedin.com/" ? `URL:${SOCIAL.linkedin}` : "",
+    "END:VCARD"
+  ].filter(Boolean).join("\n");
+  $$("[data-vcard]").forEach((btn) => btn.addEventListener("click", () => {
+    const blob = new Blob([vcard()], { type: "text/vcard" });
+    const a = document.createElement("a");
+    a.href = URL.createObjectURL(blob);
+    a.download = "lea-datin.vcf";
+    document.body.appendChild(a); a.click(); a.remove();
+  }));
+
   $$("[data-copy]").forEach((btn) => btn.addEventListener("click", async () => {
     const email = SOCIAL.email || "lea.datinpro@gmail.com";
     try {

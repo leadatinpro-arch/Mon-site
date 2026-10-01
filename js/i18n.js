@@ -496,3 +496,53 @@ Object.assign(window.TRANSLATIONS.en, {
   "about.inspire.travel.title": "Travel",
   "about.inspire.travel.text": "For me, travelling is much more than a hobby: it's a way to discover unique landscapes and different cultures. From Albania with its traditions and authentic towns, to Croatia and its fascinating museums, to Mallorca where I took part in solidarity work for an animal shelter, every experience has enriched me and strengthened my openness to the world."
 });
+
+/* ---------- Page Contact (v2) ---------- */
+Object.assign(window.TRANSLATIONS.fr, {
+  "hero.available": "Disponible dès novembre 2026 · France & international",
+  "contactPage.title1": "Prête à rejoindre",
+  "contactPage.title2": "votre",
+  "contactPage.title3": "équipe",
+  "contactPage.lead": "Disponible dès <strong>novembre 2026</strong>, en France ou à l'international. Un poste qui me correspond ? La localisation n'est <strong>pas</strong> un frein.",
+  "contactPage.chip1": "Disponible nov. 2026",
+  "contactPage.chip2": "🌍 France & international",
+  "contactPage.chip3": "✈️ Mobilité complète",
+  "contactPage.hello": "Hello !",
+  "contactPage.direct": "Me contacter",
+  "contactPage.info.phone": "Téléphone",
+  "contactPage.write": "Écrire",
+  "contactPage.call": "Appeler",
+  "contactPage.profile": "Voir le profil",
+  "contactPage.cv": "Consultez<br>mon CV !",
+  "contactPage.dispo.label": "Disponibilité",
+  "contactPage.dispo.date": "Nov. 2026",
+  "contactPage.dispo.where": "France &amp;<br>International",
+  "contactPage.dispo.sub": "Mobilité complète",
+  "contactPage.vcard.title": "Ajoutez-moi en un scan",
+  "contactPage.vcard.text": "Scannez pour enregistrer mes coordonnées directement dans vos contacts.",
+  "contactPage.vcard.btn": "Télécharger ma carte"
+});
+Object.assign(window.TRANSLATIONS.en, {
+  "hero.available": "Available from November 2026 · France & abroad",
+  "contactPage.title1": "Ready to join",
+  "contactPage.title2": "your",
+  "contactPage.title3": "team",
+  "contactPage.lead": "Available from <strong>November 2026</strong>, in France or abroad. A role that fits me? Location is <strong>not</strong> an issue.",
+  "contactPage.chip1": "Available Nov 2026",
+  "contactPage.chip2": "🌍 France & abroad",
+  "contactPage.chip3": "✈️ Fully mobile",
+  "contactPage.hello": "Hello!",
+  "contactPage.direct": "Get in touch",
+  "contactPage.info.phone": "Phone",
+  "contactPage.write": "Write",
+  "contactPage.call": "Call",
+  "contactPage.profile": "View profile",
+  "contactPage.cv": "Check out<br>my resume!",
+  "contactPage.dispo.label": "Availability",
+  "contactPage.dispo.date": "Nov 2026",
+  "contactPage.dispo.where": "France &amp;<br>International",
+  "contactPage.dispo.sub": "Fully mobile",
+  "contactPage.vcard.title": "Add me in one scan",
+  "contactPage.vcard.text": "Scan to save my details straight into your contacts.",
+  "contactPage.vcard.btn": "Download my card"
+});
