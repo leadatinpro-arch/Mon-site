@@ -286,7 +286,7 @@ window.SOCIAL = {
 window.JOURNEY = [
   { href: "saint-gobain.html", img: "assets/saint-gobain/pamline-mockup.png", fit: "contain", year: "2024 — 2026", title: "Saint-Gobain PAM", role: { fr: "Cheffe de projet marketing digital", en: "Digital marketing project manager" } },
   { href: "about.html", img: "assets/about/icn.png", fit: "logo", year: "2024 — 2026", title: "ICN Business School", role: { fr: "Master Programme Grande École", en: "Master in Management" } },
-  { href: "eclipse.html", img: "assets/eclipse/juin-affiche.jpg", year: "2026", title: "Eclipse", role: { fr: "DA, com' & co-organisation", en: "Art direction, comms & co-organisation" } },
+  { href: "eclipse.html", img: "assets/eclipse/photo-3.jpg", year: "2026", title: "Eclipse", role: { fr: "DA, com' & co-organisation", en: "Art direction, comms & co-organisation" } },
   { href: "cora.html", img: "assets/cora/brioches.jpg", year: "2023 — 2024", title: "Carrefour (ex-Cora)", role: { fr: "Chargée de marketing & communication", en: "Marketing & communication officer" } },
   { href: "360idcom.html", img: "assets/360idcom/photo-3.jpg", year: "", title: "360 ID COM", role: { fr: "Cheffe de projet", en: "Project manager" } },
   { href: "jacques-laveine.html", img: "assets/jacques-laveine/bonne-nouvelle.png", fit: "contain", year: "2022", title: "Jacques Laveine", role: { fr: "Community Manager", en: "Community Manager" } },

@@ -3826,6 +3826,14 @@ body.theme-eclipse { transition: --ed 1.2s ease, --ed2 1.2s ease; }
 @media (max-width: 1000px) { .s-hero--sg .s-tagline, .s-hero--sg .s-facts { max-width: none; } }
 @media (max-width: 700px) { .s-title--long { font-size: 9.2vw; } .s-hero--sg .s-title { font-size: 9.2vw; } .s-hero--sg { padding-top: 290px; } .s-hero--sg .s-hero-img { top: 90px; bottom: auto; width: 80vw; max-height: 200px; opacity: 1; right: 50%; transform: translateX(50%); animation: none; } }
 
+/* Full-bleed photo banner (Eclipse) */
+.s-banner { --by: 0%; position: relative; height: clamp(320px, 70vh, 640px); overflow: hidden; display: grid; place-items: end start; }
+.s-banner__img { position: absolute; inset: -12% 0; width: 100%; height: 124%; object-fit: cover; transform: translateY(var(--by)); }
+.s-banner::after { content: ""; position: absolute; inset: 0; background: linear-gradient(to top, var(--bg) 0%, rgba(5, 7, 13, 0.25) 45%, var(--bg) 100%); }
+.s-banner__quote { position: relative; z-index: 1; padding: 0 var(--gutter) clamp(32px, 6vw, 72px); max-width: 900px; font-family: var(--font-display); font-weight: 800; font-size: clamp(1.6rem, 3.4vw, 3rem); line-height: 1.05; letter-spacing: -0.02em; }
+.s-gallery .gallery__media img { transition: transform 1s var(--ease-out), filter 0.4s; }
+.s-gallery .gallery__media:hover img { filter: saturate(1.25); }
+
 /* ---------- Story responsive ---------- */
 @media (max-width: 1000px) {
   .s-intro__grid { grid-template-columns: 1fr; }

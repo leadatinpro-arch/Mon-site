@@ -369,6 +369,15 @@
     </div></section>`;
   }
 
+  function banner() {
+    const B = P.banner;
+    if (!B) return "";
+    return `<section class="s-banner" data-banner aria-label="${tx(B.quote)}">
+      <img class="s-banner__img" src="${esc(B.src)}" alt="" loading="lazy" />
+      <p class="s-banner__quote reveal-up">${tx(B.quote)}</p>
+    </section>`;
+  }
+
   function walker() {
     if (!P.walker) return "";
     return `<div class="walker" aria-hidden="true"><img src="${esc(P.walker)}" alt="" onerror="this.parentNode.remove()" /></div>`;
@@ -508,7 +517,7 @@
     lang = currentLang;
     t = translate;
     document.body.classList.add(`theme-${P.theme}`);
-    root.innerHTML = hero() + marquee() + intro() + project() + context() + services() + concept() + event() + stats() + editions() + walker() + role() + showcase() + highlights() + impact() + award() + outro() + mascot() + faq() + posters() + gallery() + links() + next() + cta();
+    root.innerHTML = hero() + marquee() + intro() + project() + context() + services() + concept() + event() + stats() + editions() + banner() + walker() + role() + showcase() + highlights() + impact() + award() + outro() + mascot() + faq() + posters() + gallery() + links() + next() + cta();
     document.title = `${pick(P.title)} — Léa Datin`;
     const meta = $('meta[name="description"]');
     if (meta) meta.setAttribute("content", pick(P.tagline));
@@ -525,6 +534,12 @@
       eds.forEach((e) => { if (e.getBoundingClientRect().top < mid) cur = e; });
       document.body.style.setProperty("--ed", cur.dataset.edColor);
       document.body.style.setProperty("--ed2", cur.dataset.edColor2);
+    }
+    const ban = $("[data-banner]");
+    if (ban && !reduceMotion) {
+      const r = ban.getBoundingClientRect();
+      const p = (r.top + r.height / 2 - window.innerHeight / 2) / window.innerHeight;
+      ban.style.setProperty("--by", `${(p * 18).toFixed(2)}%`);
     }
     const hero = $(".s-hero--eclipse");
     if (!hero) return;

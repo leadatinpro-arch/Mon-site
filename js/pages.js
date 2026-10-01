@@ -157,16 +157,20 @@ window.PAGES = {
         { src: "assets/eclipse/helios-sticker.jpg", alt: { fr: "Sticker Hélios", en: "Hélios sticker" }, wide: true }
       ]
     },
+    banner: { src: "assets/eclipse/photo-1.jpg", quote: { fr: "Salle comble, néons allumés, son à fond.", en: "Full house, neons on, music loud." } },
     gallery: {
       title: { fr: "Dans la fosse", en: "On the dancefloor" },
       subtitle: { fr: "Photos des soirées · cliquez pour agrandir", en: "Event photos · click to enlarge" },
       items: [
-        { src: "assets/eclipse/photo-1.jpg" },
-        { src: "assets/eclipse/photo-2.jpg" },
-        { src: "assets/eclipse/photo-3.jpg" },
-        { src: "assets/eclipse/photo-4.jpg" },
-        { src: "assets/eclipse/photo-5.jpg" },
-        { src: "assets/eclipse/photo-6.jpg" }
+        { src: "assets/eclipse/photo-1.jpg", caption: { fr: "La salle, sous les lumières", en: "The room, under the lights" } },
+        { src: "assets/eclipse/photo-2.jpg", caption: { fr: "Les téléphones levés", en: "Phones in the air" } },
+        { src: "assets/eclipse/photo-3.jpg", caption: { fr: "Aux platines, sous le néon Eclipse", en: "On the decks, under the Eclipse neon" } },
+        { src: "assets/eclipse/photo-4.jpg", caption: { fr: "Bras levés derrière les platines", en: "Arms up behind the decks" } },
+        { src: "assets/eclipse/photo-5.jpg", caption: { fr: "Un DJ cagoulé aux platines", en: "A masked DJ on the decks" } },
+        { src: "assets/eclipse/photo-6.jpg", caption: { fr: "Le néon soleil-lune", en: "The sun-and-moon neon" } },
+        { src: "assets/eclipse/photo-7.jpg", caption: { fr: "Plein feux sur la scène", en: "Lights on the stage" } },
+        { src: "assets/eclipse/photo-8.jpg", caption: { fr: "Le sourire de fin de set", en: "End-of-set smile" } },
+        { src: "assets/eclipse/photo-9.jpg", caption: { fr: "La guirlande d'étoiles et de lunes", en: "The star and moon garland" } }
       ]
     },
     links: [
