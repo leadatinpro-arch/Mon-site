@@ -342,6 +342,70 @@ window.PAGES = {
     cta: { fr: "Besoin d'une community manager ?", en: "Need a community manager?" }
   },
 
+  "saint-gobain": {
+    theme: "sg",
+    eyebrow: { fr: "Expérience pro · Alternance", en: "Professional experience · Work-study" },
+    title: "SAINT-GOBAIN",
+    tagline: {
+      fr: "Cheffe de projet marketing digital chez Saint-Gobain PAM : référente de 12 pays pour PAMLINE, la refonte du site web international.",
+      en: "Digital marketing project manager at Saint-Gobain PAM: lead contact for 12 countries on PAMLINE, the international website overhaul."
+    },
+    heroImage: "assets/saint-gobain/lea-sg.png",
+    facts: [
+      { label: { fr: "Rôle", en: "Role" }, value: { fr: "Cheffe de projet marketing digital", en: "Digital marketing project manager" } },
+      { label: { fr: "Période", en: "Period" }, value: { fr: "Sept. 2024 – août 2026", en: "Sept 2024 – Aug 2026" } },
+      { label: { fr: "Entreprise", en: "Company" }, value: "Saint-Gobain PAM" },
+      { label: { fr: "Projet", en: "Project" }, value: { fr: "PAMLINE · 12 pays", en: "PAMLINE · 12 countries" } }
+    ],
+    marquee: ["SAINT-GOBAIN PAM", "PAMLINE", "12 PAYS", "DRUPAL 10", "GESTION DE PROJET", "INTERNATIONAL"],
+    intro: {
+      title: { fr: "L'entreprise", en: "The company" },
+      text: {
+        fr: "Saint-Gobain PAM est spécialisée dans les solutions de canalisation en fonte ductile pour le transport de l'eau potable et des eaux usées. Filiale du groupe Saint-Gobain, elle est leader mondial dans son secteur et dispose d'un rayonnement international.",
+        en: "Saint-Gobain PAM specialises in ductile iron pipe solutions for drinking water and wastewater. A subsidiary of the Saint-Gobain group, it is a global leader in its field with a strong international presence."
+      }
+    },
+    project: {
+      title: { fr: "Le projet PAMLINE", en: "The PAMLINE project" },
+      text: {
+        fr: "PAMLINE est bien plus qu'une refonte de site web : c'est une transformation digitale stratégique. Lancé il y a plus de deux ans, le projet vise à moderniser l'image de marque, harmoniser la communication digitale et offrir une expérience utilisateur fluide et multilingue. PAMLINE est conçu comme une plateforme unique pour 12 pays, avec un back-office centralisé et des fonctionnalités adaptées aux besoins locaux.",
+        en: "PAMLINE is much more than a website redesign: it's a strategic digital transformation. Launched over two years ago, the project aims to modernise the brand image, harmonise digital communication and deliver a smooth, multilingual user experience. PAMLINE is designed as a single platform for 12 countries, with a centralised back office and features tailored to local needs."
+      },
+      image: "assets/saint-gobain/pamline-mockup.png"
+    },
+    stats: [
+      { value: "12", label: { fr: "pays coordonnés sur une même plateforme", en: "countries coordinated on one platform" } },
+      { value: "3", label: { fr: "sites construits ou co-construits (dont le site français)", en: "sites built or co-built (including the French one)" } },
+      { value: "D10", label: { fr: "migration de Drupal 7 vers Drupal 10", en: "migration from Drupal 7 to Drupal 10" } }
+    ],
+    context: {
+      title: { fr: "Pourquoi ce projet est essentiel", en: "Why this project matters" },
+      items: [
+        { label: { fr: "Un site vieillissant", en: "An ageing website" }, value: { fr: "L'ancien site, basé sur Drupal 7, était obsolète et peu ergonomique.", en: "The old Drupal 7 site was outdated and hard to use." } },
+        { label: { fr: "Une urgence technique", en: "A technical deadline" }, value: { fr: "L'hébergement arrivant à échéance en novembre 2025, la migration vers Drupal 10 était indispensable.", en: "With hosting ending in November 2025, migrating to Drupal 10 was essential." } },
+        { label: { fr: "Un enjeu stratégique", en: "A strategic stake" }, value: { fr: "Améliorer la visibilité internationale, centraliser les contenus et renforcer la cohérence de la marque.", en: "Boosting international visibility, centralising content and strengthening brand consistency." } }
+      ]
+    },
+    role: {
+      title: { fr: "Mon rôle dans ce projet", en: "My role in this project" },
+      subtitle: { fr: "Référente pour 12 pays", en: "Lead contact for 12 countries" },
+      lead: {
+        fr: "En tant que référente pour 12 pays, j'assure un suivi quotidien et une coordination constante entre les équipes locales, l'équipe centrale et l'agence de développement. Mon rôle ne se limite pas à la supervision : je suis impliquée dans la construction du site français et j'ai contribué à la création des sites de deux autres pays. Je dois être réactive, répondre aux besoins, trouver des solutions et anticiper les problèmes pour garantir le respect des délais et la qualité des livrables.",
+        en: "As the lead contact for 12 countries, I provide daily follow-up and constant coordination between local teams, the central team and the development agency. My role goes beyond supervision: I'm building the French site and contributed to the sites of two other countries. I need to be responsive, meet needs, find solutions and anticipate problems to keep deadlines and deliverable quality on track."
+      },
+      items: [
+        { title: { fr: "Coordination internationale", en: "International coordination" }, text: { fr: "Interface entre les pays, l'équipe centrale et les développeurs.", en: "Interface between the countries, the central team and the developers." } },
+        { title: { fr: "Workshops", en: "Workshops" }, text: { fr: "Organisation des ateliers : analyse des besoins, définition des priorités.", en: "Running workshops: needs analysis, setting priorities." } },
+        { title: { fr: "Formation des équipes", en: "Team training" }, text: { fr: "Sessions en ligne, guides pratiques, support continu pour les équipes locales.", en: "Online sessions, practical guides, ongoing support for local teams." } },
+        { title: { fr: "Gestion des contenus", en: "Content management" }, text: { fr: "Création complète du site français, contribution à deux autres sites.", en: "Building the entire French site, contributing to two other sites." } },
+        { title: { fr: "Suivi technique", en: "Technical follow-up" }, text: { fr: "Remontée des bugs via tickets, validation des composants UI.", en: "Reporting bugs through tickets, validating UI components." } },
+        { title: { fr: "Planification & reporting", en: "Planning & reporting" }, text: { fr: "Suivi des deadlines, mise à jour des plannings, reporting hebdomadaire.", en: "Tracking deadlines, updating schedules, weekly reporting." } }
+      ]
+    },
+    links: [],
+    cta: { fr: "Un projet international à piloter ?", en: "An international project to lead?" }
+  },
+
   cora: {
     theme: "cora",
     eyebrow: { fr: "Expérience pro · Alternance", en: "Professional experience · Work-study" },

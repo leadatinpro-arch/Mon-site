@@ -337,6 +337,18 @@
     </div></section>`;
   }
 
+  function project() {
+    const J = P.project;
+    if (!J) return "";
+    return `<section class="s-project"><div class="container s-project__grid">
+      <div>
+        <h2 class="section-title reveal-up">${tx(J.title)}</h2>
+        <p class="s-impact__text reveal-up">${tx(J.text)}</p>
+      </div>
+      ${J.image ? `<figure class="s-project__img reveal-up" data-lb="project"><span class="show-row__halo"></span><img src="${esc(J.image)}" alt="${esc(pick(J.title))}" loading="lazy" /></figure>` : ""}
+    </div></section>`;
+  }
+
   function showcase() {
     const S = P.showcase;
     if (!S) return "";
@@ -383,8 +395,9 @@
           </li>`).join("")}</ol>
       </div></section>`;
     }
+    const lead = P.role.lead ? `<p class="role-lead reveal-up">${tx(P.role.lead)}</p>` : "";
     const withImg = P.role.image ? `<figure class="role-photo reveal-up">${media(P.role.image, "", "role-photo__media", "story.placeholder", "role")}</figure>` : "";
-    return `<section class="s-role"><div class="container">${head}
+    return `<section class="s-role"><div class="container">${head}${lead}
       <div class="${P.role.image ? "role-split" : ""}">${withImg}
       <div class="role-grid${P.role.items.length === 4 ? " role-grid--4" : ""}">${P.role.items.map((it, i) => `
         <article class="value reveal-up" style="--d:${i * 0.1}s">
@@ -495,7 +508,7 @@
     lang = currentLang;
     t = translate;
     document.body.classList.add(`theme-${P.theme}`);
-    root.innerHTML = hero() + marquee() + intro() + context() + services() + concept() + event() + stats() + editions() + walker() + role() + showcase() + highlights() + impact() + award() + outro() + mascot() + faq() + posters() + gallery() + links() + next() + cta();
+    root.innerHTML = hero() + marquee() + intro() + project() + context() + services() + concept() + event() + stats() + editions() + walker() + role() + showcase() + highlights() + impact() + award() + outro() + mascot() + faq() + posters() + gallery() + links() + next() + cta();
     document.title = `${pick(P.title)} — Léa Datin`;
     const meta = $('meta[name="description"]');
     if (meta) meta.setAttribute("content", pick(P.tagline));

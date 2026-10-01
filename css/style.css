@@ -3789,6 +3789,26 @@ body.theme-eclipse { transition: --ed 1.2s ease, --ed2 1.2s ease; }
 @media (max-width: 1000px) { .photo-stack { opacity: 0.45; } }
 @media (max-width: 700px) { .s-hero--cora { padding-top: 250px; } .photo-stack { top: 80px; right: 4%; width: 32vw; transform: none; opacity: 0.9; } .photo-stack__img { border-width: 3px; border-radius: 10px; } }
 
+/* ---------- Saint-Gobain ---------- */
+.s-hero--sg { background: radial-gradient(ellipse 55% 65% at 82% 45%, rgba(47, 107, 255, 0.35), transparent 70%), radial-gradient(ellipse 30% 40% at 95% 10%, rgba(255, 210, 63, 0.12), transparent 70%); }
+.s-hero--sg .s-title { font-size: clamp(3rem, 7.6vw, 7.5rem); }
+.s-hero--sg .s-tagline, .s-hero--sg .s-facts { max-width: 64%; }
+.s-hero--sg .s-hero-img { bottom: 0; right: 2%; max-height: 74vh; width: min(30vw, 56vh); animation: sgIn 1.2s 0.3s cubic-bezier(0.34, 1.56, 0.64, 1) both; }
+@keyframes sgIn { from { opacity: 0; transform: translateY(80px); } to { opacity: 1; transform: none; } }
+.s-project { padding: clamp(40px, 6vw, 80px) 0 clamp(60px, 8vw, 100px); overflow: hidden; }
+.s-project__grid { display: grid; grid-template-columns: 0.9fr 1.1fr; gap: clamp(24px, 5vw, 72px); align-items: center; }
+.s-project .section-title { margin-bottom: 24px; }
+.s-project__img { position: relative; margin: 0; display: grid; place-items: center; cursor: zoom-in; }
+.s-project__img img { position: relative; z-index: 1; width: 100%; filter: drop-shadow(0 40px 50px rgba(0, 0, 0, 0.55)); animation: floatY 7s ease-in-out infinite; transition: transform 0.8s var(--ease-out); }
+.s-project__img:hover img { transform: scale(1.03) rotate(-1deg); }
+.s-project__img.reveal-up { transform: translateX(80px); }
+.s-project__img.reveal-up.is-visible { transform: none; }
+.role-lead { max-width: 900px; margin: -24px 0 clamp(32px, 5vw, 56px); font-size: clamp(1.05rem, 1.5vw, 1.25rem); line-height: 1.7; padding-left: clamp(16px, 2vw, 28px); border-left: 3px solid var(--accent); }
+.s-role .role-grid:has(.value:nth-child(6)) .value:nth-child(4) { grid-column: auto; }
+@media (max-width: 1000px) { .s-project__grid { grid-template-columns: 1fr; } }
+@media (max-width: 1000px) { .s-hero--sg .s-tagline, .s-hero--sg .s-facts { max-width: none; } }
+@media (max-width: 700px) { .s-title--long { font-size: 11.4vw; } .s-hero--sg .s-title { font-size: 11.4vw; } .s-hero--sg { padding-top: 330px; } .s-hero--sg .s-hero-img { top: 72px; bottom: auto; width: 62vw; max-height: 260px; opacity: 1; right: 50%; transform: translateX(50%); animation: none; } }
+
 /* ---------- Story responsive ---------- */
 @media (max-width: 1000px) {
   .s-intro__grid { grid-template-columns: 1fr; }

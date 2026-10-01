@@ -15,16 +15,17 @@
 window.PROJECTS = [
   {
     id: "saint-gobain",
+    page: "saint-gobain.html",
     type: "pro",
     featured: true,
     color: 1,
     shape: "circle",
     year: "2024 — 2026",
-    image: "",
-    title: { fr: "Saint-Gobain — Pilotage international", en: "Saint-Gobain — International project lead" },
+    image: "assets/saint-gobain/pamline-mockup.png",
+    title: { fr: "Saint-Gobain PAM — Projet PAMLINE", en: "Saint-Gobain PAM — PAMLINE project" },
     summary: {
-      fr: "Cheffe de projet marketing digital : coordination de 12 équipes internationales autour d'une plateforme digitale.",
-      en: "Digital marketing project manager: coordinating 12 international teams around a digital platform."
+      fr: "Cheffe de projet marketing digital : référente de 12 pays pour la refonte du site web international (Drupal 10).",
+      en: "Digital marketing project manager: lead contact for 12 countries on the international website overhaul (Drupal 10)."
     },
     context: {
       fr: "En alternance chez Saint-Gobain, j'ai accompagné le déploiement et l'adoption d'une plateforme digitale dans de nombreux pays, avec des équipes, des besoins et des contraintes propres à chaque marché.",
@@ -181,9 +182,9 @@ window.PROJECTS = [
 window.TIMELINE = [
   {
     kind: "work",
-    period: "2024 — 2026",
-    title: { fr: "Cheffe de projet marketing digital", en: "Digital marketing project manager" },
-    place: "Saint-Gobain",
+    period: { fr: "Sept. 2024 — août 2026", en: "Sept 2024 — Aug 2026" },
+    title: { fr: "Cheffe de projet marketing digital (alternance)", en: "Digital marketing project manager (work-study)" },
+    place: "Saint-Gobain PAM",
     text: {
       fr: "Pilotage de 12 équipes internationales, création des supports projet, reporting des KPIs par pays et validation des évolutions de la plateforme.",
       en: "Leading 12 international teams, creating project materials, country-level KPI reporting and validating platform changes."
