@@ -47,12 +47,12 @@ window.PROJECTS = [
     featured: true,
     color: 2,
     shape: "square",
-    year: { fr: "En cours", en: "Ongoing" },
-    image: "assets/eclipse/affiche-1.jpg",
+    year: "2026",
+    image: "assets/eclipse/juin-affiche.jpg",
     title: { fr: "Eclipse — Soirées techno à Nancy", en: "Eclipse — Techno nights in Nancy" },
     summary: {
-      fr: "Co-organisatrice de concerts techno : gestion de projet de A à Z, communication et image de marque.",
-      en: "Co-organiser of techno events: end-to-end project management, communication and brand identity."
+      fr: "Soirées techno à Nancy : identité visuelle, communication, vidéos et mascotte Hélios. 2 éditions, ~200 personnes à chaque fois.",
+      en: "Techno nights in Nancy: visual identity, communication, videos and the Hélios mascot. 2 editions, ~200 people each time."
     },
     context: {
       fr: "Eclipse, ce sont des concerts de musique techno que nous organisons à Nancy, à seulement trois. Un projet qui demande autant de rigueur que de créativité.",

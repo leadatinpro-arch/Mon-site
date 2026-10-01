@@ -20,92 +20,159 @@ window.PAGES = {
     eyebrow: { fr: "Projet perso · Événementiel", en: "Personal project · Events" },
     title: "ECLIPSE",
     tagline: {
-      fr: "Des soirées électro-techno à Nancy, imaginées et organisées à trois. Je pilote le projet de A à Z, la communication et l'image de marque.",
-      en: "Electro-techno nights in Nancy, dreamed up and organised by a team of three. I run the project from start to finish, plus all communication and branding."
+      fr: "Des soirées techno à Nancy, nées d'un projet étudiant et devenues un rendez-vous. J'ai créé l'identité visuelle et la communication, et je fais aujourd'hui partie des trois organisateurs.",
+      en: "Techno nights in Nancy, born from a student project and now a local fixture. I created the visual identity and communication, and I'm now one of the three organisers."
     },
     facts: [
-      { label: { fr: "Rôle", en: "Role" }, value: { fr: "Co-organisatrice · Cheffe de projet · Com'", en: "Co-organiser · Project lead · Comms" } },
-      { label: { fr: "Équipe", en: "Team" }, value: { fr: "3 personnes", en: "3 people" } },
-      { label: { fr: "Où", en: "Where" }, value: "Nancy" },
-      { label: { fr: "Style", en: "Sound" }, value: "Techno · Hard techno · Raw" }
+      { label: { fr: "Rôle", en: "Role" }, value: { fr: "DA, com' & co-organisation", en: "Art direction, comms & co-organisation" } },
+      { label: { fr: "Équipe", en: "Team" }, value: { fr: "3 à 100 % + bénévoles", en: "3 full-time + volunteers" } },
+      { label: { fr: "Lieu", en: "Venue" }, value: "Nirvana Club · Nancy" },
+      { label: { fr: "Son", en: "Sound" }, value: "Techno · Hard techno · Raw" }
     ],
     heroMascot: "assets/eclipse/mascotte-2.png",
     walker: "assets/eclipse/mascotte-3.png",
-    marquee: ["ECLIPSE", "TECHNO", "HARD TECHNO", "RAW", "NANCY", "DE A À Z"],
+    marquee: ["ECLIPSE", "TECHNO", "HARD TECHNO", "RAW", "NIRVANA CLUB", "NANCY", "HÉLIOS"],
     intro: {
-      title: { fr: "Le projet", en: "The project" },
+      title: { fr: "L'histoire", en: "The story" },
       text: {
-        fr: "Eclipse, ce sont des événements autour de la musique électro et techno que nous organisons à trois à Nancy, comme l'Eclipse Festival au Nirvana Club. Tout est fait maison, de l'idée jusqu'au jour J : organisation, communication et identité visuelle.",
-        en: "Eclipse is a series of electro and techno events that the three of us organise in Nancy, such as Eclipse Festival at Nirvana Club. Everything is homemade, from the idea to the big night: organisation, communication and visual identity."
+        fr: "Tout commence par un projet scolaire : deux amis décident d'organiser une soirée techno avec leur classe, en réunissant des artistes de la scène électro locale. Il leur manque des visuels : ils m'appellent. Je crée avec eux l'identité d'Eclipse, les premières affiches et toute la communication sur les réseaux, et je viens leur prêter main-forte le soir même. Salle comble. Une deuxième date suit en septembre, puis l'aventure devient la nôtre : nous sommes désormais trois à porter Eclipse à 100 %.",
+        en: "It all starts with a school project: two friends decide to throw a techno night with their class, bringing together artists from the local electronic scene. They need visuals, so they call me. Together we create Eclipse's identity, the first posters and all the social media communication, and I come to help out on the night itself. Sold out. A second date follows in September, then the adventure becomes ours: there are now three of us running Eclipse full-time."
       }
     },
-    event: {
-      name: "Eclipse Festival",
-      date: { fr: "11 septembre", en: "September 11" },
-      venue: "Nirvana Club",
-      address: "6 quai Claude Lorrain — Nancy",
-      genres: "Techno / Hard techno / Raw",
-      hours: { fr: "23h – 5h", en: "11pm – 5am" },
-      poster: "assets/eclipse/affiche-1.jpg"
-    },
     stats: [
-      { value: "3", label: { fr: "organisateurs", en: "organisers" } },
-      { value: "A → Z", label: { fr: "projet géré de bout en bout", en: "project run end to end" } },
-      { value: "100%", label: { fr: "communication & image de marque", en: "communication & branding" } }
+      { value: "2", label: { fr: "éditions, toutes deux réussies", en: "editions, both a success" } },
+      { value: "10", label: { fr: "artistes programmés", en: "artists booked" } },
+      { value: "~200", label: { fr: "personnes à chaque soirée, salle comble", en: "people every night, full house" } }
     ],
+    editions: {
+      title: { fr: "Les éditions", en: "The editions" },
+      subtitle: { fr: "Une identité, une couleur par saison", en: "One identity, one colour per season" },
+      items: [
+        {
+          num: "01",
+          color: "#ff8a1f",
+          color2: "#ffd23f",
+          season: { fr: "Juin 2026", en: "June 2026" },
+          date: { fr: "5 juin", en: "June 5" },
+          hours: "22h – 5h",
+          genres: "Reggae / Dub · Techno · Hard techno · Raw",
+          price: { fr: "6 €", en: "€6" },
+          crowd: { fr: "Salle comble", en: "Full house" },
+          story: {
+            fr: "La première. Organisée avec la classe de mes deux amis, elle réunit des artistes de la scène locale autour d'une tête d'affiche venue d'ailleurs : Vicø. Billetterie en ligne sur Shotgun et sur place, et une salle pleine jusqu'à 5 h.",
+            en: "The first one. Organised with my two friends' class, it brought local artists together around a headliner from further afield: Vicø. Online ticketing on Shotgun plus door sales, and a packed room until 5am."
+          },
+          lineup: [
+            { name: "Meltek", time: "22h – 23h30" },
+            { name: "Kyrb", time: "23h30 – 01h" },
+            { name: "Double Paced", time: "01h – 02h" },
+            { name: "SLMT", time: "02h – 03h" },
+            { name: "Vicø", time: "03h – 04h", headliner: true },
+            { name: "Blueharder", time: "04h – 05h" }
+          ],
+          posters: [
+            { src: "assets/eclipse/juin-affiche.jpg", alt: { fr: "Affiche Eclipse Festival, 5 juin", en: "Eclipse Festival poster, June 5" } },
+            { src: "assets/eclipse/juin-lineup.jpg", alt: { fr: "Line-up du 5 juin", en: "June 5 line-up" } },
+            { src: "assets/eclipse/juin-timetable.jpg", alt: { fr: "Timetable du 5 juin", en: "June 5 timetable" } },
+            { src: "assets/eclipse/juin-logo.jpg", alt: { fr: "Visuel logo Eclipse Festival", en: "Eclipse Festival logo visual" } }
+          ]
+        },
+        {
+          num: "02",
+          color: "#2f6bff",
+          color2: "#5b9bff",
+          season: { fr: "Septembre 2026", en: "September 2026" },
+          date: { fr: "11 septembre", en: "September 11" },
+          hours: "23h – 5h",
+          genres: "Techno · Hard techno · Raw",
+          price: { fr: "8 € sur place", en: "€8 at the door" },
+          crowd: { fr: "180 à 220 personnes", en: "180 to 220 people" },
+          story: {
+            fr: "Le retour. Même charte graphique, nouvelle couleur : le bleu. Quatre artistes, une soirée encore une fois réussie et beaucoup de retours enthousiastes, de gens curieux de ce qu'on faisait : à Nancy, il n'existait pas vraiment de soirées comme celles-ci portées par des organisateurs locaux.",
+            en: "The comeback. Same visual identity, new colour: blue. Four artists, another successful night and lots of enthusiastic feedback from people curious about what we were doing: in Nancy, there weren't really nights like these run by local organisers."
+          },
+          lineup: [
+            { name: "Antara" },
+            { name: "Gigi Acid" },
+            { name: "Noisyneighbors" },
+            { name: "Purificator" }
+          ],
+          posters: [
+            { src: "assets/eclipse/sept-affiche.jpg", alt: { fr: "Affiche Eclipse Festival, 11 septembre", en: "Eclipse Festival poster, September 11" } },
+            { src: "assets/eclipse/sept-lineup.jpg", alt: { fr: "Line-up du 11 septembre", en: "September 11 line-up" } },
+            { src: "assets/eclipse/sept-billetterie.jpg", alt: { fr: "Visuel « La billetterie est ouverte »", en: "“Ticketing is open” visual" } },
+            { src: "assets/eclipse/sept-affiche-2.jpg", alt: { fr: "Affiche Eclipse, 11 septembre", en: "Eclipse poster, September 11" } }
+          ]
+        }
+      ],
+      next: {
+        num: "03",
+        color: "#7a3cff",
+        color2: "#c08bff",
+        title: { fr: "La prochaine éclipse…", en: "The next eclipse…" },
+        text: { fr: "Une troisième édition se prépare, dans une nouvelle couleur. Restez à l'écoute.", en: "A third edition is in the works, in a brand-new colour. Stay tuned." },
+        badge: { fr: "Bientôt", en: "Coming soon" },
+        image: "assets/eclipse/helios-ou.jpg"
+      }
+    },
     role: {
       title: { fr: "Ma tracklist", en: "My tracklist" },
-      subtitle: { fr: "Ce que je gère sur chaque événement", en: "What I handle for every event" },
+      subtitle: { fr: "Ce que j'apporte à Eclipse", en: "What I bring to Eclipse" },
       items: [
-        { title: { fr: "Gestion de projet", en: "Project management" }, text: { fr: "Organisation, planning, coordination de l'équipe et suivi de chaque étape jusqu'au jour J.", en: "Organisation, planning, team coordination and following every step up to the big night." } },
-        { title: { fr: "Communication", en: "Communication" }, text: { fr: "Stratégie et contenus sur les réseaux sociaux, annonces et teasing avant chaque événement, sans oublier les messages de prévention pour que chacun passe une soirée safe.", en: "Social media strategy and content, announcements and teasers before each event, plus prevention messages so everyone has a safe night." } },
-        { title: { fr: "Image de marque", en: "Brand identity" }, text: { fr: "Création de l'identité d'Eclipse : univers, ton et visuels.", en: "Creating Eclipse's identity: universe, tone of voice and visuals." } },
-        { title: { fr: "La mascotte", en: "The mascot" }, text: { fr: "Imaginée et créée pour incarner Eclipse et la rendre reconnaissable en un coup d'œil.", en: "Designed and created to embody Eclipse and make it recognisable at a glance." } }
+        { title: { fr: "Identité visuelle", en: "Visual identity" }, text: { fr: "Création de la charte d'Eclipse et de toutes les affiches : une même identité, déclinée dans une couleur par édition.", en: "Creating Eclipse's brand guidelines and every poster: one identity, with a new colour for each edition." } },
+        { title: { fr: "Réseaux sociaux", en: "Social media" }, text: { fr: "Annonces, line-up, timetable, ouverture de la billetterie : toute la communication Instagram, du teasing au récap.", en: "Announcements, line-up, timetable, ticket launches: all the Instagram communication, from teasers to recaps." } },
+        { title: { fr: "Vidéos", en: "Videos" }, text: { fr: "Teasers, préparation de la scène, récaps de soirée : des formats courts pour faire vivre l'événement avant, pendant et après.", en: "Teasers, stage set-up, night recaps: short formats that bring the event to life before, during and after." } },
+        { title: { fr: "Hélios, la mascotte", en: "Hélios, the mascot" }, text: { fr: "Imaginée et dessinée pour incarner Eclipse et porter la communication des prochaines éditions.", en: "Designed and drawn to embody Eclipse and front the communication for upcoming editions." } },
+        { title: { fr: "Organisation & jour J", en: "Organisation & the big night" }, text: { fr: "Aujourd'hui l'une des trois organisateurs à 100 % : préparation des soirées, coordination des bénévoles et présence le soir même.", en: "Now one of the three full-time organisers: preparing the nights, coordinating volunteers and being there on the night." } }
       ]
     },
     mascot: {
-      src: "assets/eclipse/mascotte.png",
-      /* Chaque clic sur la mascotte passe à la pose suivante */
+      src: "assets/eclipse/mascotte-2.png",
       poses: [
+        { src: "assets/eclipse/mascotte-2.png", bubble: { fr: "Salut, moi c'est Hélios !", en: "Hi, I'm Hélios!" } },
         { src: "assets/eclipse/mascotte.png", bubble: { fr: "Le son est lancé !", en: "The music is on!" } },
-        { src: "assets/eclipse/mascotte-2.png", bubble: { fr: "On se voit à la prochaine ?", en: "See you at the next one?" } },
         { src: "assets/eclipse/mascotte-3.png", bubble: { fr: "Petite pause fraîcheur…", en: "Quick refreshment break…" } }
       ],
-      title: { fr: "Voici la mascotte", en: "Meet the mascot" },
+      title: { fr: "Voici Hélios", en: "Meet Hélios" },
       text: {
-        fr: "Je l'ai créée pour donner un visage à Eclipse. Elle apparaît sur les affiches, les réseaux sociaux et tous nos supports.",
-        en: "I created it to give Eclipse a face. It shows up on posters, social media and all our materials."
+        fr: "Une petite lune à lunettes, un éclat de soleil dans le dos, et toujours le casque sur les oreilles. Je l'ai créé pour donner un visage à Eclipse : il porte désormais nos affiches, nos réseaux et nos goodies.",
+        en: "A little moon in sunglasses, a burst of sun behind him, and headphones always on. I created him to give Eclipse a face: he now fronts our posters, social media and merch."
       },
-      bubble: { fr: "On se voit à la prochaine ?", en: "See you at the next one?" }
+      bubble: { fr: "Salut, moi c'est Hélios !", en: "Hi, I'm Hélios!" },
+      faq: [
+        { q: { fr: "Qui est Hélios ?", en: "Who is Hélios?" }, a: { fr: "La mascotte d'Eclipse : une lune qui a croqué un bout de soleil, fan de techno, de hard techno et de raw.", en: "Eclipse's mascot: a moon that took a bite of the sun, into techno, hard techno and raw." }, img: "assets/eclipse/mascotte-3.png" },
+        { q: { fr: "Sa mission ?", en: "His mission?" }, a: { fr: "Mettre l'ambiance, annoncer les prochaines dates et rappeler à chacun de passer une soirée safe.", en: "Setting the mood, announcing upcoming dates and reminding everyone to have a safe night." }, img: "assets/eclipse/mascotte.png" },
+        { q: { fr: "Où le retrouver ?", en: "Where to find him?" }, a: { fr: "Sur nos affiches, nos réseaux, nos stickers… et bientôt en soirée.", en: "On our posters, social media, stickers… and soon at our nights." }, img: "assets/eclipse/mascotte-2.png" }
+      ]
     },
     posters: {
-      title: { fr: "Les visuels", en: "The visuals" },
-      subtitle: { fr: "Affiches, prévention et mascotte · glissez pour parcourir, cliquez pour agrandir", en: "Posters, prevention and mascot · drag to browse, click to enlarge" },
+      title: { fr: "Le mur des visuels", en: "The visuals wall" },
+      subtitle: { fr: "Affiches, réseaux et goodies · glissez pour parcourir, cliquez pour agrandir", en: "Posters, social posts and merch · drag to browse, click to enlarge" },
       items: [
-        { src: "assets/eclipse/affiche-1.jpg", alt: { fr: "Affiche de l'Eclipse Festival au Nirvana Club", en: "Eclipse Festival poster at Nirvana Club" } },
-        { src: "assets/eclipse/mascotte.png", alt: { fr: "Mascotte Eclipse aux platines", en: "Eclipse mascot DJing" }, fit: "contain" },
-        { src: "assets/eclipse/affiche-2.jpg", alt: { fr: "Visuel de prévention « Besoin d'aide ? »", en: "\"Need help?\" prevention visual" } },
-        { src: "assets/eclipse/mascotte-2.png", alt: { fr: "Mascotte Eclipse à lunettes", en: "Eclipse mascot with sunglasses" }, fit: "contain" },
-        { src: "assets/eclipse/mascotte-3.png", alt: { fr: "Mascotte Eclipse avec un jus", en: "Eclipse mascot with a drink" }, fit: "contain" }
+        { src: "assets/eclipse/helios-annonce.jpg", alt: { fr: "Annonce d'Hélios, la mascotte", en: "Hélios mascot announcement" } },
+        { src: "assets/eclipse/helios-qui.jpg", alt: { fr: "Slide « Qui est Hélios ? »", en: "“Who is Hélios?” slide" } },
+        { src: "assets/eclipse/helios-mission.jpg", alt: { fr: "Slide « Sa mission ? »", en: "“His mission?” slide" } },
+        { src: "assets/eclipse/juin-affiche.jpg", alt: { fr: "Affiche du 5 juin", en: "June 5 poster" } },
+        { src: "assets/eclipse/sept-affiche.jpg", alt: { fr: "Affiche du 11 septembre", en: "September 11 poster" } },
+        { src: "assets/eclipse/affiche-2.jpg", alt: { fr: "Visuel de prévention « Besoin d'aide ? »", en: "“Need help?” prevention visual" } },
+        { src: "assets/eclipse/helios-sticker.jpg", alt: { fr: "Sticker Hélios", en: "Hélios sticker" }, wide: true }
       ]
     },
     gallery: {
       title: { fr: "Dans la fosse", en: "On the dancefloor" },
-      subtitle: { fr: "Photos des événements · cliquez pour agrandir", en: "Event photos · click to enlarge" },
+      subtitle: { fr: "Photos des soirées · cliquez pour agrandir", en: "Event photos · click to enlarge" },
       items: [
         { src: "assets/eclipse/photo-1.jpg" },
         { src: "assets/eclipse/photo-2.jpg" },
         { src: "assets/eclipse/photo-3.jpg" },
         { src: "assets/eclipse/photo-4.jpg" },
         { src: "assets/eclipse/photo-5.jpg" },
-        { src: "assets/eclipse/photo-6.jpg" },
-        { src: "assets/eclipse/photo-7.jpg" },
-        { src: "assets/eclipse/photo-8.jpg" }
+        { src: "assets/eclipse/photo-6.jpg" }
       ]
     },
     links: [
-      { label: "Instagram", url: "" },
-      { label: "Shotgun", url: "" }
+      { label: "Instagram @eclipsefestival_ncy", url: "https://www.instagram.com/eclipsefestival_ncy" },
+      { label: { fr: "Billetterie Shotgun", en: "Shotgun tickets" }, url: "https://shotgun.live/fr/venues/event-nancy" }
     ],
     cta: { fr: "Envie d'en parler ?", en: "Want to talk about it?" }
   },

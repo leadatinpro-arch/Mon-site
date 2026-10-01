@@ -247,6 +247,84 @@
     </div></section>`;
   }
 
+  function editions() {
+    const E = P.editions;
+    if (!E) return "";
+    const ticket = (ed) => `
+      <div class="ticket ticket--ed reveal-up">
+        <div class="ticket__main">
+          <span class="ticket__kicker">${esc(t("story.ed.edition"))} ${esc(ed.num)}</span>
+          <h3 class="ticket__name">${tx(ed.date)}</h3>
+          <dl class="ticket__rows">
+            <div><dt>${esc(t("story.event.hours"))}</dt><dd>${esc(ed.hours)}</dd></div>
+            <div><dt>${esc(t("story.ed.price"))}</dt><dd>${tx(ed.price)}</dd></div>
+            <div class="ticket__wide"><dt>${esc(t("story.event.venue"))}</dt><dd>Nirvana Club<small>6 quai Claude Lorrain — Nancy</small></dd></div>
+            <div class="ticket__wide"><dt>${esc(t("story.event.sound"))}</dt><dd>${esc(ed.genres)}</dd></div>
+          </dl>
+        </div>
+        <div class="ticket__stub" aria-hidden="true"><span class="ticket__barcode"></span><span class="ticket__admit">ECLIPSE · ${esc(ed.num)}</span></div>
+      </div>`;
+    const lineup = (ed) => `
+      <div class="lineup reveal-up">
+        <h4 class="lineup__title">Line-up${ed.lineup.some((a) => a.time) ? ` <span>· timetable</span>` : ""}</h4>
+        <ol class="lineup__list">${ed.lineup.map((a, i) => `
+          <li class="lineup__item${a.headliner ? " is-head" : ""}" style="--i:${i}">
+            <span class="lineup__name">${esc(a.name)}${a.headliner ? ` <em>${esc(t("story.ed.headliner"))}</em>` : ""}</span>
+            ${a.time ? `<span class="lineup__time">${esc(a.time)}</span>` : ""}
+          </li>`).join("")}</ol>
+      </div>`;
+    const N = E.next;
+    return `<section class="s-editions" data-editions>
+      <div class="s-editions__bgwrap" aria-hidden="true"><div class="s-editions__bg"></div></div>
+      <div class="container">
+        <div class="section-head">
+          <p class="eyebrow reveal-up"><span>✦</span> <span>${tx(E.subtitle)}</span></p>
+          <h2 class="section-title reveal-up">${tx(E.title)}</h2>
+        </div>
+        ${E.items.map((ed) => `
+        <article class="edition" data-ed-color="${esc(ed.color)}" data-ed-color2="${esc(ed.color2)}" style="--c:${esc(ed.color)};--c2:${esc(ed.color2)}">
+          <header class="edition__head">
+            <span class="edition__num" aria-hidden="true">${esc(ed.num)}</span>
+            <div>
+              <p class="edition__season reveal-up">${tx(ed.season)} · <strong>${tx(ed.crowd)}</strong></p>
+              <p class="edition__story reveal-up">${tx(ed.story)}</p>
+            </div>
+          </header>
+          <div class="edition__grid">
+            <div class="edition__info">${ticket(ed)}${lineup(ed)}</div>
+            <div class="edition__posters">${ed.posters.map((po, i) => media(po.src, pick(po.alt), `edition__poster edition__poster--${i + 1} reveal-up`, "story.visualPh", `ed-${ed.num}`)).join("")}</div>
+          </div>
+        </article>`).join("")}
+        ${N ? `
+        <article class="edition edition--next" data-ed-color="${esc(N.color)}" data-ed-color2="${esc(N.color2)}" style="--c:${esc(N.color)};--c2:${esc(N.color2)}">
+          <div class="next-teaser reveal-up">
+            <span class="edition__num" aria-hidden="true">${esc(N.num)}</span>
+            <div class="next-teaser__text">
+              <span class="live-badge"><i></i>${tx(N.badge)}</span>
+              <h3 class="next-teaser__title">${tx(N.title)}</h3>
+              <p>${tx(N.text)}</p>
+              <div class="next-teaser__date" aria-hidden="true"><span>??</span><span>·</span><span>??</span><span>·</span><span>2026</span></div>
+            </div>
+            ${N.image ? `<div class="next-teaser__img"><img src="${esc(N.image)}" alt="" loading="lazy" /></div>` : ""}
+          </div>
+        </article>` : ""}
+      </div>
+    </section>`;
+  }
+
+  function faq() {
+    const F = P.mascot && P.mascot.faq;
+    if (!F) return "";
+    return `<section class="s-faq"><div class="container">
+      <div class="faq">${F.map((f, i) => `
+        <article class="faq__card reveal-up" style="--d:${i * 0.12}s">
+          <img class="faq__img" src="${esc(f.img)}" alt="" loading="lazy" />
+          <h3 class="faq__q">${tx(f.q)}</h3>
+          <p class="faq__a">${tx(f.a)}</p>
+        </article>`).join("")}</div>
+    </div></section>`;
+  }
+
   function walker() {
     if (!P.walker) return "";
     return `<div class="walker" aria-hidden="true"><img src="${esc(P.walker)}" alt="" onerror="this.parentNode.remove()" /></div>`;
@@ -329,7 +407,7 @@
         <h2 class="section-title reveal-up">${tx(P.posters.title)}</h2>
       </div>
       <div class="posters" data-drag data-cursor="drag">
-        <div class="posters__track">${P.posters.items.map((it, i) => media(it.src, pick(it.alt), `poster poster--${(i % 3) + 1}${it.fit === "contain" ? " poster--art" : ""}`, "story.visualPh", "posters")).join("")}</div>
+        <div class="posters__track">${P.posters.items.map((it, i) => media(it.src, pick(it.alt), `poster poster--${(i % 3) + 1}${it.fit === "contain" ? " poster--art" : ""}${it.wide ? " poster--wide" : ""}`, "story.visualPh", "posters")).join("")}</div>
       </div>
     </section>`;
   }
@@ -385,7 +463,7 @@
     lang = currentLang;
     t = translate;
     document.body.classList.add(`theme-${P.theme}`);
-    root.innerHTML = hero() + marquee() + intro() + context() + services() + concept() + event() + stats() + walker() + role() + highlights() + impact() + award() + outro() + mascot() + posters() + gallery() + links() + next() + cta();
+    root.innerHTML = hero() + marquee() + intro() + context() + services() + concept() + event() + stats() + editions() + walker() + role() + highlights() + impact() + award() + outro() + mascot() + faq() + posters() + gallery() + links() + next() + cta();
     document.title = `${pick(P.title)} — Léa Datin`;
     const meta = $('meta[name="description"]');
     if (meta) meta.setAttribute("content", pick(P.tagline));
@@ -395,6 +473,14 @@
 
   /* ---------- scroll: eclipse moon ---------- */
   function onScroll() {
+    const eds = $$("[data-ed-color]");
+    if (eds.length) {
+      const mid = window.innerHeight * 0.55;
+      let cur = eds[0];
+      eds.forEach((e) => { if (e.getBoundingClientRect().top < mid) cur = e; });
+      document.body.style.setProperty("--ed", cur.dataset.edColor);
+      document.body.style.setProperty("--ed2", cur.dataset.edColor2);
+    }
     const hero = $(".s-hero--eclipse");
     if (!hero) return;
     const p = Math.min(Math.max(window.scrollY / (hero.offsetHeight * 0.8), 0), 1);
