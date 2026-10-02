@@ -59,10 +59,13 @@ Pour un envoi direct : créer un compte gratuit sur https://web3forms.com avec c
 la clé d'accès dans `window.SITE.web3formsKey` (`js/content.js`). En cas d'échec de l'envoi, le
 formulaire repasse automatiquement par la messagerie.
 
-## Statistiques (Google Analytics 4)
+## Statistiques (Google Tag Manager / Google Analytics 4)
 
-Coller l'identifiant `G-XXXXXXXXXX` dans `window.SITE.gaId` (`js/content.js`). Un bandeau cookies
-s'affiche alors ; Google Analytics n'est chargé que si le visiteur accepte.
+Le conteneur Tag Manager est réglé dans `window.SITE.gtmId` (`js/content.js`). Un bandeau cookies
+s'affiche ; Tag Manager n'est chargé que si le visiteur accepte. Google Analytics se configure ensuite
+dans Tag Manager (balise « Google » avec l'identifiant `G-XXXXXXXXXX`, déclencheur « Initialisation -
+Toutes les pages », puis « Envoyer »). Sans Tag Manager, on peut aussi coller directement l'identifiant
+`G-…` dans `window.SITE.gaId`.
 
 ## Nom de domaine (lea-datin.com)
 

@@ -79,19 +79,24 @@
   if ((window.SITE || {}).web3formsKey) {
     document.querySelectorAll('[data-i18n="contactPage.form.note"], [data-i18n="contactPage.form.okText"]').forEach((el) => { el.dataset.i18n += "Direct"; });
   }
-  // Google Analytics : chargé seulement après accord du visiteur
-  const GA = (window.SITE || {}).gaId;
-  if (GA) {
+  // Mesure d'audience (Google Tag Manager ou Google Analytics) : chargée seulement après accord du visiteur
+  const { gtmId: GTM, gaId: GA } = window.SITE || {};
+  if (GTM || GA) {
     const store = { get() { try { return localStorage.getItem("ld-consent"); } catch (e) { return null; } }, set(v) { try { localStorage.setItem("ld-consent", v); } catch (e) {} } };
     const loadGA = () => {
+      window.dataLayer = window.dataLayer || [];
       const sc = document.createElement("script");
       sc.async = true;
-      sc.src = `https://www.googletagmanager.com/gtag/js?id=${GA}`;
+      if (GTM) {
+        window.dataLayer.push({ "gtm.start": Date.now(), event: "gtm.js" });
+        sc.src = `https://www.googletagmanager.com/gtm.js?id=${GTM}`;
+      } else {
+        sc.src = `https://www.googletagmanager.com/gtag/js?id=${GA}`;
+        window.gtag = function () { window.dataLayer.push(arguments); };
+        window.gtag("js", new Date());
+        window.gtag("config", GA, { anonymize_ip: true });
+      }
       document.head.appendChild(sc);
-      window.dataLayer = window.dataLayer || [];
-      window.gtag = function () { window.dataLayer.push(arguments); };
-      window.gtag("js", new Date());
-      window.gtag("config", GA, { anonymize_ip: true });
     };
     const choice = store.get();
     if (choice === "yes") loadGA();
