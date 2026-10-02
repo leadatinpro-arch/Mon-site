@@ -91,6 +91,7 @@
           <span class="punch-hero__burst"></span>
           <img class="punch-hero__logo" src="${esc(P.logo)}" alt="" />
           ${P.heroMascot ? `<img class="punch-hero__mascot" src="${esc(P.heroMascot)}" alt="" />` : ""}
+          ${P.heroSprite ? `<span class="punch-hero__mascot punch-hero__sprite" style="background-image:url('${esc(P.heroSprite.src)}');--frames:${P.heroSprite.frames}"></span>` : ""}
           <span class="punch-hero__spark punch-hero__spark--1">✦</span>
           <span class="punch-hero__spark punch-hero__spark--2">✦</span>
           <span class="punch-hero__spark punch-hero__spark--3">★</span>
@@ -126,10 +127,7 @@
       return `<div class="idcom-hero" aria-hidden="true">
           <span class="arc arc--1"></span><span class="arc arc--2"></span><span class="arc arc--3"></span><span class="arc arc--4"></span>
           <img class="idcom-hero__logo" src="${esc(P.logo)}" alt="" />
-          <span class="doodle doodle--gear">${doodles.gear}</span>
-          <span class="doodle doodle--mega">${doodles.mega}</span>
-          <span class="doodle doodle--wrench">${doodles.wrench}</span>
-          <span class="doodle doodle--idea">${doodles.idea}</span>
+          ${["gear", "mega", "wrench", "idea"].map((k) => `<span class="doodle doodle--${k}${P.doodles ? " doodle--img" : ""}">${P.doodles ? `<img src="${esc(P.doodles[k])}" alt="" />` : doodles[k]}</span>`).join("")}
         </div>`;
     }
     if (P.theme === "idcom") {
@@ -250,6 +248,7 @@
       <div class="s-services__grid">
         <div class="services">${S.groups.map((g, i) => `
           <article class="service reveal-up" style="--c:${esc(g.color)};--d:${i * 0.08}s">
+            ${g.icon ? `<img class="service__icon" src="${esc(g.icon)}" alt="" loading="lazy" />` : ""}
             <h3 class="service__name"><span class="service__dot"></span>${tx(g.name)}<span class="service__count">${g.items.length}</span></h3>
             <ul class="service__list">${g.items.map((it) => `<li>${tx(it)}</li>`).join("")}</ul>
           </article>`).join("")}</div>
@@ -608,7 +607,7 @@
       <div class="mascot reveal-up" data-mascot>
         <div class="mascot__halo" aria-hidden="true"></div>
         <button class="mascot__btn" aria-label="${esc(t("story.mascot.click"))}">
-          <img class="mascot__img" src="${esc(M.poses ? M.poses[0].src : M.src)}" alt="${esc(t("story.mascot.alt"))}" onerror="this.closest('.mascot').classList.add('is-fallback');this.remove()" />
+          <img class="mascot__img" src="${esc(M.poses ? M.poses[0].src : M.src)}" alt="${M.alt ? tx(M.alt) : esc(t("story.mascot.alt"))}" onerror="this.closest('.mascot').classList.add('is-fallback');this.remove()" />
           <span class="mascot__fallback" aria-hidden="true">
             <span class="mf__corona"></span>
             <span class="mf__body"><span class="mf__eye"><i></i></span><span class="mf__eye"><i></i></span><span class="mf__mouth"></span></span>

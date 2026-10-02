@@ -189,8 +189,8 @@ window.PAGES = {
       fr: "Une mini-entreprise engagée pour le bien-être mental.",
       en: "A student company committed to mental well-being."
     },
-    logo: "assets/punch/logo.png",
-    heroMascot: "assets/punch/mascotte-2.png",
+    logo: "assets/punch/logo-blanc.webp",
+    heroSprite: { src: "assets/punch/mascotte-vol.webp", frames: 11 },
     facts: [
       { label: { fr: "Rôle", en: "Role" }, value: { fr: "Co-fondatrice", en: "Co-founder" } },
       { label: { fr: "Création", en: "Founded" }, value: "2022" },
@@ -223,7 +223,7 @@ window.PAGES = {
     },
     concept: {
       title: { fr: "Le concept PUNCH", en: "The PUNCH concept" },
-      image: "assets/punch/mascotte-1.png",
+      image: "assets/punch/mascotte-joie.webp",
       text: {
         fr: "PUNCH est une application de soutien mental dédiée aux personnes atteintes de troubles du comportement alimentaire, mais aussi à leurs proches. L'objectif : offrir un espace sécurisé, des ressources adaptées et un accompagnement pour améliorer le quotidien des utilisateurs.",
         en: "PUNCH is a mental health support app for people with eating disorders, and for their loved ones too. The goal: offer a safe space, tailored resources and support to improve users' everyday lives."
@@ -233,7 +233,7 @@ window.PAGES = {
         { fr: "Des ressources adaptées", en: "Tailored resources" },
         { fr: "Un accompagnement", en: "Ongoing support" }
       ],
-      photo: "assets/punch/photo-app.jpg"
+      photo: "assets/punch/appli-carte.jpg"
     },
     role: {
       title: { fr: "Mes responsabilités et réalisations", en: "My responsibilities and achievements" },
@@ -241,7 +241,7 @@ window.PAGES = {
       image: "assets/punch/lea-punch.jpg",
       items: [
         { title: { fr: "Définition du concept", en: "Defining the concept" }, text: { fr: "Analyse des besoins, proposition de valeur, étude de marché.", en: "Needs analysis, value proposition, market research." } },
-        { title: { fr: "Identité visuelle", en: "Visual identity" }, text: { fr: "Logo, charte graphique, maquettes de l'application.", en: "Logo, brand guidelines, app mock-ups." } },
+        { title: { fr: "Identité visuelle", en: "Visual identity" }, text: { fr: "Logo, mascotte, charte graphique, maquettes de l'application.", en: "Logo, mascot, brand guidelines, app mock-ups." } },
         { title: { fr: "Communication & marketing", en: "Communication & marketing" }, text: { fr: "Conception des supports pour le concours, stratégie digitale fictive.", en: "Designing materials for the competition, a mock digital strategy." } },
         { title: { fr: "Pitch final", en: "Final pitch" }, text: { fr: "Préparation et présentation devant le jury, avec un support visuel professionnel.", en: "Preparing and presenting to the jury, with a professional visual deck." } }
       ]
@@ -258,12 +258,26 @@ window.PAGES = {
     },
     outro: {
       title: { fr: "Et après ?", en: "What's next?" },
-      image: "assets/punch/mascotte-2.png",
+      image: "assets/punch/mascotte-malice.webp",
       text: {
         fr: "Le concours est terminé, mais l'aventure continue. Cette expérience m'a tellement marquée que j'ai la volonté de reprendre PUNCH de mon côté, pour en faire non plus un projet fictif, mais une solution réelle. Parce que l'innovation sociale mérite de passer du concept à la réalité.",
         en: "The competition is over, but the adventure goes on. This experience left such a mark on me that I intend to take PUNCH forward on my own, turning it from a fictional project into a real solution. Because social innovation deserves to move from concept to reality."
       },
       badge: { fr: "Projet toujours d'actualité", en: "Still an active project" }
+    },
+    mascot: {
+      src: "assets/punch/mascotte-joie.webp",
+      alt: { fr: "La mascotte de PUNCH", en: "The PUNCH mascot" },
+      poses: [
+        { src: "assets/punch/mascotte-joie.webp", bubble: { fr: "Coucou, je suis la mascotte de PUNCH !", en: "Hi, I'm the PUNCH mascot!" } },
+        { src: "assets/punch/mascotte-surprise.webp", bubble: { fr: "Oh ! Un nouveau challenge ?", en: "Oh! A new challenge?" } },
+        { src: "assets/punch/mascotte-malice.webp", bubble: { fr: "On avance ensemble, à ton rythme.", en: "We move forward together, at your pace." } }
+      ],
+      title: { fr: "La mascotte, un visage pour l'appli", en: "The mascot, a face for the app" },
+      text: {
+        fr: "Je l'ai dessinée pour rendre l'application plus douce et rassurante : une petite créature toute ronde, de grands yeux, des ailes et plusieurs expressions (joie, surprise, malice) pour réagir à ce que vit l'utilisateur. On la retrouve dans l'appli, sur le stand et sur nos supports. Clique dessus pour changer son humeur !",
+        en: "I drew it to make the app feel softer and more reassuring: a small round creature with big eyes, wings and several expressions (joy, surprise, mischief) to react to what the user is going through. You'll find it in the app, at the stand and on our materials. Click it to change its mood!"
+      }
     },
     showcaseAfter: true,
     showcase: {
@@ -282,13 +296,13 @@ window.PAGES = {
       title: { fr: "Galerie", en: "Gallery" },
       subtitle: { fr: "Le stand, le concours, l'équipe · cliquez pour agrandir", en: "The stand, the competition, the team · click to enlarge" },
       items: [
+        { src: "assets/punch/appli-carte.jpg", caption: { fr: "L'appli, la carte en bois gravée et la mascotte", en: "The app, the engraved wooden card and the mascot" } },
         { src: "assets/punch/epa-rotonde.jpg", caption: { fr: "La Rotonde, Thaon-les-Vosges", en: "La Rotonde, Thaon-les-Vosges" } },
         { src: "assets/punch/epa-salle.jpg", caption: { fr: "Festival des mini-entreprises 2026", en: "Student company festival 2026" } },
         { src: "assets/punch/epa-badge.jpg", caption: { fr: "Badge de jurée", en: "Jury badge" } },
         { src: "assets/punch/photo-stand.jpg", caption: { fr: "L'équipe PUNCH sur le stand", en: "The PUNCH team at the stand" } },
         { src: "assets/punch/photo-prix.jpg", caption: { fr: "Remise du label Économie sociale et solidaire", en: "Social and solidarity economy award ceremony" } },
         { src: "assets/punch/photo-equipe.jpg", caption: { fr: "Sur le stand, avec la mascotte", en: "At the stand, with the mascot" } },
-        { src: "assets/punch/photo-app.jpg", caption: { fr: "L'application PUNCH", en: "The PUNCH app" } },
         { src: "assets/punch/lea-punch.jpg", caption: { fr: "Le jour du concours", en: "Competition day" } }
       ]
     },
@@ -489,6 +503,7 @@ window.PAGES = {
       en: "Communication, strategy and solidarity."
     },
     logo: "assets/360idcom/logo.jpg",
+    doodles: { gear: "assets/360idcom/icone-engrenages.webp", mega: "assets/360idcom/icone-megaphone-corail.webp", wrench: "assets/360idcom/icone-cle.webp", idea: "assets/360idcom/icone-idees.webp" },
     facts: [
       { label: { fr: "Rôle", en: "Role" }, value: { fr: "Membre actif & cheffe de projet", en: "Active member & project manager" } },
       { label: { fr: "Équipe", en: "Team" }, value: { fr: "6 étudiants", en: "6 students" } },
@@ -520,10 +535,10 @@ window.PAGES = {
       subtitle: { fr: "Ce que l'agence proposait à ses clients", en: "What the agency offered its clients" },
       image: "assets/360idcom/flyer.jpg",
       groups: [
-        { name: "Digital", color: "#e04848", items: [{ fr: "Création de site web", en: "Website creation" }, { fr: "Fiche Google My Business", en: "Google Business Profile" }, { fr: "Référencement SEO", en: "SEO" }, { fr: "Référencement SEA", en: "SEA" }] },
-        { name: { fr: "Événementiel", en: "Events" }, color: "#4fb8a8", items: [{ fr: "Organisation d'événements", en: "Event organisation" }, "Buzz marketing", { fr: "Street marketing & accueil", en: "Street marketing & hosting" }, { fr: "Distribution de flyers", en: "Flyer distribution" }] },
-        { name: "Communication", color: "#f7c948", items: [{ fr: "Rédaction d'articles", en: "Article writing" }, { fr: "Photographie professionnelle", en: "Professional photography" }, { fr: "Charte graphique", en: "Brand guidelines" }, { fr: "Supports de communication", en: "Communication materials" }, "Community management"] },
-        { name: "Marketing", color: "#f4f6fb", items: [{ fr: "Étude de satisfaction", en: "Satisfaction surveys" }, { fr: "Étude de marché", en: "Market research" }, "E-mailing"] }
+        { name: "Digital", color: "#e04848", icon: "assets/360idcom/icone-ecran.webp", items: [{ fr: "Création de site web", en: "Website creation" }, { fr: "Fiche Google My Business", en: "Google Business Profile" }, { fr: "Référencement SEO", en: "SEO" }, { fr: "Référencement SEA", en: "SEA" }] },
+        { name: { fr: "Événementiel", en: "Events" }, color: "#4fb8a8", icon: "assets/360idcom/icone-megaphone-vert.webp", items: [{ fr: "Organisation d'événements", en: "Event organisation" }, "Buzz marketing", { fr: "Street marketing & accueil", en: "Street marketing & hosting" }, { fr: "Distribution de flyers", en: "Flyer distribution" }] },
+        { name: "Communication", color: "#f7c948", icon: "assets/360idcom/icone-megaphone-jaune.webp", items: [{ fr: "Rédaction d'articles", en: "Article writing" }, { fr: "Photographie professionnelle", en: "Professional photography" }, { fr: "Charte graphique", en: "Brand guidelines" }, { fr: "Supports de communication", en: "Communication materials" }, "Community management"] },
+        { name: "Marketing", color: "#f4f6fb", icon: "assets/360idcom/icone-idees.webp", items: [{ fr: "Étude de satisfaction", en: "Satisfaction surveys" }, { fr: "Étude de marché", en: "Market research" }, "E-mailing"] }
       ]
     },
     role: {
@@ -563,7 +578,7 @@ window.PAGES = {
         { src: "assets/360idcom/photo-1.jpg", caption: { fr: "Le tote bag 360 ID COM… et un nouvel ami", en: "The 360 ID COM tote bag… and a new friend" } },
         { src: "assets/360idcom/photo-2.jpg", caption: { fr: "Découverte du refuge", en: "Discovering the shelter" } },
         { src: "assets/360idcom/photo-4.jpg", caption: { fr: "Nettoyage des espaces", en: "Cleaning the grounds" } },
-        { src: "assets/360idcom/equipe-poster.jpg", caption: { fr: "Notre équipe", en: "Our team" } },
+        { src: "assets/360idcom/equipe-planche.jpg", caption: { fr: "Notre équipe : six étudiants, six rôles (j'étais responsable communication)", en: "Our team: six students, six roles (I was head of communication)" } },
         { src: "assets/360idcom/flyer.jpg", caption: { fr: "Le flyer de l'agence", en: "The agency flyer" } }
       ]
     },
@@ -592,7 +607,7 @@ window.PAGES = {
     },
     showcase: {
       title: { fr: "Mes créations visuelles", en: "My visual creations" },
-      subtitle: { fr: "Chartes, logos, maquettes", en: "Brand guidelines, logos, mock-ups" },
+      subtitle: { fr: "Chartes, logos, mascottes, icônes", en: "Brand guidelines, logos, mascots, icons" },
       items: [
         {
           src: "assets/art/chartes.webp",
@@ -605,6 +620,20 @@ window.PAGES = {
           tag: { fr: "Packaging & illustration", en: "Packaging & illustration" },
           title: { fr: "Donner vie à un univers", en: "Bringing a world to life" },
           text: { fr: "Un packaging de jeu imaginé et illustré de bout en bout, avec son personnage, ses couleurs et son plateau : la preuve qu'une identité forte raconte une histoire.", en: "A game packaging designed and illustrated from start to finish, with its character, colours and board: proof that a strong identity tells a story." }
+        },
+        {
+          src: "assets/art/punch-planche.jpg",
+          tag: { fr: "Identité visuelle · PUNCH", en: "Visual identity · PUNCH" },
+          title: { fr: "PUNCH : un poing levé et une mascotte", en: "PUNCH: a raised fist and a mascot" },
+          text: { fr: "Pour PUNCH, j'ai dessiné le logo, un poing levé décliné en noir, en blanc, en couleur et en icône d'appli, puis la mascotte et ses expressions (joie, surprise, malice). Une identité pensée pour être forte et rassurante à la fois.", en: "For PUNCH, I drew the logo, a raised fist available in black, white, colour and as an app icon, then the mascot and its expressions (joy, surprise, mischief). An identity designed to feel both strong and reassuring." },
+          link: { href: "punch.html", label: { fr: "Voir le projet PUNCH", en: "See the PUNCH project" } }
+        },
+        {
+          src: "assets/art/360idcom-da.jpg",
+          tag: { fr: "Direction artistique · 360 ID COM", en: "Art direction · 360 ID COM" },
+          title: { fr: "360 ID COM : des icônes dessinées à la main", en: "360 ID COM: hand-drawn icons" },
+          text: { fr: "Responsable communication de l'agence, j'ai construit sa direction artistique : une palette jaune, corail et vert d'eau, des icônes au trait dessinées à la main et des visuels comme la planche de présentation de l'équipe.", en: "As the agency's head of communication, I built its art direction: a yellow, coral and teal palette, hand-drawn line icons and visuals such as the team presentation board." },
+          link: { href: "360idcom.html", label: { fr: "Voir le projet 360 ID COM", en: "See the 360 ID COM project" } }
         },
         {
           src: "assets/eclipse/mascotte-2.webp",

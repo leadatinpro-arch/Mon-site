@@ -4885,3 +4885,21 @@ a.float-card:hover { box-shadow: 0 24px 50px rgba(255, 210, 63, 0.3); }
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; scroll-behavior: auto !important; }
 }
+
+/* PUNCH : logo blanc dessiné + mascotte en vol (planche d'animation) */
+.punch-hero__logo { border-radius: 0; box-shadow: none; height: auto; object-fit: contain; filter: drop-shadow(0 0 28px rgba(34, 166, 214, 0.55)) drop-shadow(0 20px 40px rgba(0, 0, 0, 0.5)); }
+.punch-hero__sprite { display: block; aspect-ratio: 462 / 360; background-position: 0 0; background-size: calc(var(--frames) * 100%) 100%; background-repeat: no-repeat; animation: spriteFly 0.77s steps(11, jump-none) infinite, flutter 3s ease-in-out infinite; }
+@keyframes spriteFly { to { background-position: 100% 0; } }
+
+/* 360 ID COM : icônes dessinées de la DA */
+.doodle--img { width: 22%; }
+.doodle--img img { width: 100%; display: block; filter: drop-shadow(0 10px 18px rgba(0, 0, 0, 0.4)); }
+.doodle--gear.doodle--img img { animation: spin 14s linear infinite; }
+.service { position: relative; }
+.service__icon { display: block; width: 58px; height: 58px; margin-bottom: 12px; object-fit: contain; opacity: 0.95; animation: doodleFloat 5s ease-in-out infinite; }
+.service:nth-child(2) .service__icon { animation-delay: -1.2s; }
+.service:nth-child(3) .service__icon { animation-delay: -2.4s; }
+.service:nth-child(4) .service__icon { animation-delay: -3.6s; }
+/* Logo PUNCH (icône d'appli) : affiché en entier */
+img[src*="punch/logo-app"] { object-fit: contain !important; }
+.side-card__logo img[src*="punch/logo-app"] { padding: 12px; }
