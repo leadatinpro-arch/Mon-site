@@ -381,17 +381,17 @@ window.PAGES = {
     eyebrow: { fr: "Expérience pro · Alternance", en: "Professional experience · Work-study" },
     title: "SAINT-GOBAIN",
     tagline: {
-      fr: "Cheffe de projet marketing digital chez Saint-Gobain PAM : référente de 12 pays pour PAMLINE, la refonte des sites web du groupe.",
-      en: "Digital marketing project manager at Saint-Gobain PAM: lead contact for 12 countries on PAMLINE, the overhaul of the group's websites."
+      fr: "Cheffe de projet marketing digital chez Saint-Gobain PAM : référente de 13 pays pour PAMLINE, la refonte des sites web du groupe.",
+      en: "Digital marketing project manager at Saint-Gobain PAM: lead contact for 13 countries on PAMLINE, the overhaul of the group's websites."
     },
     heroImage: "assets/saint-gobain/pamline-mockup.webp",
     facts: [
       { label: { fr: "Rôle", en: "Role" }, value: { fr: "Cheffe de projet marketing digital", en: "Digital marketing project manager" } },
       { label: { fr: "Période", en: "Period" }, value: { fr: "Sept. 2024 – août 2026", en: "Sept 2024 – Aug 2026" } },
       { label: { fr: "Entreprise", en: "Company" }, value: "Saint-Gobain PAM" },
-      { label: { fr: "Projet", en: "Project" }, value: { fr: "PAMLINE · 12 pays", en: "PAMLINE · 12 countries" } }
+      { label: { fr: "Projet", en: "Project" }, value: { fr: "PAMLINE · 13 pays", en: "PAMLINE · 13 countries" } }
     ],
-    marquee: ["SAINT-GOBAIN PAM", "PAMLINE", "12 PAYS", "DRUPAL 10", "GESTION DE PROJET", "INTERNATIONAL"],
+    marquee: ["SAINT-GOBAIN PAM", "PAMLINE", "13 PAYS", "DRUPAL 10", "GESTION DE PROJET", "INTERNATIONAL"],
     intro: {
       title: { fr: "L'entreprise", en: "The company" },
       text: {
@@ -402,12 +402,12 @@ window.PAGES = {
     project: {
       title: { fr: "Le projet PAMLINE", en: "The PAMLINE project" },
       text: {
-        fr: "PAMLINE est bien plus qu'une refonte de site web : c'est une transformation digitale stratégique. Lancé il y a plus de deux ans, le projet vise à moderniser l'image de marque, harmoniser la communication digitale et offrir une expérience utilisateur fluide et multilingue. PAMLINE réunit 12 sites pays dans un même back-office centralisé, certains déclinés en plusieurs langues (par exemple BE-FR et BE-NL pour la Belgique), avec des fonctionnalités adaptées aux besoins locaux.",
-        en: "PAMLINE is much more than a website redesign: it's a strategic digital transformation. Launched over two years ago, the project aims to modernise the brand image, harmonise digital communication and deliver a smooth, multilingual user experience. PAMLINE brings 12 country sites together in a single centralised back office, some available in several languages (for example BE-FR and BE-NL for Belgium), with features tailored to local needs."
+        fr: "PAMLINE est bien plus qu'une refonte de site web : c'est une transformation digitale stratégique. Lancé il y a plus de deux ans, le projet vise à moderniser l'image de marque, harmoniser la communication digitale et offrir une expérience utilisateur fluide et multilingue. PAMLINE réunit 13 sites pays dans un même back-office centralisé, certains déclinés en plusieurs langues (par exemple BE-FR et BE-NL pour la Belgique), avec des fonctionnalités adaptées aux besoins locaux.",
+        en: "PAMLINE is much more than a website redesign: it's a strategic digital transformation. Launched over two years ago, the project aims to modernise the brand image, harmonise digital communication and deliver a smooth, multilingual user experience. PAMLINE brings 13 country sites together in a single centralised back office, some available in several languages (for example BE-FR and BE-NL for Belgium), with features tailored to local needs."
       }
     },
     stats: [
-      { value: "12", label: { fr: "sites pays pilotés, réunis dans un même back-office", en: "country sites managed, brought together in one back office" } },
+      { value: "13", label: { fr: "sites pays pilotés, réunis dans un même back-office", en: "country sites managed, brought together in one back office" } },
       { value: "1", label: { fr: "interlocutrice entre les pays, l'équipe centrale et l'agence de développement", en: "single point of contact between the countries, the central team and the development agency" } },
       { value: "D10", label: { fr: "migration de Drupal 7 vers Drupal 10, suivie avec l'agence", en: "migration from Drupal 7 to Drupal 10, managed with the agency" } }
     ],
@@ -421,10 +421,10 @@ window.PAGES = {
     },
     role: {
       title: { fr: "Mon rôle dans ce projet", en: "My role in this project" },
-      subtitle: { fr: "Référente pour 12 pays", en: "Lead contact for 12 countries" },
+      subtitle: { fr: "Référente pour 13 pays", en: "Lead contact for 13 countries" },
       lead: {
-        fr: "En tant que référente pour 12 pays, j'assure un suivi quotidien et une coordination constante entre les équipes locales, l'équipe centrale et l'agence de développement. Je ne développe pas : je fais le lien entre les besoins métier et l'équipe technique. Je propose des idées et des évolutions, je rédige les demandes, je teste chaque nouvelle version et je la valide avant sa mise en ligne. Je dois être réactive, répondre aux besoins, trouver des solutions et anticiper les problèmes pour garantir le respect des délais et la qualité des livrables.",
-        en: "As the lead contact for 12 countries, I provide daily follow-up and constant coordination between local teams, the central team and the development agency. I don't code: I bridge business needs and the technical team. I suggest ideas and improvements, write the requests, test every new release and sign it off before it goes live. I need to be responsive, meet needs, find solutions and anticipate problems to keep deadlines and deliverable quality on track."
+        fr: "En tant que référente pour 13 pays, j'assure un suivi quotidien et une coordination constante entre les équipes locales, l'équipe centrale et l'agence de développement. Je ne développe pas : je fais le lien entre les besoins métier et l'équipe technique. Je propose des idées et des évolutions, je rédige les demandes, je teste chaque nouvelle version et je la valide avant sa mise en ligne. Je dois être réactive, répondre aux besoins, trouver des solutions et anticiper les problèmes pour garantir le respect des délais et la qualité des livrables.",
+        en: "As the lead contact for 13 countries, I provide daily follow-up and constant coordination between local teams, the central team and the development agency. I don't code: I bridge business needs and the technical team. I suggest ideas and improvements, write the requests, test every new release and sign it off before it goes live. I need to be responsive, meet needs, find solutions and anticipate problems to keep deadlines and deliverable quality on track."
       },
       items: [
         { title: { fr: "Coordination internationale", en: "International coordination" }, text: { fr: "Intermédiaire entre les pays, l'équipe centrale et l'agence de développement.", en: "Go-between for the countries, the central team and the development agency." } },
@@ -744,7 +744,7 @@ window.PAGES = {
       image: "assets/sport/quatre-face.jpg",
       items: [
         { title: { fr: "Rigueur", en: "Rigour" }, text: { fr: "Respecter un programme exigeant et s'y tenir. Au travail : des plannings tenus et des deadlines respectées.", en: "Sticking to a demanding programme. At work: schedules kept and deadlines met." } },
-        { title: { fr: "Esprit d'équipe", en: "Team spirit" }, text: { fr: "Avancer ensemble, synchroniser les efforts. Au travail : coordonner 12 pays dans la même direction.", en: "Moving forward together, syncing efforts. At work: getting 12 countries pulling in the same direction." } },
+        { title: { fr: "Esprit d'équipe", en: "Team spirit" }, text: { fr: "Avancer ensemble, synchroniser les efforts. Au travail : coordonner 13 pays dans la même direction.", en: "Moving forward together, syncing efforts. At work: getting 13 countries pulling in the same direction." } },
         { title: { fr: "Gestion de la pression", en: "Handling pressure" }, text: { fr: "Performer en compétition malgré le stress. Au travail : garder son calme quand les échéances approchent.", en: "Performing in competition despite stress. At work: staying calm as deadlines approach." } },
         { title: { fr: "Leadership", en: "Leadership" }, text: { fr: "Encadrer les plus jeunes et soutenir le collectif. Au travail : animer des ateliers et former les équipes.", en: "Coaching younger rowers and supporting the group. At work: running workshops and training teams." } }
       ]
@@ -848,7 +848,7 @@ window.PAGES = {
       items: [
         { title: { fr: "Adaptabilité", en: "Adaptability" }, text: { fr: "M'adapter rapidement à des environnements différents.", en: "Adapting quickly to different environments." } },
         { title: { fr: "Organisation", en: "Organisation" }, text: { fr: "Organiser efficacement des déplacements variés, avec un budget et un sac à dos.", en: "Planning varied trips efficiently, on a budget and with a backpack." } },
-        { title: { fr: "Ouverture", en: "Open-mindedness" }, text: { fr: "Comprendre et respecter des cultures diverses : un vrai atout pour coordonner 12 pays.", en: "Understanding and respecting diverse cultures: a real asset when coordinating 12 countries." } },
+        { title: { fr: "Ouverture", en: "Open-mindedness" }, text: { fr: "Comprendre et respecter des cultures diverses : un vrai atout pour coordonner 13 pays.", en: "Understanding and respecting diverse cultures: a real asset when coordinating 13 countries." } },
         { title: { fr: "Sang-froid", en: "Composure" }, text: { fr: "Garder l'esprit ouvert et calme face à l'inattendu.", en: "Staying calm and open-minded in the face of the unexpected." } }
       ]
     },

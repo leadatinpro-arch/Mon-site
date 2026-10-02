@@ -24,20 +24,20 @@ window.PROJECTS = [
     image: "assets/saint-gobain/pamline-mockup.webp",
     title: { fr: "Saint-Gobain PAM — Projet PAMLINE", en: "Saint-Gobain PAM — PAMLINE project" },
     summary: {
-      fr: "Cheffe de projet marketing digital : référente de 12 pays pour la refonte de 12 sites pays multilingues (Drupal 10).",
-      en: "Digital marketing project manager: lead contact for 12 countries on the overhaul of 12 multilingual country sites (Drupal 10)."
+      fr: "Cheffe de projet marketing digital : référente de 13 pays pour la refonte de 13 sites pays multilingues (Drupal 10).",
+      en: "Digital marketing project manager: lead contact for 13 countries on the overhaul of 13 multilingual country sites (Drupal 10)."
     },
     context: {
       fr: "En alternance chez Saint-Gobain, j'ai accompagné le déploiement et l'adoption d'une plateforme digitale dans de nombreux pays, avec des équipes, des besoins et des contraintes propres à chaque marché.",
       en: "As a work-study project manager at Saint-Gobain, I supported the rollout and adoption of a digital platform across many countries, each with its own teams, needs and constraints."
     },
     mission: {
-      fr: "Pilotage et suivi personnalisé de 12 équipes internationales (kick-off, points réguliers, hebdomadaires en période critique) et gestion des priorités pays par pays. Création de l'ensemble des supports projet : guides, formations, documents de cadrage et calendriers adaptés à chaque marché. Suivi et reporting des KPIs par pays (Google Analytics, tableaux de bord Excel). Validation des évolutions de la plateforme : analyse des besoins, vérification de la compatibilité avec chaque pays, collecte des retours et arbitrage final.",
-      en: "Tailored leadership and follow-up of 12 international teams (kick-offs, regular check-ins, weekly during critical phases) and country-by-country prioritisation. Creation of all project materials: guides, training, scoping documents and calendars adapted to each market. KPI tracking and reporting by country (Google Analytics, Excel dashboards). Validation of platform changes: needs analysis, compatibility checks for each country, feedback collection and final decisions."
+      fr: "Pilotage et suivi personnalisé de 13 équipes internationales (kick-off, points réguliers, hebdomadaires en période critique) et gestion des priorités pays par pays. Création de l'ensemble des supports projet : guides, formations, documents de cadrage et calendriers adaptés à chaque marché. Suivi et reporting des KPIs par pays (Google Analytics, tableaux de bord Excel). Validation des évolutions de la plateforme : analyse des besoins, vérification de la compatibilité avec chaque pays, collecte des retours et arbitrage final.",
+      en: "Tailored leadership and follow-up of 13 international teams (kick-offs, regular check-ins, weekly during critical phases) and country-by-country prioritisation. Creation of all project materials: guides, training, scoping documents and calendars adapted to each market. KPI tracking and reporting by country (Google Analytics, Excel dashboards). Validation of platform changes: needs analysis, compatibility checks for each country, feedback collection and final decisions."
     },
     results: {
-      fr: "12 équipes internationales coordonnées, des supports adaptés à chaque marché et un reporting par pays pour mesurer l'avancement et l'adoption de la plateforme.",
-      en: "12 international teams coordinated, materials adapted to each market and country-level reporting to measure progress and platform adoption."
+      fr: "13 équipes internationales coordonnées, des supports adaptés à chaque marché et un reporting par pays pour mesurer l'avancement et l'adoption de la plateforme.",
+      en: "13 international teams coordinated, materials adapted to each market and country-level reporting to measure progress and platform adoption."
     },
     tags: [{ fr: "Gestion de projet", en: "Project management" }, "International", "Google Analytics", "Excel", "Reporting"]
   },
@@ -162,8 +162,8 @@ window.TIMELINE = [
     title: { fr: "Cheffe de projet marketing digital (alternance)", en: "Digital marketing project manager (work-study)" },
     place: "Saint-Gobain PAM",
     text: {
-      fr: "Pilotage de 12 équipes internationales, création des supports projet, reporting des KPIs par pays et validation des évolutions de la plateforme.",
-      en: "Leading 12 international teams, creating project materials, country-level KPI reporting and validating platform changes."
+      fr: "Pilotage de 13 équipes internationales, création des supports projet, reporting des KPIs par pays et validation des évolutions de la plateforme.",
+      en: "Leading 13 international teams, creating project materials, country-level KPI reporting and validating platform changes."
     }
   },
   {
