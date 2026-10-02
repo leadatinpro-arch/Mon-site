@@ -70,7 +70,7 @@
           <div class="bp__pocket">${L(6, "bp__player", 0, 1.3)}<span class="bp__pface"><span class="bp__zip"></span>
             ${ppos.map(([x, y, r], i) => `<span class="bp__badge bp__badge--${flags[i]}" style="left:${x}em;top:${y}em;--r:${r}deg"></span>`).join("")}
           </span></div>
-          <span class="bp__tag"><b>NANCY</b><i>→ ✈</i></span>
+          <span class="bp__tag"><b>${lang === "en" ? "ANYWHERE" : "PARTOUT"}</b><i>→ ✈</i></span>
         </div>${sparks(["✈", "✦", "✧", "✦"])}`;
     }
     return `<div class="o3 o3--${esc(kind)}" aria-hidden="true"><div class="o3__tilt"><div class="o3__float">${body}</div></div><span class="o3__shadow"></span></div>`;
