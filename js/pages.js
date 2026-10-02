@@ -664,6 +664,8 @@ window.PAGES = {
       subtitle: { fr: "Expos, musées, street art et disquaires · cliquez pour agrandir", en: "Exhibitions, museums, street art and record shops · click to enlarge" },
       items: [
         { src: "assets/art/expo-obey.jpg", caption: { fr: "Exposition Obey (Shepard Fairey), Berlin", en: "Obey (Shepard Fairey) exhibition, Berlin" } },
+        { src: "assets/art/musee-dali.jpg", caption: { fr: "Théâtre-Musée Dalí, Figueres", en: "Dalí Theatre-Museum, Figueres" } },
+        { src: "assets/art/portrait-dali.jpg", caption: { fr: "« Portrait de Salvador Dalí », Sebastián Cestero, 1975", en: "“Portrait of Salvador Dalí”, Sebastián Cestero, 1975" } },
         { src: "assets/art/street-art-zagreb.jpg", caption: { fr: "Street art d'Anthony Brooks, Zagreb", en: "Street art by Anthony Brooks, Zagreb" } },
         { src: "assets/art/gravure.jpg", caption: { fr: "Gravure sur bois, musée de Berlin", en: "Woodcut, Berlin museum" } },
         { src: "assets/art/expo-photo-nancy.jpg", caption: { fr: "Exposition photo, Nancy", en: "Photo exhibition, Nancy" } },
@@ -778,6 +780,14 @@ window.PAGES = {
           text: { fr: "Avec 360 ID COM, nous avons financé et vécu une mission dans un refuge pour animaux : soins, nettoyage, repas. Un voyage qui avait du sens.", en: "With 360 ID COM, we funded and took part in a mission at an animal shelter: care, cleaning, meals. A trip with real meaning." },
           photos: ["assets/360idcom/photo-3.jpg", "assets/360idcom/photo-1.jpg"],
           link: { href: "360idcom.html", label: { fr: "Voir le projet 360 ID COM", en: "See the 360 ID COM project" } }
+        },
+        {
+          id: "catalogne", name: { fr: "Catalogne", en: "Catalonia" }, country: { fr: "Barcelone · Figueres · Collioure", en: "Barcelona · Figueres · Collioure" }, lat: 41.39, lon: 2.17,
+          extra: [{ lat: 42.27, lon: 2.96 }, { lat: 42.53, lon: 3.08 }],
+          when: { fr: "2 à 3 séjours", en: "2 to 3 trips" },
+          title: { fr: "Du soleil, la mer et Dalí", en: "Sunshine, the sea and Dalí" },
+          text: { fr: "Une région où je suis retournée plusieurs fois. Les avenues bordées de palmiers de Barcelone, les canaux et le port d'Empuriabrava, les ruelles colorées de Collioure juste de l'autre côté de la frontière, et surtout le Théâtre-Musée Dalí à Figueres : sa coupole de verre et son univers surréaliste m'ont marquée.", en: "A region I've returned to several times. Barcelona's palm-lined avenues, the canals and harbour of Empuriabrava, the colourful alleys of Collioure just across the border, and above all the Dalí Theatre-Museum in Figueres: its glass dome and surrealist world really stayed with me." },
+          photos: ["assets/voyage/espagne-figueres-dali.jpg", "assets/voyage/espagne-barcelone.jpg", "assets/voyage/collioure-ruelle.jpg", "assets/voyage/espagne-empuriabrava.jpg"]
         },
         {
           id: "albanie", name: { fr: "Albanie", en: "Albania" }, country: { fr: "Tirana · Durrës · Vlora", en: "Tirana · Durrës · Vlora" }, lat: 41.33, lon: 19.82,
