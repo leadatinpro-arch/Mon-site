@@ -284,6 +284,6 @@ window.JOURNEY = [
 /* Passions : menu « Passions », cartes d'À propos et de Projets. 3 photos par passion, la première sert de vignette. */
 window.PASSIONS = [
   { id: "art", href: "art.html", key: "passions.art", imgs: ["assets/art/expo-obey.jpg", "assets/art/aquarelle.jpg", "assets/art/gravure.jpg"] },
-  { id: "sport", href: "sport.html", key: "passions.sport", imgs: ["assets/sport/equipe-medailles.jpg", "assets/sport/g-quatre.jpg", "assets/sport/podium.jpg"] },
+  { id: "sport", href: "sport.html", key: "passions.sport", imgs: ["assets/sport/quatre-haut.jpg", "assets/sport/quatre-face.jpg", "assets/sport/coach.jpg"] },
   { id: "voyage", href: "voyage.html", key: "passions.voyage", imgs: ["assets/voyage/albanie-vlora-palmiers.jpg", "assets/voyage/berlin-spree.jpg", "assets/voyage/jura-coucher-2.jpg"] }
 ];

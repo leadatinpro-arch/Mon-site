@@ -661,9 +661,10 @@ window.PAGES = {
     ],
     gallery: {
       title: { fr: "Je nourris mon œil", en: "Feeding my eye" },
-      subtitle: { fr: "Expos, musées et disquaires · cliquez pour agrandir", en: "Exhibitions, museums and record shops · click to enlarge" },
+      subtitle: { fr: "Expos, musées, street art et disquaires · cliquez pour agrandir", en: "Exhibitions, museums, street art and record shops · click to enlarge" },
       items: [
         { src: "assets/art/expo-obey.jpg", caption: { fr: "Exposition Obey (Shepard Fairey), Berlin", en: "Obey (Shepard Fairey) exhibition, Berlin" } },
+        { src: "assets/art/street-art-zagreb.jpg", caption: { fr: "Street art d'Anthony Brooks, Zagreb", en: "Street art by Anthony Brooks, Zagreb" } },
         { src: "assets/art/gravure.jpg", caption: { fr: "Gravure sur bois, musée de Berlin", en: "Woodcut, Berlin museum" } },
         { src: "assets/art/expo-photo-nancy.jpg", caption: { fr: "Exposition photo, Nancy", en: "Photo exhibition, Nancy" } },
         { src: "assets/art/musee-berlin.jpg", caption: { fr: "Musée, Berlin", en: "Museum, Berlin" } },
@@ -717,6 +718,7 @@ window.PAGES = {
     role: {
       title: { fr: "Ce que le sport m'a appris", en: "What sport taught me" },
       subtitle: { fr: "Et ce que j'en fais au travail", en: "And how I use it at work" },
+      image: "assets/sport/quatre-face.jpg",
       items: [
         { title: { fr: "Rigueur", en: "Rigour" }, text: { fr: "Respecter un programme exigeant et s'y tenir. Au travail : des plannings tenus et des deadlines respectées.", en: "Sticking to a demanding programme. At work: schedules kept and deadlines met." } },
         { title: { fr: "Esprit d'équipe", en: "Team spirit" }, text: { fr: "Avancer ensemble, synchroniser les efforts. Au travail : coordonner 12 pays dans la même direction.", en: "Moving forward together, syncing efforts. At work: getting 12 countries pulling in the same direction." } },
@@ -728,14 +730,12 @@ window.PAGES = {
       title: { fr: "Sur l'eau", en: "On the water" },
       subtitle: { fr: "Courses, équipages et podiums · cliquez pour agrandir", en: "Races, crews and podiums · click to enlarge" },
       items: [
-        { src: "assets/sport/g-equipage.jpg", caption: { fr: "En équipage", en: "In the crew" } },
+        { src: "assets/sport/quatre-haut.jpg", caption: { fr: "En quatre, en pleine course", en: "In a quad, mid-race" } },
+        { src: "assets/sport/coach.jpg", caption: { fr: "Les consignes du coach au ponton", en: "The coach's instructions on the pontoon" } },
+        { src: "assets/sport/quatre-roseaux.jpg", caption: { fr: "Récupération entre deux courses", en: "Recovery between two races" } },
+        { src: "assets/sport/ponton-lea.jpg", caption: { fr: "Au ponton avec l'équipe", en: "On the pontoon with the team" } },
         { src: "assets/sport/podium.jpg", caption: { fr: "Médailles et mascotte", en: "Medals and mascot" } },
-        { src: "assets/sport/huit.jpg", caption: { fr: "Un huit sur le lac", en: "An eight on the lake" } },
-        { src: "assets/sport/g-quatre.jpg", caption: { fr: "Un quatre en course", en: "A four racing" } },
-        { src: "assets/sport/equipe-medailles.jpg", caption: { fr: "L'équipe du club", en: "The club team" } },
-        { src: "assets/sport/g-ponton.jpg", caption: { fr: "Avant le départ", en: "Before the start" } },
-        { src: "assets/sport/g-loin.jpg", caption: { fr: "Régate", en: "Regatta" } },
-        { src: "assets/sport/g-repos.jpg", caption: { fr: "Débrief au ponton", en: "Debrief on the pontoon" } }
+        { src: "assets/sport/equipe-medailles.jpg", caption: { fr: "L'équipe du club", en: "The club team" } }
       ]
     },
     quote: { fr: "On va plus loin quand tout le monde rame dans le même sens.", en: "You go further when everyone rows in the same direction." },
@@ -765,19 +765,19 @@ window.PAGES = {
       home: { name: { fr: "France", en: "France" }, lat: 48.69, lon: 6.18 },
       stops: [
         {
+          id: "zagreb", name: "Zagreb", country: { fr: "Croatie", en: "Croatia" }, lat: 45.81, lon: 15.98,
+          when: { fr: "1ʳᵉ année de BUT · 2022", en: "1st year of my degree · 2022" },
+          title: { fr: "Entre amis, toits colorés et street art", en: "With friends, colourful roofs and street art" },
+          text: { fr: "Mon premier voyage entre amis de l'école, pendant ma première année de BUT. Trois jours pour arpenter la vieille ville, du toit en mosaïque de l'église Saint-Marc aux ruelles pleines de terrasses, sauter dans le tram bleu et dénicher le street art caché au détour des murs. Sans oublier ses nombreux musées.", en: "My first trip with friends from school, during the first year of my degree. Three days exploring the old town, from the mosaic roof of St Mark's Church to alleys full of terraces, hopping on the blue tram and spotting street art hidden around corners. Not forgetting its many museums." },
+          photos: ["assets/voyage/zagreb-saint-marc.jpg", "assets/voyage/zagreb-ruelle.jpg", "assets/voyage/zagreb-tram.jpg", "assets/voyage/zagreb-street-art-chat.jpg"]
+        },
+        {
           id: "majorque", name: { fr: "Majorque", en: "Mallorca" }, country: { fr: "Espagne", en: "Spain" }, lat: 39.6, lon: 2.9,
           when: { fr: "5 jours", en: "5 days" },
           title: { fr: "Cinq jours de solidarité", en: "Five days of solidarity" },
           text: { fr: "Avec 360 ID COM, nous avons financé et vécu une mission dans un refuge pour animaux : soins, nettoyage, repas. Un voyage qui avait du sens.", en: "With 360 ID COM, we funded and took part in a mission at an animal shelter: care, cleaning, meals. A trip with real meaning." },
           photos: ["assets/360idcom/photo-3.jpg", "assets/360idcom/photo-1.jpg"],
           link: { href: "360idcom.html", label: { fr: "Voir le projet 360 ID COM", en: "See the 360 ID COM project" } }
-        },
-        {
-          id: "zagreb", name: "Zagreb", country: { fr: "Croatie", en: "Croatia" }, lat: 45.81, lon: 15.98,
-          when: { fr: "3 jours", en: "3 days" },
-          title: { fr: "Une immersion culturelle", en: "A cultural deep-dive" },
-          text: { fr: "Trois jours pour explorer la capitale croate et ses nombreux musées : une parenthèse culturelle et artistique.", en: "Three days exploring the Croatian capital and its many museums: a cultural and artistic break." },
-          photos: []
         },
         {
           id: "albanie", name: { fr: "Albanie", en: "Albania" }, country: { fr: "Tirana · Durrës · Vlora", en: "Tirana · Durrës · Vlora" }, lat: 41.33, lon: 19.82,
