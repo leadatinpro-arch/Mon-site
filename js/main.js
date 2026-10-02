@@ -97,7 +97,7 @@
     ring.style.setProperty("--n", items.length);
     ring.innerHTML = items.map((it, i) => `
       <a href="${esc(it.href)}" class="ring-card" style="--i:${i}" data-cursor="view">
-        <span class="ring-card__img ring-card__img--${esc(it.fit || "cover")}"><img src="${esc(it.img)}" alt="" loading="lazy" /></span>
+        <span class="ring-card__img ring-card__img--${esc(it.fit || "cover")}"><img src="${esc(it.img)}" alt="${esc(it.title)}" loading="lazy"${it.pos ? ` style="object-position:${esc(it.pos)}"` : ""} /></span>
         <span class="ring-card__body">
           ${it.year ? `<span class="ring-card__year">${esc(it.year)}</span>` : ""}
           <span class="ring-card__title">${esc(it.title)}</span>
