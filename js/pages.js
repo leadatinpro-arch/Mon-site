@@ -265,10 +265,26 @@ window.PAGES = {
       },
       badge: { fr: "Projet toujours d'actualité", en: "Still an active project" }
     },
+    showcaseAfter: true,
+    showcase: {
+      title: { fr: "De candidate à jurée", en: "From contestant to jury member" },
+      subtitle: { fr: "Festival des mini-entreprises · Avril 2026", en: "Student company festival · April 2026" },
+      items: [
+        {
+          src: "assets/punch/epa-jury.jpg",
+          tag: { fr: "Jury · Entreprendre Pour Apprendre", en: "Jury · Entreprendre Pour Apprendre" },
+          title: { fr: "Invitée à juger la nouvelle génération", en: "Invited to judge the next generation" },
+          text: { fr: "Après PUNCH, Entreprendre Pour Apprendre m'a invitée à faire partie du jury du Festival des mini-entreprises Grand Est, à la Rotonde de Thaon-les-Vosges. Passer de l'autre côté de la table pour évaluer les projets et les pitchs des nouveaux entrepreneurs : une vraie fierté.", en: "After PUNCH, Entreprendre Pour Apprendre invited me to sit on the jury of the Grand Est Student Company Festival, at La Rotonde in Thaon-les-Vosges. Moving to the other side of the table to assess the projects and pitches of new young entrepreneurs: a real source of pride." }
+        }
+      ]
+    },
     gallery: {
       title: { fr: "Galerie", en: "Gallery" },
       subtitle: { fr: "Le stand, le concours, l'équipe · cliquez pour agrandir", en: "The stand, the competition, the team · click to enlarge" },
       items: [
+        { src: "assets/punch/epa-rotonde.jpg", caption: { fr: "La Rotonde, Thaon-les-Vosges", en: "La Rotonde, Thaon-les-Vosges" } },
+        { src: "assets/punch/epa-salle.jpg", caption: { fr: "Festival des mini-entreprises 2026", en: "Student company festival 2026" } },
+        { src: "assets/punch/epa-badge.jpg", caption: { fr: "Badge de jurée", en: "Jury badge" } },
         { src: "assets/punch/photo-stand.jpg", caption: { fr: "L'équipe PUNCH sur le stand", en: "The PUNCH team at the stand" } },
         { src: "assets/punch/photo-prix.jpg", caption: { fr: "Remise du label Économie sociale et solidaire", en: "Social and solidarity economy award ceremony" } },
         { src: "assets/punch/photo-equipe.jpg", caption: { fr: "Sur le stand, avec la mascotte", en: "At the stand, with the mascot" } },
@@ -614,6 +630,20 @@ window.PAGES = {
       { img: "assets/art/platine.png", fx: "spin", title: { fr: "Musique", en: "Music" }, text: { fr: "La musique m'accompagne au quotidien. J'écoute tous les genres et toutes les générations : classique, jazz, électro, hip-hop, rock… Chaque style m'apporte une énergie différente et crée une ambiance propice à la réflexion ou à la créativité.", en: "Music is with me every day. I listen to every genre and generation: classical, jazz, electro, hip-hop, rock… Each style brings a different energy and sets the mood for thinking or creating." } },
       { img: "assets/art/tele.png", fx: "flicker", title: { fr: "Cinéma", en: "Film" }, text: { fr: "Le cinéma influence ma manière de travailler. J'aime analyser la structure d'un film, son rythme, ses cadrages et sa bande-son : ils m'inspirent pour concevoir des projets fluides et immersifs. Films d'auteur, grands classiques, documentaires, animation…", en: "Film influences the way I work. I love analysing a film's structure, rhythm, framing and soundtrack: they inspire me to design smooth, immersive projects. Arthouse, great classics, documentaries, animation…" } }
     ],
+    gallery: {
+      title: { fr: "Je nourris mon œil", en: "Feeding my eye" },
+      subtitle: { fr: "Expos, musées et disquaires · cliquez pour agrandir", en: "Exhibitions, museums and record shops · click to enlarge" },
+      items: [
+        { src: "assets/art/expo-obey.jpg", caption: { fr: "Exposition Obey (Shepard Fairey), Berlin", en: "Obey (Shepard Fairey) exhibition, Berlin" } },
+        { src: "assets/art/gravure.jpg", caption: { fr: "Gravure sur bois, musée de Berlin", en: "Woodcut, Berlin museum" } },
+        { src: "assets/art/expo-photo-nancy.jpg", caption: { fr: "Exposition photo, Nancy", en: "Photo exhibition, Nancy" } },
+        { src: "assets/art/musee-berlin.jpg", caption: { fr: "Musée, Berlin", en: "Museum, Berlin" } },
+        { src: "assets/art/disquaire.jpg", caption: { fr: "Chez un disquaire, Bruxelles", en: "At a record shop, Brussels" } },
+        { src: "assets/art/aquarelle.jpg", caption: { fr: "Aquarelles et carnets", en: "Watercolours and sketchbooks" } },
+        { src: "assets/art/expo-photo-nancy-2.jpg", caption: { fr: "Exposition photo, Nancy", en: "Photo exhibition, Nancy" } },
+        { src: "assets/art/disquaire-2.jpg", caption: { fr: "Vinyles, Bruxelles", en: "Vinyl, Brussels" } }
+      ]
+    },
     quote: { fr: "Transformer une idée en projet concret, c'est là que l'art rencontre la performance.", en: "Turning an idea into a concrete project: that's where art meets performance." },
     next: "sport"
   },
@@ -693,26 +723,84 @@ window.PAGES = {
     title: { fr: "VOYAGE", en: "TRAVEL" },
     heroImage: "assets/about/cavalier.png",
     tagline: {
-      fr: "Voyager est pour moi bien plus qu'un loisir : c'est une manière de découvrir des paysages uniques et des cultures différentes.",
-      en: "For me, travelling is much more than a hobby: it's a way to discover unique landscapes and different cultures."
+      fr: "Voyager pour découvrir, apprendre et s'ouvrir. Chaque destination enrichit ma vision et renforce mon adaptabilité.",
+      en: "Travelling to discover, learn and open up. Every destination broadens my outlook and sharpens my adaptability."
     },
-    highlights: [
-      { title: { fr: "Albanie", en: "Albania" }, text: { fr: "Ses traditions et ses villes authentiques.", en: "Its traditions and authentic towns." } },
-      { title: { fr: "Croatie", en: "Croatia" }, text: { fr: "Ses musées fascinants.", en: "Its fascinating museums." } },
-      { title: { fr: "Majorque", en: "Mallorca" }, text: { fr: "Où j'ai contribué à des actions solidaires pour un refuge pour animaux, avec 360 ID COM.", en: "Where I took part in solidarity work for an animal shelter, with 360 ID COM." } }
+    facts: [
+      { label: { fr: "Pays visités", en: "Countries" }, value: { fr: "8 en Europe", en: "8 in Europe" } },
+      { label: { fr: "Style", en: "Style" }, value: { fr: "Sac à dos & transports locaux", en: "Backpack & local transport" } },
+      { label: { fr: "Coup de cœur", en: "Favourite" }, value: { fr: "La montagne", en: "The mountains" } }
     ],
-    gallery: {
-      title: { fr: "Carnet de voyage", en: "Travel journal" },
-      subtitle: { fr: "Cliquez pour agrandir", en: "Click to enlarge" },
-      items: [
-        { src: "assets/voyage/voyage-1.jpg", caption: { fr: "Albanie", en: "Albania" } },
-        { src: "assets/voyage/voyage-2.jpg", caption: { fr: "Albanie", en: "Albania" } },
-        { src: "assets/voyage/voyage-3.jpg", caption: { fr: "Croatie", en: "Croatia" } },
-        { src: "assets/voyage/voyage-4.jpg", caption: { fr: "Croatie", en: "Croatia" } },
-        { src: "assets/360idcom/photo-3.jpg", caption: { fr: "Majorque", en: "Mallorca" } },
-        { src: "assets/360idcom/photo-1.jpg", caption: { fr: "Majorque", en: "Mallorca" } }
+    trips: {
+      title: { fr: "Mon carnet de route", en: "My travel log" },
+      subtitle: { fr: "Faites défiler : le trajet se dessine", en: "Scroll: the route draws itself" },
+      home: { name: "Nancy", lat: 48.69, lon: 6.18 },
+      stops: [
+        {
+          id: "majorque", name: { fr: "Majorque", en: "Mallorca" }, country: { fr: "Espagne", en: "Spain" }, lat: 39.6, lon: 2.9,
+          when: { fr: "5 jours", en: "5 days" },
+          title: { fr: "Cinq jours de solidarité", en: "Five days of solidarity" },
+          text: { fr: "Avec 360 ID COM, nous avons financé et vécu une mission dans un refuge pour animaux : soins, nettoyage, repas. Un voyage qui avait du sens.", en: "With 360 ID COM, we funded and took part in a mission at an animal shelter: care, cleaning, meals. A trip with real meaning." },
+          photos: ["assets/360idcom/photo-3.jpg", "assets/360idcom/photo-1.jpg"],
+          link: { href: "360idcom.html", label: { fr: "Voir le projet 360 ID COM", en: "See the 360 ID COM project" } }
+        },
+        {
+          id: "zagreb", name: "Zagreb", country: { fr: "Croatie", en: "Croatia" }, lat: 45.81, lon: 15.98,
+          when: { fr: "3 jours", en: "3 days" },
+          title: { fr: "Une immersion culturelle", en: "A cultural deep-dive" },
+          text: { fr: "Trois jours pour explorer la capitale croate et ses nombreux musées : une parenthèse culturelle et artistique.", en: "Three days exploring the Croatian capital and its many museums: a cultural and artistic break." },
+          photos: []
+        },
+        {
+          id: "albanie", name: { fr: "Albanie", en: "Albania" }, country: { fr: "Tirana · Durrës · Vlora", en: "Tirana · Durrës · Vlora" }, lat: 41.33, lon: 19.82,
+          extra: [{ lat: 41.31, lon: 19.45 }, { lat: 40.45, lon: 19.49 }],
+          when: { fr: "Octobre 2025", en: "October 2025" },
+          title: { fr: "Sac au dos avec ma petite sœur", en: "Backpacking with my little sister" },
+          text: { fr: "Mon cadeau pour ses 18 ans : un gros sac à dos chacune et trois villes. La capitale Tirana, puis Durrës et enfin Vlora, en bus et en transports locaux, à travers des paysages toujours différents. Une aventure qui m'a appris la simplicité et l'organisation.", en: "My gift for her 18th birthday: a big backpack each and three cities. The capital Tirana, then Durrës and finally Vlora, by bus and local transport, through ever-changing landscapes. An adventure that taught me simplicity and organisation." },
+          photos: ["assets/voyage/albanie-tirana-skanderbeg.jpg", "assets/voyage/albanie-durres-tour.jpg", "assets/voyage/albanie-vlora-baie.jpg", "assets/voyage/albanie-vlora-soir.jpg", "assets/voyage/albanie-durres-coucher.jpg"]
+        },
+        {
+          id: "bruxelles", name: "Bruxelles", country: { fr: "Belgique", en: "Belgium" }, lat: 50.85, lon: 4.35,
+          when: { fr: "Novembre 2025 · 2 fois", en: "November 2025 · twice" },
+          title: { fr: "Une ville où je reviens", en: "A city I keep coming back to" },
+          text: { fr: "Deux séjours et toujours le même plaisir : la Grand-Place illuminée, les ruelles colorées, les cafés et les disquaires où l'on pourrait passer des heures.", en: "Two stays and the same pleasure every time: the lit-up Grand-Place, colourful streets, cafés and record shops you could spend hours in." },
+          photos: ["assets/voyage/bruxelles-grand-place-nuit.jpg", "assets/voyage/bruxelles-rue.jpg", "assets/voyage/bruxelles-lea.jpg", "assets/voyage/bruxelles-cafe.jpg"]
+        },
+        {
+          id: "mediterranee", name: "La Grande-Motte", country: { fr: "France", en: "France" }, lat: 43.56, lon: 4.08,
+          when: { fr: "Mai 2026", en: "May 2026" },
+          title: { fr: "Cap au sud", en: "Heading south" },
+          text: { fr: "Quelques jours au bord de la Méditerranée, entre étangs, pins et soleil couchant.", en: "A few days by the Mediterranean, among lagoons, pine trees and sunsets." },
+          photos: ["assets/voyage/grande-motte-paillote.jpg", "assets/voyage/grande-motte-ponton.jpg", "assets/voyage/grande-motte-soleil.jpg"]
+        },
+        {
+          id: "berlin", name: "Berlin", country: { fr: "Allemagne", en: "Germany" }, lat: 52.52, lon: 13.4,
+          when: { fr: "Juin 2026 · 5 jours", en: "June 2026 · 5 days" },
+          title: { fr: "Une ville multiculturelle", en: "A multicultural city" },
+          text: { fr: "Cinq jours avec une amie, un concert inoubliable et la découverte d'une culture foisonnante : expos, street art, cours cachées. La ville est si grande qu'on n'a pas tout vu… on y retournera.", en: "Five days with a friend, an unforgettable concert and a vibrant culture to discover: exhibitions, street art, hidden courtyards. The city is so big we didn't see it all… we'll be back." },
+          photos: ["assets/voyage/berlin-dom.jpg", "assets/voyage/berlin-spree.jpg", "assets/voyage/berlin-concert.jpg", "assets/voyage/berlin-cour.jpg", "assets/voyage/berlin-alexanderplatz.jpg", "assets/voyage/berlin-sony-center.jpg"]
+        },
+        {
+          id: "montagne", name: { fr: "La montagne", en: "The mountains" }, country: { fr: "Jura · Savoie", en: "Jura · Savoie" }, lat: 45.5, lon: 6.7,
+          extra: [{ lat: 46.75, lon: 6.35 }],
+          when: { fr: "Été 2026", en: "Summer 2026" },
+          title: { fr: "Mon terrain de jeu préféré", en: "My favourite playground" },
+          text: { fr: "Mes vacances préférées. Cet été encore : couchers de soleil sur les crêtes du Jura, puis VTT, télésièges et torrents en Savoie. Sans oublier quelques passages par la Suisse.", en: "My favourite kind of holiday. This summer again: sunsets over the Jura ridges, then mountain biking, chairlifts and rushing rivers in Savoie. Plus a few trips across into Switzerland." },
+          photos: ["assets/voyage/savoie-vtt.jpg", "assets/voyage/jura-coucher.jpg", "assets/voyage/savoie-alpage.jpg", "assets/voyage/savoie-telesiege.jpg", "assets/voyage/savoie-torrent.jpg"]
+        }
       ]
     },
+    role: {
+      title: { fr: "Ce que les voyages m'apportent", en: "What travel gives me" },
+      subtitle: { fr: "Et ce que j'en fais au travail", en: "And how I use it at work" },
+      items: [
+        { title: { fr: "Adaptabilité", en: "Adaptability" }, text: { fr: "M'adapter rapidement à des environnements différents.", en: "Adapting quickly to different environments." } },
+        { title: { fr: "Organisation", en: "Organisation" }, text: { fr: "Organiser efficacement des déplacements variés, avec un budget et un sac à dos.", en: "Planning varied trips efficiently, on a budget and with a backpack." } },
+        { title: { fr: "Ouverture", en: "Open-mindedness" }, text: { fr: "Comprendre et respecter des cultures diverses : un vrai atout pour coordonner 12 pays.", en: "Understanding and respecting diverse cultures: a real asset when coordinating 12 countries." } },
+        { title: { fr: "Sang-froid", en: "Composure" }, text: { fr: "Garder l'esprit ouvert et calme face à l'inattendu.", en: "Staying calm and open-minded in the face of the unexpected." } }
+      ]
+    },
+    quote: { fr: "Chaque voyage est une occasion d'apprendre et de voir les choses autrement.", en: "Every trip is a chance to learn and see things differently." },
     next: "art"
   }
 };

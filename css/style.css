@@ -3898,6 +3898,52 @@ body.theme-eclipse { transition: --ed 1.2s ease, --ed2 1.2s ease; }
   .race-step::before { content: ""; position: absolute; left: -24px; top: 22px; width: 12px; height: 12px; border-radius: 50%; background: var(--accent); }
 }
 
+/* ---------- Voyage: travel log map ---------- */
+.s-trips { padding: clamp(60px, 10vw, 130px) 0; }
+.trips { display: grid; grid-template-columns: minmax(0, 1.05fr) minmax(0, 1fr); gap: clamp(24px, 4vw, 64px); align-items: start; }
+.trips__map { position: sticky; top: 90px; min-width: 0; border-radius: 28px; background: radial-gradient(circle at 60% 40%, rgba(47, 107, 255, 0.25), transparent 70%), var(--bg-2); border: 1px solid var(--line); padding: 10px; }
+.tmap { width: 100%; height: auto; display: block; }
+.tmap__grid line { stroke: rgba(160, 185, 255, 0.08); stroke-width: 1; }
+.tmap__seg { fill: none; stroke: var(--accent); stroke-width: 3; stroke-linecap: round; stroke-dasharray: 1; stroke-dashoffset: 1; transition: stroke-dashoffset 1s var(--ease-out); filter: drop-shadow(0 0 6px rgba(255, 210, 63, 0.6)); }
+.tmap__seg.is-drawn { stroke-dashoffset: 0; }
+.tmap__home circle { fill: var(--text); }
+.tmap__home text, .tmap__stop text { fill: var(--muted); font: 700 22px var(--font-body); transition: fill 0.4s; }
+.tmap__dot { fill: var(--bg); stroke: rgba(160, 185, 255, 0.5); stroke-width: 3; transition: fill 0.4s, stroke 0.4s; }
+.tmap__mini { fill: rgba(160, 185, 255, 0.4); transition: fill 0.4s; }
+.tmap__pulse { fill: rgba(255, 210, 63, 0.35); opacity: 0; transform-box: fill-box; transform-origin: center; }
+.tmap__stop.is-past .tmap__dot { fill: var(--accent-2); stroke: var(--accent-2); }
+.tmap__stop.is-on .tmap__dot { fill: var(--accent); stroke: var(--accent); }
+.tmap__stop.is-on .tmap__mini, .tmap__stop.is-past .tmap__mini { fill: var(--accent); }
+.tmap__stop.is-on text { fill: var(--text); }
+.tmap__stop.is-on .tmap__pulse { animation: mapPulse 1.8s ease-out infinite; }
+@keyframes mapPulse { from { opacity: 0.9; transform: scale(0.6); } to { opacity: 0; transform: scale(2.2); } }
+.trips__counter { position: absolute; left: 22px; bottom: 16px; font-family: var(--font-display); font-weight: 800; font-size: 1.1rem; color: var(--muted); }
+.trips__counter span { color: var(--accent); font-size: 1.6rem; }
+.trips__list { display: flex; flex-direction: column; gap: clamp(40px, 8vh, 90px); padding: 10vh 0 20vh; }
+.trip { opacity: 0.35; transform: translateX(20px); transition: opacity 0.5s, transform 0.6s var(--ease-out); }
+.trip.is-on { opacity: 1; transform: none; }
+.trip__head { display: flex; align-items: center; gap: 16px; margin-bottom: 14px; }
+.trip__num { font-family: var(--font-display); font-weight: 800; font-size: 2.4rem; line-height: 1; color: transparent; -webkit-text-stroke: 1.5px var(--accent); }
+.trip__name { font-family: var(--font-display); font-weight: 800; font-size: clamp(1.6rem, 2.6vw, 2.2rem); line-height: 1; }
+.trip__meta { color: var(--accent); font-weight: 700; font-size: 0.85rem; }
+.trip__title { font-family: "Kaushan Script", cursive; color: var(--text); font-size: clamp(1.3rem, 2vw, 1.7rem); margin-bottom: 8px; }
+.trip__text { color: var(--muted); line-height: 1.7; margin-bottom: 18px; }
+.trip__photos { display: flex; gap: 10px; overflow-x: auto; scrollbar-width: none; padding: 6px 2px 14px; margin-bottom: 10px; }
+.trip__photos::-webkit-scrollbar { display: none; }
+.trip__photo { flex: 0 0 auto; margin: 0; width: clamp(130px, 13vw, 180px); aspect-ratio: 3 / 4; border-radius: 14px; overflow: hidden; cursor: zoom-in; border: 3px solid var(--text); box-shadow: 0 14px 28px rgba(0, 0, 0, 0.45); transform: rotate(calc((var(--k) - 1) * 2deg)); transition: transform 0.4s var(--ease-out); }
+.trip__photo:hover { transform: rotate(0) scale(1.06); }
+.trip__photo img { width: 100%; height: 100%; object-fit: cover; }
+@media (max-width: 900px) {
+  .trips { grid-template-columns: minmax(0, 1fr); }
+  .trips__map { top: 70px; z-index: 3; padding: 4px; border-radius: 18px; height: 30vh; display: grid; place-items: center; box-shadow: 0 20px 40px rgba(0,0,0,.5); }
+  .tmap { height: 100%; width: 100%; }
+  .trips__counter { left: 12px; bottom: 6px; font-size: 0.9rem; }
+  .trips__counter span { font-size: 1.2rem; }
+  .tmap__home text, .tmap__stop text { font-size: 30px; }
+  .trips__list { padding: 30px 0 10vh; }
+  .trip { opacity: 1; transform: none; }
+}
+
 /* ---------- Story responsive ---------- */
 @media (max-width: 1000px) {
   .s-intro__grid { grid-template-columns: 1fr; }
@@ -4613,3 +4659,4 @@ a.float-card:hover { box-shadow: 0 24px 50px rgba(255, 210, 63, 0.3); }
   .marquee__track { animation: none; }
   .grain { display: none; }
 }
+.gallery__media:not(.is-empty) img { max-height: 440px; width: 100%; object-fit: cover; }

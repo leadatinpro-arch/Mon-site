@@ -370,6 +370,59 @@
     </div></section>`;
   }
 
+  function trips() {
+    const T = P.trips;
+    if (!T) return "";
+    // simple equirectangular projection over Europe
+    const X = (lon) => ((lon + 2) / 26) * 1000, Y = (lat) => ((55 - lat) / 17) * 700;
+    const pts = T.stops.map((st) => [X(st.lon), Y(st.lat)]);
+    const home = [X(T.home.lon), Y(T.home.lat)];
+    const all = [home, ...pts];
+    const segs = pts.map((pt, i) => {
+      const [x1, y1] = all[i], [x2, y2] = pt;
+      const mx = (x1 + x2) / 2, my = (y1 + y2) / 2 - Math.hypot(x2 - x1, y2 - y1) * 0.25;
+      return `<path class="tmap__seg" data-seg="${i}" d="M${x1.toFixed(1)} ${y1.toFixed(1)} Q${mx.toFixed(1)} ${my.toFixed(1)} ${x2.toFixed(1)} ${y2.toFixed(1)}" pathLength="1" />`;
+    }).join("");
+    const grid = [];
+    for (let lon = 0; lon <= 24; lon += 4) grid.push(`<line x1="${X(lon)}" y1="0" x2="${X(lon)}" y2="700" />`);
+    for (let lat = 40; lat <= 54; lat += 2) grid.push(`<line x1="0" y1="${Y(lat)}" x2="1000" y2="${Y(lat)}" />`);
+    const dots = T.stops.map((st, i) => {
+      const [x, y] = pts[i];
+      const ex = (st.extra || []).map((e) => `<circle class="tmap__mini" cx="${X(e.lon).toFixed(1)}" cy="${Y(e.lat).toFixed(1)}" r="4" />`).join("");
+      return `<g class="tmap__stop" data-stop="${i}">${ex}<circle class="tmap__pulse" cx="${x.toFixed(1)}" cy="${y.toFixed(1)}" r="16" /><circle class="tmap__dot" cx="${x.toFixed(1)}" cy="${y.toFixed(1)}" r="8" /><text x="${(x + 14).toFixed(1)}" y="${(y - 12).toFixed(1)}">${tx(st.name)}</text></g>`;
+    }).join("");
+    return `<section class="s-trips" data-trips>
+      <div class="container">
+        <div class="section-head">
+          <p class="eyebrow reveal-up"><span>✦</span> <span>${tx(T.subtitle)}</span></p>
+          <h2 class="section-title reveal-up">${tx(T.title)}</h2>
+        </div>
+        <div class="trips">
+          <div class="trips__map">
+            <svg class="tmap" viewBox="0 0 1000 700" aria-hidden="true">
+              <g class="tmap__grid">${grid.join("")}</g>
+              ${segs}
+              <g class="tmap__home"><circle cx="${home[0].toFixed(1)}" cy="${home[1].toFixed(1)}" r="7" /><text x="${(home[0] + 12).toFixed(1)}" y="${(home[1] + 22).toFixed(1)}">${esc(T.home.name)} ★</text></g>
+              ${dots}
+            </svg>
+            <div class="trips__counter"><span data-trip-count>01</span> / ${String(T.stops.length).padStart(2, "0")}</div>
+          </div>
+          <ol class="trips__list">${T.stops.map((st, i) => `
+            <li class="trip" data-trip="${i}">
+              <div class="trip__head">
+                <span class="trip__num">${String(i + 1).padStart(2, "0")}</span>
+                <div><h3 class="trip__name">${tx(st.name)}</h3><span class="trip__meta">${tx(st.country)} · ${tx(st.when)}</span></div>
+              </div>
+              <p class="trip__title">${tx(st.title)}</p>
+              <p class="trip__text">${tx(st.text)}</p>
+              ${st.photos.length ? `<div class="trip__photos">${st.photos.map((ph, k) => `<figure class="trip__photo" data-lb="trip-${i}" style="--k:${k}"><img src="${esc(ph)}" alt="${tx(st.name)}" loading="lazy" /></figure>`).join("")}</div>` : ""}
+              ${st.link ? `<a href="${esc(st.link.href)}" class="link-arrow">${tx(st.link.label)}</a>` : ""}
+            </li>`).join("")}</ol>
+        </div>
+      </div>
+    </section>`;
+  }
+
   function race() {
     const R = P.race;
     if (!R) return "";
@@ -575,7 +628,7 @@
     lang = currentLang;
     t = translate;
     document.body.classList.add(`theme-${P.theme}`);
-    root.innerHTML = hero() + marquee() + intro() + race() + project() + context() + services() + concept() + event() + stats() + editions() + banner() + walker() + role() + showcase() + asset() + duo() + quote() + highlights() + impact() + award() + outro() + mascot() + faq() + posters() + gallery() + links() + next() + cta();
+    root.innerHTML = hero() + marquee() + intro() + trips() + race() + project() + context() + services() + concept() + event() + stats() + editions() + banner() + walker() + role() + (P.showcaseAfter ? "" : showcase()) + asset() + duo() + quote() + highlights() + impact() + award() + outro() + (P.showcaseAfter ? showcase() : "") + mascot() + faq() + posters() + gallery() + links() + next() + cta();
     document.title = `${pick(P.title)} — Léa Datin`;
     const meta = $('meta[name="description"]');
     if (meta) meta.setAttribute("content", pick(P.tagline));
@@ -592,6 +645,17 @@
       eds.forEach((e) => { if (e.getBoundingClientRect().top < mid) cur = e; });
       document.body.style.setProperty("--ed", cur.dataset.edColor);
       document.body.style.setProperty("--ed2", cur.dataset.edColor2);
+    }
+    const tr = $("[data-trips]");
+    if (tr) {
+      const items = $$(".trip", tr);
+      const mid = window.innerHeight * 0.5;
+      let cur = 0;
+      items.forEach((el, i) => { if (el.getBoundingClientRect().top < mid) cur = i; });
+      items.forEach((el, i) => el.classList.toggle("is-on", i === cur));
+      $$(".tmap__seg", tr).forEach((el, i) => el.classList.toggle("is-drawn", i <= cur));
+      $$(".tmap__stop", tr).forEach((el, i) => { el.classList.toggle("is-on", i === cur); el.classList.toggle("is-past", i < cur); });
+      const c = $("[data-trip-count]", tr); if (c) c.textContent = String(cur + 1).padStart(2, "0");
     }
     const rc = $("[data-race]");
     if (rc) {
