@@ -577,7 +577,7 @@ Object.assign(window.TRANSLATIONS.en, {
 Object.assign(window.TRANSLATIONS.fr, {
   "home.testi.eyebrow": "Recommandations",
   "home.testi.title": "Ils parlent <em>de moi</em>",
-  "home.testi.1.text": "Autonome, rigoureuse et dotée d'un excellent sens de l'organisation. Léa a su s'adapter et s'imposer comme un membre à part entière de notre équipe sur un projet multilingue couvrant 12 pays européens.",
+  "home.testi.1.text": "Autonome, rigoureuse et dotée d'un excellent sens de l'organisation. Léa a su s'adapter et s'imposer comme un membre à part entière de notre équipe sur un projet multilingue couvrant 13 pays européens.",
   "home.testi.1.role": "Responsable contenu digital · Saint-Gobain PAM Canalisation",
   "home.testi.2.text": "Dynamique, fiable et d'une implication sans faille. Un véritable atout pour l'entreprise qui lui fera confiance.",
   "home.testi.2.role": "Coordinateur · Entreprendre Pour Apprendre"
@@ -585,7 +585,7 @@ Object.assign(window.TRANSLATIONS.fr, {
 Object.assign(window.TRANSLATIONS.en, {
   "home.testi.eyebrow": "Recommendations",
   "home.testi.title": "What they <em>say</em>",
-  "home.testi.1.text": "Autonomous, rigorous and highly organised. Léa adapted quickly and became a full member of our team on a multilingual project covering 12 European countries.",
+  "home.testi.1.text": "Autonomous, rigorous and highly organised. Léa adapted quickly and became a full member of our team on a multilingual project covering 13 European countries.",
   "home.testi.1.role": "Digital content manager · Saint-Gobain PAM Canalisation",
   "home.testi.2.text": "Dynamic, reliable and fully committed. A real asset for any company that puts its trust in her.",
   "home.testi.2.role": "Coordinator · Entreprendre Pour Apprendre"
