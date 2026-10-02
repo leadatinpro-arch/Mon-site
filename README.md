@@ -79,3 +79,16 @@ Pour brancher le domaine sur GitHub Pages :
 python3 -m http.server 8000
 # puis ouvrir http://localhost:8000
 ```
+
+## SEO : pré-rendu du contenu
+
+Le contenu des pages projets/passions, du parcours (À propos) et de la grille de projets est généré en
+JavaScript à partir de `js/content.js` et `js/pages.js`. Pour que Google le lise directement, il est aussi
+écrit dans le HTML. **Après chaque modification de ces fichiers**, relancer :
+
+```bash
+python3 -m http.server 8765   # dans un autre terminal, à la racine du site
+node tools/prerender.js
+```
+
+Chaque page contient aussi des données structurées (JSON-LD : Person, WebSite, fil d'Ariane, type de page).

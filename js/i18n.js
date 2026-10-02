@@ -4,8 +4,8 @@
 
 window.TRANSLATIONS = {
   fr: {
-    "meta.title": "Léa Datin — Cheffe de projet marketing digital",
-    "meta.description": "Portfolio de Léa Datin, cheffe de projet marketing digital : gestion de projets internationaux, coordination d'équipes, communication et reporting.",
+    "meta.title": "Léa Datin — Cheffe de projet marketing digital & communication",
+    "meta.description": "Portfolio de Léa Datin, cheffe de projet marketing digital : projets internationaux (13 pays), coordination d'équipes, communication et événementiel. Disponible dès maintenant.",
 
     "nav.home": "Accueil",
     "nav.about": "À propos",
@@ -76,7 +76,7 @@ window.TRANSLATIONS = {
   },
 
   en: {
-    "meta.title": "Léa Datin — Digital Marketing Project Manager",
+    "meta.title": "Léa Datin — Digital Marketing & Communication Project Manager",
     "meta.description": "Portfolio of Léa Datin, digital marketing project manager: international projects, team coordination, communication and reporting.",
 
     "nav.home": "Home",
@@ -150,12 +150,12 @@ window.TRANSLATIONS = {
 
 /* ---------- Pages À propos, Projets, Contact, 404 ---------- */
 Object.assign(window.TRANSLATIONS.fr, {
-  "meta.about.title": "À propos — Léa Datin",
-  "meta.about.description": "Découvrez le parcours, les compétences et les valeurs de Léa Datin, spécialiste en marketing digital.",
-  "meta.projects.title": "Projets — Léa Datin",
-  "meta.projects.description": "Expériences professionnelles et projets personnels de Léa Datin en marketing digital.",
-  "meta.contact.title": "Contact — Léa Datin",
-  "meta.contact.description": "Contactez Léa Datin pour un poste ou une mission freelance en marketing digital.",
+  "meta.about.title": "À propos de Léa Datin — Parcours, compétences et valeurs",
+  "meta.about.description": "Parcours de Léa Datin : master ICN Business School, BUT TC, quatre ans d'alternance (Saint-Gobain PAM, Carrefour), compétences en gestion de projet et marketing digital.",
+  "meta.projects.title": "Projets marketing digital — Portfolio de Léa Datin",
+  "meta.projects.description": "Les projets de Léa Datin : refonte de 13 sites pays chez Saint-Gobain PAM, marketing chez Carrefour, community management, soirées Eclipse, mini-entreprise PUNCH.",
+  "meta.contact.title": "Contact Léa Datin — Digital marketing project manager",
+  "meta.contact.description": "Un poste ou une mission freelance en marketing digital ou gestion de projet ? Contactez Léa Datin, disponible immédiatement en France et à l'international.",
   "meta.404.title": "Page introuvable — Léa Datin",
 
   "projects.view": "Voir le projet",
@@ -249,11 +249,11 @@ Object.assign(window.TRANSLATIONS.fr, {
 });
 
 Object.assign(window.TRANSLATIONS.en, {
-  "meta.about.title": "About — Léa Datin",
+  "meta.about.title": "About Léa Datin — Background, skills and values",
   "meta.about.description": "Discover the background, skills and values of Léa Datin, digital marketing specialist.",
-  "meta.projects.title": "Projects — Léa Datin",
+  "meta.projects.title": "Digital marketing projects — Léa Datin's portfolio",
   "meta.projects.description": "Professional experience and personal projects by Léa Datin in digital marketing.",
-  "meta.contact.title": "Contact — Léa Datin",
+  "meta.contact.title": "Contact Léa Datin — Digital marketing project manager",
   "meta.contact.description": "Get in touch with Léa Datin for a job or a freelance mission in digital marketing.",
   "meta.404.title": "Page not found — Léa Datin",
 

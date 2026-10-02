@@ -6,6 +6,9 @@
   const $$ = (s, ctx = document) => [...ctx.querySelectorAll(s)];
   const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   const root = $("[data-story-root]");
+  // Titre et description du HTML (optimisés SEO), mémorisés avant que main.js ne les touche
+  const seoMeta = document.querySelector('meta[name="description"]');
+  window.__seo = { title: document.title, desc: seoMeta ? seoMeta.content : "" };
   const id = document.body.dataset.story;
   const P = (window.PAGES || {})[id];
   if (!root || !P) return;
@@ -742,9 +745,10 @@
     t = translate;
     document.body.classList.add(`theme-${P.theme}`);
     root.innerHTML = hero() + marquee() + intro() + trips() + race() + project() + context() + services() + concept() + event() + stats() + editions() + banner() + walker() + role() + countries() + (P.showcaseAfter ? "" : showcase()) + asset() + duo() + quote() + highlights() + impact() + award() + outro() + (P.showcaseAfter ? showcase() : "") + mascot() + faq() + posters() + gallery() + links() + next() + cta();
-    document.title = `${pick(P.title)} — Léa Datin`;
+    // En français on garde le titre et la description optimisés du HTML ; en anglais on les traduit
     const meta = $('meta[name="description"]');
-    if (meta) meta.setAttribute("content", pick(P.tagline));
+    document.title = lang === "fr" ? window.__seo.title : `${pick(P.title)} — Léa Datin`;
+    if (meta) meta.setAttribute("content", lang === "fr" ? window.__seo.desc : pick(P.tagline));
     bindDrag();
     bindMascot();
   };
