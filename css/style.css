@@ -4932,3 +4932,16 @@ img[src*="punch/logo-app"] { object-fit: contain !important; }
 .cchip.is-hot, .cchip:hover { border-color: var(--accent); background: rgba(255, 210, 63, 0.1); transform: translateY(-2px); }
 @media (max-width: 900px) { .s-countries__grid { grid-template-columns: 1fr; } }
 @media (max-width: 600px) { .cmap__pt text { font-size: 26px; } }
+
+/* Mentions légales */
+.page-hero--legal { padding-bottom: clamp(30px, 4vw, 50px); }
+.legal { padding: 0 0 clamp(60px, 9vw, 120px); }
+.legal__body > * { max-width: 820px; }
+.legal__body h2 { font-family: var(--font-display); font-size: clamp(1.25rem, 2vw, 1.55rem); margin: 42px 0 12px; color: var(--accent); }
+.legal__body p { color: var(--muted); line-height: 1.75; margin-bottom: 12px; }
+.legal__body strong { color: var(--text); }
+.legal__body a { color: var(--text); text-decoration: underline; text-underline-offset: 3px; }
+.legal__date { margin-top: 36px; font-size: 0.85rem; }
+.footer__legal { font-size: 0.85rem; color: var(--muted); }
+.footer__legal button { font: inherit; color: inherit; }
+.form__privacy { margin-top: 6px; font-size: 0.8rem; color: var(--muted); } .form__privacy a { color: var(--text); text-decoration: underline; text-underline-offset: 3px; }

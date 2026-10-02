@@ -69,6 +69,7 @@
           ${S.instagram ? `<li><a href="${S.instagram}" target="_blank" rel="noopener" class="hover-line">Instagram</a></li>` : ""}
           <li><a href="mailto:${S.email}" class="hover-line">Email</a></li>
         </ul>
+        <p class="footer__legal"><a href="mentions-legales.html" class="hover-line" data-i18n="footer.legal">Mentions légales & confidentialité</a>${(window.SITE || {}).gaId || (window.SITE || {}).gtmId ? ` · <button type="button" class="hover-line" data-cookies-reset data-i18n="footer.cookies">Cookies</button>` : ""}</p>
         <a href="#top" class="footer__top hover-line" data-i18n="footer.top">Retour en haut ↑</a>
       </div>
     </footer>`;
@@ -117,6 +118,12 @@
       });
     }
   }
+  // Bouton « Gérer mes cookies » : on efface le choix et on recharge pour réafficher le bandeau
+  document.addEventListener("click", (e) => {
+    if (!e.target.closest("[data-cookies-reset]")) return;
+    try { localStorage.removeItem("ld-consent"); } catch (err) {}
+    location.reload();
+  });
   document.querySelectorAll("[data-passions]").forEach((el) => { el.innerHTML = cards(); });
   document.querySelectorAll(".js-year").forEach((el) => { el.textContent = new Date().getFullYear(); });
 })();
