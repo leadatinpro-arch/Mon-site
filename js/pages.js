@@ -407,9 +407,9 @@ window.PAGES = {
       }
     },
     stats: [
-      { value: "12", label: { fr: "sites pays créés avec les équipes, dans un même back-office", en: "country sites created with the teams, in one back office" } },
-      { value: "2", label: { fr: "sites construits de A à Z, dont le site français", en: "sites built from scratch, including the French one" } },
-      { value: "D10", label: { fr: "migration de Drupal 7 vers Drupal 10", en: "migration from Drupal 7 to Drupal 10" } }
+      { value: "12", label: { fr: "sites pays pilotés, réunis dans un même back-office", en: "country sites managed, brought together in one back office" } },
+      { value: "1", label: { fr: "interlocutrice entre les pays, l'équipe centrale et l'agence de développement", en: "single point of contact between the countries, the central team and the development agency" } },
+      { value: "D10", label: { fr: "migration de Drupal 7 vers Drupal 10, suivie avec l'agence", en: "migration from Drupal 7 to Drupal 10, managed with the agency" } }
     ],
     context: {
       title: { fr: "Pourquoi ce projet est essentiel", en: "Why this project matters" },
@@ -423,22 +423,22 @@ window.PAGES = {
       title: { fr: "Mon rôle dans ce projet", en: "My role in this project" },
       subtitle: { fr: "Référente pour 12 pays", en: "Lead contact for 12 countries" },
       lead: {
-        fr: "En tant que référente pour 12 pays, j'assure un suivi quotidien et une coordination constante entre les équipes locales, l'équipe centrale et l'agence de développement. Mon rôle ne se limite pas à la supervision : j'ai participé à la création des 12 sites et j'ai construit moi-même deux d'entre eux, dont le site français. Je dois être réactive, répondre aux besoins, trouver des solutions et anticiper les problèmes pour garantir le respect des délais et la qualité des livrables.",
-        en: "As the lead contact for 12 countries, I provide daily follow-up and constant coordination between local teams, the central team and the development agency. My role goes beyond supervision: I took part in creating all 12 sites and built two of them myself, including the French one. I need to be responsive, meet needs, find solutions and anticipate problems to keep deadlines and deliverable quality on track."
+        fr: "En tant que référente pour 12 pays, j'assure un suivi quotidien et une coordination constante entre les équipes locales, l'équipe centrale et l'agence de développement. Je ne développe pas : je fais le lien entre les besoins métier et l'équipe technique. Je propose des idées et des évolutions, je rédige les demandes, je teste chaque nouvelle version et je la valide avant sa mise en ligne. Je dois être réactive, répondre aux besoins, trouver des solutions et anticiper les problèmes pour garantir le respect des délais et la qualité des livrables.",
+        en: "As the lead contact for 12 countries, I provide daily follow-up and constant coordination between local teams, the central team and the development agency. I don't code: I bridge business needs and the technical team. I suggest ideas and improvements, write the requests, test every new release and sign it off before it goes live. I need to be responsive, meet needs, find solutions and anticipate problems to keep deadlines and deliverable quality on track."
       },
       items: [
-        { title: { fr: "Coordination internationale", en: "International coordination" }, text: { fr: "Interface entre les pays, l'équipe centrale et les développeurs.", en: "Interface between the countries, the central team and the developers." } },
+        { title: { fr: "Coordination internationale", en: "International coordination" }, text: { fr: "Intermédiaire entre les pays, l'équipe centrale et l'agence de développement.", en: "Go-between for the countries, the central team and the development agency." } },
         { title: { fr: "Workshops", en: "Workshops" }, text: { fr: "Organisation des ateliers : analyse des besoins, définition des priorités.", en: "Running workshops: needs analysis, setting priorities." } },
         { title: { fr: "Formation des équipes", en: "Team training" }, text: { fr: "Sessions en ligne, guides pratiques, support continu pour les équipes locales.", en: "Online sessions, practical guides, ongoing support for local teams." } },
-        { title: { fr: "Gestion des contenus", en: "Content management" }, text: { fr: "Création complète de deux sites, dont le site français, et participation à la création des 12 sites.", en: "Built two sites from scratch, including the French one, and helped create all 12 sites." } },
-        { title: { fr: "Suivi technique", en: "Technical follow-up" }, text: { fr: "Remontée des bugs via tickets, validation des composants UI.", en: "Reporting bugs through tickets, validating UI components." } },
+        { title: { fr: "Force de proposition", en: "Driving ideas" }, text: { fr: "Remontée des besoins des pays, idées d'évolutions et priorisation avec l'équipe centrale.", en: "Gathering country needs, suggesting improvements and prioritising with the central team." } },
+        { title: { fr: "Tests & validation", en: "Testing & sign-off" }, text: { fr: "Recette des nouvelles fonctionnalités, remontée des bugs via tickets, validation avant mise en ligne.", en: "Testing new features, reporting bugs through tickets, sign-off before go-live." } },
         { title: { fr: "Planification & reporting", en: "Planning & reporting" }, text: { fr: "Suivi des deadlines, mise à jour des plannings, reporting hebdomadaire.", en: "Tracking deadlines, updating schedules, weekly reporting." } }
       ]
     },
     countries: {
       title: { fr: "Les pays que j'ai accompagnés", en: "The countries I supported" },
       subtitle: { fr: "Coordonnés, formés et suivis au quotidien", en: "Coordinated, trained and supported day to day" },
-      text: { fr: "Depuis Pont-à-Mousson, j'ai travaillé avec les équipes locales de chaque pays : ateliers de cadrage, formations au nouveau back-office, suivi des contenus jusqu'à la mise en ligne. Survolez un pays pour le repérer sur la carte.", en: "From Pont-à-Mousson, I worked with the local teams in each country: scoping workshops, training on the new back office, content follow-up through to go-live. Hover over a country to find it on the map." },
+      text: { fr: "Depuis Pont-à-Mousson, j'ai coordonné les équipes locales de chaque pays : ateliers de cadrage, formations au nouveau back-office, suivi jusqu'à la mise en ligne. Survolez un pays pour le repérer sur la carte.", en: "From Pont-à-Mousson, I coordinated the local teams in each country: scoping workshops, training on the new back office, follow-up through to go-live. Hover over a country to find it on the map." },
       hub: { name: "Pont-à-Mousson", lat: 48.9, lon: 6.05 },
       items: [
         { id: "fr", name: { fr: "France", en: "France" }, lat: 48.86, lon: 2.35, dx: -18, dy: 26, anchor: "end" },
