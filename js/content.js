@@ -265,8 +265,8 @@ window.SOCIAL = {
    Les deux ne sont chargés que si le visiteur accepte les cookies. */
 window.SITE = {
   web3formsKey: "e10a25d7-dce8-4783-bd8d-7738b3e1fe78",
-  gtmId: "GTM-TJLGTLMJ",
-  gaId: ""
+  gtmId: "",
+  gaId: "G-VXMH0L38C4"
 };
 
 /* Roue 3D « Mon parcours en 360° » (page d'accueil) */
