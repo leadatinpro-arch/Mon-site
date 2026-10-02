@@ -28,6 +28,54 @@
 
   const eq = (n = 5) => `<span class="eq" aria-hidden="true">${Array.from({ length: n }, (_, i) => `<i style="--i:${i}"></i>`).join("")}</span>`;
 
+  /* Objets 3D des pages passions (CSS 3D, pas d'image) : vinyle, médaille, sac à dos */
+  function obj3d(kind) {
+    const L = (n, cls, from, to) => Array.from({ length: n }, (_, i) => `<span class="${cls}" style="--z:${(from + (to - from) * i / (n - 1)).toFixed(3)}em"></span>`).join("");
+    const sparks = (chars) => chars.map((c, i) => `<span class="o3__spark" style="--i:${i}">${c}</span>`).join("");
+    let body = "";
+    if (kind === "vinyl") {
+      body = `<div class="vin">
+          <div class="vin__disc">${L(10, "vin__layer", -1.15, -0.55)}<span class="vin__face"><span class="vin__label"><b>LD</b><i>SIDE A · 33⅓</i></span></span></div>
+          <span class="vin__sheen"></span>
+          <div class="vin__sleeve"><span class="vin__sun"></span><span class="vin__stripes"></span><span class="vin__title">LÉA<br>DATIN</span><span class="vin__sub">Mixtape · Vol. 1</span></div>
+        </div>${sparks(["♪", "♫", "♪", "♬"])}`;
+    } else if (kind === "medal") {
+      const ring = "AVIRON • ESPRIT D'ÉQUIPE • DÉPASSEMENT • ";
+      body = `<div class="med">
+          <span class="med__strap med__strap--r"></span><span class="med__strap med__strap--l"></span>
+          <span class="med__ring"></span>
+          <div class="med__coin">${L(16, "med__layer", -0.6, 0.6)}
+            <span class="med__face med__face--front"><svg viewBox="0 0 200 200">
+              <defs><path id="medRing" d="M100,100 m-72,0 a72,72 0 1,1 144,0 a72,72 0 1,1 -144,0"/></defs>
+              <circle cx="100" cy="100" r="88" class="med__line"/><circle cx="100" cy="100" r="58" class="med__line"/>
+              <text class="med__txt"><textPath href="#medRing" textLength="440" lengthAdjust="spacing">${ring}</textPath></text>
+              <g class="med__oars"><path d="M68 132 L132 68"/><path d="M132 132 L68 68"/><path d="M126 62 q14 -10 18 -4 q4 6 -8 18 z" class="med__blade"/><path d="M74 62 q-14 -10 -18 -4 q-4 6 8 18 z" class="med__blade"/></g>
+              <text x="100" y="152" class="med__one">1</text>
+            </svg></span>
+            <span class="med__face med__face--back"><b>LD</b><i>TEAM · RIGUEUR</i></span>
+          </div>
+        </div>${sparks(["✦", "✧", "✦", "✧"])}`;
+    } else if (kind === "backpack") {
+      const flags = ["fr", "al", "hr", "de", "be", "ch", "es"];
+      const pos = [[1.1, 4.6, -12], [8.2, 4.2, 10], [7.3, 1.6, -6], [3.3, 2.7, 14]];
+      const ppos = [[1.0, 1.2, 8], [3.4, 2.4, -10], [5.8, 1.0, 6]];
+      body = `<div class="bp">
+          <span class="bp__handle"></span>
+          ${L(18, "bp__layer", -2.8, 2.8)}
+          <div class="bp__front">
+            <span class="bp__flap"></span>
+            <span class="bp__strap"><i></i></span>
+            ${pos.map(([x, y, r], i) => `<span class="bp__badge bp__badge--${flags[i + 3]}" style="left:${x}em;top:${y}em;--r:${r}deg"></span>`).join("")}
+          </div>
+          <div class="bp__pocket">${L(6, "bp__player", 0, 1.3)}<span class="bp__pface"><span class="bp__zip"></span>
+            ${ppos.map(([x, y, r], i) => `<span class="bp__badge bp__badge--${flags[i]}" style="left:${x}em;top:${y}em;--r:${r}deg"></span>`).join("")}
+          </span></div>
+          <span class="bp__tag"><b>NANCY</b><i>→ ✈</i></span>
+        </div>${sparks(["✈", "✦", "✧", "✦"])}`;
+    }
+    return `<div class="o3 o3--${esc(kind)}" aria-hidden="true"><div class="o3__tilt"><div class="o3__float">${body}</div></div><span class="o3__shadow"></span></div>`;
+  }
+
   function heroVisual() {
     if (P.theme === "eclipse") {
       return `<div class="eclipse" aria-hidden="true">
@@ -91,7 +139,7 @@
           <span class="ring__deg">360°</span>
         </div>`;
     }
-    return `<span class="s-bigword" aria-hidden="true">${tx(P.title)}</span>${P.heroImage ? `<img class="s-hero-img${P.heroFx ? ` s-hero-img--${esc(P.heroFx)}` : ""}" src="${esc(P.heroImage)}" alt="" onerror="this.remove()" />` : ""}`;
+    return `<span class="s-bigword" aria-hidden="true">${tx(P.title)}</span>${P.hero3d ? obj3d(P.hero3d) : ""}${P.heroImage ? `<img class="s-hero-img${P.heroFx ? ` s-hero-img--${esc(P.heroFx)}` : ""}" src="${esc(P.heroImage)}" alt="" onerror="this.remove()" />` : ""}`;
   }
 
   const doodles = {
@@ -465,11 +513,24 @@
     </div></section>`;
   }
 
+  // Visuels animés en CSS pour Musique (égaliseur) et Cinéma (pellicule)
+  function duoVisual(d) {
+    if (d.fx === "eq") {
+      return `<span class="duo-eq" aria-hidden="true">${Array.from({ length: 18 }, (_, i) => `<i style="--i:${i};--h:${(35 + ((i * 37) % 60))}%"></i>`).join("")}</span>`;
+    }
+    if (d.fx === "film") {
+      const frames = (lang === "en" ? ["Arthouse", "Classics", "Docs", "Animation", "Soundtracks"] : ["Auteur", "Classiques", "Docu", "Animation", "B.O."]);
+      const row = frames.map((f, i) => `<span class="duo-film__frame" style="--i:${i}"><b>${esc(f)}</b></span>`).join("");
+      return `<span class="duo-film" aria-hidden="true"><span class="duo-film__track">${row}${row}</span></span>`;
+    }
+    return d.img ? `<span class="duo-card__obj duo-card__obj--${esc(d.fx || "")}"><img src="${esc(d.img)}" alt="" loading="lazy" /></span>` : "";
+  }
+
   function duo() {
     if (!P.duo) return "";
     return `<section class="s-duo"><div class="container s-duo__grid">${P.duo.map((d, i) => `
       <article class="duo-card reveal-up" style="--d:${i * 0.12}s">
-        <span class="duo-card__obj duo-card__obj--${esc(d.fx || "")}"><img src="${esc(d.img)}" alt="" loading="lazy" /></span>
+        ${duoVisual(d)}
         <h3 class="duo-card__title">${tx(d.title)}</h3>
         <p>${tx(d.text)}</p>
       </article>`).join("")}</div></section>`;
@@ -741,6 +802,14 @@
       });
     });
   }
+
+  /* ---------- objets 3D : suivent la souris ---------- */
+  window.addEventListener("mousemove", (e) => {
+    const o = document.querySelector(".o3");
+    if (!o) return;
+    o.style.setProperty("--mx", (e.clientX / innerWidth - 0.5).toFixed(3));
+    o.style.setProperty("--my", (e.clientY / innerHeight - 0.5).toFixed(3));
+  }, { passive: true });
 
   /* ---------- lightbox ---------- */
   const lb = document.createElement("div");

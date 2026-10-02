@@ -620,3 +620,5 @@ Object.assign(window.TRANSLATIONS.en, {
   "passions.voyage.teaser": "Backpack and local transport: 8 countries, from Albania to Berlin.",
   "about.inspire.lead": "Three passions that say a lot about how I work. Click to see more."
 });
+Object.assign(window.TRANSLATIONS.fr, { "passions.shortcut": "En dehors du travail", "passions.strip": "Et en dehors du travail ?" });
+Object.assign(window.TRANSLATIONS.en, { "passions.shortcut": "Off the clock", "passions.strip": "And outside of work?" });

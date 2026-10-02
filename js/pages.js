@@ -578,7 +578,7 @@ window.PAGES = {
     back: "about",
     eyebrow: { fr: "Ce qui m'inspire", en: "What inspires me" },
     title: "ART",
-    heroImage: "assets/about/statue.png",
+    hero3d: "vinyl",
     tagline: {
       fr: "L'art, mon moteur créatif. Dessin, design, musique, cinéma : mes sources d'inspiration au quotidien.",
       en: "Art, my creative engine. Drawing, design, music, film: my everyday sources of inspiration."
@@ -627,8 +627,8 @@ window.PAGES = {
       ]
     },
     duo: [
-      { img: "assets/art/platine.png", fx: "spin", title: { fr: "Musique", en: "Music" }, text: { fr: "La musique m'accompagne au quotidien. J'écoute tous les genres et toutes les générations : classique, jazz, électro, hip-hop, rock… Chaque style m'apporte une énergie différente et crée une ambiance propice à la réflexion ou à la créativité.", en: "Music is with me every day. I listen to every genre and generation: classical, jazz, electro, hip-hop, rock… Each style brings a different energy and sets the mood for thinking or creating." } },
-      { img: "assets/art/tele.png", fx: "flicker", title: { fr: "Cinéma", en: "Film" }, text: { fr: "Le cinéma influence ma manière de travailler. J'aime analyser la structure d'un film, son rythme, ses cadrages et sa bande-son : ils m'inspirent pour concevoir des projets fluides et immersifs. Films d'auteur, grands classiques, documentaires, animation…", en: "Film influences the way I work. I love analysing a film's structure, rhythm, framing and soundtrack: they inspire me to design smooth, immersive projects. Arthouse, great classics, documentaries, animation…" } }
+      { fx: "eq", title: { fr: "Musique", en: "Music" }, text: { fr: "La musique m'accompagne au quotidien. J'écoute tous les genres et toutes les générations : classique, jazz, électro, hip-hop, rock… Chaque style m'apporte une énergie différente et crée une ambiance propice à la réflexion ou à la créativité.", en: "Music is with me every day. I listen to every genre and generation: classical, jazz, electro, hip-hop, rock… Each style brings a different energy and sets the mood for thinking or creating." } },
+      { fx: "film", title: { fr: "Cinéma", en: "Film" }, text: { fr: "Le cinéma influence ma manière de travailler. J'aime analyser la structure d'un film, son rythme, ses cadrages et sa bande-son : ils m'inspirent pour concevoir des projets fluides et immersifs. Films d'auteur, grands classiques, documentaires, animation…", en: "Film influences the way I work. I love analysing a film's structure, rhythm, framing and soundtrack: they inspire me to design smooth, immersive projects. Arthouse, great classics, documentaries, animation…" } }
     ],
     gallery: {
       title: { fr: "Je nourris mon œil", en: "Feeding my eye" },
@@ -655,8 +655,7 @@ window.PAGES = {
     back: "about",
     eyebrow: { fr: "Ce qui m'inspire", en: "What inspires me" },
     title: "SPORT",
-    heroImage: "assets/sport/skiff.png",
-    heroFx: "glide",
+    hero3d: "medal",
     tagline: {
       fr: "L'aviron, une école de rigueur et de persévérance. Un sport qui a forgé mon esprit d'équipe et ma détermination.",
       en: "Rowing, a school of rigour and perseverance. A sport that shaped my team spirit and determination."
@@ -721,7 +720,7 @@ window.PAGES = {
     back: "about",
     eyebrow: { fr: "Ce qui m'inspire", en: "What inspires me" },
     title: { fr: "VOYAGE", en: "TRAVEL" },
-    heroImage: "assets/about/cavalier.png",
+    hero3d: "backpack",
     tagline: {
       fr: "Voyager pour découvrir, apprendre et s'ouvrir. Chaque destination enrichit ma vision et renforce mon adaptabilité.",
       en: "Travelling to discover, learn and open up. Every destination broadens my outlook and sharpens my adaptability."
