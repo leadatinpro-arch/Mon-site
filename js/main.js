@@ -816,7 +816,7 @@
       fetch("https://api.web3forms.com/submit", {
         method: "POST",
         headers: { "Content-Type": "application/json", Accept: "application/json" },
-        body: JSON.stringify({ access_key: key, subject, from_name: f.name.value.trim(), replyto: f.email.value.trim(), message: body, botcheck: f.botcheck.checked })
+        body: JSON.stringify({ access_key: key, subject, from_name: f.name.value.trim(), name: f.name.value.trim(), email: f.email.value.trim(), replyto: f.email.value.trim(), message: body, botcheck: f.botcheck.checked })
       })
         .then((r) => r.json())
         .then((res) => { if (!res.success) throw new Error(res.message); form.classList.add("is-sent"); })
