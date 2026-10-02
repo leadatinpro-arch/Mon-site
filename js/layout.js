@@ -7,29 +7,13 @@
     ["home", "index.html", "nav.home", "Accueil"],
     ["about", "about.html", "nav.about", "À propos"],
     ["projects", "projects.html", "nav.projects", "Projets"],
-    ["passions", "about.html#passions", "nav.passions", "Passions"],
     ["contact", "contact.html", "nav.contact", "Contact"]
   ];
   const P = window.PASSIONS || [];
-  const here = document.body.dataset.page;
 
   const navLinks = (cls) => links.map(([id, href, key, label]) =>
     `<a href="${href}" class="${cls}${id === page ? " is-active" : ""}"${id === page ? ' aria-current="page"' : ""} data-i18n="${key}">${label}</a>`
   ).join("");
-
-  // Desktop : « Passions » ouvre un petit panneau avec les trois pages.
-  const deskNav = navLinks("nav__link").replace(/(<a href="about\.html#passions"[^>]*>[^<]*<\/a>)/, (a) => `
-    <div class="nav__drop">${a.replace('class="nav__link', 'aria-haspopup="true" class="nav__link nav__link--drop')}
-      <div class="nav__panel">${P.map((x) => `
-        <a href="${x.href}" class="nav__pass${x.id === here ? " is-active" : ""}">
-          <img src="${x.imgs[0]}" alt="" loading="lazy" /><span data-i18n="${x.key}.title">${x.id}</span>
-        </a>`).join("")}
-      </div>
-    </div>`);
-
-  // Mobile : les trois passions en pastilles sous le lien « Passions ».
-  const menuNav = navLinks("menu__link").replace(/(<a href="about\.html#passions"[^>]*>[^<]*<\/a>)/, (a) => `${a}
-    <div class="menu__sub">${P.map((x) => `<a href="${x.href}" class="menu__pass${x.id === here ? " is-active" : ""}"><img src="${x.imgs[0]}" alt="" /><span data-i18n="${x.key}.title">${x.id}</span></a>`).join("")}</div>`);
 
   // Cartes « Passions » réutilisables : <div data-passions></div>
   const cards = () => `<div class="pcards">${P.map((x, i) => `
@@ -56,7 +40,7 @@
 
     <header class="header">
       <a href="index.html" class="logo" aria-label="Léa Datin — Accueil"><span class="logo__mark">LD</span></a>
-      <nav class="nav" aria-label="Navigation">${deskNav}</nav>
+      <nav class="nav" aria-label="Navigation">${navLinks("nav__link")}</nav>
       <div class="header__right">
         <a href="assets/cv-lea-datin.pdf" class="header-cv" data-cv download><span>CV</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11M7 10l5 5 5-5M5 20h14"/></svg></a>
         <button class="lang-switch" role="switch" aria-checked="false" aria-label="English version">
@@ -69,7 +53,7 @@
     </header>
 
     <div class="menu" aria-hidden="true">
-      <nav class="menu__nav">${menuNav}</nav>
+      <nav class="menu__nav">${navLinks("menu__link")}</nav>
       <div class="menu__foot">
         <a href="mailto:${S.email}">${S.email}</a>
         <a href="${S.linkedin}" target="_blank" rel="noopener">LinkedIn</a>
