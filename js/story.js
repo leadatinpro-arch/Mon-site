@@ -561,6 +561,59 @@
     </div></section>`;
   }
 
+  // Petits drapeaux simplifiés (SVG local, pas de service externe)
+  const FLAGS = {
+    fr: '<rect width="1" height="2" fill="#2f4fd8"/><rect x="1" width="1" height="2" fill="#fff"/><rect x="2" width="1" height="2" fill="#e63946"/>',
+    be: '<rect width="1" height="2" fill="#111"/><rect x="1" width="1" height="2" fill="#fdda24"/><rect x="2" width="1" height="2" fill="#ef3340"/>',
+    it: '<rect width="1" height="2" fill="#009246"/><rect x="1" width="1" height="2" fill="#fff"/><rect x="2" width="1" height="2" fill="#ce2b37"/>',
+    ro: '<rect width="1" height="2" fill="#002b7f"/><rect x="1" width="1" height="2" fill="#fcd116"/><rect x="2" width="1" height="2" fill="#ce1126"/>',
+    de: '<rect width="3" height=".67" fill="#111"/><rect y=".67" width="3" height=".67" fill="#dd0000"/><rect y="1.33" width="3" height=".67" fill="#ffce00"/>',
+    nl: '<rect width="3" height=".67" fill="#ae1c28"/><rect y=".67" width="3" height=".67" fill="#fff"/><rect y="1.33" width="3" height=".67" fill="#21468b"/>',
+    pl: '<rect width="3" height="1" fill="#fff"/><rect y="1" width="3" height="1" fill="#dc143c"/>',
+    es: '<rect width="3" height="2" fill="#c60b1e"/><rect y=".5" width="3" height="1" fill="#ffc400"/>',
+    pt: '<rect width="3" height="2" fill="#da291c"/><rect width="1.2" height="2" fill="#046a38"/><circle cx="1.2" cy="1" r=".42" fill="#ffe900"/>',
+    cz: '<rect width="3" height="1" fill="#fff"/><rect y="1" width="3" height="1" fill="#d7141a"/><path d="M0 0L1.5 1L0 2z" fill="#11457e"/>',
+    no: '<rect width="3" height="2" fill="#ba0c2f"/><rect x=".8" width=".5" height="2" fill="#fff"/><rect y=".75" width="3" height=".5" fill="#fff"/><rect x=".92" width=".26" height="2" fill="#00205b"/><rect y=".87" width="3" height=".26" fill="#00205b"/>',
+    fi: '<rect width="3" height="2" fill="#fff"/><rect x=".8" width=".45" height="2" fill="#002f6c"/><rect y=".78" width="3" height=".45" fill="#002f6c"/>',
+    gb: '<rect width="3" height="2" fill="#012169"/><path d="M0 0L3 2M3 0L0 2" stroke="#fff" stroke-width=".4"/><path d="M0 0L3 2M3 0L0 2" stroke="#c8102e" stroke-width=".15"/><rect x="1.3" width=".4" height="2" fill="#fff"/><rect y=".8" width="3" height=".4" fill="#fff"/><rect x="1.38" width=".24" height="2" fill="#c8102e"/><rect y=".88" width="3" height=".24" fill="#c8102e"/>'
+  };
+  const flag = (id) => FLAGS[id] ? `<svg class="cchip__flag" viewBox="0 0 3 2" aria-hidden="true">${FLAGS[id]}</svg>` : "";
+
+  /* Carte des pays accompagnés (Saint-Gobain) : lignes tracées depuis le siège */
+  function countries() {
+    const C = P.countries;
+    if (!C) return "";
+    const X = (lon) => (lon + 12) / 44 * 1000, Y = (lat) => (64 - lat) / 29 * 760;
+    const hx = X(C.hub.lon), hy = Y(C.hub.lat);
+    const grid = Array.from({ length: 9 }, (_, i) => `<line x1="${i * 125}" y1="0" x2="${i * 125}" y2="760"/>`).join("") + Array.from({ length: 7 }, (_, i) => `<line x1="0" y1="${i * 126}" x2="1000" y2="${i * 126}"/>`).join("");
+    const lines = C.items.map((c, i) => {
+      const x = X(c.lon), y = Y(c.lat), mx = (hx + x) / 2, my = (hy + y) / 2 - Math.hypot(x - hx, y - hy) * 0.18;
+      return `<path class="cmap__line" data-c="${esc(c.id)}" style="--i:${i}" pathLength="1" d="M${hx.toFixed(1)} ${hy.toFixed(1)} Q${mx.toFixed(1)} ${my.toFixed(1)} ${x.toFixed(1)} ${y.toFixed(1)}"/>`;
+    }).join("");
+    const dots = C.items.map((c, i) => {
+      const x = X(c.lon), y = Y(c.lat);
+      return `<g class="cmap__pt" data-c="${esc(c.id)}" style="--i:${i}"><circle class="cmap__halo" cx="${x.toFixed(1)}" cy="${y.toFixed(1)}" r="16"/><circle class="cmap__dot" cx="${x.toFixed(1)}" cy="${y.toFixed(1)}" r="7"/><text x="${(x + (c.dx || 14)).toFixed(1)}" y="${(y + (c.dy || 6)).toFixed(1)}" text-anchor="${c.anchor || "start"}">${tx(c.name)}</text></g>`;
+    }).join("");
+    return `<section class="s-countries"><div class="container">
+      <div class="section-head">
+        <p class="eyebrow reveal-up"><span>✦</span> <span>${tx(C.subtitle)}</span></p>
+        <h2 class="section-title reveal-up">${tx(C.title)}<sup class="s-countries__count">${C.items.length}</sup></h2>
+      </div>
+      <div class="s-countries__grid">
+        <div class="cmap-wrap reveal-up" data-cmap>
+          <svg class="cmap" viewBox="0 0 1000 760" role="img" aria-label="${tx(C.title)}">
+            <g class="cmap__grid">${grid}</g>${lines}${dots}
+            <g class="cmap__hub"><circle class="cmap__hub-pulse" cx="${hx.toFixed(1)}" cy="${hy.toFixed(1)}" r="14"/><circle cx="${hx.toFixed(1)}" cy="${hy.toFixed(1)}" r="10"/><text x="${(hx + 16).toFixed(1)}" y="${(hy + 30).toFixed(1)}">${esc(C.hub.name)} ★</text></g>
+          </svg>
+        </div>
+        <div class="s-countries__text">
+          <p class="s-intro__text reveal-up">${tx(C.text)}</p>
+          <ul class="cchips">${C.items.map((c, i) => `<li><button type="button" class="cchip reveal-up" data-c="${esc(c.id)}" style="--d:${(i * 0.04).toFixed(2)}s">${flag(c.id)}<span>${tx(c.name)}</span></button></li>`).join("")}</ul>
+        </div>
+      </div>
+    </div></section>`;
+  }
+
   function role() {
     if (!P.role) return "";
     const head = `<div class="section-head"><p class="eyebrow reveal-up"><span>✦</span> <span>${tx(P.role.subtitle)}</span></p><h2 class="section-title reveal-up">${tx(P.role.title)}</h2></div>`;
@@ -688,7 +741,7 @@
     lang = currentLang;
     t = translate;
     document.body.classList.add(`theme-${P.theme}`);
-    root.innerHTML = hero() + marquee() + intro() + trips() + race() + project() + context() + services() + concept() + event() + stats() + editions() + banner() + walker() + role() + (P.showcaseAfter ? "" : showcase()) + asset() + duo() + quote() + highlights() + impact() + award() + outro() + (P.showcaseAfter ? showcase() : "") + mascot() + faq() + posters() + gallery() + links() + next() + cta();
+    root.innerHTML = hero() + marquee() + intro() + trips() + race() + project() + context() + services() + concept() + event() + stats() + editions() + banner() + walker() + role() + countries() + (P.showcaseAfter ? "" : showcase()) + asset() + duo() + quote() + highlights() + impact() + award() + outro() + (P.showcaseAfter ? showcase() : "") + mascot() + faq() + posters() + gallery() + links() + next() + cta();
     document.title = `${pick(P.title)} — Léa Datin`;
     const meta = $('meta[name="description"]');
     if (meta) meta.setAttribute("content", pick(P.tagline));
@@ -801,6 +854,19 @@
       });
     });
   }
+
+  /* ---------- carte des pays : survol d'une pastille ---------- */
+  document.addEventListener("mouseover", (e) => {
+    const chip = e.target.closest && e.target.closest(".cchip, .cmap__pt");
+    const map = document.querySelector("[data-cmap]");
+    if (!map) return;
+    map.querySelectorAll(".is-hot").forEach((el) => el.classList.remove("is-hot"));
+    document.querySelectorAll(".cchip.is-hot").forEach((el) => el.classList.remove("is-hot"));
+    if (!chip) { map.classList.remove("has-hot"); return; }
+    const id = chip.dataset.c;
+    map.classList.add("has-hot");
+    document.querySelectorAll(`[data-c="${id}"]`).forEach((el) => el.classList.add("is-hot"));
+  });
 
   /* ---------- objets 3D : suivent la souris ---------- */
   window.addEventListener("mousemove", (e) => {

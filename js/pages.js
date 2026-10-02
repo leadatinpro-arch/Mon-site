@@ -435,6 +435,27 @@ window.PAGES = {
         { title: { fr: "Planification & reporting", en: "Planning & reporting" }, text: { fr: "Suivi des deadlines, mise à jour des plannings, reporting hebdomadaire.", en: "Tracking deadlines, updating schedules, weekly reporting." } }
       ]
     },
+    countries: {
+      title: { fr: "Les pays que j'ai accompagnés", en: "The countries I supported" },
+      subtitle: { fr: "Coordonnés, formés et suivis au quotidien", en: "Coordinated, trained and supported day to day" },
+      text: { fr: "Depuis Pont-à-Mousson, j'ai travaillé avec les équipes locales de chaque pays : ateliers de cadrage, formations au nouveau back-office, suivi des contenus jusqu'à la mise en ligne. Survolez un pays pour le repérer sur la carte.", en: "From Pont-à-Mousson, I worked with the local teams in each country: scoping workshops, training on the new back office, content follow-up through to go-live. Hover over a country to find it on the map." },
+      hub: { name: "Pont-à-Mousson", lat: 48.9, lon: 6.05 },
+      items: [
+        { id: "fr", name: { fr: "France", en: "France" }, lat: 48.86, lon: 2.35, dx: -18, dy: 26, anchor: "end" },
+        { id: "be", name: { fr: "Belgique", en: "Belgium" }, lat: 50.85, lon: 4.35, dx: -16, dy: 6, anchor: "end" },
+        { id: "nl", name: { fr: "Pays-Bas", en: "Netherlands" }, lat: 52.37, lon: 4.9, dx: -16, dy: -10, anchor: "end" },
+        { id: "gb", name: { fr: "Royaume-Uni", en: "United Kingdom" }, lat: 51.5, lon: -0.13, dx: -16, dy: -12, anchor: "end" },
+        { id: "de", name: { fr: "Allemagne", en: "Germany" }, lat: 52.52, lon: 13.4, dx: 16, dy: -10 },
+        { id: "no", name: { fr: "Norvège", en: "Norway" }, lat: 59.91, lon: 10.75, dx: -16, dy: 6, anchor: "end" },
+        { id: "fi", name: { fr: "Finlande", en: "Finland" }, lat: 60.17, lon: 24.94, dx: 16, dy: 6 },
+        { id: "pl", name: { fr: "Pologne", en: "Poland" }, lat: 52.23, lon: 21.01, dx: 16, dy: 6 },
+        { id: "cz", name: { fr: "République tchèque", en: "Czech Republic" }, lat: 50.08, lon: 14.44, dx: 16, dy: 22 },
+        { id: "ro", name: { fr: "Roumanie", en: "Romania" }, lat: 44.43, lon: 26.1, dx: 0, dy: 34, anchor: "middle" },
+        { id: "it", name: { fr: "Italie", en: "Italy" }, lat: 41.9, lon: 12.5, dx: 16, dy: 6 },
+        { id: "es", name: { fr: "Espagne", en: "Spain" }, lat: 40.42, lon: -3.7, dx: 16, dy: 6 },
+        { id: "pt", name: { fr: "Portugal", en: "Portugal" }, lat: 38.72, lon: -9.14, dx: 0, dy: 34, anchor: "middle" }
+      ]
+    },
     links: [],
     cta: { fr: "Un projet international à piloter ?", en: "An international project to lead?" }
   },

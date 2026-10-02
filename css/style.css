@@ -4903,3 +4903,32 @@ a.float-card:hover { box-shadow: 0 24px 50px rgba(255, 210, 63, 0.3); }
 /* Logo PUNCH (icône d'appli) : affiché en entier */
 img[src*="punch/logo-app"] { object-fit: contain !important; }
 .side-card__logo img[src*="punch/logo-app"] { padding: 12px; }
+
+/* Saint-Gobain : carte des pays accompagnés */
+.s-countries { padding: clamp(60px, 9vw, 120px) 0; }
+.s-countries__count { font-size: 0.45em; vertical-align: super; margin-left: 10px; color: var(--accent); font-family: var(--font-display); }
+.s-countries__grid { display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr); gap: clamp(28px, 4vw, 60px); align-items: center; }
+.cmap-wrap { border-radius: 28px; background: radial-gradient(circle at 45% 50%, rgba(47, 107, 255, 0.28), transparent 70%), var(--bg-2); border: 1px solid var(--line); padding: 10px; }
+.cmap { width: 100%; height: auto; display: block; }
+.cmap__grid line { stroke: rgba(160, 185, 255, 0.08); stroke-width: 1; }
+.cmap__line { fill: none; stroke: var(--accent); stroke-width: 2.5; stroke-linecap: round; stroke-dasharray: 1; stroke-dashoffset: 1; opacity: 0.75; transition: stroke-dashoffset 1.2s var(--ease-out), opacity 0.3s, stroke-width 0.3s; transition-delay: calc(var(--i) * 0.09s), 0s, 0s; }
+.cmap-wrap.is-visible .cmap__line { stroke-dashoffset: 0; }
+.cmap__pt { opacity: 0; transition: opacity 0.5s; transition-delay: calc(0.6s + var(--i) * 0.09s); cursor: pointer; }
+.cmap-wrap.is-visible .cmap__pt { opacity: 1; }
+.cmap__dot { fill: var(--accent); stroke: var(--bg); stroke-width: 3; }
+.cmap__halo { fill: rgba(255, 210, 63, 0.18); transform-box: fill-box; transform-origin: center; animation: cmapPulse 2.6s ease-out infinite; animation-delay: calc(var(--i) * -0.2s); }
+@keyframes cmapPulse { 0% { transform: scale(0.6); opacity: 1; } 100% { transform: scale(1.8); opacity: 0; } }
+.cmap__pt text { fill: var(--text); font: 700 21px var(--font-body); paint-order: stroke; stroke: var(--bg-2); stroke-width: 5px; }
+.cmap__hub circle:last-of-type, .cmap__hub > circle:nth-child(2) { fill: #f4f6fb; }
+.cmap__hub-pulse { fill: rgba(244, 246, 251, 0.25); transform-box: fill-box; transform-origin: center; animation: cmapPulse 2s ease-out infinite; }
+.cmap__hub text { fill: #f4f6fb; font: 800 22px var(--font-body); paint-order: stroke; stroke: var(--bg-2); stroke-width: 5px; }
+.cmap-wrap.has-hot .cmap__line:not(.is-hot) { opacity: 0.15; }
+.cmap-wrap.has-hot .cmap__pt:not(.is-hot) { opacity: 0.35; }
+.cmap__line.is-hot { stroke-width: 5; opacity: 1; }
+.cmap__pt.is-hot .cmap__dot { r: 10; }
+.cchips { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 24px; }
+.cchip { display: inline-flex; align-items: center; gap: 9px; padding: 7px 14px 7px 8px; border: 1px solid var(--line); border-radius: 100px; background: rgba(11, 21, 48, 0.6); color: var(--text); font: 600 0.9rem var(--font-body); cursor: default; transition: border-color 0.3s, transform 0.3s var(--ease-out), background 0.3s; }
+.cchip__flag { width: 24px; height: 16px; border-radius: 3px; box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.2); flex: none; }
+.cchip.is-hot, .cchip:hover { border-color: var(--accent); background: rgba(255, 210, 63, 0.1); transform: translateY(-2px); }
+@media (max-width: 900px) { .s-countries__grid { grid-template-columns: 1fr; } }
+@media (max-width: 600px) { .cmap__pt text { font-size: 26px; } }
