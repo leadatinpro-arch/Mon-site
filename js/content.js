@@ -271,12 +271,12 @@ window.SITE = {
 
 /* Roue 3D « Mon parcours en 360° » (page d'accueil) */
 window.JOURNEY = [
-  { href: "saint-gobain.html", img: "assets/saint-gobain/lea-sg.webp", pos: "50% 20%", year: "2024 — 2026", title: "Saint-Gobain PAM", role: { fr: "Cheffe de projet marketing digital · 13 pays", en: "Digital marketing project manager · 13 countries" } },
-  { href: "eclipse.html", img: "assets/eclipse/photo-4.jpg", pos: "50% 30%", year: "2026", title: "Eclipse", role: { fr: "DA, com' & co-organisation", en: "Art direction, comms & co-organisation" } },
+  { href: "saint-gobain.html", img: "assets/saint-gobain/pamline-mockup.webp", fit: "contain", year: "2024 — 2026", title: "Saint-Gobain PAM", role: { fr: "Cheffe de projet marketing digital · 13 pays", en: "Digital marketing project manager · 13 countries" } },
+  { href: "eclipse.html", img: "assets/eclipse/photo-3.jpg", year: "2026", title: "Eclipse", role: { fr: "DA, com' & co-organisation", en: "Art direction, comms & co-organisation" } },
   { href: "cora.html", img: "assets/cora/cora-rose.jpg", year: "2023 — 2024", title: "Carrefour (ex-Cora)", role: { fr: "Chargée de marketing & communication", en: "Marketing & communication officer" } },
   { href: "360idcom.html", img: "assets/360idcom/photo-3.jpg", year: "", title: "360 ID COM", role: { fr: "Cheffe de projet & responsable com'", en: "Project manager & head of comms" } },
-  { href: "jacques-laveine.html", img: "assets/jacques-laveine/concours-photos.webp", year: "2022", title: "Jacques Laveine", role: { fr: "Community Manager", en: "Community Manager" } },
-  { href: "punch.html", img: "assets/punch/photo-equipe.jpg", pos: "50% 30%", year: "2022", title: "PUNCH", role: { fr: "Co-fondatrice · médaille d'or ESS", en: "Co-founder · social economy gold medal" } }
+  { href: "jacques-laveine.html", img: "assets/jacques-laveine/concours-photos.webp", fit: "contain", year: "2022", title: "Jacques Laveine", role: { fr: "Community Manager", en: "Community Manager" } },
+  { href: "punch.html", img: "assets/punch/photo-equipe.jpg", pos: "60% 30%", year: "2022", title: "PUNCH", role: { fr: "Co-fondatrice · médaille d'or ESS", en: "Co-founder · social economy gold medal" } }
 ];
 
 /* Passions : menu « Passions », cartes d'À propos et de Projets. 3 photos par passion, la première sert de vignette. */

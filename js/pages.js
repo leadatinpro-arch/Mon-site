@@ -565,7 +565,7 @@ window.PAGES = {
     role: {
       title: { fr: "Mes responsabilités et réalisations", en: "My responsibilities and achievements" },
       subtitle: { fr: "Cheffe de projet & responsable communication", en: "Project manager & head of communication" },
-      image: "assets/360idcom/equipe.jpg",
+      image: "assets/360idcom/photo-3.jpg",
       items: [
         { title: { fr: "Prospection et négociation", en: "Prospecting and negotiation" }, text: { fr: "Recherche de clients, élaboration de devis, présentation des offres.", en: "Finding clients, preparing quotes, presenting offers." } },
         { title: { fr: "Gestion de projets", en: "Project management" }, text: { fr: "Organisation des prestations, suivi des deadlines, coordination avec les équipes.", en: "Organising services, tracking deadlines, coordinating with the teams." } },
@@ -756,9 +756,7 @@ window.PAGES = {
         { src: "assets/sport/quatre-haut.jpg", caption: { fr: "En quatre, en pleine course", en: "In a quad, mid-race" } },
         { src: "assets/sport/coach.jpg", caption: { fr: "Les consignes du coach au ponton", en: "The coach's instructions on the pontoon" } },
         { src: "assets/sport/quatre-roseaux.jpg", caption: { fr: "Récupération entre deux courses", en: "Recovery between two races" } },
-        { src: "assets/sport/ponton-lea.jpg", caption: { fr: "Au ponton avec l'équipe", en: "On the pontoon with the team" } },
-        { src: "assets/sport/podium.jpg", caption: { fr: "Médailles et mascotte", en: "Medals and mascot" } },
-        { src: "assets/sport/equipe-medailles.jpg", caption: { fr: "L'équipe du club", en: "The club team" } }
+        { src: "assets/sport/ponton-lea.jpg", caption: { fr: "Au ponton avec l'équipe", en: "On the pontoon with the team" } }
       ]
     },
     quote: { fr: "On va plus loin quand tout le monde rame dans le même sens.", en: "You go further when everyone rows in the same direction." },
