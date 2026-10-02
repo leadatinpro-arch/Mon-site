@@ -29,8 +29,8 @@ window.PAGES = {
       { label: { fr: "Lieu", en: "Venue" }, value: "Nirvana Club · Nancy" },
       { label: { fr: "Son", en: "Sound" }, value: "Techno · Hard techno · Raw" }
     ],
-    heroMascot: "assets/eclipse/mascotte-2.png",
-    walker: "assets/eclipse/mascotte-3.png",
+    heroMascot: "assets/eclipse/mascotte-2.webp",
+    walker: "assets/eclipse/mascotte-3.webp",
     marquee: ["ECLIPSE", "TECHNO", "HARD TECHNO", "RAW", "NIRVANA CLUB", "NANCY", "HÉLIOS"],
     intro: {
       title: { fr: "L'histoire", en: "The story" },
@@ -126,11 +126,11 @@ window.PAGES = {
       ]
     },
     mascot: {
-      src: "assets/eclipse/mascotte-2.png",
+      src: "assets/eclipse/mascotte-2.webp",
       poses: [
-        { src: "assets/eclipse/mascotte-2.png", bubble: { fr: "Salut, moi c'est Hélios !", en: "Hi, I'm Hélios!" } },
-        { src: "assets/eclipse/mascotte.png", bubble: { fr: "Le son est lancé !", en: "The music is on!" } },
-        { src: "assets/eclipse/mascotte-3.png", bubble: { fr: "Petite pause fraîcheur…", en: "Quick refreshment break…" } }
+        { src: "assets/eclipse/mascotte-2.webp", bubble: { fr: "Salut, moi c'est Hélios !", en: "Hi, I'm Hélios!" } },
+        { src: "assets/eclipse/mascotte.webp", bubble: { fr: "Le son est lancé !", en: "The music is on!" } },
+        { src: "assets/eclipse/mascotte-3.webp", bubble: { fr: "Petite pause fraîcheur…", en: "Quick refreshment break…" } }
       ],
       title: { fr: "Voici Hélios", en: "Meet Hélios" },
       text: {
@@ -139,9 +139,9 @@ window.PAGES = {
       },
       bubble: { fr: "Salut, moi c'est Hélios !", en: "Hi, I'm Hélios!" },
       faq: [
-        { q: { fr: "Qui est Hélios ?", en: "Who is Hélios?" }, a: { fr: "La mascotte d'Eclipse : une éclipse personnifiée, fan de techno, de hard techno et de raw.", en: "Eclipse's mascot: an eclipse brought to life, into techno, hard techno and raw." }, img: "assets/eclipse/mascotte-3.png" },
-        { q: { fr: "Sa mission ?", en: "His mission?" }, a: { fr: "Mettre l'ambiance, annoncer les prochaines dates et rappeler à chacun de passer une soirée safe.", en: "Setting the mood, announcing upcoming dates and reminding everyone to have a safe night." }, img: "assets/eclipse/mascotte.png" },
-        { q: { fr: "Où le retrouver ?", en: "Where to find him?" }, a: { fr: "Sur nos affiches, nos réseaux, nos stickers… et bientôt en soirée.", en: "On our posters, social media, stickers… and soon at our nights." }, img: "assets/eclipse/mascotte-2.png" }
+        { q: { fr: "Qui est Hélios ?", en: "Who is Hélios?" }, a: { fr: "La mascotte d'Eclipse : une éclipse personnifiée, fan de techno, de hard techno et de raw.", en: "Eclipse's mascot: an eclipse brought to life, into techno, hard techno and raw." }, img: "assets/eclipse/mascotte-3.webp" },
+        { q: { fr: "Sa mission ?", en: "His mission?" }, a: { fr: "Mettre l'ambiance, annoncer les prochaines dates et rappeler à chacun de passer une soirée safe.", en: "Setting the mood, announcing upcoming dates and reminding everyone to have a safe night." }, img: "assets/eclipse/mascotte.webp" },
+        { q: { fr: "Où le retrouver ?", en: "Where to find him?" }, a: { fr: "Sur nos affiches, nos réseaux, nos stickers… et bientôt en soirée.", en: "On our posters, social media, stickers… and soon at our nights." }, img: "assets/eclipse/mascotte-2.webp" }
       ]
     },
     posters: {
@@ -345,13 +345,13 @@ window.PAGES = {
       subtitle: { fr: "Quelques contenus créés pour l'agence", en: "Some content created for the agency" },
       items: [
         {
-          src: "assets/jacques-laveine/bonne-nouvelle.png",
+          src: "assets/jacques-laveine/bonne-nouvelle.webp",
           tag: { fr: "Post réseaux sociaux", en: "Social media post" },
           title: { fr: "« Bonne nouvelle » : les taux d'usure", en: "“Good news”: usury rates" },
           text: { fr: "Un visuel pédagogique et percutant pour annoncer la hausse des taux d'usure au 1er octobre 2022, une info clé pour les futurs acheteurs.", en: "An informative, eye-catching visual announcing the rise in usury rates on 1 October 2022, key news for future buyers." }
         },
         {
-          src: "assets/jacques-laveine/concours-photos.png",
+          src: "assets/jacques-laveine/concours-photos.webp",
           tag: { fr: "Campagne & print", en: "Campaign & print" },
           title: { fr: "Concours photos & calendrier 2022", en: "Photo contest & 2022 calendar" },
           text: { fr: "Un concours photos valorisant le pays messin, avec 12 lauréats récompensés et leurs clichés réunis dans le calendrier de l'agence.", en: "A photo contest showcasing the Metz area, with 12 winners rewarded and their shots gathered in the agency's calendar." }
@@ -370,7 +370,7 @@ window.PAGES = {
       fr: "Cheffe de projet marketing digital chez Saint-Gobain PAM : référente de 12 pays pour PAMLINE, la refonte des sites web du groupe.",
       en: "Digital marketing project manager at Saint-Gobain PAM: lead contact for 12 countries on PAMLINE, the overhaul of the group's websites."
     },
-    heroImage: "assets/saint-gobain/pamline-mockup.png",
+    heroImage: "assets/saint-gobain/pamline-mockup.webp",
     facts: [
       { label: { fr: "Rôle", en: "Role" }, value: { fr: "Cheffe de projet marketing digital", en: "Digital marketing project manager" } },
       { label: { fr: "Période", en: "Period" }, value: { fr: "Sept. 2024 – août 2026", en: "Sept 2024 – Aug 2026" } },
@@ -595,7 +595,7 @@ window.PAGES = {
       subtitle: { fr: "Chartes, logos, maquettes", en: "Brand guidelines, logos, mock-ups" },
       items: [
         {
-          src: "assets/art/chartes.png",
+          src: "assets/art/chartes.webp",
           tag: { fr: "Identités visuelles", en: "Visual identities" },
           title: { fr: "Des chartes graphiques de A à Z", en: "Brand guidelines from A to Z" },
           text: { fr: "Au fil de mes études et de mes projets, j'ai souvent pris en charge la partie visuelle : chartes graphiques, logos, palettes, maquettes et flyers. J'aime transformer une idée en identité cohérente et impactante.", en: "Throughout my studies and projects, I often took charge of the visual side: brand guidelines, logos, colour palettes, mock-ups and flyers. I love turning an idea into a coherent, striking identity." }
@@ -607,7 +607,7 @@ window.PAGES = {
           text: { fr: "Un packaging de jeu imaginé et illustré de bout en bout, avec son personnage, ses couleurs et son plateau : la preuve qu'une identité forte raconte une histoire.", en: "A game packaging designed and illustrated from start to finish, with its character, colours and board: proof that a strong identity tells a story." }
         },
         {
-          src: "assets/eclipse/mascotte-2.png",
+          src: "assets/eclipse/mascotte-2.webp",
           tag: { fr: "Direction artistique · Eclipse", en: "Art direction · Eclipse" },
           title: { fr: "Eclipse : de l'affiche à la mascotte", en: "Eclipse: from poster to mascot" },
           text: { fr: "Pour Eclipse, j'ai créé toute l'identité visuelle : une charte déclinée dans une couleur par édition, les affiches, les visuels réseaux et Hélios, la mascotte que j'ai dessinée. Mon goût pour le dessin au service d'un vrai projet.", en: "For Eclipse, I created the whole visual identity: guidelines with a new colour for each edition, posters, social visuals and Hélios, the mascot I drew. My love of drawing put to work on a real project." },
@@ -733,7 +733,7 @@ window.PAGES = {
     trips: {
       title: { fr: "Mon carnet de route", en: "My travel log" },
       subtitle: { fr: "Faites défiler : le trajet se dessine", en: "Scroll: the route draws itself" },
-      home: { name: "Nancy", lat: 48.69, lon: 6.18 },
+      home: { name: { fr: "France", en: "France" }, lat: 48.69, lon: 6.18 },
       stops: [
         {
           id: "majorque", name: { fr: "Majorque", en: "Mallorca" }, country: { fr: "Espagne", en: "Spain" }, lat: 39.6, lon: 2.9,
@@ -764,13 +764,6 @@ window.PAGES = {
           title: { fr: "Une ville où je reviens", en: "A city I keep coming back to" },
           text: { fr: "Deux séjours et toujours le même plaisir : la Grand-Place illuminée, les ruelles colorées, les cafés et les disquaires où l'on pourrait passer des heures.", en: "Two stays and the same pleasure every time: the lit-up Grand-Place, colourful streets, cafés and record shops you could spend hours in." },
           photos: ["assets/voyage/bruxelles-grand-place-nuit.jpg", "assets/voyage/bruxelles-rue.jpg", "assets/voyage/bruxelles-lea.jpg", "assets/voyage/bruxelles-cafe.jpg"]
-        },
-        {
-          id: "mediterranee", name: "La Grande-Motte", country: { fr: "France", en: "France" }, lat: 43.56, lon: 4.08,
-          when: { fr: "Mai 2026", en: "May 2026" },
-          title: { fr: "Cap au sud", en: "Heading south" },
-          text: { fr: "Quelques jours au bord de la Méditerranée, entre étangs, pins et soleil couchant.", en: "A few days by the Mediterranean, among lagoons, pine trees and sunsets." },
-          photos: ["assets/voyage/grande-motte-paillote.jpg", "assets/voyage/grande-motte-ponton.jpg", "assets/voyage/grande-motte-soleil.jpg"]
         },
         {
           id: "berlin", name: "Berlin", country: { fr: "Allemagne", en: "Germany" }, lat: 52.52, lon: 13.4,

@@ -66,7 +66,7 @@
         <p>© <span class="js-year"></span> Léa Datin</p>
         <ul class="footer__social">
           <li><a href="${S.linkedin}" target="_blank" rel="noopener" class="hover-line">LinkedIn</a></li>
-          <li><a href="${S.instagram}" target="_blank" rel="noopener" class="hover-line">Instagram</a></li>
+          ${S.instagram ? `<li><a href="${S.instagram}" target="_blank" rel="noopener" class="hover-line">Instagram</a></li>` : ""}
           <li><a href="mailto:${S.email}" class="hover-line">Email</a></li>
         </ul>
         <a href="#top" class="footer__top hover-line" data-i18n="footer.top">Retour en haut ↑</a>
@@ -75,6 +75,43 @@
 
   document.body.insertAdjacentHTML("afterbegin", before);
   document.body.insertAdjacentHTML("beforeend", footer);
+  // Formulaire en envoi direct : textes adaptés
+  if ((window.SITE || {}).web3formsKey) {
+    document.querySelectorAll('[data-i18n="contactPage.form.note"], [data-i18n="contactPage.form.okText"]').forEach((el) => { el.dataset.i18n += "Direct"; });
+  }
+  // Google Analytics : chargé seulement après accord du visiteur
+  const GA = (window.SITE || {}).gaId;
+  if (GA) {
+    const store = { get() { try { return localStorage.getItem("ld-consent"); } catch (e) { return null; } }, set(v) { try { localStorage.setItem("ld-consent", v); } catch (e) {} } };
+    const loadGA = () => {
+      const sc = document.createElement("script");
+      sc.async = true;
+      sc.src = `https://www.googletagmanager.com/gtag/js?id=${GA}`;
+      document.head.appendChild(sc);
+      window.dataLayer = window.dataLayer || [];
+      window.gtag = function () { window.dataLayer.push(arguments); };
+      window.gtag("js", new Date());
+      window.gtag("config", GA, { anonymize_ip: true });
+    };
+    const choice = store.get();
+    if (choice === "yes") loadGA();
+    else if (choice !== "no") {
+      document.body.insertAdjacentHTML("beforeend", `
+        <div class="cookies" role="dialog" aria-live="polite">
+          <p data-i18n="cookies.text">J'utilise Google Analytics pour savoir quelles pages vous intéressent.</p>
+          <div class="cookies__btns"><button class="cookies__btn" data-c="no" data-i18n="cookies.refuse">Refuser</button><button class="cookies__btn cookies__btn--yes" data-c="yes" data-i18n="cookies.accept">Accepter</button></div>
+        </div>`);
+      const box = document.querySelector(".cookies");
+      box.addEventListener("click", (e) => {
+        const c = e.target.closest("[data-c]");
+        if (!c) return;
+        store.set(c.dataset.c);
+        if (c.dataset.c === "yes") loadGA();
+        box.classList.add("is-hidden");
+        setTimeout(() => box.remove(), 600);
+      });
+    }
+  }
   document.querySelectorAll("[data-passions]").forEach((el) => { el.innerHTML = cards(); });
   document.querySelectorAll(".js-year").forEach((el) => { el.textContent = new Date().getFullYear(); });
 })();

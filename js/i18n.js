@@ -622,3 +622,53 @@ Object.assign(window.TRANSLATIONS.en, {
 });
 Object.assign(window.TRANSLATIONS.fr, { "passions.shortcut": "En dehors du travail", "passions.strip": "Et en dehors du travail ?" });
 Object.assign(window.TRANSLATIONS.en, { "passions.shortcut": "Off the clock", "passions.strip": "And outside of work?" });
+
+/* Accueil : ce que je recherche */
+Object.assign(window.TRANSLATIONS.fr, {
+  "home.seek.eyebrow": "Prochaine étape",
+  "home.seek.title": "Ce que je <em>recherche</em>",
+  "home.seek.status": "Disponible immédiatement · France & international",
+  "home.seek.roles": "Postes",
+  "home.seek.role1": "Cheffe de projet digital",
+  "home.seek.role2": "Chargée de marketing",
+  "home.seek.role3": "Chargée de communication",
+  "home.seek.role4": "Project manager international",
+  "home.seek.contracts": "Contrats",
+  "home.seek.sectors": "Secteurs",
+  "home.seek.sector1": "Industrie & B2B",
+  "home.seek.sector2": "Culture & événementiel",
+  "home.seek.sector3": "Agence",
+  "home.seek.cta": "Parlons de votre projet"
+});
+Object.assign(window.TRANSLATIONS.en, {
+  "home.seek.eyebrow": "Next step",
+  "home.seek.title": "What I'm <em>looking for</em>",
+  "home.seek.status": "Available now · France & abroad",
+  "home.seek.roles": "Roles",
+  "home.seek.role1": "Digital project manager",
+  "home.seek.role2": "Marketing officer",
+  "home.seek.role3": "Communications officer",
+  "home.seek.role4": "International project manager",
+  "home.seek.contracts": "Contracts",
+  "home.seek.sectors": "Sectors",
+  "home.seek.sector1": "Industry & B2B",
+  "home.seek.sector2": "Culture & events",
+  "home.seek.sector3": "Agency",
+  "home.seek.cta": "Let's talk about your project"
+});
+
+/* Formulaire : envoi direct (Web3Forms) */
+Object.assign(window.TRANSLATIONS.fr, {
+  "contactPage.form.noteDirect": "Votre message m'est envoyé directement par e-mail. Je vous réponds au plus vite.",
+  "contactPage.form.okTextDirect": "Votre message est bien arrivé. Je vous réponds au plus vite.",
+  "cookies.text": "J'utilise Google Analytics pour savoir quelles pages vous intéressent. Aucune donnée n'est revendue.",
+  "cookies.accept": "Accepter",
+  "cookies.refuse": "Refuser"
+});
+Object.assign(window.TRANSLATIONS.en, {
+  "contactPage.form.noteDirect": "Your message is sent straight to my inbox. I.ll get back to you as soon as possible.",
+  "contactPage.form.okTextDirect": "Your message has arrived. I.ll get back to you as soon as possible.",
+  "cookies.text": "I use Google Analytics to see which pages interest you. No data is ever sold.",
+  "cookies.accept": "Accept",
+  "cookies.refuse": "Decline"
+});

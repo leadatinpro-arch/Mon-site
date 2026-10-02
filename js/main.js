@@ -803,8 +803,25 @@
         f.company.value.trim() ? `${t("contactPage.mail.company")} : ${f.company.value.trim()}` : null,
         `${t("contactPage.mail.topic")} : ${topic}`
       ].filter((l) => l !== null).join("\n");
-      window.location.href = `mailto:${SOCIAL.email || "lea.datinpro@gmail.com"}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-      form.classList.add("is-sent");
+      const mailto = () => {
+        window.location.href = `mailto:${SOCIAL.email || "lea.datinpro@gmail.com"}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+        form.classList.add("is-sent");
+      };
+      const key = (window.SITE || {}).web3formsKey;
+      if (!key) return mailto();
+      // Envoi direct via Web3Forms ; en cas d'échec, on retombe sur la messagerie.
+      const btn = $(".btn--submit", form);
+      btn.disabled = true;
+      form.classList.add("is-sending");
+      fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: { "Content-Type": "application/json", Accept: "application/json" },
+        body: JSON.stringify({ access_key: key, subject, from_name: f.name.value.trim(), replyto: f.email.value.trim(), message: body, botcheck: f.botcheck.checked })
+      })
+        .then((r) => r.json())
+        .then((res) => { if (!res.success) throw new Error(res.message); form.classList.add("is-sent"); })
+        .catch(() => { const ok = $('[data-i18n="contactPage.form.okTextDirect"]', form); if (ok) ok.textContent = t("contactPage.form.okText"); mailto(); })
+        .finally(() => { btn.disabled = false; form.classList.remove("is-sending"); });
     });
 
     $("[data-reset]", form).addEventListener("click", () => {

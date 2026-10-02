@@ -21,7 +21,7 @@ window.PROJECTS = [
     color: 1,
     shape: "circle",
     year: "2024 — 2026",
-    image: "assets/saint-gobain/pamline-mockup.png",
+    image: "assets/saint-gobain/pamline-mockup.webp",
     title: { fr: "Saint-Gobain PAM — Projet PAMLINE", en: "Saint-Gobain PAM — PAMLINE project" },
     summary: {
       fr: "Cheffe de projet marketing digital : référente de 12 pays pour la refonte de 12 sites pays multilingues (Drupal 10).",
@@ -121,7 +121,7 @@ window.PROJECTS = [
     color: 2,
     shape: "circle",
     year: "2022",
-    image: "assets/jacques-laveine/bonne-nouvelle.png",
+    image: "assets/jacques-laveine/bonne-nouvelle.webp",
     title: { fr: "Jacques Laveine Immobilier — Community Manager", en: "Jacques Laveine Immobilier — Community Manager" },
     summary: {
       fr: "Community Manager (sept. – déc. 2022) : contenus Facebook et Instagram, animation des pages, SEO des annonces.",
@@ -255,17 +255,25 @@ window.SOCIAL = {
   email: "lea.datinpro@gmail.com",
   phone: "06 49 46 94 96",
   linkedin: "https://www.linkedin.com/in/lea-datin",
-  instagram: "https://www.instagram.com/"
+  instagram: "" // mettre l'adresse complète du profil pour afficher le lien
+};
+
+/* Réglages du site. Coller ici les identifiants quand ils sont prêts :
+   - web3formsKey : clé d'accès Web3Forms (formulaire envoyé directement par e-mail) ;
+   - gaId : identifiant Google Analytics 4 (G-XXXXXXXXXX), chargé seulement si le visiteur accepte les cookies. */
+window.SITE = {
+  web3formsKey: "",
+  gaId: ""
 };
 
 /* Roue 3D « Mon parcours en 360° » (page d'accueil) */
 window.JOURNEY = [
-  { href: "saint-gobain.html", img: "assets/saint-gobain/pamline-mockup.png", fit: "contain", year: "2024 — 2026", title: "Saint-Gobain PAM", role: { fr: "Cheffe de projet marketing digital", en: "Digital marketing project manager" } },
+  { href: "saint-gobain.html", img: "assets/saint-gobain/pamline-mockup.webp", fit: "contain", year: "2024 — 2026", title: "Saint-Gobain PAM", role: { fr: "Cheffe de projet marketing digital", en: "Digital marketing project manager" } },
   { href: "about.html", img: "assets/about/icn.png", fit: "logo", year: "2024 — 2026", title: "ICN Business School", role: { fr: "Master Programme Grande École", en: "Master in Management" } },
   { href: "eclipse.html", img: "assets/eclipse/photo-3.jpg", year: "2026", title: "Eclipse", role: { fr: "DA, com' & co-organisation", en: "Art direction, comms & co-organisation" } },
   { href: "cora.html", img: "assets/cora/brioches.jpg", year: "2023 — 2024", title: "Carrefour (ex-Cora)", role: { fr: "Chargée de marketing & communication", en: "Marketing & communication officer" } },
   { href: "360idcom.html", img: "assets/360idcom/photo-3.jpg", year: "", title: "360 ID COM", role: { fr: "Cheffe de projet", en: "Project manager" } },
-  { href: "jacques-laveine.html", img: "assets/jacques-laveine/bonne-nouvelle.png", fit: "contain", year: "2022", title: "Jacques Laveine", role: { fr: "Community Manager", en: "Community Manager" } },
+  { href: "jacques-laveine.html", img: "assets/jacques-laveine/bonne-nouvelle.webp", fit: "contain", year: "2022", title: "Jacques Laveine", role: { fr: "Community Manager", en: "Community Manager" } },
   { href: "punch.html", img: "assets/punch/photo-stand.jpg", year: "2022", title: "PUNCH", role: { fr: "Co-fondatrice", en: "Co-founder" } },
   { href: "about.html", img: "assets/about/iut.png", fit: "logo", year: "2021 — 2024", title: "IUT Nancy-Charlemagne", role: { fr: "BUT Techniques de commercialisation", en: "Bachelor in Marketing & Sales" } }
 ];

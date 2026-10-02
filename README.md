@@ -52,8 +52,25 @@ par exemple `image: "assets/projets/campagne.jpg"`.
 
 ## Formulaire de contact
 
-Le formulaire ouvre la messagerie du visiteur avec le message déjà rédigé et adressé à
-`lea.datinpro@gmail.com`. Aucun service externe n'est nécessaire.
+Sans réglage, le formulaire ouvre la messagerie du visiteur avec le message déjà rédigé et adressé à
+`lea.datinpro@gmail.com`.
+
+Pour un envoi direct : créer un compte gratuit sur https://web3forms.com avec cette adresse, puis coller
+la clé d'accès dans `window.SITE.web3formsKey` (`js/content.js`). En cas d'échec de l'envoi, le
+formulaire repasse automatiquement par la messagerie.
+
+## Statistiques (Google Analytics 4)
+
+Coller l'identifiant `G-XXXXXXXXXX` dans `window.SITE.gaId` (`js/content.js`). Un bandeau cookies
+s'affiche alors ; Google Analytics n'est chargé que si le visiteur accepte.
+
+## Nom de domaine (lea-datin.com)
+
+Les balises de partage, `sitemap.xml` et `robots.txt` utilisent déjà `https://lea-datin.com/`.
+Pour brancher le domaine sur GitHub Pages :
+1. Chez le registraire du domaine, créer 4 enregistrements A vers 185.199.108.153, 185.199.109.153,
+   185.199.110.153 et 185.199.111.153, et un CNAME `www` vers `leadatinpro-arch.github.io`.
+2. Dans GitHub, Settings → Pages → Custom domain : saisir `lea-datin.com`, puis cocher « Enforce HTTPS ».
 
 ## Tester en local
 

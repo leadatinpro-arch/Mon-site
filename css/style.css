@@ -4853,3 +4853,35 @@ a.float-card:hover { box-shadow: 0 24px 50px rgba(255, 210, 63, 0.3); }
 }
 .duo-film__frame:nth-child(even) b { background: linear-gradient(140deg, var(--accent-2), #1d3a8f); color: #f4f6fb; }
 @media (prefers-reduced-motion: reduce) { .duo-eq i, .duo-film__track { animation: none; } }
+
+/* Accueil : ce que je recherche */
+.seek { padding: clamp(60px, 10vw, 130px) 0 0; }
+.seek__card { position: relative; display: grid; grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.4fr); gap: clamp(28px, 4vw, 60px); align-items: start; padding: clamp(28px, 4vw, 56px); border-radius: 32px; background: radial-gradient(circle at 100% 0%, rgba(47, 107, 255, 0.28), transparent 55%), linear-gradient(150deg, var(--bg-2), rgba(11, 21, 48, 0.35)); border: 1px solid var(--line); overflow: hidden; }
+.seek__head .section-title { margin: 14px 0 20px; }
+.seek__status { width: fit-content; display: inline-flex; align-items: center; gap: 10px; padding: 8px 14px; border-radius: 100px; background: rgba(255, 210, 63, 0.1); color: var(--accent); font-weight: 600; font-size: 0.9rem; }
+.seek__dot { width: 8px; height: 8px; border-radius: 50%; background: var(--accent); box-shadow: 0 0 0 0 rgba(255, 210, 63, 0.6); animation: seekPulse 2s infinite; }
+@keyframes seekPulse { 70% { box-shadow: 0 0 0 10px rgba(255, 210, 63, 0); } 100% { box-shadow: 0 0 0 0 rgba(255, 210, 63, 0); } }
+.seek__grid { display: grid; gap: 22px; margin: 0; }
+.seek__grid dt { font-size: 0.72rem; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: var(--muted); margin-bottom: 10px; }
+.seek__chips { display: flex; flex-wrap: wrap; gap: 8px; margin: 0; }
+.seek__chips span { padding: 8px 14px; border: 1px solid var(--line); border-radius: 100px; font-weight: 600; font-size: 0.92rem; background: rgba(5, 7, 13, 0.35); transition: border-color 0.3s, color 0.3s; }
+.seek__chips span:hover { border-color: var(--accent); color: var(--accent); }
+.seek__cta { grid-column: 2; justify-self: start; }
+@media (max-width: 900px) { .seek__card { grid-template-columns: 1fr; } .seek__cta { grid-column: 1; } }
+
+/* Formulaire : anti-spam caché, envoi en cours */
+.form__hp { position: absolute; left: -9999px; width: 1px; height: 1px; opacity: 0; }
+.form.is-sending .btn--submit { opacity: 0.6; pointer-events: none; }
+
+/* Bandeau cookies (seulement si Google Analytics est activé) */
+.cookies { position: fixed; left: 16px; right: 16px; bottom: 16px; z-index: 120; max-width: 460px; display: flex; flex-direction: column; gap: 14px; padding: 18px 20px; border-radius: 18px; background: rgba(11, 21, 48, 0.95); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); border: 1px solid var(--line); box-shadow: 0 20px 50px -20px rgba(0, 0, 0, 0.8); font-size: 0.9rem; line-height: 1.5; color: var(--muted); animation: cookiesIn 0.6s 1.5s var(--ease-out) both; transition: opacity 0.5s, transform 0.5s; }
+.cookies.is-hidden { opacity: 0; transform: translateY(20px); }
+@keyframes cookiesIn { from { opacity: 0; transform: translateY(20px); } }
+.cookies__btns { display: flex; gap: 10px; justify-content: flex-end; }
+.cookies__btn { padding: 9px 18px; border-radius: 100px; border: 1px solid var(--line); background: none; color: var(--text); font: inherit; font-weight: 600; cursor: pointer; }
+.cookies__btn--yes { background: var(--accent); border-color: var(--accent); color: var(--bg); }
+
+/* Accessibilité : visiteurs qui ont demandé moins d'animations */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; scroll-behavior: auto !important; }
+}

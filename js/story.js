@@ -450,7 +450,7 @@
             <svg class="tmap" viewBox="0 0 1000 700" aria-hidden="true">
               <g class="tmap__grid">${grid.join("")}</g>
               ${segs}
-              <g class="tmap__home"><circle cx="${home[0].toFixed(1)}" cy="${home[1].toFixed(1)}" r="7" /><text x="${(home[0] + 12).toFixed(1)}" y="${(home[1] + 22).toFixed(1)}">${esc(T.home.name)} ★</text></g>
+              <g class="tmap__home"><circle cx="${home[0].toFixed(1)}" cy="${home[1].toFixed(1)}" r="7" /><text x="${(home[0] + 12).toFixed(1)}" y="${(home[1] + 22).toFixed(1)}">${tx(T.home.name)} ★</text></g>
               ${dots}
             </svg>
             <div class="trips__counter"><span data-trip-count>01</span> / ${String(T.stops.length).padStart(2, "0")}</div>
