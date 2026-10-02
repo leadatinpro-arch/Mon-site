@@ -102,7 +102,7 @@
   };
 
   function hero() {
-    const back = P.back === "about" ? ["about.html", "story.back.about"] : ["projects.html", "story.back.projects"];
+    const back = P.back === "about" ? ["about.html#passions", "story.back.about"] : ["projects.html", "story.back.projects"];
     return `<section class="s-hero s-hero--${esc(P.theme)}">
       ${heroVisual()}
       <div class="container s-hero__inner">

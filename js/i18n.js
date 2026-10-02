@@ -353,7 +353,7 @@ Object.assign(window.TRANSLATIONS.fr, {
   "cursor.drag": "Glisser",
   "cursor.flip": "Retourner",
   "story.back.projects": "← Retour aux projets",
-  "story.back.about": "← Retour à propos",
+  "story.back.about": "← Toutes mes passions",
   "story.placeholder": "Photo à venir",
   "story.visualPh": "Visuel à venir",
   "story.follow": "Suivre le projet",
@@ -385,7 +385,7 @@ Object.assign(window.TRANSLATIONS.en, {
   "cursor.drag": "Drag",
   "cursor.flip": "Flip",
   "story.back.projects": "← Back to projects",
-  "story.back.about": "← Back to about",
+  "story.back.about": "← All my passions",
   "story.placeholder": "Photo coming soon",
   "story.visualPh": "Visual coming soon",
   "story.follow": "Follow the project",
@@ -589,4 +589,34 @@ Object.assign(window.TRANSLATIONS.en, {
   "home.testi.1.role": "Digital content manager · Saint-Gobain PAM Canalisation",
   "home.testi.2.text": "Dynamic, reliable and fully committed. A real asset for any company that puts its trust in her.",
   "home.testi.2.role": "Coordinator · Entreprendre Pour Apprendre"
+});
+
+/* Passions : menu, cartes */
+Object.assign(window.TRANSLATIONS.fr, {
+  "nav.passions": "Passions",
+  "passions.discover": "Découvrir",
+  "passions.eyebrow": "Hors du bureau",
+  "passions.title": "Mes <em>passions</em>",
+  "passions.lead": "Ce que je fais quand je ne travaille pas, et qui nourrit ma façon de travailler.",
+  "passions.art.title": "L'art",
+  "passions.art.teaser": "Expos, musées, disquaires, dessin : ce qui nourrit mon œil et mes créations.",
+  "passions.sport.title": "Le sport",
+  "passions.sport.teaser": "L'aviron en compétition : rigueur, esprit d'équipe et sang-froid.",
+  "passions.voyage.title": "Le voyage",
+  "passions.voyage.teaser": "Sac à dos et transports locaux : 8 pays, de l'Albanie à Berlin.",
+  "about.inspire.lead": "Trois passions qui en disent long sur ma façon de travailler. Cliquez pour en voir plus."
+});
+Object.assign(window.TRANSLATIONS.en, {
+  "nav.passions": "Passions",
+  "passions.discover": "Discover",
+  "passions.eyebrow": "Off the clock",
+  "passions.title": "My <em>passions</em>",
+  "passions.lead": "What I do when I'm not working, and how it shapes the way I work.",
+  "passions.art.title": "Art",
+  "passions.art.teaser": "Exhibitions, museums, record shops, drawing: what feeds my eye and my designs.",
+  "passions.sport.title": "Sport",
+  "passions.sport.teaser": "Competitive rowing: rigour, team spirit and composure.",
+  "passions.voyage.title": "Travel",
+  "passions.voyage.teaser": "Backpack and local transport: 8 countries, from Albania to Berlin.",
+  "about.inspire.lead": "Three passions that say a lot about how I work. Click to see more."
 });
