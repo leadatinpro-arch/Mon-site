@@ -74,16 +74,21 @@
   function renderHomeProjects() {
     const track = $("[data-home-projects]");
     if (!track) return;
-    const featured = PROJECTS.filter((p) => p.featured !== false);
-    track.innerHTML = featured.map((p) => `
-      <a href="${esc(p.page || `projects.html#${p.id}`)}" class="project" data-cursor="view">
-        ${visual(p)}
+    // Cartes = parcours (photos avec des personnes) + résumé du projet correspondant
+    const byPage = Object.fromEntries(PROJECTS.map((p) => [p.page, p]));
+    track.innerHTML = (window.JOURNEY || []).map((it) => {
+      const p = byPage[it.href] || {};
+      const fit = it.fit === "contain" ? " project__visual--contain" : "";
+      return `
+      <a href="${esc(it.href)}" class="project" data-cursor="view">
+        <div class="project__visual project__visual--1${fit}"><img src="${esc(it.img)}" alt="${esc(it.title)}" loading="lazy"${it.pos ? ` style="object-position:${esc(it.pos)}"` : ""} /></div>
         <div class="project__meta">
-          <span class="tag${p.type === "perso" ? " tag--alt" : ""}">${esc(tagLabel(p.type))}</span>
-          <h3 class="project__title">${esc(pick(p.title))}</h3>
-          <p class="project__desc">${esc(pick(p.summary))}</p>
+          <span class="tag${p.type === "perso" ? " tag--alt" : ""}">${esc(it.year || tagLabel(p.type))}</span>
+          <h3 class="project__title">${esc(it.title)}</h3>
+          <p class="project__desc">${esc(pick(it.role))}</p>
         </div>
-      </a>`).join("") + `
+      </a>`;
+    }).join("") + `
       <a href="projects.html" class="project project--all" data-cursor="go">
         <span class="project--all__text">${t("projects.all")}</span>
         <span class="project--all__arrow">→</span>

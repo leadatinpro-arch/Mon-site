@@ -4958,3 +4958,6 @@ img[src*="punch/logo-app"] { object-fit: contain !important; }
 .s-concept__photo { aspect-ratio: 3 / 4; width: 34%; }
 .s-concept__photo img { object-position: 50% 40%; }
 body[data-page="sport"] .role-photo__media img { object-position: 72% 50%; }
+/* Accueil : visuels « contain » (maquette, calendrier) */
+.project__visual--contain img { object-fit: contain !important; padding: 6%; }
+.projects__track .project { transform: none; }
