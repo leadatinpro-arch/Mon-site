@@ -50,13 +50,13 @@
           </h1>
           <p class="page-hero__lead reveal-up" data-i18n="about.lead">Découvrez ma personnalité, mes valeurs et ce qui me motive.</p>
           <div class="page-hero__ctas reveal-up">
-            <a href="contact.html" class="btn btn--primary magnetic">
-              <span class="btn__text" data-i18n="about.cta.contact">Me contacter</span>
-              <span class="btn__icon">→</span>
-            </a>
-            <a href="assets/cv-lea-datin.pdf" class="btn btn--ghost magnetic" data-cv download>
+            <a href="assets/cv-lea-datin.pdf" class="btn btn--primary magnetic" data-cv download>
               <span class="btn__text" data-i18n="about.cta.cv">Télécharger mon CV</span>
               <span class="btn__icon">↓</span>
+            </a>
+            <a href="contact.html" class="btn btn--ghost magnetic">
+              <span class="btn__text" data-i18n="about.cta.contact">Me contacter</span>
+              <span class="btn__icon">→</span>
             </a>
           </div>
           <p class="hero-pass reveal-up"><span class="hero-pass__label" data-i18n="passions.shortcut">En dehors du travail</span><a href="art.html" class="hero-pass__link"><span class="hero-pass__ico"><svg viewBox="0 0 24 24"><path d="M12 3a9 9 0 0 0 0 18c1.2 0 1.8-.8 1.8-1.7 0-1.3-1-1.6-1-2.6 0-.9.7-1.5 1.7-1.5H17a4 4 0 0 0 4-4c0-4.5-4-8.2-9-8.2z"/><circle cx="7.5" cy="11" r="1.2"/><circle cx="10" cy="7" r="1.2"/><circle cx="15" cy="7.2" r="1.2"/></svg></span><span data-i18n="passions.art.title">art</span></a><a href="sport.html" class="hero-pass__link"><span class="hero-pass__ico"><svg viewBox="0 0 24 24"><path d="M8 2l4 7 4-7"/><circle cx="12" cy="15" r="6"/><path d="M12 12.5l.8 1.7 1.9.2-1.4 1.3.4 1.9-1.7-1-1.7 1 .4-1.9-1.4-1.3 1.9-.2z"/></svg></span><span data-i18n="passions.sport.title">sport</span></a><a href="voyage.html" class="hero-pass__link"><span class="hero-pass__ico"><svg viewBox="0 0 24 24"><path d="M7 8a5 5 0 0 1 10 0v12a1 1 0 0 1-1 1H8a1 1 0 0 1-1-1z"/><path d="M10 3.5h4M9 13h6v4H9z"/></svg></span><span data-i18n="passions.voyage.title">voyage</span></a></p>
@@ -70,17 +70,17 @@
               <img class="flip__face flip__face--back" src="assets/about/lea-bebe.webp" alt="Léa Datin enfant" />
             </span>
             <span class="flip__label">
-              <span class="flip__label-front" data-i18n="about.flip.front">Clique pour voir la version 1.0 👶</span>
+              <span class="flip__label-front" data-i18n="about.flip.front">Projets · Marketing · Digital</span>
               <span class="flip__label-back" data-i18n="about.flip.back">Retour à la version actuelle ✨</span>
             </span>
           </button>
-          <div class="sticker" aria-hidden="true">
+          <button type="button" class="sticker" data-flip-trigger aria-label="Voir la version bébé">
             <svg viewBox="0 0 100 100">
               <defs><path id="stickerPath" d="M50,50 m-36,0 a36,36 0 1,1 72,0 a36,36 0 1,1 -72,0" /></defs>
-              <text><textPath href="#stickerPath" textLength="224" lengthAdjust="spacing">PROJETS • MARKETING • DIGITAL •</textPath></text>
+              <text><textPath href="#stickerPath" textLength="224" lengthAdjust="spacing" data-i18n="about.sticker">CLIQUE POUR VOIR MA VERSION BÉBÉ •</textPath></text>
             </svg>
             <span class="sticker__star">✦</span>
-          </div>
+          </button>
         </div>
       </div>
     </section>
@@ -101,23 +101,23 @@
             <p class="eyebrow reveal-up"><span>03</span> <span data-i18n="about.vision.eyebrow">État d'esprit</span></p>
             <h2 class="section-title reveal-up" data-i18n-html="about.vision.title">Ma vision du <em>travail</em></h2>
           </div>
-          <p class="vision__text reveal-up" data-i18n="about.vision.text">Je crois en un leadership basé sur l'écoute, la motivation et la confiance.</p>
+          <p class="vision__text reveal-up" data-i18n-html="about.vision.text">Je crois en un leadership basé sur l'écoute, la motivation et la confiance.</p>
         </div>
         <div class="values__list">
           <article class="value reveal-up">
             <span class="value__num">01</span>
             <h3 class="value__title" data-i18n="about.v1.title">Écoute &amp; confiance</h3>
-            <p class="value__text" data-i18n="about.v1.text"></p>
+            <p class="value__text" data-i18n-html="about.v1.text"></p>
           </article>
           <article class="value reveal-up">
             <span class="value__num">02</span>
             <h3 class="value__title" data-i18n="about.v2.title">Organisation &amp; créativité</h3>
-            <p class="value__text" data-i18n="about.v2.text"></p>
+            <p class="value__text" data-i18n-html="about.v2.text"></p>
           </article>
           <article class="value reveal-up">
             <span class="value__num">03</span>
             <h3 class="value__title" data-i18n="about.v3.title">Optimisme &amp; détermination</h3>
-            <p class="value__text" data-i18n="about.v3.text"></p>
+            <p class="value__text" data-i18n-html="about.v3.text"></p>
           </article>
         </div>
       </div>
@@ -174,12 +174,12 @@
 <li class="tl-item reveal-up">
         <span class="tl-item__dot" aria-hidden="true"></span>
         <div class="tl-item__head">
-          <span class="tl-item__period">Sept 2024 — Aug 2026</span>
+          <span class="tl-item__period">Sept — Dec 2022</span>
           <span class="tag">Experience</span>
         </div>
-        <h3 class="tl-item__title">Digital marketing project manager (work-study)</h3>
-        <p class="tl-item__place">Saint-Gobain PAM</p>
-        <p class="tl-item__text">Leading 13 international teams, creating project materials, country-level KPI reporting and validating platform changes.</p>
+        <h3 class="tl-item__title">Community Manager</h3>
+        <p class="tl-item__place">Jacques Laveine Immobilier</p>
+        <p class="tl-item__text">Creating digital content (social media, newsletters), managing and monitoring digital channels.</p>
       </li>
       <li class="tl-item reveal-up">
         <span class="tl-item__dot" aria-hidden="true"></span>
@@ -194,12 +194,12 @@
       <li class="tl-item reveal-up">
         <span class="tl-item__dot" aria-hidden="true"></span>
         <div class="tl-item__head">
-          <span class="tl-item__period">Sept — Dec 2022</span>
+          <span class="tl-item__period">Sept 2024 — Aug 2026</span>
           <span class="tag">Experience</span>
         </div>
-        <h3 class="tl-item__title">Community Manager</h3>
-        <p class="tl-item__place">Jacques Laveine Immobilier</p>
-        <p class="tl-item__text">Creating digital content (social media, newsletters), managing and monitoring digital channels.</p>
+        <h3 class="tl-item__title">Digital marketing project manager (work-study)</h3>
+        <p class="tl-item__place">Saint-Gobain PAM</p>
+        <p class="tl-item__text">Leading 13 international teams, creating project materials, country-level KPI reporting and validating platform changes.</p>
       </li>
 </ol>
         </div>

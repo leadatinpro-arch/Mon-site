@@ -115,7 +115,8 @@
     const list = $("[data-timeline]");
     if (!list) return;
     const kind = list.dataset.kind;
-    list.innerHTML = (window.TIMELINE || []).filter((item) => !kind || item.kind === kind).map((item) => `
+    // Ordre chronologique : du plus ancien (en haut) au plus récent (en bas)
+    list.innerHTML = (window.TIMELINE || []).filter((item) => !kind || item.kind === kind).slice().reverse().map((item) => `
       <li class="tl-item reveal-up">
         <span class="tl-item__dot" aria-hidden="true"></span>
         <div class="tl-item__head">
@@ -841,6 +842,8 @@
     const on = btn.classList.toggle("is-flipped");
     btn.setAttribute("aria-pressed", on);
   }));
+  // L'autocollant jaune retourne aussi la photo
+  $$("[data-flip-trigger]").forEach((st) => st.addEventListener("click", () => { const f = $("[data-flip]"); if (f) f.click(); }));
 
   /* ==================================================================
      Pointer effects (desktop only)
@@ -890,7 +893,7 @@
 
     // Magnetic buttons
     document.addEventListener("mousemove", (e) => {
-      $$(".magnetic").forEach((el) => {
+      $$(".magnetic-on").forEach((el) => { // effet magnétique désactivé (moins d'animations)
         const r = el.getBoundingClientRect();
         const inside = e.clientX > r.left - 20 && e.clientX < r.right + 20 && e.clientY > r.top - 20 && e.clientY < r.bottom + 20;
         if (inside) {

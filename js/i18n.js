@@ -360,7 +360,7 @@ Object.assign(window.TRANSLATIONS.fr, {
   "story.next": "Passion suivante",
   "story.otherProjects": "Autres projets",
   "story.mascot.eyebrow": "La mascotte",
-  "story.mascot.click": "Clique-moi !",
+  "story.mascot.click": "Clique sur moi !",
   "story.mascot.alt": "Hélios, la mascotte d'Eclipse",
   "story.mascotAlt": "Mascotte du projet",
   "story.event.kicker": "Événement",
@@ -392,7 +392,7 @@ Object.assign(window.TRANSLATIONS.en, {
   "story.next": "Next passion",
   "story.otherProjects": "Other projects",
   "story.mascot.eyebrow": "The mascot",
-  "story.mascot.click": "Click me!",
+  "story.mascot.click": "Click on me!",
   "story.mascot.alt": "Hélios, the Eclipse mascot",
   "story.mascotAlt": "Project mascot",
   "story.event.kicker": "Event",
@@ -696,3 +696,25 @@ Object.assign(window.TRANSLATIONS.en, {
 });
 Object.assign(window.TRANSLATIONS.fr, { "contactPage.form.privacy": "Vos données servent uniquement à vous répondre. <a href=\"mentions-legales.html\">En savoir plus</a>" });
 Object.assign(window.TRANSLATIONS.en, { "contactPage.form.privacy": "Your data is only used to reply to you. <a href=\"mentions-legales.html\">Learn more</a>" });
+
+/* Maquette v2 : mots-clés surlignés, autocollant « clique » */
+Object.assign(window.TRANSLATIONS.fr, {
+  "about.flip.front": "Projets · Marketing · Digital",
+  "about.flip.back": "Retour à la version actuelle ✨",
+  "about.sticker": "CLIQUE POUR VOIR MA VERSION BÉBÉ •",
+  "about.vision.text": "Je crois en un leadership basé sur <strong class=\"hl\">l'écoute, la motivation et la confiance</strong>. Mon objectif est de créer des environnements où chacun se sent <strong class=\"hl\">impliqué et valorisé</strong>. Je suis convaincue que la diversité des idées est une force et que la réussite d'un projet repose sur la capacité à <strong class=\"hl\">travailler ensemble</strong>. Dans la vie comme au travail, j'aime les <strong class=\"hl\">projets bien organisés</strong>, mais je laisse toujours une place à la spontanéité et à la <strong class=\"hl\">créativité</strong>. Mon état d'esprit : avancer avec <strong class=\"hl\">optimisme</strong>, apprendre en continu et relever les défis avec <strong class=\"hl\">détermination</strong>.",
+  "about.v1.text": "Un leadership fondé sur <strong class=\"hl\">l'écoute</strong> et la <strong class=\"hl\">motivation</strong>, pour que chacun se sente impliqué et valorisé.",
+  "about.v2.text": "Des projets <strong class=\"hl\">bien organisés</strong>, avec toujours une place pour la spontanéité et les <strong class=\"hl\">idées nouvelles</strong>.",
+  "about.v3.text": "Avancer avec <strong class=\"hl\">optimisme</strong>, <strong class=\"hl\">apprendre en continu</strong> et relever les défis avec détermination.",
+  "story.mascot.click": "Clique sur moi !"
+});
+Object.assign(window.TRANSLATIONS.en, {
+  "about.flip.front": "Projects · Marketing · Digital",
+  "about.flip.back": "Back to the current version ✨",
+  "about.sticker": "CLICK TO SEE MY BABY VERSION •",
+  "about.vision.text": "I believe in leadership built on <strong class=\"hl\">listening, motivation and trust</strong>. My goal is to create environments where everyone feels <strong class=\"hl\">involved and valued</strong>. I'm convinced that diversity of ideas is a strength and that a project's success depends on the ability to <strong class=\"hl\">work together</strong>. In life as at work, I love <strong class=\"hl\">well-organised projects</strong>, but I always leave room for spontaneity and <strong class=\"hl\">creativity</strong>. My mindset: move forward with <strong class=\"hl\">optimism</strong>, keep learning and take on challenges with <strong class=\"hl\">determination</strong>.",
+  "about.v1.text": "Leadership built on <strong class=\"hl\">listening</strong> and <strong class=\"hl\">motivation</strong>, so that everyone feels involved and valued.",
+  "about.v2.text": "<strong class=\"hl\">Well-organised</strong> projects, always with room for spontaneity and <strong class=\"hl\">new ideas</strong>.",
+  "about.v3.text": "Move forward with <strong class=\"hl\">optimism</strong>, <strong class=\"hl\">keep learning</strong> and take on challenges with determination.",
+  "story.mascot.click": "Click on me!"
+});

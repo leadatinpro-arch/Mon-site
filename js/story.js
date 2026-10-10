@@ -87,7 +87,7 @@
           <div class="eclipse__moon"></div>
         </div>
         ${P.heroMascot ? `<img class="hero-mascot" src="${esc(P.heroMascot)}" alt="" onerror="this.remove()" />` : ""}
-        <div class="hero-eq" aria-hidden="true">${Array.from({ length: 48 }, (_, i) => `<i style="--i:${i};--h:${20 + ((i * 37) % 80)}%;--dur:${(0.5 + ((i * 37) % 70) / 100).toFixed(2)}s"></i>`).join("")}</div>`;
+`;
     }
     if (P.theme === "punch" && P.logo) {
       return `<div class="punch-hero" aria-hidden="true">
@@ -174,7 +174,7 @@
     if (!P.intro) return "";
     return `<section class="s-intro"><div class="container s-intro__grid">
       <h2 class="section-title reveal-up">${tx(P.intro.title)}</h2>
-      <p class="s-intro__text reveal-up">${tx(P.intro.text)}</p>
+      ${P.intro.reveal ? `<p class="s-intro__text s-intro__text--reveal" data-words="story.noKeys">${tx(P.intro.text)}</p>` : `<p class="s-intro__text reveal-up">${tx(P.intro.text)}</p>`}
     </div></section>`;
   }
 

@@ -620,6 +620,7 @@ window.PAGES = {
       en: "Art, my creative engine. Drawing, design, music, film: my everyday sources of inspiration."
     },
     intro: {
+      reveal: true,
       title: { fr: "Depuis toujours", en: "Since forever" },
       text: {
         fr: "J'ai toujours été profondément attirée par l'art et la création. Depuis mon enfance, le dessin fait partie de mon quotidien, au point d'avoir envisagé des études de graphisme et de design. J'ai finalement choisi la gestion de projet, car j'aime organiser, coordonner et donner vie à des idées. Mais l'art reste une force qui complète mon profil : il nourrit ma créativité et mon sens esthétique.",

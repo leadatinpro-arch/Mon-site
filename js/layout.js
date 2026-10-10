@@ -76,6 +76,13 @@
 
   document.body.insertAdjacentHTML("afterbegin", before);
   document.body.insertAdjacentHTML("beforeend", footer);
+  // Flèche « retour en haut », visible après avoir bien défilé
+  document.body.insertAdjacentHTML("beforeend", `<button type="button" class="to-top" aria-label="Retour en haut de la page"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 19V5M5 12l7-7 7 7"/></svg></button>`);
+  const toTop = document.querySelector(".to-top");
+  const onScrollTop = () => toTop.classList.toggle("is-shown", window.scrollY > window.innerHeight * 1.2);
+  window.addEventListener("scroll", onScrollTop, { passive: true });
+  onScrollTop();
+  toTop.addEventListener("click", () => window.scrollTo({ top: 0, behavior: "smooth" }));
   // Formulaire en envoi direct : textes adaptés
   if ((window.SITE || {}).web3formsKey) {
     document.querySelectorAll('[data-i18n="contactPage.form.note"], [data-i18n="contactPage.form.okText"]').forEach((el) => { el.dataset.i18n += "Direct"; });

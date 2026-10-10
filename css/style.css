@@ -4961,3 +4961,29 @@ body[data-page="sport"] .role-photo__media img { object-position: 72% 50%; }
 /* Accueil : visuels « contain » (maquette, calendrier) */
 .project__visual--contain img { object-fit: contain !important; padding: 6%; }
 .projects__track .project { transform: none; }
+
+/* ===== Maquette v2 : moins d'animations ===== */
+.hero__name { display: inline-block; }
+.hero__name--outline { color: transparent; -webkit-text-stroke: 2px var(--text); }
+@media (max-width: 820px) { .hero__name--outline { -webkit-text-stroke-width: 1.5px; } }
+.cta__btn { margin-top: 8px; padding: 18px 34px; font-size: 1.05rem; }
+.cta__btn:hover { transform: translateY(-2px); }
+/* Section « Ce que je recherche » : simples libellés, pas des boutons */
+.seek__chips { gap: 6px 0; }
+.seek__chips span { padding: 0; border: 0; background: none; border-radius: 0; font-weight: 600; font-size: 1rem; color: var(--text); }
+.seek__chips span:not(:last-child)::after { content: "·"; color: var(--accent); margin: 0 12px; font-weight: 800; }
+.seek__chips span:hover { color: var(--text); }
+.hl { color: var(--accent); font-weight: 600; }
+.sticker { border: 0; cursor: pointer; font: inherit; transition: transform 0.4s var(--ease-out); }
+.sticker:hover { transform: scale(1.06) rotate(-6deg); }
+.sticker:focus-visible { outline: 3px solid var(--text); outline-offset: 4px; }
+/* Texte révélé mot à mot au scroll (page Art) */
+.s-intro__text--reveal .word { display: inline-block; opacity: 0.15; transition: opacity 0.3s; }
+.s-intro__text--reveal .word.is-lit { opacity: 1; }
+/* Bouton retour en haut */
+.to-top { position: fixed; right: max(18px, env(safe-area-inset-right, 0px)); bottom: calc(18px + env(safe-area-inset-bottom, 0px)); z-index: 110; width: 50px; height: 50px; border-radius: 50%; display: grid; place-items: center; background: var(--accent); color: var(--bg); border: 0; cursor: pointer; box-shadow: 0 12px 30px -10px rgba(0, 0, 0, 0.7); opacity: 0; visibility: hidden; transform: translateY(12px); transition: opacity 0.3s, transform 0.3s var(--ease-out), visibility 0.3s; }
+.to-top.is-shown { opacity: 1; visibility: visible; transform: none; }
+.to-top:hover { transform: translateY(-3px); }
+.to-top:focus-visible { outline: 3px solid var(--text); outline-offset: 3px; }
+.to-top svg { width: 22px; height: 22px; fill: none; stroke: currentColor; stroke-width: 2.5; stroke-linecap: round; stroke-linejoin: round; }
+@media (max-width: 600px) { .to-top { width: 44px; height: 44px; } }
