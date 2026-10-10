@@ -79,6 +79,15 @@
     return `<div class="o3 o3--${esc(kind)}" aria-hidden="true"><div class="o3__tilt"><div class="o3__float">${body}</div></div><span class="o3__shadow"></span></div>`;
   }
 
+  // Petites icônes au trait (à la place des émojis)
+  const ICON = {
+    key: '<svg viewBox="0 0 24 24"><circle cx="8" cy="15" r="4"/><path d="M11 12l8-8M16 7l2 2M14 9l2 2"/></svg>',
+    pin: '<svg viewBox="0 0 24 24"><path d="M12 21s-6-5.6-6-11a6 6 0 0 1 12 0c0 5.4-6 11-6 11z"/><circle cx="12" cy="10" r="2.2"/></svg>',
+    heart: '<svg viewBox="0 0 24 24"><path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10z"/></svg>',
+    paw: '<svg viewBox="0 0 24 24"><circle cx="7" cy="9" r="1.8"/><circle cx="11" cy="6" r="1.8"/><circle cx="15" cy="6" r="1.8"/><circle cx="18.5" cy="9.5" r="1.8"/><path d="M12.5 11c-3 0-5.5 3.5-5.5 6 0 1.6 1.3 2.5 2.8 2.2 1.1-.2 1.8-.7 2.7-.7s1.6.5 2.7.7c1.5.3 2.8-.6 2.8-2.2 0-2.5-2.5-6-5.5-6z"/></svg>',
+    gift: '<svg viewBox="0 0 24 24"><rect x="4" y="9" width="16" height="11" rx="1.5"/><path d="M3 9h18M12 9v11M12 9S10.5 4 8 4.5 7 8 12 9zM12 9s1.5-5 4-4.5S17 8 12 9z"/></svg>'
+  };
+
   function heroVisual() {
     if (P.theme === "eclipse") {
       return `<div class="eclipse" aria-hidden="true">
@@ -121,9 +130,9 @@
       return `<div class="jli-hero" aria-hidden="true">
           <span class="jli-hero__beam"></span>
           <img class="jli-hero__logo" src="${esc(P.logo)}" alt="" />
-          <span class="jli-hero__key">🔑</span>
-          <span class="jli-hero__pin">📍</span>
-          <span class="jli-hero__like">♥</span>
+          <span class="jli-hero__key ico">${ICON.key}</span>
+          <span class="jli-hero__pin ico">${ICON.pin}</span>
+          <span class="jli-hero__like ico">${ICON.heart}</span>
         </div>`;
     }
     if (P.theme === "idcom" && P.logo) {
@@ -267,14 +276,14 @@
     return `<section class="s-impact"><div class="container">
       <div class="s-impact__head">
         <h2 class="section-title reveal-up">${tx(I.title)}</h2>
-        <div class="days reveal-up"><span class="days__value">${esc(I.days.value)}</span><span class="days__label">${tx(I.days.label)}<strong>📍 ${tx(I.place)}</strong></span></div>
+        <div class="days reveal-up"><span class="days__value">${esc(I.days.value)}</span><span class="days__label">${tx(I.days.label)}<strong><span class="ico ico--inline">${ICON.pin}</span> ${tx(I.place)}</strong></span></div>
       </div>
       <div class="s-impact__grid">
         <div>
           <p class="s-impact__text reveal-up">${tx(I.text)}</p>
           <div class="impact-actions">${I.actions.map((a, i) => `
             <article class="impact-action reveal-up" style="--d:${i * 0.1}s">
-              <span class="impact-action__icon" aria-hidden="true">${esc(a.icon)}</span>
+              <span class="impact-action__icon ico" aria-hidden="true">${ICON[a.icon] || ""}</span>
               <h3>${tx(a.title)}</h3>
               <p>${tx(a.text)}</p>
             </article>`).join("")}</div>

@@ -4987,3 +4987,15 @@ body[data-page="sport"] .role-photo__media img { object-position: 72% 50%; }
 .to-top:focus-visible { outline: 3px solid var(--text); outline-offset: 3px; }
 .to-top svg { width: 22px; height: 22px; fill: none; stroke: currentColor; stroke-width: 2.5; stroke-linecap: round; stroke-linejoin: round; }
 @media (max-width: 600px) { .to-top { width: 44px; height: 44px; } }
+/* Mots-clés en gras (sans couleur) */
+.hl { color: var(--text); font-weight: 700; }
+/* Le haut des titres (contour) n'est plus coupé */
+.line { padding-top: 0.14em; margin-top: -0.14em; }
+.hero__title .line { overflow: visible; }
+/* Icônes au trait */
+.ico svg { width: 1em; height: 1em; display: block; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+.jli-hero .ico { color: var(--accent); font-size: clamp(1.6rem, 2.4vw, 2.2rem); }
+.jli-hero__like.ico { color: #ff5c7a; }
+.impact-action__icon.ico { color: var(--accent); font-size: 1.9rem; }
+.ico--inline { display: inline-block; vertical-align: -0.12em; color: var(--accent); }
+.ico--inline svg { display: inline-block; }

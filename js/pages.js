@@ -582,8 +582,8 @@ window.PAGES = {
       days: { value: "5", label: { fr: "jours de mission au refuge", en: "days at the shelter" } },
       place: { fr: "Majorque", en: "Mallorca" },
       actions: [
-        { icon: "🐾", title: { fr: "Aidé sur place", en: "Helped on site" }, text: { fr: "Soins aux animaux (chiens et chats), nettoyage des espaces, organisation des repas.", en: "Caring for the animals (dogs and cats), cleaning the spaces, organising meals." } },
-        { icon: "🤝", title: { fr: "Contribué financièrement", en: "Contributed financially" }, text: { fr: "Achat de nourriture, produits d'entretien et matériel pour améliorer le confort des animaux.", en: "Buying food, cleaning products and equipment to make the animals more comfortable." } }
+        { icon: "paw", title: { fr: "Aidé sur place", en: "Helped on site" }, text: { fr: "Soins aux animaux (chiens et chats), nettoyage des espaces, organisation des repas.", en: "Caring for the animals (dogs and cats), cleaning the spaces, organising meals." } },
+        { icon: "gift", title: { fr: "Contribué financièrement", en: "Contributed financially" }, text: { fr: "Achat de nourriture, produits d'entretien et matériel pour améliorer le confort des animaux.", en: "Buying food, cleaning products and equipment to make the animals more comfortable." } }
       ],
       conclusion: {
         fr: "Cette expérience a été une leçon de solidarité et de travail d'équipe, qui a donné un sens concret à nos efforts tout au long de l'année. Elle illustre parfaitement la capacité à transformer des compétences professionnelles en actions utiles et humaines.",
