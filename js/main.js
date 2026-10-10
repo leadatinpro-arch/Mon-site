@@ -352,7 +352,11 @@
     setTimeout(() => { location.href = url.href; }, 650);
   });
 
+  // Toujours arriver en haut d'une page qu'on ouvre
+  if ("scrollRestoration" in history) history.scrollRestoration = "manual";
+  if (!location.hash) window.scrollTo(0, 0);
   window.addEventListener("pageshow", (e) => {
+    if (!location.hash) window.scrollTo(0, 0);
     if (e.persisted) document.body.classList.remove("is-leaving");
   });
 

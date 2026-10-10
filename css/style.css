@@ -4999,3 +4999,8 @@ body[data-page="sport"] .role-photo__media img { object-position: 72% 50%; }
 .impact-action__icon.ico { color: var(--accent); font-size: 1.9rem; }
 .ico--inline { display: inline-block; vertical-align: -0.12em; color: var(--accent); }
 .ico--inline svg { display: inline-block; }
+/* Logos : toujours contenus entièrement dans leur cadre */
+.side-card__logo, .school__logo { position: relative; overflow: hidden; }
+.side-card__logo--light img, .school__logo img { position: absolute; inset: 14px; width: calc(100% - 28px); height: calc(100% - 28px); max-width: none; max-height: none; object-fit: contain; }
+.side-card__logo--light { padding: 0; }
+.school__logo { padding: 0; }

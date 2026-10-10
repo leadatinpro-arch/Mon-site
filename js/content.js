@@ -102,7 +102,7 @@ window.PROJECTS = [
     color: 4,
     shape: "leaf",
     year: "2023 — 2024",
-    image: "assets/cora/brioches.jpg",
+    image: "assets/cora/cora-rose.jpg",
     title: { fr: "Carrefour (ex-Cora) — Marketing & communication", en: "Carrefour (ex-Cora) — Marketing & communication" },
     summary: {
       fr: "Alternance (avril 2023 – août 2024) : campagnes promotionnelles, événements en magasin, supports visuels et réseaux sociaux.",
